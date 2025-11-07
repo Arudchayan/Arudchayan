@@ -1,0 +1,15 @@
+name: WakaTime (optional)
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  waka:
+    if: ${{ secrets.WAKATIME_API_KEY != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: athul/waka-readme@master
+        with:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}

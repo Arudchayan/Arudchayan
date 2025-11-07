@@ -1,0 +1,98 @@
+[
+  {
+    "id": "metagross",
+    "title": "Quantum Steel Prophet",
+    "lead": "Mega Metagross",
+    "team": [
+      "Mega Metagross",
+      "Rayquaza",
+      "Gengar",
+      "Zeraora",
+      "Noivern",
+      "Decidueye"
+    ],
+    "tera_type": "Steel",
+    "z_move": null,
+    "mega": "Metagrossite"
+  },
+  {
+    "id": "gengar",
+    "title": "Nightfall Rift Summoner",
+    "lead": "Mega Gengar",
+    "team": [
+      "Mega Gengar",
+      "Decidueye",
+      "Noivern",
+      "Rayquaza",
+      "Zeraora",
+      "Metagross"
+    ],
+    "tera_type": "Ghost",
+    "z_move": "Never-Ending Nightmare",
+    "mega": "Gengarite"
+  },
+  {
+    "id": "rayquaza",
+    "title": "Sky Tyrant Ascendant",
+    "lead": "Mega Rayquaza",
+    "team": [
+      "Mega Rayquaza",
+      "Noivern",
+      "Zeraora",
+      "Metagross",
+      "Gengar",
+      "Decidueye"
+    ],
+    "tera_type": "Dragon",
+    "z_move": null,
+    "mega": "Dragon Ascent (Primal Instinct)"
+  },
+  {
+    "id": "decidueye",
+    "title": "Emerald Forest Warden",
+    "lead": "Decidueye",
+    "team": [
+      "Decidueye",
+      "Rayquaza",
+      "Noivern",
+      "Metagross",
+      "Gengar",
+      "Zeraora"
+    ],
+    "tera_type": "Grass",
+    "z_move": "Sinister Arrow Raid",
+    "mega": null
+  },
+  {
+    "id": "noivern",
+    "title": "Ultrasonic Night Raider",
+    "lead": "Noivern",
+    "team": [
+      "Noivern",
+      "Rayquaza",
+      "Zeraora",
+      "Gengar",
+      "Metagross",
+      "Decidueye"
+    ],
+    "tera_type": "Flying",
+    "z_move": "Supersonic Skystrike",
+    "mega": null
+  },
+  {
+    "id": "zeraora",
+    "title": "Thunderborn Storm Raider",
+    "lead": "Zeraora",
+    "team": [
+      "Zeraora",
+      "Rayquaza",
+      "Noivern",
+      "Metagross",
+      "Gengar",
+      "Decidueye"
+    ],
+    "tera_type": "Electric",
+    "z_move": "Gigavolt Havoc",
+    "mega": null
+  }
+]

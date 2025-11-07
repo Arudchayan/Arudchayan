@@ -1,0 +1,46 @@
+name: Blog (optional)
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  rss:
+    if: ${{ secrets.BLOG_RSS != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch RSS and update README
+        env:
+          BLOG_RSS: ${{ secrets.BLOG_RSS }}
+        run: |
+          python - << 'PY'
+import os, re, sys, urllib.request, xml.etree.ElementTree as ET
+rss = os.environ.get("BLOG_RSS")
+if not rss:
+    sys.exit(0)
+data = urllib.request.urlopen(rss).read()
+root = ET.fromstring(data)
+ns = {'dc':'http://purl.org/dc/elements/1.1/'}
+items = root.findall('.//item')[:5]
+lines = []
+for it in items:
+    title = it.findtext('title') or 'Post'
+    link = it.findtext('link') or '#'
+    lines.append(f"- [{title}]({link})")
+with open("README.md","r",encoding="utf-8") as f:
+    s = f.read()
+s = re.sub(r"<!-- BLOG_POSTS_START -->.*?<!-- BLOG_POSTS_END -->",
+           "<!-- BLOG_POSTS_START -->\n" + "\n".join(lines) + "\n<!-- BLOG_POSTS_END -->",
+           s, flags=re.S)
+with open("README.md","w",encoding="utf-8") as f:
+    f.write(s)
+PY
+      - name: Commit
+        run: |
+          git config user.name "Blog Bot"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "docs: refresh latest posts" || echo "no changes"
+          git push

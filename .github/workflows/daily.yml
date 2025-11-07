@@ -1,0 +1,26 @@
+name: Daily Build (Archetype + README)
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # daily at 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Build README
+        run: python scripts/build_readme.py
+      - name: Commit
+        run: |
+          git config user.name "Form Rotator"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "chore: daily archetype refresh (royal purple)" || echo "no changes"
+          git push
