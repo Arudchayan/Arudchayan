@@ -18,9 +18,9 @@ _Current form updates on every UTC midnight._
 
 ## 🎭 Today's Archetype
 <!-- CURRENT_ARCHETYPE_START -->
-**Archetype:** Sky Tyrant Ascendant  
-**Lead:** Mega Rayquaza
-**Team:** Mega Rayquaza, Noivern, Zeraora, Metagross, Gengar, Decidueye
+**Archetype:** Emerald Forest Warden  
+**Lead:** Decidueye
+**Team:** Decidueye, Rayquaza, Noivern, Metagross, Gengar, Zeraora
 <!-- CURRENT_ARCHETYPE_END -->
 
 ### ⚙️ Loadout Highlights
