@@ -1,71 +1,40 @@
 <!-- ⚡ ULTIMATE POKÉMON TRAINER PROFILE - GENERATED DAILY ⚡ -->
 <div align="center">
 
-```
-██████╗  ██████╗ ██╗  ██╗███████╗████████╗██████╗  ██████╗ ███████╗██╗██╗     ███████╗
-██╔══██╗██╔═══██╗██║ ██╔╝██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗██╔════╝██║██║     ██╔════╝
-██████╔╝██║   ██║█████╔╝ █████╗     ██║   ██████╔╝██║   ██║█████╗  ██║██║     █████╗  
-██╔═══╝ ██║   ██║██╔═██╗ ██╔══╝     ██║   ██╔══██╗██║   ██║██╔══╝  ██║██║     ██╔══╝  
-██║     ╚██████╔╝██║  ██╗███████╗   ██║   ██║  ██║╚██████╔╝██║     ██║███████╗███████╗
-╚═╝      ╚═════╝ ╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝
-```
+<img src="https://img.shields.io/badge/POKEPROFILE-6A0DAD?style=for-the-badge&logoColor=white" alt="PokeProfile" height="60"/>
+<img src="https://img.shields.io/badge/TRAINER-PROFILE-purple?style=for-the-badge&logo=github&logoColor=white" alt="Trainer Profile" height="60"/>
 
 # ⚡ TRAINER ARUDCHAYAN ⚡
 ### 🎯 CHAMPION OF THE CODE REGION 🎯
 ### 💜 ROYAL PURPLE SPECIALIST 💜
 
-```
-        ___
-      /     \
-     | () () |
-      \  ^  /
-       |||||
-      |||||||
-     |||||||||
-    
-   POKÉBALL GO!
-```
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Pokeball" width="80" height="80"/>
+
+**POKÉBALL GO!**
 
 <table>
 <tr>
 <td>
 
-```
-╔══════════════════╗
-║ TRAINER ID:      ║
-║ #6A0DAD          ║
-║                  ║
-║ BADGES: █████████║
-║         █████████║
-║                  ║
-║ REGION: GITHUB   ║
-╚══════════════════╝
-```
+<img src="https://img.shields.io/badge/TRAINER_ID-%236A0DAD-6A0DAD?style=for-the-badge" alt="Trainer ID"/>
+<img src="https://img.shields.io/badge/REGION-GITHUB-181717?style=for-the-badge&logo=github" alt="Region"/>
+<img src="https://img.shields.io/badge/BADGES-★★★★★★★★-FFD700?style=for-the-badge" alt="Badges"/>
 
 </td>
 <td>
 
 ### 🏆 ELITE FOUR STATUS 🏆
 **DAILY ROTATION ACTIVE**
-```
-[████████] Day 739564
-FORM SHIFT: 2025-11-09 09:08 UTC
-```
+<img src="https://img.shields.io/badge/Day-739564-purple?style=for-the-badge" alt="Day"/>
+<img src="https://img.shields.io/badge/FORM_SHIFT-2025-11-09 09:21 UTC-6A0DAD?style=flat-square" alt="Form Shift"/>
 ⚡ **MEGA EVOLUTION READY** ⚡
 
 </td>
 <td>
 
-```
-╔══════════════════╗
-║   PARTY SIZE     ║
-║      ████        ║
-║      6/6         ║
-║                  ║
-║  POKEDEX: 6  ║
-║  SEEN: ∞         ║
-╚══════════════════╝
-```
+<img src="https://img.shields.io/badge/PARTY-6/6-success?style=for-the-badge&logo=pokeball" alt="Party"/>
+<img src="https://img.shields.io/badge/POKEDEX-6-orange?style=for-the-badge" alt="Pokedex"/>
+<img src="https://img.shields.io/badge/SEEN-∞-blue?style=for-the-badge" alt="Seen"/>
 
 </td>
 </tr>
@@ -96,7 +65,7 @@ FORM SHIFT: 2025-11-09 09:08 UTC
 <table>
 <tr><td><b>Type:</b></td><td>🕊️FLYING 🐉DRAGON</td></tr>
 <tr><td><b>Ability:</b></td><td>Frisk</td></tr>
-<tr><td><b>Nature:</b></td><td>Hasty</td></tr>
+<tr><td><b>Nature:</b></td><td>Timid</td></tr>
 <tr><td><b>Height:</b></td><td>1.5m</td></tr>
 <tr><td><b>Weight:</b></td><td>85.0kg</td></tr>
 </table>
@@ -177,17 +146,9 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 <td align="center" width="33%">
 
 ### 💎 MEGA EVOLUTION
-```
-    ✧･ﾟ: *✧･ﾟ:*
-   ╔═══════════╗
-   ║    ◆◆◆    ║
-   ║   ◆◆◆◆◆   ║
-   ║  ◆◆◆◆◆◆◆  ║
-   ║   ◆◆◆◆◆   ║
-   ║    ◆◆◆    ║
-   ╚═══════════╝
-    *:･ﾟ✧*:･ﾟ✧
-```
+
+<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/items/mega-stone.png" alt="Mega Stone" width="80" height="80"/>
+
 **—**
 
 
@@ -195,17 +156,9 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 <td align="center" width="33%">
 
 ### ⚡ Z-MOVE CRYSTAL
-```
-    ⚡️━━━━━⚡️
-   ╔═══════════╗
-   ║     ▲     ║
-   ║    ▲▲▲    ║
-   ║   ▲▲ ▲▲   ║
-   ║  ▲▲   ▲▲  ║
-   ║ ▲▲     ▲▲ ║
-   ╚═══════════╝
-    ⚡️━━━━━⚡️
-```
+
+<img src="https://raw.githubusercontent.com/msikma/pokesprite/master/items/z-crystal.png" alt="Z-Crystal" width="80" height="80"/>
+
 **Supersonic Skystrike**
 ⚡
 
@@ -213,17 +166,9 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 <td align="center" width="33%">
 
 ### 🔮 TERASTALLIZATION
-```
-    ✨━━━━━✨
-   ╔═══════════╗
-   ║    ◇◇◇    ║
-   ║   ◇◇◇◇◇   ║
-   ║  ◇◇ ★ ◇◇  ║
-   ║   ◇◇◇◇◇   ║
-   ║    ◇◇◇    ║
-   ╚═══════════╝
-    ✨━━━━━✨
-```
+
+<img src="https://archives.bulbagarden.net/media/upload/7/7f/Tera_Jewel.png" alt="Tera Crystal" width="80" height="80"/>
+
 **TERA-Flying**
 ✨
 
@@ -240,20 +185,9 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 
 <div align="center">
 
-```
-╔══════════════════════════════════════════════════════════════════════╗
-║                                                                      ║
-║   ██████╗  ██████╗ ██╗  ██╗███████╗██████╗ ███████╗██╗  ██╗        ║
-║   ██╔══██╗██╔═══██╗██║ ██╔╝██╔════╝██╔══██╗██╔════╝╚██╗██╔╝        ║
-║   ██████╔╝██║   ██║█████╔╝ █████╗  ██║  ██║█████╗   ╚███╔╝         ║
-║   ██╔═══╝ ██║   ██║██╔═██╗ ██╔══╝  ██║  ██║██╔══╝   ██╔██╗         ║
-║   ██║     ╚██████╔╝██║  ██╗███████╗██████╔╝███████╗██╔╝ ██╗        ║
-║   ╚═╝      ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝        ║
-║                                                                      ║
-║              LOADING TRAINER DATA... PLEASE WAIT...                  ║
-║                                                                      ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
+<img src="https://img.shields.io/badge/📱_POKÉDEX-LOADING...-red?style=for-the-badge" alt="Pokedex Loading" height="40"/>
+
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/pokedex.png" alt="Pokedex" width="100" height="100"/>
 
 ---
 
@@ -264,37 +198,29 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 <td width="50%">
 
 ### 📊 CODING STATS (POKÉMON-STYLE)
-```
-╔═══════════════════════════════╗
-║ COMMITS CAUGHT:      ∞       ║
-║ BUGS DEFEATED:       9,999+   ║
-║ PULL REQUESTS:       █████    ║
-║ CODE REVIEWS:        ████     ║
-║ MERGE CONFLICTS:     ███      ║
-║ COFFEE CONSUMED:     ∞²       ║
-║ SLEEP HOURS:         404      ║
-║ LEGENDARY CATCHES:   42       ║
-╚═══════════════════════════════╝
-```
+
+<img src="https://img.shields.io/badge/COMMITS_CAUGHT-∞-brightgreen?style=flat-square" alt="Commits"/>
+<img src="https://img.shields.io/badge/BUGS_DEFEATED-9999+-red?style=flat-square" alt="Bugs"/>
+<img src="https://img.shields.io/badge/PULL_REQUESTS-★★★★★-blue?style=flat-square" alt="PRs"/>
+<img src="https://img.shields.io/badge/CODE_REVIEWS-★★★★-purple?style=flat-square" alt="Reviews"/>
+<img src="https://img.shields.io/badge/MERGE_CONFLICTS-★★★-orange?style=flat-square" alt="Conflicts"/>
+<img src="https://img.shields.io/badge/COFFEE_CONSUMED-∞²-brown?style=flat-square" alt="Coffee"/>
+<img src="https://img.shields.io/badge/SLEEP_HOURS-404-lightgrey?style=flat-square" alt="Sleep"/>
+<img src="https://img.shields.io/badge/LEGENDARY_CATCHES-42-yellow?style=flat-square" alt="Legendary"/>
 
 </td>
 <td width="50%">
 
 ### 🏆 GYM BADGES EARNED 🏆
-```
-╔════════════════════════════════╗
-║                                ║
-║  🔥 DEPLOY BADGE    [EARNED]  ║
-║  💧 DEBUG BADGE     [EARNED]  ║
-║  ⚡ REFACTOR BADGE  [EARNED]  ║
-║  🌿 GROWTH BADGE    [EARNED]  ║
-║  🧊 OPTIMIZE BADGE  [EARNED]  ║
-║  ⚔️  MERGE BADGE     [EARNED]  ║
-║  🌙 NIGHT-CODE      [EARNED]  ║
-║  🏔️  PRODUCTION      [EARNED]  ║
-║                                ║
-╚════════════════════════════════╝
-```
+
+<img src="https://img.shields.io/badge/🔥_DEPLOY-EARNED-FF4500?style=flat-square" alt="Deploy Badge"/>
+<img src="https://img.shields.io/badge/💧_DEBUG-EARNED-1E90FF?style=flat-square" alt="Debug Badge"/>
+<img src="https://img.shields.io/badge/⚡_REFACTOR-EARNED-FFD700?style=flat-square" alt="Refactor Badge"/>
+<img src="https://img.shields.io/badge/🌿_GROWTH-EARNED-228B22?style=flat-square" alt="Growth Badge"/>
+<img src="https://img.shields.io/badge/🧊_OPTIMIZE-EARNED-00CED1?style=flat-square" alt="Optimize Badge"/>
+<img src="https://img.shields.io/badge/⚔️_MERGE-EARNED-C0C0C0?style=flat-square" alt="Merge Badge"/>
+<img src="https://img.shields.io/badge/🌙_NIGHT_CODE-EARNED-191970?style=flat-square" alt="Night Code Badge"/>
+<img src="https://img.shields.io/badge/🏔️_PRODUCTION-EARNED-8B4513?style=flat-square" alt="Production Badge"/>
 
 </td>
 </tr>
@@ -366,14 +292,9 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 <td align="center">
 
 ### 🔥 CHARIZARD-TIER PROJECT
-```
-      /\___/\
-     ( o   o )
-     (  =^=  )
-      ) ~ ~ (
-     /|     |\
-    (_|     |_)
-```
+
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/6.gif" alt="Charizard" width="120" height="120"/>
+
 **The Code Dragon**
 - Lines of Fire: 10,000+
 - Deploys: Flawless
@@ -382,15 +303,9 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 <td align="center">
 
 ### 💧 BLASTOISE-TIER PROJECT
-```
-     ___
-    /   \
-   | O O |
-   |  >  |
-    \___/
-     | |
-    /   \
-```
+
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/9.gif" alt="Blastoise" width="120" height="120"/>
+
 **The Debug Turtle**
 - Bugs Fixed: 9,999+
 - Stability: Maximum
@@ -399,11 +314,9 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 <td align="center">
 
 ### ⚡ PIKACHU-TIER PROJECT
-```
-    (\__/)
-    (o^.^)
-    z(_(")(")
-```
+
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/25.gif" alt="Pikachu" width="120" height="120"/>
+
 **The Quick Deploy**
 - Speed: Lightning
 - Popularity: Viral
@@ -418,22 +331,16 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 
 <div align="center">
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                                                         │
-│  "A TRAINER'S BOND WITH THEIR CODE IS UNBREAKABLE!"   │
-│                                                         │
-│  "GOTTA CATCH ALL THE BUGS!" - Professor Git           │
-│                                                         │
-│  "USE GIT PUSH! IT'S SUPER EFFECTIVE!"                 │
-│                                                         │
-│  "YOUR POKÉMON EVOLVED INTO... A PRODUCTION BUILD!"   │
-│                                                         │
-│  "WILD MERGE CONFLICT APPEARED!"                       │
-│  "TRAINER USED REBASE! CONFLICT FAINTED!"             │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
-```
+
+> 💬 _"A TRAINER'S BOND WITH THEIR CODE IS UNBREAKABLE!"_
+
+> 💬 _"GOTTA CATCH ALL THE BUGS!"_ - Professor Git
+
+> 💬 _"USE GIT PUSH! IT'S SUPER EFFECTIVE!"_
+
+> 💬 _"YOUR POKÉMON EVOLVED INTO... A PRODUCTION BUILD!"_
+
+> 💬 _"WILD MERGE CONFLICT APPEARED! TRAINER USED REBASE! CONFLICT FAINTED!"_
 
 </div>
 
@@ -441,18 +348,10 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 
 ## 📈 TRAINER JOURNEY MAP 📈
 
-```
-START ═══════════════════════════════════════════════ CHAMPION
-  ▼          ▼          ▼          ▼          ▼          ▼
-PALLET    VIRIDIAN   CERULEAN   LAVENDER   SAFFRON   ELITE 4
-TOWN       CITY       CITY       TOWN       CITY     CHAMPION
-  │          │          │          │          │          │
-  ├─ JS     ├─ REACT   ├─ NODE    ├─ DOCKER  ├─ K8S    ├─ MASTERY
-  ├─ HTML   ├─ VUE     ├─ PYTHON  ├─ AWS     ├─ GCP    ├─ ARCHITECT
-  └─ CSS    └─ ANGULAR └─ RUST    └─ AZURE   └─ CI/CD  └─ ∞
 
-      🔥 CURRENTLY AT: CHAMPION LEVEL 💯
-```
+📍 **START** ➡️ Pallet Town _(JS, HTML, CSS)_ ➡️ Viridian City _(React, Vue, Angular)_ ➡️ Cerulean City _(Node, Python, Rust)_ ➡️ Lavender Town _(Docker, AWS, Azure)_ ➡️ Saffron City _(K8s, GCP, CI/CD)_ ➡️ Elite 4 _(Mastery, Architect, ∞)_ ➡️ 🏆 **CHAMPION**
+
+<img src="https://img.shields.io/badge/🔥_CURRENTLY_AT-CHAMPION_LEVEL_💯-gold?style=for-the-badge" alt="Champion Level"/>
 
 ---
 
@@ -462,27 +361,18 @@ TOWN       CITY       CITY       TOWN       CITY     CHAMPION
 <tr>
 <td>
 
-```
-╔════════════════════════════════╗
-║  TIP #001                      ║
-╠════════════════════════════════╣
-║  Always save before fighting   ║
-║  the Elite Four (production    ║
-║  deployment).                  ║
-╚════════════════════════════════╝
-```
+
+> 💡 **TIP #001**
+> 
+> Always save before fighting the Elite Four (production deployment).
 
 </td>
 <td>
 
-```
-╔════════════════════════════════╗
-║  TIP #042                      ║
-╠════════════════════════════════╣
-║  Stock up on Revives (coffee)  ║
-║  before a long coding session. ║
-╚════════════════════════════════╝
-```
+
+> 💡 **TIP #042**
+> 
+> Stock up on Revives (coffee) before a long coding session.
 
 </td>
 </tr>
@@ -495,38 +385,21 @@ TOWN       CITY       CITY       TOWN       CITY     CHAMPION
 <div align="center">
 
 ### MEWTWO - THE GENETIC ALGORITHM
-```
-      ___
-     /   \
-    | O O |
-    |  >  |
-    |     |
-     \___/
-    /_/ \_\
-```
+
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/150.gif" alt="Mewtwo" width="120" height="120"/>
+
 **Last Seen:** Optimizing neural networks at 3 AM
 
 ### RAYQUAZA - THE SKY SERPENT
-```
-    ~~~~~~
-   ~~~~~~~
-  ~~~~~~~~
- ~~~◉~◉~~~
-  ~~~~~~~~
-   ~~~~~~~
-    ~~~~~~
-```
+
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/384.gif" alt="Rayquaza" width="120" height="120"/>
+
 **Last Seen:** Soaring through cloud infrastructure
 
 ### DIALGA - THE TIME CONTROLLER
-```
-    ╔═══╗
-    ║ ◇ ║
-   ╔╬═══╬╗
-   ║║ ◉ ║║
-   ╚╬═══╬╝
-    ║   ║
-```
+
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/483.gif" alt="Dialga" width="120" height="120"/>
+
 **Last Seen:** Managing cron jobs and time-based tasks
 
 </div>
@@ -556,31 +429,23 @@ TOWN       CITY       CITY       TOWN       CITY     CHAMPION
 
 <div align="center">
 
-```
-╔══════════════════════════════════════════════════════════╗
-║                   TRAINER CARD                           ║
-╠══════════════════════════════════════════════════════════╣
-║                                                          ║
-║  NAME: ARUDCHAYAN                  ID: 6A0DAD           ║
-║  REGION: GITHUB                    RANK: CHAMPION        ║
-║                                                          ║
-║  ╔════════════════════════════════════════════════════╗  ║
-║  ║  BATTLE RECORD:                                    ║  ║
-║  ║  ─────────────                                     ║  ║
-║  ║  WINS:    ████████████████████ 9,999+             ║  ║
-║  ║  LOSSES:  █░░░░░░░░░░░░░░░░░░░ 42                 ║  ║
-║  ║  DRAWS:   ██░░░░░░░░░░░░░░░░░░ 137                ║  ║
-║  ║                                                    ║  ║
-║  ║  WIN RATE: 99.6%                                   ║  ║
-║  ╚════════════════════════════════════════════════════╝  ║
-║                                                          ║
-║  MONEY: $999,999 (Stack Overflow points)                 ║
-║  PLAYTIME: 1337:42:00                                    ║
-║                                                          ║
-║  FAVORITE TYPE: 💜 PURPLE/PSYCHIC                        ║
-║                                                          ║
-╚══════════════════════════════════════════════════════════╝
-```
+
+### 🎴 TRAINER CARD 🎴
+
+<img src="https://img.shields.io/badge/NAME-ARUDCHAYAN-6A0DAD?style=for-the-badge" alt="Name"/>
+<img src="https://img.shields.io/badge/ID-6A0DAD-6A0DAD?style=for-the-badge" alt="ID"/>
+<img src="https://img.shields.io/badge/REGION-GITHUB-181717?style=for-the-badge&logo=github" alt="Region"/>
+<img src="https://img.shields.io/badge/RANK-CHAMPION-gold?style=for-the-badge&logo=pokemon" alt="Rank"/>
+
+**BATTLE RECORD:**
+- 🏆 **WINS:** 9,999+ `████████████████████ 100%`
+- ❌ **LOSSES:** 42 `█░░░░░░░░░░░░░░░░░░░ 0.4%`
+- 🤝 **DRAWS:** 137 `██░░░░░░░░░░░░░░░░░░ 1.4%`
+- **WIN RATE:** 99.6%
+
+💰 **MONEY:** $999,999 (Stack Overflow points)  
+⏰ **PLAYTIME:** 1337:42:00  
+💜 **FAVORITE TYPE:** PURPLE/PSYCHIC
 
 </div>
 
@@ -593,28 +458,25 @@ TOWN       CITY       CITY       TOWN       CITY     CHAMPION
 <td align="center">
 
 ### ❤️ HP
-```
-████████████████████
-HP: 9999/9999
-```
+
+<img src="https://img.shields.io/badge/HP-9999/9999-red?style=for-the-badge" alt="HP"/>  
+`████████████████████ 100%`
 
 </td>
 <td align="center">
 
 ### 💙 MANA
-```
-████████░░░░░░░░░░░░
-MP: 420/1337
-```
+
+<img src="https://img.shields.io/badge/MP-420/1337-blue?style=for-the-badge" alt="MP"/>  
+`████████░░░░░░░░░░░░ 31%`
 
 </td>
 <td align="center">
 
 ### ⚡ STAMINA
-```
-██░░░░░░░░░░░░░░░░░░
-ST: 42/999
-```
+
+<img src="https://img.shields.io/badge/ST-42/999-yellow?style=for-the-badge" alt="ST"/>  
+`██░░░░░░░░░░░░░░░░░░ 4%`
 
 </td>
 </tr>
@@ -622,9 +484,9 @@ ST: 42/999
 
 <div align="center">
 
-```
-STATUS EFFECTS: ☕ CAFFEINATED | 🌙 NOCTURNAL | 💻 IN THE ZONE
-```
+<img src="https://img.shields.io/badge/☕-CAFFEINATED-brown?style=flat-square" alt="Caffeinated"/>
+<img src="https://img.shields.io/badge/🌙-NOCTURNAL-navy?style=flat-square" alt="Nocturnal"/>
+<img src="https://img.shields.io/badge/💻-IN_THE_ZONE-green?style=flat-square" alt="In The Zone"/>
 
 </div>
 
@@ -638,18 +500,15 @@ STATUS EFFECTS: ☕ CAFFEINATED | 🌙 NOCTURNAL | 💻 IN THE ZONE
 
 <div align="center">
 
-```
-╔══════════════════════════════════════════════════════╗
-║                                                      ║
-║     WANT TO BATTLE? SEND A CHALLENGE REQUEST!       ║
-║                                                      ║
-║  📧 POKÉGEAR: somewhere@in.the.cloud                ║
-║  🌐 PC STORAGE: https://github.com/Arudchayan       ║
-║  💬 POKÉNAV: Open for battles (PRs)                 ║
-║  🎮 BATTLE MODE: Always accepting challenges        ║
-║                                                      ║
-╚══════════════════════════════════════════════════════╝
-```
+
+### 📬 WANT TO BATTLE? SEND A CHALLENGE REQUEST!
+
+📧 **POKÉGEAR:** somewhere@in.the.cloud  
+🌐 **PC STORAGE:** [https://github.com/Arudchayan](https://github.com/Arudchayan)  
+💬 **POKÉNAV:** Open for battles (PRs)  
+🎮 **BATTLE MODE:** Always accepting challenges
+
+<img src="https://img.shields.io/badge/STATUS-READY_TO_BATTLE-brightgreen?style=for-the-badge&logo=github" alt="Battle Status"/>
 
 </div>
 
@@ -674,13 +533,8 @@ STATUS EFFECTS: ☕ CAFFEINATED | 🌙 NOCTURNAL | 💻 IN THE ZONE
 > **A HEART SO TRUE,**  
 > **OUR COURAGE WILL PULL US THROUGH!**
 
-```
-     ⚡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⚡
-    ⚡                                           ⚡
-   ⚡   YOU AND ME, WE'LL CODE OUR DESTINY!     ⚡
-    ⚡                                           ⚡
-     ⚡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⚡
-```
+
+<img src="https://img.shields.io/badge/⚡-YOU_AND_ME_WE'LL_CODE_OUR_DESTINY!-FFD700?style=for-the-badge" alt="Destiny" height="40"/>
 
 </div>
 
@@ -688,25 +542,14 @@ STATUS EFFECTS: ☕ CAFFEINATED | 🌙 NOCTURNAL | 💻 IN THE ZONE
 
 <div align="center">
 
-```
-╔═══════════════════════════════════════════════════════════════════╗
-║                                                                   ║
-║  ████████╗██╗  ██╗ █████╗ ███╗   ██╗██╗  ██╗███████╗            ║
-║  ╚══██╔══╝██║  ██║██╔══██╗████╗  ██║██║ ██╔╝██╔════╝            ║
-║     ██║   ███████║███████║██╔██╗ ██║█████╔╝ ███████╗            ║
-║     ██║   ██╔══██║██╔══██║██║╚██╗██║██╔═██╗ ╚════██║            ║
-║     ██║   ██║  ██║██║  ██║██║ ╚████║██║  ██╗███████║            ║
-║     ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝            ║
-║                                                                   ║
-║         FOR VISITING MY POKÉMON TRAINER PROFILE!                 ║
-║                                                                   ║
-║            🎮 WILD GITHUB USER APPEARED! 🎮                      ║
-║                                                                   ║
-║          MAY YOUR COMMITS BE CLEAN AND YOUR                      ║
-║           DEPLOYMENTS ALWAYS SUCCESSFUL!                         ║
-║                                                                   ║
-╚═══════════════════════════════════════════════════════════════════╝
-```
+
+# 🎉 THANKS FOR VISITING! 🎉
+
+<img src="https://img.shields.io/badge/THANK_YOU-FOR_VISITING-purple?style=for-the-badge&logoColor=white" alt="Thanks" height="50"/>
+
+### 🎮 WILD GITHUB USER APPEARED! 🎮
+
+**May your commits be clean and your deployments always successful!** 🚀
 
 <sup>⚡ POWERED BY: PokéAPI | Pure Dedication | Caffeine | Royal Purple Energy ⚡</sup>
 
@@ -716,15 +559,11 @@ STATUS EFFECTS: ☕ CAFFEINATED | 🌙 NOCTURNAL | 💻 IN THE ZONE
 
 ### 🎯 PROFILE STATS 🎯
 
-```
-╔════════════════════════════════════════════════╗
-║  LAST UPDATED: 2025-11-09 09:08 UTC                  ║
-║  NEXT ROTATION: Midnight UTC                   ║
-║  PROFILE VERSION: Gen 7             ║
-║  TOTAL VISITORS: [Counter currently sleeping]  ║
-║  API CALLS TODAY: 7                  ║
-╚════════════════════════════════════════════════╝
-```
+
+<img src="https://img.shields.io/badge/LAST_UPDATED-2025-11-09 09:21 UTC-blue?style=flat-square" alt="Last Updated"/>
+<img src="https://img.shields.io/badge/NEXT_ROTATION-Midnight_UTC-purple?style=flat-square" alt="Next Rotation"/>
+<img src="https://img.shields.io/badge/VERSION-Gen_6-red?style=flat-square" alt="Version"/>
+<img src="https://img.shields.io/badge/API_CALLS-7-green?style=flat-square" alt="API Calls"/>
 
 ---
 
