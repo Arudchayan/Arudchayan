@@ -112,6 +112,21 @@ def fetch_pokemon_data(pokemon_name):
             
         time.sleep(0.5)  # Be nice to the API
         
+        # Get sprite URLs - prefer animated!
+        sprites = data['sprites']
+        sprite_url = None
+        
+        # Priority order: Gen 5 animated > Showdown animated > Default
+        if sprites.get('versions', {}).get('generation-v', {}).get('black-white', {}).get('animated', {}).get('front_default'):
+            sprite_url = sprites['versions']['generation-v']['black-white']['animated']['front_default']
+        elif sprites.get('other', {}).get('showdown', {}).get('front_default'):
+            sprite_url = sprites['other']['showdown']['front_default']
+        elif sprites.get('front_default'):
+            sprite_url = sprites['front_default']
+        
+        # Shiny sprite as backup option
+        shiny_sprite = sprites.get('front_shiny')
+        
         return {
             'name': data['name'].title(),
             'types': [t['type']['name'] for t in data['types']],
@@ -120,7 +135,10 @@ def fetch_pokemon_data(pokemon_name):
             'stats': {s['stat']['name']: s['base_stat'] for s in data['stats']},
             'abilities': [a['ability']['name'].replace('-', ' ').title() for a in data['abilities']],
             'moves': [m['move']['name'].replace('-', ' ').title() for m in data['moves'][:4]],
-            'flavor_text': get_english_flavor_text(species_data)
+            'flavor_text': get_english_flavor_text(species_data),
+            'sprite': sprite_url,
+            'shiny_sprite': shiny_sprite,
+            'id': data['id']
         }
     except Exception as e:
         print(f"Warning: Could not fetch data for {pokemon_name}: {e}")
@@ -139,9 +157,18 @@ def create_stat_bar(value, max_value=255):
     return '[' + '█' * filled + '░' * (20 - filled) + ']'
 
 def get_pokemon_ascii(name):
-    """Get ASCII art for a Pokémon"""
+    """Get ASCII art for a Pokémon - DEPRECATED, kept for fallback"""
     name_lower = name.lower()
     return POKEMON_ASCII_ART.get(name_lower, POKEMON_ASCII_ART['default'])
+
+def get_pokemon_sprite_html(sprite_url, name, size=150):
+    """Generate HTML for Pokémon sprite"""
+    if sprite_url:
+        return f'<img src="{sprite_url}" alt="{name}" width="{size}" height="{size}"/>'
+    else:
+        # Fallback to ASCII if no sprite
+        ascii_art = get_pokemon_ascii(name)
+        return f"```\n{ascii_art}\n```"
 
 def get_type_emoji(type_name):
     """Get emoji for a type"""
@@ -183,7 +210,10 @@ for pokemon_name in chosen['team']:
             'stats': {'hp': 100, 'attack': 100, 'defense': 100, 'special-attack': 100, 'special-defense': 100, 'speed': 100},
             'abilities': ['Unknown'],
             'moves': ['Tackle', 'Quick Attack', 'Hyper Beam', 'Rest'],
-            'flavor_text': 'A mysterious Pokémon!'
+            'flavor_text': 'A mysterious Pokémon!',
+            'sprite': None,
+            'shiny_sprite': None,
+            'id': 0
         }
 
 # Pick a random Pokémon for the encounter
@@ -244,7 +274,7 @@ replacements = {
     '{ARCHETYPE_EMOJI}': archetype_emoji,
     '{LEAD_POKEMON}': lead_name,
     '{LEAD_EMOJI}': lead_emoji,
-    '{LEAD_ASCII}': get_pokemon_ascii(lead_name),
+    '{LEAD_ASCII}': get_pokemon_sprite_html(lead_data.get('sprite'), lead_name, 200),
     '{LEAD_TYPES}': lead_types,
     '{LEAD_ABILITY}': lead_ability,
     '{LEAD_NATURE}': lead_nature,
@@ -287,13 +317,13 @@ for i, pokemon_name in enumerate(chosen['team'], 1):
     
     replacements[f'{{POKEMON_{i}_NAME}}'] = pokemon_name
     replacements[f'{{POKEMON_{i}_TYPES}}'] = types_str
-    replacements[f'{{POKEMON_{i}_ASCII}}'] = get_pokemon_ascii(pokemon_name)
+    replacements[f'{{POKEMON_{i}_ASCII}}'] = get_pokemon_sprite_html(pdata.get('sprite'), pokemon_name, 120)
 
 # Random Pokémon encounter
 if random_pokemon_data:
     random_types = ' '.join([get_type_emoji(t) + t.upper() for t in random_pokemon_data.get('types', ['normal'])])
     replacements['{RANDOM_POKEMON}'] = random_pokemon_data['name'].upper()
-    replacements['{RANDOM_POKEMON_ASCII}'] = get_pokemon_ascii(random_pokemon_data['name'])
+    replacements['{RANDOM_POKEMON_ASCII}'] = get_pokemon_sprite_html(random_pokemon_data.get('sprite'), random_pokemon_data['name'], 150)
     replacements['{RANDOM_POKEMON_TYPES}'] = random_types
     replacements['{RANDOM_POKEMON_HEIGHT}'] = f"{random_pokemon_data['height']:.1f}m"
     replacements['{RANDOM_POKEMON_WEIGHT}'] = f"{random_pokemon_data['weight']:.1f}kg"
@@ -301,7 +331,7 @@ if random_pokemon_data:
     replacements['{RANDOM_POKEMON_FLAVOR}'] = random_pokemon_data['flavor_text']
 else:
     replacements['{RANDOM_POKEMON}'] = 'MISSINGNO'
-    replacements['{RANDOM_POKEMON_ASCII}'] = POKEMON_ASCII_ART['default']
+    replacements['{RANDOM_POKEMON_ASCII}'] = get_pokemon_sprite_html(None, 'missingno', 150)
     replacements['{RANDOM_POKEMON_TYPES}'] = '❓ GLITCH'
     replacements['{RANDOM_POKEMON_HEIGHT}'] = '???'
     replacements['{RANDOM_POKEMON_WEIGHT}'] = '???'

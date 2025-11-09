@@ -87,9 +87,11 @@ FORM SHIFT: {CURRENT_DATE}
 
 ## 👑 {LEAD_EMOJI} TEAM LEADER: {LEAD_POKEMON} {LEAD_EMOJI}
 
-```
+<div align="center">
+
 {LEAD_ASCII}
-```
+
+</div>
 
 <table>
 <tr><td><b>Type:</b></td><td>{LEAD_TYPES}</td></tr>
@@ -118,34 +120,46 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 ## 🎪 FULL BATTLE PARTY 🎪
 
 ### 1️⃣ {POKEMON_1_NAME} {POKEMON_1_TYPES}
-```
+<div align="center">
+
 {POKEMON_1_ASCII}
-```
+
+</div>
 
 ### 2️⃣ {POKEMON_2_NAME} {POKEMON_2_TYPES}
-```
+<div align="center">
+
 {POKEMON_2_ASCII}
-```
+
+</div>
 
 ### 3️⃣ {POKEMON_3_NAME} {POKEMON_3_TYPES}
-```
+<div align="center">
+
 {POKEMON_3_ASCII}
-```
+
+</div>
 
 ### 4️⃣ {POKEMON_4_NAME} {POKEMON_4_TYPES}
-```
+<div align="center">
+
 {POKEMON_4_ASCII}
-```
+
+</div>
 
 ### 5️⃣ {POKEMON_5_NAME} {POKEMON_5_TYPES}
-```
+<div align="center">
+
 {POKEMON_5_ASCII}
-```
+
+</div>
 
 ### 6️⃣ {POKEMON_6_NAME} {POKEMON_6_TYPES}
-```
+<div align="center">
+
 {POKEMON_6_ASCII}
-```
+
+</div>
 
 </td>
 </tr>
@@ -289,9 +303,11 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 
 ### Wild {RANDOM_POKEMON} appeared!
 
-```
+<div align="center">
+
 {RANDOM_POKEMON_ASCII}
-```
+
+</div>
 
 <table>
 <tr>

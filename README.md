@@ -49,7 +49,7 @@
 **DAILY ROTATION ACTIVE**
 ```
 [████████] Day 739564
-FORM SHIFT: 2025-11-09 09:00 UTC
+FORM SHIFT: 2025-11-09 09:03 UTC
 ```
 ⚡ **MEGA EVOLUTION READY** ⚡
 
@@ -87,20 +87,16 @@ FORM SHIFT: 2025-11-09 09:00 UTC
 
 ## 👑 🕊️ TEAM LEADER: Noivern 🕊️
 
-```
+<div align="center">
 
-     /\_/\
-    ( O O )
-    (  V  )
-     |   |
-     -----
-    
-```
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/715.gif" alt="Noivern" width="200" height="200"/>
+
+</div>
 
 <table>
 <tr><td><b>Type:</b></td><td>🕊️FLYING 🐉DRAGON</td></tr>
 <tr><td><b>Ability:</b></td><td>Frisk</td></tr>
-<tr><td><b>Nature:</b></td><td>Adamant</td></tr>
+<tr><td><b>Nature:</b></td><td>Careful</td></tr>
 <tr><td><b>Height:</b></td><td>1.5m</td></tr>
 <tr><td><b>Weight:</b></td><td>85.0kg</td></tr>
 </table>
@@ -127,75 +123,46 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 ## 🎪 FULL BATTLE PARTY 🎪
 
 ### 1️⃣ Noivern 🕊️ 🐉
-```
+<div align="center">
 
-     /\_/\
-    ( O O )
-    (  V  )
-     |   |
-     -----
-    
-```
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/715.gif" alt="Noivern" width="120" height="120"/>
+
+</div>
 
 ### 2️⃣ Rayquaza 🐉 🕊️
-```
+<div align="center">
 
-    ~~~~~~
-   ~~~~~~~
-  ~~~~~~~~
- ~~~◉~◉~~~
-  ~~~~~~~~
-   ~~~~~~~
-    ~~~~~~
-    
-```
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/384.gif" alt="Rayquaza" width="120" height="120"/>
+
+</div>
 
 ### 3️⃣ Zeraora ⚡
-```
+<div align="center">
 
-      /\
-     /  \
-    | ◉◉ |
-    |  < |
-     \ /
-     / \
-    
-```
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/807.gif" alt="Zeraora" width="120" height="120"/>
+
+</div>
 
 ### 4️⃣ Gengar 👻 ☠️
-```
+<div align="center">
 
-     /\_/\
-    ( o.o )
-     > ^ <
-    /|   |\
-   (_|   |_)
-    
-```
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="120" height="120"/>
+
+</div>
 
 ### 5️⃣ Metagross ⚙️ 🔮
-```
+<div align="center">
 
-    ╔═══╗
-    ║ ◉ ║
-    ║◉ ◉║
-    ╚═══╝
-     ║║║
-     ███
-    
-```
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/376.gif" alt="Metagross" width="120" height="120"/>
+
+</div>
 
 ### 6️⃣ Decidueye 🌿 👻
-```
+<div align="center">
 
-      /\
-     /  \
-    | ◉◉ |
-     \  /
-      \/
-     /||\
-    
-```
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="120" height="120"/>
+
+</div>
 
 </td>
 </tr>
@@ -337,34 +304,30 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 
 ## 🎯 RANDOM POKÉMON ENCOUNTER! 🎯
 
-### Wild SNORLAX appeared!
+### Wild LUCARIO appeared!
 
-```
+<div align="center">
 
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-    
-```
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/448.gif" alt="Lucario" width="150" height="150"/>
+
+</div>
 
 <table>
 <tr>
-<td><b>Type:</b></td><td>⚪NORMAL</td>
+<td><b>Type:</b></td><td>🥊FIGHTING ⚙️STEEL</td>
 </tr>
 <tr>
-<td><b>Height:</b></td><td>2.1m</td>
+<td><b>Height:</b></td><td>1.2m</td>
 </tr>
 <tr>
-<td><b>Weight:</b></td><td>460.0kg</td>
+<td><b>Weight:</b></td><td>54.0kg</td>
 </tr>
 <tr>
-<td><b>Abilities:</b></td><td>Immunity, Thick Fat, Gluttony</td>
+<td><b>Abilities:</b></td><td>Steadfast, Inner Focus, Justified</td>
 </tr>
 </table>
 
-**Pokédex Entry:** Very lazy. Just eats and sleeps. As its rotund bulk builds, it becomes steadily more slothful.
+**Pokédex Entry:** It has the ability to sense the auras of all things. It understands human speech.
 
 ---
 
@@ -755,9 +718,9 @@ STATUS EFFECTS: ☕ CAFFEINATED | 🌙 NOCTURNAL | 💻 IN THE ZONE
 
 ```
 ╔════════════════════════════════════════════════╗
-║  LAST UPDATED: 2025-11-09 09:00 UTC                  ║
+║  LAST UPDATED: 2025-11-09 09:03 UTC                  ║
 ║  NEXT ROTATION: Midnight UTC                   ║
-║  PROFILE VERSION: Gen 5             ║
+║  PROFILE VERSION: Gen 7             ║
 ║  TOTAL VISITORS: [Counter currently sleeping]  ║
 ║  API CALLS TODAY: 7                  ║
 ╚════════════════════════════════════════════════╝
