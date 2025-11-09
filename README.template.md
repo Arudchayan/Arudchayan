@@ -1,53 +1,70 @@
-<!-- ⚡ ABSOLUTELY BONKERS README - GENERATED DAILY ⚡ -->
+<!-- ⚡ ULTIMATE POKÉMON TRAINER PROFILE - GENERATED DAILY ⚡ -->
 <div align="center">
 
 ```
-███████╗██╗      ██████╗ ████████╗██╗  ██╗    ██████╗  ██████╗ ███╗   ██╗██╗  ██╗███████╗██████╗ ███████╗
-██╔════╝██║     ██╔═══██╗╚══██╔══╝██║  ██║    ██╔══██╗██╔═══██╗████╗  ██║██║ ██╔╝██╔════╝██╔══██╗╚══███╔╝
-███████╗██║     ██║   ██║   ██║   ███████║    ██████╔╝██║   ██║██╔██╗ ██║█████╔╝ █████╗  ██████╔╝  ███╔╝ 
-╚════██║██║     ██║   ██║   ██║   ██╔══██║    ██╔══██╗██║   ██║██║╚██╗██║██╔═██╗ ██╔══╝  ██╔══██╗ ███╔╝  
-███████║███████╗╚██████╔╝   ██║   ██║  ██║    ██████╔╝╚██████╔╝██║ ╚████║██║  ██╗███████╗██║  ██║███████╗
-╚══════╝╚══════╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝    ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
+██████╗  ██████╗ ██╗  ██╗███████╗████████╗██████╗  ██████╗ ███████╗██╗██╗     ███████╗
+██╔══██╗██╔═══██╗██║ ██╔╝██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗██╔════╝██║██║     ██╔════╝
+██████╔╝██║   ██║█████╔╝ █████╗     ██║   ██████╔╝██║   ██║█████╗  ██║██║     █████╗  
+██╔═══╝ ██║   ██║██╔═██╗ ██╔══╝     ██║   ██╔══██╗██║   ██║██╔══╝  ██║██║     ██╔══╝  
+██║     ╚██████╔╝██║  ██╗███████╗   ██║   ██║  ██║╚██████╔╝██║     ██║███████╗███████╗
+╚═╝      ╚═════╝ ╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝
 ```
 
-# 🌀 A R U D C H A Y A N 🌀
-### ⚡ THE MULTIDIMENSIONAL CODE SORCERER ⚡
+# ⚡ TRAINER ARUDCHAYAN ⚡
+### 🎯 CHAMPION OF THE CODE REGION 🎯
+### 💜 ROYAL PURPLE SPECIALIST 💜
+
+```
+        ___
+      /     \
+     | () () |
+      \  ^  /
+       |||||
+      |||||||
+     |||||||||
+    
+   POKÉBALL GO!
+```
 
 <table>
 <tr>
 <td>
 
 ```
-   ▲
-  ▲ ▲
- ▲   ▲
-▲ ◉ ◉ ▲
- ▲ ▼ ▲
-  ▲ ▲
-   █
+╔══════════════════╗
+║ TRAINER ID:      ║
+║ #6A0DAD          ║
+║                  ║
+║ BADGES: █████████║
+║         █████████║
+║                  ║
+║ REGION: GITHUB   ║
+╚══════════════════╝
 ```
 
 </td>
 <td>
 
-### 🎲 DAILY FORM SHIFT 🎲
-**TRANSFORMING SINCE EPOCH**
-`{CURRENT_DATE}`
-
+### 🏆 ELITE FOUR STATUS 🏆
+**DAILY ROTATION ACTIVE**
 ```
-[████████████████] 100% CHAOS
+[████████] Day {DAY_NUMBER}
+FORM SHIFT: {CURRENT_DATE}
 ```
+⚡ **MEGA EVOLUTION READY** ⚡
 
 </td>
 <td>
 
 ```
-  ╔═══╗
-  ║ ◉ ║
-  ║◉ ◉║
-  ╚═══╝
-   ║║║
-   ███
+╔══════════════════╗
+║   PARTY SIZE     ║
+║      ████        ║
+║      6/6         ║
+║                  ║
+║  POKEDEX: {POKEDEX_COUNT}  ║
+║  SEEN: ∞         ║
+╚══════════════════╝
 ```
 
 </td>
@@ -56,158 +73,210 @@
 
 ---
 
-# 🎭 ⚡ TODAY'S ARCHETYPE MANIFESTATION ⚡ 🎭
-
-<table width="100%">
-<tr>
-<td width="50%">
-
-### {ARCHETYPE_EMOJI} {ARCHETYPE_TITLE} {ARCHETYPE_EMOJI}
-
-```
-╔══════════════════════════════╗
-║   ACTIVE TRANSFORMATION      ║
-╠══════════════════════════════╣
-║ LEAD UNIT: {LEAD_POKEMON}
-║ STATUS: ◉ OPERATIONAL        ║
-║ POWER LEVEL: {POWER_LEVEL}   ║
-╚══════════════════════════════╝
-```
-
-</td>
-<td width="50%">
-
-### 🎯 BATTLE CONFIGURATION 🎯
-
-```
-{TEAM_VISUAL}
-```
-
-</td>
-</tr>
-</table>
+# 🎭 TODAY'S TEAM CONFIGURATION 🎭
 
 <!-- CURRENT_ARCHETYPE_START -->
-<!-- FILLED BY BUILDER -->
+**Archetype:** {ARCHETYPE_TITLE}  
+**Lead:** {LEAD_POKEMON}  
+**Team:** {TEAM_LIST}
 <!-- CURRENT_ARCHETYPE_END -->
-
----
-
-## ⚙️ ⚡ LOADOUT PROTOCOLS ⚡ ⚙️
 
 <table width="100%">
 <tr>
-<td align="center">
+<td width="50%" valign="top">
+
+## 👑 {LEAD_EMOJI} TEAM LEADER: {LEAD_POKEMON} {LEAD_EMOJI}
+
+```
+{LEAD_ASCII}
+```
+
+<table>
+<tr><td><b>Type:</b></td><td>{LEAD_TYPES}</td></tr>
+<tr><td><b>Ability:</b></td><td>{LEAD_ABILITY}</td></tr>
+<tr><td><b>Nature:</b></td><td>{LEAD_NATURE}</td></tr>
+<tr><td><b>Height:</b></td><td>{LEAD_HEIGHT}</td></tr>
+<tr><td><b>Weight:</b></td><td>{LEAD_WEIGHT}</td></tr>
+</table>
+
+### 📊 BASE STATS
+```
+HP:     {LEAD_HP_BAR}  {LEAD_HP}
+ATK:    {LEAD_ATK_BAR} {LEAD_ATK}
+DEF:    {LEAD_DEF_BAR} {LEAD_DEF}
+SP.ATK: {LEAD_SPATK_BAR} {LEAD_SPATK}
+SP.DEF: {LEAD_SPDEF_BAR} {LEAD_SPDEF}
+SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
+```
+
+### 🎯 SIGNATURE MOVES
+{LEAD_MOVES}
+
+</td>
+<td width="50%" valign="top">
+
+## 🎪 FULL BATTLE PARTY 🎪
+
+### 1️⃣ {POKEMON_1_NAME} {POKEMON_1_TYPES}
+```
+{POKEMON_1_ASCII}
+```
+
+### 2️⃣ {POKEMON_2_NAME} {POKEMON_2_TYPES}
+```
+{POKEMON_2_ASCII}
+```
+
+### 3️⃣ {POKEMON_3_NAME} {POKEMON_3_TYPES}
+```
+{POKEMON_3_ASCII}
+```
+
+### 4️⃣ {POKEMON_4_NAME} {POKEMON_4_TYPES}
+```
+{POKEMON_4_ASCII}
+```
+
+### 5️⃣ {POKEMON_5_NAME} {POKEMON_5_TYPES}
+```
+{POKEMON_5_ASCII}
+```
+
+### 6️⃣ {POKEMON_6_NAME} {POKEMON_6_TYPES}
+```
+{POKEMON_6_ASCII}
+```
+
+</td>
+</tr>
+</table>
+
+---
+
+## ⚙️ 💎 BATTLE MECHANICS 💎 ⚙️
+
+<table width="100%">
+<tr>
+<td align="center" width="33%">
 
 ### 💎 MEGA EVOLUTION
 ```
-╔═══════════════╗
-║   {MEGA_VISUAL}
-║               ║
-║   {MEGA_INFO}
-╚═══════════════╝
+    ✧･ﾟ: *✧･ﾟ:*
+   ╔═══════════╗
+   ║    ◆◆◆    ║
+   ║   ◆◆◆◆◆   ║
+   ║  ◆◆◆◆◆◆◆  ║
+   ║   ◆◆◆◆◆   ║
+   ║    ◆◆◆    ║
+   ╚═══════════╝
+    *:･ﾟ✧*:･ﾟ✧
 ```
+**{MEGA_INFO}**
+{MEGA_STONE_EMOJI}
 
 </td>
-<td align="center">
+<td align="center" width="33%">
 
-### ⚡ Z-MOVE MATRIX
+### ⚡ Z-MOVE CRYSTAL
 ```
-╔═══════════════╗
-║   {ZMOVE_VISUAL}
-║               ║
-║ {ZMOVE_INFO}
-╚═══════════════╝
+    ⚡️━━━━━⚡️
+   ╔═══════════╗
+   ║     ▲     ║
+   ║    ▲▲▲    ║
+   ║   ▲▲ ▲▲   ║
+   ║  ▲▲   ▲▲  ║
+   ║ ▲▲     ▲▲ ║
+   ╚═══════════╝
+    ⚡️━━━━━⚡️
 ```
+**{ZMOVE_INFO}**
+{ZMOVE_EMOJI}
 
 </td>
-<td align="center">
+<td align="center" width="33%">
 
 ### 🔮 TERASTALLIZATION
 ```
-╔═══════════════╗
-║   {TERA_VISUAL}
-║               ║
-║ TERA-{TERA_TYPE}
-╚═══════════════╝
+    ✨━━━━━✨
+   ╔═══════════╗
+   ║    ◇◇◇    ║
+   ║   ◇◇◇◇◇   ║
+   ║  ◇◇ ★ ◇◇  ║
+   ║   ◇◇◇◇◇   ║
+   ║    ◇◇◇    ║
+   ╚═══════════╝
+    ✨━━━━━✨
 ```
+**TERA-{TERA_TYPE}**
+{TERA_EMOJI}
 
 </td>
 </tr>
 </table>
 
-> _**"CODE ADAPTS. EVOLVES. TRANSCENDS."**_
+> _**"GOTTA CODE 'EM ALL! 🔥"**_
 
 ---
 
 <details>
-<summary><h2>🌊 CLICK TO UNLEASH THE CHAOS DIMENSION 🌊</h2></summary>
+<summary><h2>🌟 CLICK TO OPEN YOUR POKÉDEX 🌟</h2></summary>
 
 <div align="center">
 
 ```
-     ╔══════════════════════════════════════════════════════════════╗
-     ║                                                              ║
-     ║   ██╗   ██╗ ██████╗ ██╗   ██╗    ███████╗ ██████╗ ██╗   ██╗███╗   ██╗██████╗      ║
-     ║   ╚██╗ ██╔╝██╔═══██╗██║   ██║    ██╔════╝██╔═══██╗██║   ██║████╗  ██║██╔══██╗     ║
-     ║    ╚████╔╝ ██║   ██║██║   ██║    █████╗  ██║   ██║██║   ██║██╔██╗ ██║██║  ██║     ║
-     ║     ╚██╔╝  ██║   ██║██║   ██║    ██╔══╝  ██║   ██║██║   ██║██║╚██╗██║██║  ██║     ║
-     ║      ██║   ╚██████╔╝╚██████╔╝    ██║     ╚██████╔╝╚██████╔╝██║ ╚████║██████╔╝     ║
-     ║      ╚═╝    ╚═════╝  ╚═════╝     ╚═╝      ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚═════╝      ║
-     ║                                                              ║
-     ║           ████████╗██╗  ██╗███████╗     ██████╗ ██╗  ██╗ █████╗  ██████╗ ███████╗ ║
-     ║           ╚══██╔══╝██║  ██║██╔════╝    ██╔════╝██║  ██║██╔══██╗██╔═══██╗██╔════╝ ║
-     ║              ██║   ███████║█████╗      ██║     ███████║███████║██║   ██║███████╗ ║
-     ║              ██║   ██╔══██║██╔══╝      ██║     ██╔══██║██╔══██║██║   ██║╚════██║ ║
-     ║              ██║   ██║  ██║███████╗    ╚██████╗██║  ██║██║  ██║╚██████╔╝███████║ ║
-     ║              ╚═╝   ╚═╝  ╚═╝╚══════╝     ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ║
-     ║                                                              ║
-     ╚══════════════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║   ██████╗  ██████╗ ██╗  ██╗███████╗██████╗ ███████╗██╗  ██╗        ║
+║   ██╔══██╗██╔═══██╗██║ ██╔╝██╔════╝██╔══██╗██╔════╝╚██╗██╔╝        ║
+║   ██████╔╝██║   ██║█████╔╝ █████╗  ██║  ██║█████╗   ╚███╔╝         ║
+║   ██╔═══╝ ██║   ██║██╔═██╗ ██╔══╝  ██║  ██║██╔══╝   ██╔██╗         ║
+║   ██║     ╚██████╔╝██║  ██╗███████╗██████╔╝███████╗██╔╝ ██╗        ║
+║   ╚═╝      ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝        ║
+║                                                                      ║
+║              LOADING TRAINER DATA... PLEASE WAIT...                  ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
 ```
 
-### ⚡ THE VOID STARES BACK ⚡
+---
 
-```
-                    .-"""-.
-                   /      /
-             ___   |      |   ___
-            /   \  |      |  /   \
-           |     | |  ◉ ◉ | |     |
-           |     | |   V  | |     |
-            \___/  |      |  \___/
-                   |      |
-                    \____/
-                      ||
-                     /||\
-                    / || \
-                   ●  ||  ●
-```
-
-</div>
-
-### 🎯 INTERDIMENSIONAL STATS (SELF-REPORTED)
+## 🎮 TRAINER STATS & ACHIEVEMENTS 🎮
 
 <table width="100%">
 <tr>
-<td>
+<td width="50%">
 
-#### 📊 CODE METRICS
-- **Lines Destroyed:** ∞
-- **Bugs Created:** √-1
-- **Coffee Consumed:** ∞²
-- **Sleep Deficit:** `NaN` hours
-- **Existential Crises:** `42`
+### 📊 CODING STATS (POKÉMON-STYLE)
+```
+╔═══════════════════════════════╗
+║ COMMITS CAUGHT:      ∞       ║
+║ BUGS DEFEATED:       9,999+   ║
+║ PULL REQUESTS:       █████    ║
+║ CODE REVIEWS:        ████     ║
+║ MERGE CONFLICTS:     ███      ║
+║ COFFEE CONSUMED:     ∞²       ║
+║ SLEEP HOURS:         404      ║
+║ LEGENDARY CATCHES:   42       ║
+╚═══════════════════════════════╝
+```
 
 </td>
-<td>
+<td width="50%">
 
-#### 🔥 POWER LEVELS
+### 🏆 GYM BADGES EARNED 🏆
 ```
-IMAGINATION: [██████████] 100%
-CHAOS:       [██████████] 100%
-SANITY:      [█░░░░░░░░░]  10%
-COMMITS:     [████████░░]  87%
-MEMES:       [██████████] ∞%
+╔════════════════════════════════╗
+║                                ║
+║  🔥 DEPLOY BADGE    [EARNED]  ║
+║  💧 DEBUG BADGE     [EARNED]  ║
+║  ⚡ REFACTOR BADGE  [EARNED]  ║
+║  🌿 GROWTH BADGE    [EARNED]  ║
+║  🧊 OPTIMIZE BADGE  [EARNED]  ║
+║  ⚔️  MERGE BADGE     [EARNED]  ║
+║  🌙 NIGHT-CODE      [EARNED]  ║
+║  🏔️  PRODUCTION      [EARNED]  ║
+║                                ║
+╚════════════════════════════════╝
 ```
 
 </td>
@@ -216,348 +285,383 @@ MEMES:       [██████████] ∞%
 
 ---
 
-### 🎲 RANDOM WISDOM GENERATOR 🎲
+## 🎯 RANDOM POKÉMON ENCOUNTER! 🎯
 
-<table width="100%">
-<tr>
-<td align="center">
+### Wild {RANDOM_POKEMON} appeared!
 
 ```
-╔═══════════════════════════════════╗
-║  "THE CODE IS A LIE"              ║
-║  "GIT PUSH --FORCE YOUR DREAMS"   ║
-║  "SUDO RM -RF YOUR DOUBTS"        ║
-║  "npm install happiness@latest"   ║
-║  "pip install purpose"            ║
-║  "cargo run --release life"       ║
-╚═══════════════════════════════════╝
+{RANDOM_POKEMON_ASCII}
 ```
-
-</td>
-</tr>
-</table>
-
----
-
-### 🌈 TECH STACK RAINBOW 🌈
-
-<div align="center">
-
-![Python](https://img.shields.io/badge/Python-FF0000?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-FF7F00?style=for-the-badge&logo=javascript&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-FFFF00?style=for-the-badge&logo=typescript&logoColor=black)
-![Rust](https://img.shields.io/badge/Rust-00FF00?style=for-the-badge&logo=rust&logoColor=black)
-![Go](https://img.shields.io/badge/Go-0000FF?style=for-the-badge&logo=go&logoColor=white)
-![C++](https://img.shields.io/badge/C++-4B0082?style=for-the-badge&logo=cplusplus&logoColor=white)
-![Java](https://img.shields.io/badge/Java-9400D3?style=for-the-badge&logo=oracle&logoColor=white)
-
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-
-</div>
-
----
-
-### 🎪 THE ACHIEVEMENT CIRCUS 🎪
-
-<div align="center">
-
-| 🏆 | Achievement | Status | Proof |
-|:---:|:-----------|:------:|:-----:|
-| 💻 | Coded for 48hrs straight | ✅ | Trust me bro |
-| 🔥 | Burned production | ✅ | We don't talk about it |
-| 🐛 | Created a sentient bug | ✅ | It's still out there |
-| ☕ | Coffee overdose | ✅ | Currently experiencing |
-| 🌙 | Forgot what sunlight looks like | ✅ | Sun? Never heard of it |
-| 🎯 | Perfect code review | ❌ | Does not exist |
-| 😴 | Adequate sleep | ❌ | Sleep is for the weak |
-| 🧘 | Work-life balance | ❌ | Balance? What's that? |
-
-</div>
-
----
-
-### 📈 CONTRIBUTION HYPERCUBE (IMAGINARY DIMENSION)
-
-<div align="center">
-
-```
-    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-    █████░░░░░███░░░░░░░░░░░██████████░░░░░███████████
-    ████░░░░░░██░░░░░░░░░░░░███████████░░░░░██████████
-    ███░░░░░░░█░░░░░░░░░░░░░███████████░░░░░██████████
-    ██░░░░░░░░░░░░░░░░░░░░░░████████████░░░░███████░░█
-    █░░░░░░░░░░░░░░░░░░░░░░░████████████░░░░██████░░░█
-    ░░░░░░░░░░░░░░░░░░░░░░░░████████████░░░░█████░░░░█
-    ░░░░░░░░░░░░░░░░░░░░░░░░████████████░░░░████░░░░░█
-    Mon     Tue     Wed     Thu     Fri     Sat     Sun
-    
-    ████████ = 10+ commits | ░░░░░░░░ = 0 commits
-    
-    WARNING: This graph is procedurally generated and bears no 
-    resemblance to actual work done. Viewer discretion advised.
-```
-
-</div>
-
----
-
-### 🎨 ASCII ART GALLERY 🎨
-
-<table width="100%">
-<tr>
-<td>
-
-```
-    /\_/\  
-   ( o.o ) 
-    > ^ <
-   /|   |\
-  (_|   |_)
-  
-  "The Code Cat"
-```
-
-</td>
-<td>
-
-```
-      ___
-     /   \
-    |  ◉ ◉|
-     \ △ /
-      |||
-     // \\
-    //   \\
-    
-  "The Debugger"
-```
-
-</td>
-<td>
-
-```
-   ___
-  {   }
-  {◉_◉}
-   { }
-   | |
-  /   \
- /_____\
- 
-"The Robot"
-```
-
-</td>
-</tr>
-</table>
-
----
-
-### 🎯 CONTACT PROTOCOLS 🎯
-
-<div align="center">
-
-```
-┌─────────────────────────────────────────────────┐
-│  EMAIL:    somewhere@in.the.cloud              │
-│  DISCORD:  ProbablyAfk#0000                    │
-│  SIGNAL:   ▂▃▅▇█▓▒░◈░▒▓█▇▅▃▂                  │
-│  CARRIER PIGEON: In training                   │
-│  TELEGRAM: @into_the_void                      │
-│  SMOKE SIGNALS: Only on Tuesdays               │
-└─────────────────────────────────────────────────┘
-```
-
-</div>
-
----
-
-### 🌟 LEGENDARY PROJECTS (POSSIBLY FICTIONAL) 🌟
-
-<details>
-<summary><b>🔥 Click to view the hall of legendary codebases 🔥</b></summary>
-
-#### 🚀 Project: SkyNet Junior
-- **Status:** Definitely not achieving sentience
-- **Description:** AI that learns to order pizza autonomously
-- **Stack:** Python, TensorFlow, Pizza API
-- **Achievement:** Successfully ordered 47 pizzas in one day
-
-#### 🎮 Project: Minecraft but it's Excel
-- **Status:** Why did I do this
-- **Description:** Entire Minecraft game recreated in Excel macros
-- **Stack:** VBA, Regret, Coffee
-- **Achievement:** Runs at 0.5 FPS
-
-#### 🌐 Project: The Internet, Again
-- **Status:** It's complicated
-- **Description:** Rebuilt the internet but better (citation needed)
-- **Stack:** Dreams, Hope, More Coffee
-- **Achievement:** Got a 404 error
-
-#### 🤖 Project: Rubber Duck AI
-- **Status:** Most useful project ever
-- **Description:** AI that listens to your problems and quacks supportively
-- **Stack:** Python, NLTK, Duck sounds
-- **Achievement:** 10/10 emotional support
-
-</details>
-
----
-
-### 🎲 RANDOM FACTS ABOUT ME 🎲
-
-<div align="center">
-
-```
-┌──────────────────────────────────────────────┐
-│ • I once debugged for 6 hours only to       │
-│   realize it was a typo in the variable     │
-│   name (coudl vs could)                     │
-│                                              │
-│ • My code comments are 60% apologies        │
-│   and 40% confusion                         │
-│                                              │
-│ • I have 47 browser tabs open right now     │
-│   (34 are Stack Overflow)                   │
-│                                              │
-│ • My rubber duck has seen things            │
-│   (terrible, terrible things)               │
-│                                              │
-│ • I dream in semicolons and                 │
-│   wake up in segmentation faults           │
-│                                              │
-│ • My git history is 90% "fix", "fixed",     │
-│   "actually fixed", "fixed for real"        │
-└──────────────────────────────────────────────┘
-```
-
-</div>
-
----
-
-### ⚡ QUOTE OF THE MOMENT ⚡
-
-<div align="center">
-
-> **_"In a world of `npm install`, be the one who reads the documentation first."_**
-> 
-> — Ancient Developer Proverb
-
-```
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  "There are 10 types of people:         ┃
-┃   Those who understand binary,          ┃
-┃   Those who don't,                      ┃
-┃   And those who weren't expecting       ┃
-┃   a ternary joke."                      ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-```
-
-</div>
-
----
-
-</details>
-
----
-
-## 🎯 FINAL BOSS STATS 🎯
-
-<div align="center">
 
 <table>
 <tr>
+<td><b>Type:</b></td><td>{RANDOM_POKEMON_TYPES}</td>
+</tr>
+<tr>
+<td><b>Height:</b></td><td>{RANDOM_POKEMON_HEIGHT}</td>
+</tr>
+<tr>
+<td><b>Weight:</b></td><td>{RANDOM_POKEMON_WEIGHT}</td>
+</tr>
+<tr>
+<td><b>Abilities:</b></td><td>{RANDOM_POKEMON_ABILITIES}</td>
+</tr>
+</table>
+
+**Pokédex Entry:** {RANDOM_POKEMON_FLAVOR}
+
+---
+
+## 🌈 TYPE CHART - MY TECH STACK 🌈
+
+<div align="center">
+
+### PRIMARY TYPES
+![Fire](https://img.shields.io/badge/🔥_Python-FF4500?style=for-the-badge&logo=python&logoColor=white)
+![Water](https://img.shields.io/badge/💧_JavaScript-1E90FF?style=for-the-badge&logo=javascript&logoColor=white)
+![Electric](https://img.shields.io/badge/⚡_TypeScript-FFD700?style=for-the-badge&logo=typescript&logoColor=black)
+![Grass](https://img.shields.io/badge/🌿_Node.js-228B22?style=for-the-badge&logo=nodedotjs&logoColor=white)
+
+### SECONDARY TYPES
+![Steel](https://img.shields.io/badge/⚙️_Rust-708090?style=for-the-badge&logo=rust&logoColor=white)
+![Dragon](https://img.shields.io/badge/🐉_C++-8B008B?style=for-the-badge&logo=cplusplus&logoColor=white)
+![Psychic](https://img.shields.io/badge/🔮_Go-FF69B4?style=for-the-badge&logo=go&logoColor=white)
+![Dark](https://img.shields.io/badge/🌙_Java-2F4F4F?style=for-the-badge&logo=oracle&logoColor=white)
+
+### DUAL-TYPE COMBOS
+![React](https://img.shields.io/badge/⚛️_React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Docker](https://img.shields.io/badge/🐳_Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/☸️_Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/🐘_PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/🍃_MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/💎_Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+
+</div>
+
+---
+
+## 🎪 HALL OF FAME - LEGENDARY PROJECTS 🎪
+
+<table width="100%">
+<tr>
 <td align="center">
 
+### 🔥 CHARIZARD-TIER PROJECT
 ```
-╔════════════╗
-║  HEALTH    ║
-║ ████████   ║
-║  HP: ∞     ║
-╚════════════╝
+      /\___/\
+     ( o   o )
+     (  =^=  )
+      ) ~ ~ (
+     /|     |\
+    (_|     |_)
 ```
+**The Code Dragon**
+- Lines of Fire: 10,000+
+- Deploys: Flawless
 
 </td>
 <td align="center">
 
+### 💧 BLASTOISE-TIER PROJECT
 ```
-╔════════════╗
-║   MANA     ║
-║ ██░░░░░░   ║
-║  MP: 20%   ║
-╚════════════╝
+     ___
+    /   \
+   | O O |
+   |  >  |
+    \___/
+     | |
+    /   \
 ```
+**The Debug Turtle**
+- Bugs Fixed: 9,999+
+- Stability: Maximum
 
 </td>
 <td align="center">
 
+### ⚡ PIKACHU-TIER PROJECT
 ```
-╔════════════╗
-║  STAMINA   ║
-║ █░░░░░░░   ║
-║  ST: 12%   ║
-╚════════════╝
+    (\__/)
+    (o^.^)
+    z(_(")(")
+```
+**The Quick Deploy**
+- Speed: Lightning
+- Popularity: Viral
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🎯 TRAINER'S WISDOM 🎯
+
+<div align="center">
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│  "A TRAINER'S BOND WITH THEIR CODE IS UNBREAKABLE!"   │
+│                                                         │
+│  "GOTTA CATCH ALL THE BUGS!" - Professor Git           │
+│                                                         │
+│  "USE GIT PUSH! IT'S SUPER EFFECTIVE!"                 │
+│                                                         │
+│  "YOUR POKÉMON EVOLVED INTO... A PRODUCTION BUILD!"   │
+│                                                         │
+│  "WILD MERGE CONFLICT APPEARED!"                       │
+│  "TRAINER USED REBASE! CONFLICT FAINTED!"             │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+</div>
+
+---
+
+## 📈 TRAINER JOURNEY MAP 📈
+
+```
+START ═══════════════════════════════════════════════ CHAMPION
+  ▼          ▼          ▼          ▼          ▼          ▼
+PALLET    VIRIDIAN   CERULEAN   LAVENDER   SAFFRON   ELITE 4
+TOWN       CITY       CITY       TOWN       CITY     CHAMPION
+  │          │          │          │          │          │
+  ├─ JS     ├─ REACT   ├─ NODE    ├─ DOCKER  ├─ K8S    ├─ MASTERY
+  ├─ HTML   ├─ VUE     ├─ PYTHON  ├─ AWS     ├─ GCP    ├─ ARCHITECT
+  └─ CSS    └─ ANGULAR └─ RUST    └─ AZURE   └─ CI/CD  └─ ∞
+
+      🔥 CURRENTLY AT: CHAMPION LEVEL 💯
+```
+
+---
+
+## 🎲 RANDOM TRAINER TIPS 🎲
+
+<table width="100%">
+<tr>
+<td>
+
+```
+╔════════════════════════════════╗
+║  TIP #001                      ║
+╠════════════════════════════════╣
+║  Always save before fighting   ║
+║  the Elite Four (production    ║
+║  deployment).                  ║
+╚════════════════════════════════╝
+```
+
+</td>
+<td>
+
+```
+╔════════════════════════════════╗
+║  TIP #042                      ║
+╠════════════════════════════════╣
+║  Stock up on Revives (coffee)  ║
+║  before a long coding session. ║
+╚════════════════════════════════╝
 ```
 
 </td>
 </tr>
 </table>
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│    ╔═══════════════════════════════════════════════════╗   │
-│    ║                                                   ║   │
-│    ║   THIS README WAS PROCEDURALLY GENERATED BY       ║   │
-│    ║   AN OVER-CAFFEINATED DEVELOPER AT 3:47 AM        ║   │
-│    ║                                                   ║   │
-│    ║   NO APIs WERE HARMED IN THE MAKING OF THIS      ║   │
-│    ║   PROFILE (ONLY MY SANITY)                        ║   │
-│    ║                                                   ║   │
-│    ║   100% OPENSOURCE • 0% CLOUD DEPENDENCIES         ║   │
-│    ║   ∞% CHAOS • 42% MEMES • √-1% REALITY            ║   │
-│    ║                                                   ║   │
-│    ║   UPDATES DAILY AT MIDNIGHT UTC                   ║   │
-│    ║   (OR WHENEVER THE GITHUB ACTIONS DECIDE TO WAKE) ║   │
-│    ║                                                   ║   │
-│    ╚═══════════════════════════════════════════════════╝   │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+---
 
-### 🌟 VISITOR COUNTER (ANALOG EDITION) 🌟
+## 🌟 LEGENDARY POKÉMON SIGHTINGS 🌟
 
+<div align="center">
+
+### MEWTWO - THE GENETIC ALGORITHM
 ```
-┏━━━━━━━━━━━━━━━━━━━━━┓
-┃  YOU ARE VISITOR #  ┃
-┃                     ┃
-┃    ████  ████       ┃
-┃   ██  ████  ██      ┃
-┃   ██      ████      ┃
-┃   ██      ██        ┃
-┃   ██      ██        ┃
-┃   ██      ██        ┃
-┃    ████████         ┃
-┃                     ┃
-┃  (Or maybe not, I   ┃
-┃   stopped counting) ┃
-┗━━━━━━━━━━━━━━━━━━━━━┛
+      ___
+     /   \
+    | O O |
+    |  >  |
+    |     |
+     \___/
+    /_/ \_\
 ```
+**Last Seen:** Optimizing neural networks at 3 AM
+
+### RAYQUAZA - THE SKY SERPENT
+```
+    ~~~~~~
+   ~~~~~~~
+  ~~~~~~~~
+ ~~~◉~◉~~~
+  ~~~~~~~~
+   ~~~~~~~
+    ~~~~~~
+```
+**Last Seen:** Soaring through cloud infrastructure
+
+### DIALGA - THE TIME CONTROLLER
+```
+    ╔═══╗
+    ║ ◇ ║
+   ╔╬═══╬╗
+   ║║ ◉ ║║
+   ╚╬═══╬╝
+    ║   ║
+```
+**Last Seen:** Managing cron jobs and time-based tasks
+
+</div>
 
 ---
 
-<sup>⚡ POWERED BY: Caffeine | Insomnia | Questionable Life Choices | Pure Chaos ⚡</sup>
+## 🎪 ACHIEVEMENTS UNLOCKED 🎪
 
-<sup>🔮 BLESSED BY: The Git Gods | The Merge Fairies | The Rebase Demons 🔮</sup>
+<div align="center">
 
-<sup>💜 THEME: Royal Purple (#6A0DAD) meets Absolute Madness 💜</sup>
+| 🏆 | Achievement | Rarity | Date |
+|:---:|:-----------|:------:|:----:|
+| 💯 | Coded for 100 hours straight | ⭐⭐⭐⭐⭐ | {ACHIEVEMENT_DATE} |
+| 🔥 | Deployed on Friday evening | ⭐⭐⭐⭐⭐ | Don't ask |
+| 🐛 | Caught a Missingno (undefined bug) | ⭐⭐⭐⭐ | Every day |
+| ⚡ | One-shot a critical bug | ⭐⭐⭐⭐ | {ACHIEVEMENT_DATE} |
+| 🌙 | Night owl coder | ⭐⭐⭐⭐⭐ | Permanent |
+| 💎 | Refactored legacy code | ⭐⭐⭐⭐⭐ | Legendary |
+| 🎯 | Zero-downtime deployment | ⭐⭐⭐ | {ACHIEVEMENT_DATE} |
+| 🍕 | Ordered pizza via code | ⭐⭐ | Best achievement |
+
+</div>
+
+---
+
+## 🎯 BATTLE STATISTICS 🎯
+
+<div align="center">
+
+```
+╔══════════════════════════════════════════════════════════╗
+║                   TRAINER CARD                           ║
+╠══════════════════════════════════════════════════════════╣
+║                                                          ║
+║  NAME: ARUDCHAYAN                  ID: 6A0DAD           ║
+║  REGION: GITHUB                    RANK: CHAMPION        ║
+║                                                          ║
+║  ╔════════════════════════════════════════════════════╗  ║
+║  ║  BATTLE RECORD:                                    ║  ║
+║  ║  ─────────────                                     ║  ║
+║  ║  WINS:    ████████████████████ 9,999+             ║  ║
+║  ║  LOSSES:  █░░░░░░░░░░░░░░░░░░░ 42                 ║  ║
+║  ║  DRAWS:   ██░░░░░░░░░░░░░░░░░░ 137                ║  ║
+║  ║                                                    ║  ║
+║  ║  WIN RATE: 99.6%                                   ║  ║
+║  ╚════════════════════════════════════════════════════╝  ║
+║                                                          ║
+║  MONEY: $999,999 (Stack Overflow points)                 ║
+║  PLAYTIME: 1337:42:00                                    ║
+║                                                          ║
+║  FAVORITE TYPE: 💜 PURPLE/PSYCHIC                        ║
+║                                                          ║
+╚══════════════════════════════════════════════════════════╝
+```
+
+</div>
+
+---
+
+## 🎮 CURRENT BATTLE STATUS 🎮
+
+<table width="100%">
+<tr>
+<td align="center">
+
+### ❤️ HP
+```
+████████████████████
+HP: 9999/9999
+```
+
+</td>
+<td align="center">
+
+### 💙 MANA
+```
+████████░░░░░░░░░░░░
+MP: 420/1337
+```
+
+</td>
+<td align="center">
+
+### ⚡ STAMINA
+```
+██░░░░░░░░░░░░░░░░░░
+ST: 42/999
+```
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+```
+STATUS EFFECTS: ☕ CAFFEINATED | 🌙 NOCTURNAL | 💻 IN THE ZONE
+```
+
+</div>
+
+---
+
+</details>
+
+---
+
+## 🎯 TRAINER CONTACT INFO 🎯
+
+<div align="center">
+
+```
+╔══════════════════════════════════════════════════════╗
+║                                                      ║
+║     WANT TO BATTLE? SEND A CHALLENGE REQUEST!       ║
+║                                                      ║
+║  📧 POKÉGEAR: somewhere@in.the.cloud                ║
+║  🌐 PC STORAGE: https://github.com/Arudchayan       ║
+║  💬 POKÉNAV: Open for battles (PRs)                 ║
+║  🎮 BATTLE MODE: Always accepting challenges        ║
+║                                                      ║
+╚══════════════════════════════════════════════════════╝
+```
+
+</div>
+
+---
+
+## 🌟 POKÉMON TRAINER'S OATH 🌟
+
+<div align="center">
+
+> **I will travel across the codebase,**  
+> **Searching far and wide,**  
+> **Each bug to understand,**  
+> **The power that's inside!**
+> 
+> **POKÉMON! GOTTA CODE 'EM ALL!**  
+> **IT'S YOU AND ME,**  
+> **I KNOW IT'S MY DESTINY!**
+> 
+> **POKÉMON! OH, YOU'RE MY BEST FRIEND,**  
+> **IN A WORLD WE MUST DEBUG!**  
+> **POKÉMON! GOTTA CODE 'EM ALL!**  
+> **A HEART SO TRUE,**  
+> **OUR COURAGE WILL PULL US THROUGH!**
+
+```
+     ⚡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⚡
+    ⚡                                           ⚡
+   ⚡   YOU AND ME, WE'LL CODE OUR DESTINY!     ⚡
+    ⚡                                           ⚡
+     ⚡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⚡
+```
 
 </div>
 
@@ -566,37 +670,75 @@ MEMES:       [██████████] ∞%
 <div align="center">
 
 ```
-╔═══════════════════════════════════════════════════════════╗
-║                                                           ║
-║   ████████╗██╗  ██╗ █████╗ ███╗   ██╗██╗  ██╗███████╗   ║
-║   ╚══██╔══╝██║  ██║██╔══██╗████╗  ██║██║ ██╔╝██╔════╝   ║
-║      ██║   ███████║███████║██╔██╗ ██║█████╔╝ ███████╗   ║
-║      ██║   ██╔══██║██╔══██║██║╚██╗██║██╔═██╗ ╚════██║   ║
-║      ██║   ██║  ██║██║  ██║██║ ╚████║██║  ██╗███████║   ║
-║      ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝   ║
-║                                                           ║
-║         FOR SURVIVING THIS README EXPERIENCE             ║
-║                                                           ║
-║              YOUR SANITY: -10 POINTS                     ║
-║              YOUR CONFUSION: +100 POINTS                 ║
-║              YOUR ENTERTAINMENT: PRICELESS               ║
-║                                                           ║
-╚═══════════════════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║  ████████╗██╗  ██╗ █████╗ ███╗   ██╗██╗  ██╗███████╗            ║
+║  ╚══██╔══╝██║  ██║██╔══██╗████╗  ██║██║ ██╔╝██╔════╝            ║
+║     ██║   ███████║███████║██╔██╗ ██║█████╔╝ ███████╗            ║
+║     ██║   ██╔══██║██╔══██║██║╚██╗██║██╔═██╗ ╚════██║            ║
+║     ██║   ██║  ██║██║  ██║██║ ╚████║██║  ██╗███████║            ║
+║     ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝            ║
+║                                                                   ║
+║         FOR VISITING MY POKÉMON TRAINER PROFILE!                 ║
+║                                                                   ║
+║            🎮 WILD GITHUB USER APPEARED! 🎮                      ║
+║                                                                   ║
+║          MAY YOUR COMMITS BE CLEAN AND YOUR                      ║
+║           DEPLOYMENTS ALWAYS SUCCESSFUL!                         ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
 ```
 
-### 👋 NOW GET OUT THERE AND CODE SOMETHING AWESOME! 🚀
+<sup>⚡ POWERED BY: PokéAPI | Pure Dedication | Caffeine | Royal Purple Energy ⚡</sup>
 
-*Or take a nap. Naps are good too.* 😴
+<sup>🔮 BLESSED BY: Arceus | Mew | The RNG Gods 🔮</sup>
+
+<sup>💜 THEME: Royal Purple (#6A0DAD) meets Pokémon Universe 💜</sup>
+
+### 🎯 PROFILE STATS 🎯
+
+```
+╔════════════════════════════════════════════════╗
+║  LAST UPDATED: {CURRENT_DATE}                  ║
+║  NEXT ROTATION: Midnight UTC                   ║
+║  PROFILE VERSION: Gen {GENERATION}             ║
+║  TOTAL VISITORS: [Counter currently sleeping]  ║
+║  API CALLS TODAY: {API_CALLS}                  ║
+╚════════════════════════════════════════════════╝
+```
+
+---
+
+### 👋 CATCH YOU ON THE FLIP SIDE, TRAINER! 🎮
+
+```
+     ___
+    /   \
+   | O O |
+    \ ^ /
+     |||
+    /|||\
+   / ||| \
+  
+ *POKÉBALL*
+  *CLOSES*
+```
 
 </div>
 
 <!-- 
-  ╔═══════════════════════════════════════════════════════════╗
-  ║  END OF README                                            ║
-  ║  IF YOU READ THIS FAR, YOU'RE EITHER:                     ║
-  ║  A) INCREDIBLY BORED                                      ║
-  ║  B) INCREDIBLY DEDICATED                                  ║
-  ║  C) A BOT (HI BOT!)                                       ║
-  ║  D) ALL OF THE ABOVE                                      ║
-  ╚═══════════════════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════╗
+║  EASTER EGG SECTION - FOR THE CURIOUS TRAINERS               ║
+║                                                               ║
+║  IF YOU'RE READING THIS, YOU'RE A TRUE POKÉMON MASTER!      ║
+║                                                               ║
+║  SECRET CODE: UPUPDOWNDOWNLEFTRIGHTLEFTRIGHTBASTART          ║
+║                                                               ║
+║  THIS README IS 100% BONKERS, 100% POKÉMON,                  ║
+║  AND 1000% MADE WITH LOVE (AND INSOMNIA)                     ║
+║                                                               ║
+║  🎯 HIDDEN ACHIEVEMENT UNLOCKED:                             ║
+║     "READ THE ENTIRE README" - LEGENDARY TIER                ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
 -->
