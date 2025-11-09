@@ -18,9 +18,9 @@ _Current form updates on every UTC midnight._
 
 ## 🎭 Today's Archetype
 <!-- CURRENT_ARCHETYPE_START -->
-**Archetype:** Emerald Forest Warden  
-**Lead:** Decidueye
-**Team:** Decidueye, Rayquaza, Noivern, Metagross, Gengar, Zeraora
+**Archetype:** Ultrasonic Night Raider  
+**Lead:** Noivern
+**Team:** Noivern, Rayquaza, Zeraora, Gengar, Metagross, Decidueye
 <!-- CURRENT_ARCHETYPE_END -->
 
 ### ⚙️ Loadout Highlights
