@@ -1,0 +1,27 @@
+# Pokémon Trainer Profile - Python Dependencies
+# 
+# This project uses only Python standard library modules:
+# - json (for data parsing)
+# - os (for file operations)
+# - datetime (for date handling)
+# - random (for random selections)
+# - re (for regex operations)
+# - urllib (for HTTP requests to PokéAPI)
+# - time (for API rate limiting)
+#
+# No external dependencies required! 🎉
+#
+# However, if you want to add optional enhancements:
+
+# Optional: Better HTTP requests (if you prefer over urllib)
+# requests>=2.31.0
+
+# Optional: Async PokéAPI calls for faster builds
+# aiohttp>=3.9.0
+
+# Optional: Image processing (if you want to download and modify sprites)
+# Pillow>=10.0.0
+
+# Optional: Better CLI output
+# colorama>=0.4.6
+# rich>=13.0.0
