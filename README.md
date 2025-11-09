@@ -49,7 +49,7 @@
 **DAILY ROTATION ACTIVE**
 ```
 [████████] Day 739564
-FORM SHIFT: 2025-11-09 09:03 UTC
+FORM SHIFT: 2025-11-09 09:08 UTC
 ```
 ⚡ **MEGA EVOLUTION READY** ⚡
 
@@ -96,7 +96,7 @@ FORM SHIFT: 2025-11-09 09:03 UTC
 <table>
 <tr><td><b>Type:</b></td><td>🕊️FLYING 🐉DRAGON</td></tr>
 <tr><td><b>Ability:</b></td><td>Frisk</td></tr>
-<tr><td><b>Nature:</b></td><td>Careful</td></tr>
+<tr><td><b>Nature:</b></td><td>Hasty</td></tr>
 <tr><td><b>Height:</b></td><td>1.5m</td></tr>
 <tr><td><b>Weight:</b></td><td>85.0kg</td></tr>
 </table>
@@ -304,30 +304,30 @@ SPEED:  [█████████░░░░░░░░░░░] 123
 
 ## 🎯 RANDOM POKÉMON ENCOUNTER! 🎯
 
-### Wild LUCARIO appeared!
+### Wild DITTO appeared!
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/448.gif" alt="Lucario" width="150" height="150"/>
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/132.gif" alt="Ditto" width="150" height="150"/>
 
 </div>
 
 <table>
 <tr>
-<td><b>Type:</b></td><td>🥊FIGHTING ⚙️STEEL</td>
+<td><b>Type:</b></td><td>⚪NORMAL</td>
 </tr>
 <tr>
-<td><b>Height:</b></td><td>1.2m</td>
+<td><b>Height:</b></td><td>0.3m</td>
 </tr>
 <tr>
-<td><b>Weight:</b></td><td>54.0kg</td>
+<td><b>Weight:</b></td><td>4.0kg</td>
 </tr>
 <tr>
-<td><b>Abilities:</b></td><td>Steadfast, Inner Focus, Justified</td>
+<td><b>Abilities:</b></td><td>Limber, Imposter</td>
 </tr>
 </table>
 
-**Pokédex Entry:** It has the ability to sense the auras of all things. It understands human speech.
+**Pokédex Entry:** Capable of copying an enemy's genetic code to instantly transform itself into a duplicate of the enemy.
 
 ---
 
@@ -718,7 +718,7 @@ STATUS EFFECTS: ☕ CAFFEINATED | 🌙 NOCTURNAL | 💻 IN THE ZONE
 
 ```
 ╔════════════════════════════════════════════════╗
-║  LAST UPDATED: 2025-11-09 09:03 UTC                  ║
+║  LAST UPDATED: 2025-11-09 09:08 UTC                  ║
 ║  NEXT ROTATION: Midnight UTC                   ║
 ║  PROFILE VERSION: Gen 7             ║
 ║  TOTAL VISITORS: [Counter currently sleeping]  ║

@@ -1,0 +1,76 @@
+name: 🧪 Test README Build
+
+on:
+  pull_request:
+    branches:
+      - main
+      - master
+    paths:
+      - 'scripts/**'
+      - 'data/**'
+      - 'README.template.md'
+      - '.github/workflows/**'
+
+jobs:
+  test-build:
+    name: 🧪 Test Pokémon Profile Generation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: ⚡ Test README Generation
+        run: |
+          echo "🧪 Testing README generation..."
+          python3 scripts/build_readme.py
+          echo "✅ Build script executed successfully!"
+      
+      - name: 📊 Validate Output
+        run: |
+          if [ ! -f README.md ]; then
+            echo "❌ ERROR: README.md was not generated!"
+            exit 1
+          fi
+          
+          # Check if README has content
+          if [ ! -s README.md ]; then
+            echo "❌ ERROR: README.md is empty!"
+            exit 1
+          fi
+          
+          # Check for required sections
+          if ! grep -q "POKÉMON TRAINER PROFILE" README.md; then
+            echo "❌ ERROR: README.md missing Pokémon header!"
+            exit 1
+          fi
+          
+          if ! grep -q "TEAM CONFIGURATION" README.md; then
+            echo "❌ ERROR: README.md missing team configuration!"
+            exit 1
+          fi
+          
+          echo "✅ README.md validation passed!"
+          echo "📏 File size: $(wc -c < README.md) bytes"
+          echo "📄 Line count: $(wc -l < README.md) lines"
+      
+      - name: 🔍 Show Sample Output
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📝 First 50 lines of generated README:"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          head -50 README.md
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      
+      - name: 🎉 Test Passed!
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "✅ All tests passed!"
+          echo "🎮 README generation works perfectly!"
+          echo "💜 GOTTA CODE 'EM ALL!"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
