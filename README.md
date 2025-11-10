@@ -6,11 +6,11 @@
 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/807.gif" alt="Zeraora" width="200" height="200"/>
 </div>
 
-## 🛰️ Mission Brief
+## 🧾 POKÉMON TRAINER PROFILE
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2025-11-10 13:02 UTC |
+| Generated | 2025-11-10 13:07 UTC |
 | Schedule Index | 739565 |
 | Archetype | Thunderborn Storm Raider |
 | Lead Operative | Zeraora · Supersonic Initiator |
@@ -23,7 +23,9 @@
 
 ---
 
-## 🧭 Rotation Hologram
+## 🛡️ TEAM CONFIGURATION
+
+### 🧭 Rotation Hologram
 
 <!-- CURRENT_ARCHETYPE_START -->
 > **Rotation Profile:** Thunderborn Storm Raider  
@@ -33,9 +35,9 @@
 
 ### Lead Strategy Module
 
-**Primary Types:** ⚡ELECTRIC  
-**Ability Channel:** Volt Absorb  
-**Nature Alignment:** Hasty  
+**Primary Types:** ⚡ELECTRIC
+**Ability Channel:** Volt Absorb
+**Nature Alignment:** Adamant
 **Physical Specs:** 1.5m · 44.5kg
 
 #### Stat Telemetry
@@ -245,7 +247,7 @@ SPEED:  [███████████░░░░░░░░░] 143
 
 - **Workflow cadence:** Scheduled via GitHub Actions (`.github/workflows/update-readme.yml`) with manual dispatch support.
 - **API usage:** 7 calls per build (lead + party + encounter) using cached fallbacks on failure.
-- **Version rotation:** Currently tracking Generation 7 sprites and mechanics metadata.
+- **Version rotation:** Currently tracking Generation 9 sprites and mechanics metadata.
 - **Reliability:** Deterministic day index ensures every archetype receives equal exposure over time.
 
 ---
@@ -258,4 +260,4 @@ SPEED:  [███████████░░░░░░░░░] 143
 
 ---
 
-<sub>README last rebuilt on 2025-11-10 13:02 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2025-11-10 13:07 UTC. Next rotation triggers at midnight UTC.</sub>

@@ -6,7 +6,7 @@
 {LEAD_ASCII}
 </div>
 
-## 🛰️ Mission Brief
+## 🧾 POKÉMON TRAINER PROFILE
 
 | Signal | Readout |
 | --- | --- |
@@ -23,19 +23,21 @@
 
 ---
 
-## 🧭 Rotation Hologram
+## 🛡️ TEAM CONFIGURATION
+
+### 🧭 Rotation Hologram
 
 <!-- CURRENT_ARCHETYPE_START -->
-> **Rotation Profile:** {ARCHETYPE_TITLE}  
-> **Command Lead:** {LEAD_POKEMON}  
+> **Rotation Profile:** {ARCHETYPE_TITLE}
+> **Command Lead:** {LEAD_POKEMON}
 > **Roster Online:** {TEAM_LIST}
 <!-- CURRENT_ARCHETYPE_END -->
 
 ### Lead Strategy Module
 
-**Primary Types:** {LEAD_TYPES}  
-**Ability Channel:** {LEAD_ABILITY}  
-**Nature Alignment:** {LEAD_NATURE}  
+**Primary Types:** {LEAD_TYPES}
+**Ability Channel:** {LEAD_ABILITY}
+**Nature Alignment:** {LEAD_NATURE}
 **Physical Specs:** {LEAD_HEIGHT} · {LEAD_WEIGHT}
 
 #### Stat Telemetry
