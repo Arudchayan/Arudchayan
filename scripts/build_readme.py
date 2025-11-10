@@ -153,8 +153,20 @@ def get_english_flavor_text(species_data):
 
 def create_stat_bar(value, max_value=255):
     """Create a visual stat bar"""
+    value = max(value, 0)
     filled = int((value / max_value) * 20)
+    filled = max(0, min(20, filled))
     return '[' + '█' * filled + '░' * (20 - filled) + ']'
+
+
+def create_power_gauge(value, max_value=1530, length=30):
+    """Render a larger gauge for whole-team power analytics"""
+    value = max(value, 0)
+    ratio = min(value / max_value, 1) if max_value else 0
+    filled = int(ratio * length)
+    filled = max(0, min(length, filled))
+    bar = '[' + '█' * filled + '░' * (length - filled) + ']'
+    return f"{bar} {ratio * 100:5.1f}% capacity"
 
 def get_pokemon_ascii(name):
     """Get ASCII art for a Pokémon - DEPRECATED, kept for fallback"""
@@ -256,14 +268,113 @@ lead_speed = lead_stats.get('speed', 100)
 
 # Calculate power level
 power_level = sum([lead_hp, lead_attack, lead_defense, lead_spatk, lead_spdef, lead_speed])
+power_gauge = create_power_gauge(power_level)
 
 # Create team visual
 team_visual = "\n".join([f"  [{i+1}] {p}" for i, p in enumerate(chosen['team'])])
 
 # Build archetype section
-archetype_section = f"**Archetype:** {chosen['title']}  \n"
-archetype_section += f"**Lead:** {lead_name}  \n"
-archetype_section += f"**Team:** {', '.join(chosen['team'])}"
+archetype_section = (
+    f"> **Rotation Profile:** {chosen['title']}  \n"
+    f"> **Command Lead:** {lead_name}  \n"
+    f"> **Roster Online:** {', '.join(chosen['team'])}"
+)
+
+# Compute holistic team analytics
+team_type_counts = {}
+team_dossiers = []
+fastest_member = (None, {'stats': {'speed': 0}})
+heaviest_member = (None, {'weight': 0})
+bst_member = (None, 0)
+total_speed = 0
+
+for pokemon_name in chosen['team']:
+    pdata = pokemon_data.get(pokemon_name, {})
+    stats = pdata.get('stats', {})
+    types = pdata.get('types', ['normal'])
+    abilities = pdata.get('abilities', ['Unknown'])
+    moves = pdata.get('moves', ['Tackle'])[:4]
+    sprite_html = get_pokemon_sprite_html(pdata.get('sprite'), pokemon_name, 160)
+
+    for t in types:
+        team_type_counts[t] = team_type_counts.get(t, 0) + 1
+
+    speed_value = stats.get('speed', 0)
+    if speed_value > fastest_member[1]['stats'].get('speed', 0):
+        fastest_member = (pokemon_name, pdata)
+
+    weight_value = pdata.get('weight', 0)
+    if weight_value > heaviest_member[1].get('weight', 0):
+        heaviest_member = (pokemon_name, pdata)
+
+    bst = sum(stats.values()) if stats else 0
+    if bst > bst_member[1]:
+        bst_member = (pokemon_name, bst)
+
+    total_speed += speed_value
+
+    top_stat_key = max(stats, key=stats.get) if stats else 'hp'
+    top_stat_value = stats.get(top_stat_key, 0)
+    top_stat_label = top_stat_key.replace('-', ' ').title()
+    move_lines = "\n".join([f"  - {move}" for move in moves]) if moves else "  - (pending scouting)"
+
+    dossier = (
+        f"<details open>\n"
+        f"<summary>⚔️ <strong>{pokemon_name}</strong> · "
+        + " / ".join([get_type_emoji(t) + t.upper() for t in types])
+        + "</summary>\n\n"
+        f"<div align=\"center\">\n{sprite_html}\n</div>\n\n"
+        f"- **Base Stat Total:** {bst}\n"
+        f"- **Top Stat:** {top_stat_label} ({top_stat_value})\n"
+        f"- **Abilities:** {', '.join(abilities)}\n"
+        f"- **Signature Moves:**\n{move_lines}\n"
+        f"</details>"
+    )
+    team_dossiers.append(dossier)
+
+unique_type_count = len(team_type_counts)
+average_speed = (total_speed / len(chosen['team'])) if chosen['team'] else 0
+fastest_name = fastest_member[0] or 'Unknown'
+fastest_speed = fastest_member[1]['stats'].get('speed', 0) if fastest_member[0] else 0
+heaviest_name = heaviest_member[0] or 'Unknown'
+heaviest_weight = heaviest_member[1].get('weight', 0) if heaviest_member[0] else 0
+highest_bst_name = bst_member[0] or 'Unknown'
+highest_bst_value = bst_member[1]
+
+coverage_lines = []
+for t_name, count in sorted(team_type_counts.items(), key=lambda item: (-item[1], item[0])):
+    coverage_lines.append(f"- {get_type_emoji(t_name)} **{t_name.upper()}** ×{count}")
+type_coverage_block = "\n".join(coverage_lines) if coverage_lines else "- Coverage telemetry unavailable"
+
+bonkers_taglines = [
+    "synthetic battle intel streamed straight from Kanto Mission Control",
+    "orchestrated like a championship draft board with neon command prompts",
+    "tuned for data maximalists chasing legendary-level dashboards",
+    "pulling PokéAPI signals into a holo-briefing worthy of a League HQ"
+]
+bonkers_tagline = random.choice(bonkers_taglines)
+
+lead_stat_roles = {
+    'attack': 'Hyper-Offense Spearhead',
+    'special-attack': 'Arcane Artillery Node',
+    'defense': 'Fortified Bulwark Unit',
+    'special-defense': 'Psi-Shield Anchor',
+    'speed': 'Supersonic Initiator'
+}
+lead_stat_map = {
+    'attack': lead_attack,
+    'special-attack': lead_spatk,
+    'defense': lead_defense,
+    'special-defense': lead_spdef,
+    'speed': lead_speed
+}
+lead_dominant_stat = max(lead_stat_map, key=lead_stat_map.get)
+lead_role = lead_stat_roles.get(lead_dominant_stat, 'Balanced Command Core')
+
+analytics_blurb = (
+    f"{lead_name} fronts a {len(chosen['team'])}-unit strike team spanning {unique_type_count} unique typings "
+    f"with an average Speed index of {average_speed:.1f}. Fastest scout: {fastest_name} ({fastest_speed} Speed)."
+)
 
 # Replace template placeholders
 replacements = {
@@ -294,6 +405,8 @@ replacements = {
     '{LEAD_SPEED_BAR}': create_stat_bar(lead_speed),
     '{LEAD_MOVES}': '\n'.join([f"- **{move}**" for move in lead_data.get('moves', ['Tackle'])[:4]]),
     '{POWER_LEVEL}': str(power_level),
+    '{POWER_LEVEL_BAR}': power_gauge,
+    '{LEAD_ROLE}': lead_role,
     '{TEAM_VISUAL}': team_visual,
     '{TEAM_LIST}': ', '.join(chosen['team']),
     '{MEGA_INFO}': chosen.get('mega') or '—',
@@ -308,6 +421,18 @@ replacements = {
     '{GENERATION}': str(random.randint(1, 9)),
     '{API_CALLS}': str(len(pokemon_data) + 1),
     '{ACHIEVEMENT_DATE}': current_date.split()[0],
+    '{UNIQUE_TYPE_COUNT}': str(unique_type_count),
+    '{AVERAGE_SPEED}': f"{average_speed:.1f}",
+    '{FASTEST_MEMBER}': fastest_name,
+    '{FASTEST_SPEED}': str(fastest_speed),
+    '{HEAVIEST_MEMBER}': heaviest_name,
+    '{HEAVIEST_WEIGHT}': f"{heaviest_weight:.1f}kg",
+    '{HIGHEST_BST_MEMBER}': highest_bst_name,
+    '{HIGHEST_BST}': str(highest_bst_value),
+    '{TEAM_DETAIL_BLOCK}': '\n\n'.join(team_dossiers) if team_dossiers else '- No squad dossiers available.',
+    '{TYPE_COVERAGE_BLOCK}': type_coverage_block,
+    '{BONKERS_TAGLINE}': bonkers_tagline,
+    '{ANALYTICS_BLURB}': analytics_blurb,
 }
 
 # Add individual Pokémon data for the team
