@@ -7,6 +7,7 @@ import re
 import urllib.request
 import urllib.error
 import time
+from typing import Optional
 
 ROYAL = "#6A0DAD"
 
@@ -98,6 +99,95 @@ TYPE_EMOJIS = {
     "steel": "⚙️", "fairy": "✨"
 }
 
+LEGENDARY_ROSTER = [
+    "mewtwo",
+    "lugia",
+    "ho-oh",
+    "rayquaza",
+    "dialga",
+    "palkia",
+    "giratina",
+    "reshiram",
+    "zekrom",
+    "xerneas",
+    "yveltal",
+    "zacian",
+    "zamazenta",
+    "eternatus",
+]
+
+WILD_ROSTER = [
+    "ditto",
+    "pikachu",
+    "eevee",
+    "snorlax",
+    "magikarp",
+    "gyarados",
+    "dragonite",
+    "lucario",
+    "gardevoir",
+    "tyranitar",
+    "garchomp",
+    "dragapult",
+    "mienshao",
+    "mimikyu",
+    "noivern",
+    "zeraora",
+]
+
+SHINY_TRIGGER_RATE = 1 / 48  # noticeably higher than in-game odds to keep things lively
+
+BRANCH_PATHS = [
+    ("🌲", "Verdant Overwatch", "Bioluminescent spores swirl between ancient trunks."),
+    ("🌊", "Tidal Resonance", "Moonlit surf crashes against crystalline caverns."),
+    ("🌌", "Starfall Ridge", "Meteor dust drifts across a gravity-light plateau."),
+    ("🌋", "Magma Corridor", "Vents pulse underfoot with primal, red-hot rhythm."),
+    ("❄️", "Aurora Chasm", "Iridescent ice mirrors every motion in prismatic streaks."),
+    ("⚙️", "Celadon Manufactory", "Servo arms reset the battlefield between each exchange."),
+]
+
+BRANCH_TWISTS = [
+    "An allied scout flags a terrain hazard rewriting initiative order.",
+    "Wild support units stir in the periphery, ready to tip the balance.",
+    "A timed supply drop hums overhead, promising backup if you hold out.",
+    "Telemetry pings a sudden weather flux altering move potency.",
+    "Command authorises prototype gear if you can stall three turns.",
+    "A rival operative shadows the encounter, eager to intercept your claim.",
+]
+
+TACTIC_LOADOUTS = [
+    {
+        "icon": "🎯",
+        "title": "Deploy Quick Ball Salvo",
+        "success": "The {target} is secured in a double-shake snap while cheers erupt across comms.",
+        "fallback": "{pokemon} slips free in a burst of light, boosting its Evasion and tempo.",
+    },
+    {
+        "icon": "🛡️",
+        "title": "Raise Reflective Barriers",
+        "success": "Screens crystallise, letting you pace the fight and open a safe capture window.",
+        "fallback": "Barrier harmonics misalign, giving {pokemon} a free setup turn to escalate pressure.",
+    },
+    {
+        "icon": "⚡",
+        "title": "Trigger Overclocked Strike Team",
+        "success": "Coordinated assaults land clean, dropping {pokemon}'s stamina into the red immediately.",
+        "fallback": "Overclock feedback rattles your squad, forcing a swap while {pokemon} rallies.",
+    },
+    {
+        "icon": "🪬",
+        "title": "Invoke Terrain Sync Protocol",
+        "success": "Terrain energy bends toward you, amplifying status plays that pacify the target.",
+        "fallback": "The sync desyncs, amplifying {pokemon}'s innate typing instead.",
+    },
+    {
+        "icon": "🛰️",
+        "title": "Call Orbital Survey Assist",
+        "success": "Satellite intel locks patterns, letting you predict every counter-move perfectly.",
+        "fallback": "A solar flare knocks the feed offline, leaving you momentarily exposed.",
+    },
+]
+
 def fetch_pokemon_data(pokemon_name):
     """Fetch Pokémon data from PokéAPI"""
     try:
@@ -168,6 +258,31 @@ def create_power_gauge(value, max_value=1530, length=30):
     bar = '[' + '█' * filled + '░' * (length - filled) + ']'
     return f"{bar} {ratio * 100:5.1f}% capacity"
 
+
+def create_flux_meter(value, max_value, length=18):
+    """Create an over-the-top meter for the dynamism overlay"""
+    if max_value <= 0:
+        return '[' + '░' * length + '] 0% · STANDBY'
+
+    value = max(value, 0)
+    ratio = min(value / max_value, 1)
+    filled = int(round(ratio * length))
+    filled = max(0, min(length, filled))
+    bar = '[' + '▓' * filled + '░' * (length - filled) + ']'
+
+    if ratio >= 0.9:
+        mode = "Ω-OVERDRIVE"
+    elif ratio >= 0.7:
+        mode = "VORTEX"
+    elif ratio >= 0.5:
+        mode = "CRUISE"
+    elif ratio > 0:
+        mode = "WARMUP"
+    else:
+        mode = "STANDBY"
+
+    return f"{bar} {ratio * 100:4.0f}% · {mode}"
+
 def get_pokemon_ascii(name):
     """Get ASCII art for a Pokémon - DEPRECATED, kept for fallback"""
     name_lower = name.lower()
@@ -190,6 +305,91 @@ def pick_index(n):
     """Deterministic by date: different one each day"""
     today = datetime.datetime.now(datetime.UTC).date().toordinal()
     return today % n
+
+
+def roll_random_encounter():
+    """Roll a random encounter with chances for legendary sightings and shiny triggers."""
+    legendary_cutoff = 0.12
+    roll = random.random()
+
+    if roll < legendary_cutoff:
+        pool = LEGENDARY_ROSTER
+        rarity = "Legendary Sighting"
+        callout = "Ultra-rare beacon detected—Command approves immediate containment."
+    else:
+        pool = WILD_ROSTER
+        rarity = "Wild Encounter"
+        callout = "Routine scouting ping—deploy capture drones at your discretion."
+
+    species = random.choice(pool)
+    shiny_roll = random.random()
+    is_shiny = shiny_roll < SHINY_TRIGGER_RATE
+
+    if is_shiny:
+        callout += " ✨ Shiny trigger tripped!"
+
+    return species, rarity, callout, is_shiny
+
+
+def describe_target(is_shiny: bool, legendary_mode: bool) -> str:
+    """Return flavour text describing the encounter target."""
+    if is_shiny:
+        return "shimmering anomaly"
+    if legendary_mode:
+        return "legendary beacon"
+    return "wild signal"
+
+
+def generate_branching_paths(species: str, pokemon_info: Optional[dict], is_shiny: bool, legendary_mode: bool) -> str:
+    """Create a branching, click-to-choose set of encounter paths for the README."""
+    display_name = species.title()
+    type_summary = None
+    if pokemon_info and pokemon_info.get("types"):
+        type_summary = " / ".join([t.title() for t in pokemon_info["types"]])
+
+    target_descriptor = describe_target(is_shiny, legendary_mode)
+    legend_tag = "Legendary-class" if legendary_mode else "Wild-class"
+    shiny_suffix = " with radiant sheen" if is_shiny else ""
+    twist_pool = random.sample(BRANCH_TWISTS, k=3)
+    path_pool = random.sample(BRANCH_PATHS, k=3)
+
+    path_blocks = []
+    for idx, ((emoji, title, description), twist) in enumerate(zip(path_pool, twist_pool), start=1):
+        tactic_left, tactic_right = random.sample(TACTIC_LOADOUTS, k=2)
+        odds_left = random.randint(58, 92)
+        odds_right = random.randint(54, 88)
+
+        type_line = f"  - **Type Intel:** {type_summary}" if type_summary else ""
+        header = f"<details>\n  <summary>{emoji} Path {idx} — {title}</summary>\n\n"
+        body_lines = [
+            f"  - **Battlefield State:** {description}",
+            f"  - **Encounter Twist:** {twist}",
+            f"  - **Command Brief:** Track the {legend_tag} target — {display_name} ({target_descriptor}{shiny_suffix}).",
+        ]
+        if type_line:
+            body_lines.append(type_line)
+
+        def render_tactic(tactic: dict, odds: int) -> str:
+            success_line = tactic["success"].format(target=target_descriptor, pokemon=display_name)
+            fallback_line = tactic["fallback"].format(pokemon=display_name)
+            return (
+                "  <details>\n"
+                f"    <summary>{tactic['icon']} {tactic['title']} · {odds}% odds</summary>\n\n"
+                f"    - **If it lands:** {success_line}\n"
+                f"    - **If it whiffs:** {fallback_line}\n"
+                "  </details>"
+            )
+
+        tactics_block = "\n".join([
+            render_tactic(tactic_left, odds_left),
+            render_tactic(tactic_right, odds_right),
+        ])
+
+        path_block = header + "\n".join(body_lines) + "\n\n" + tactics_block + "\n</details>"
+        path_blocks.append(path_block)
+
+    return "\n\n".join(path_blocks)
+
 
 root = os.path.dirname(os.path.dirname(__file__))
 
@@ -228,11 +428,19 @@ for pokemon_name in chosen['team']:
             'id': 0
         }
 
-# Pick a random Pokémon for the encounter
-random_pokemon_names = ['ditto', 'pikachu', 'eevee', 'snorlax', 'magikarp', 'gyarados', 'dragonite', 'lucario']
-random_choice = random.choice(random_pokemon_names)
-print(f"\n✨ Random encounter: {random_choice.title()}")
+# Pick a random Pokémon for the encounter with legendary and shiny dynamics
+random_choice, encounter_rarity, encounter_callout, encounter_is_shiny = roll_random_encounter()
+shiny_suffix = " (shiny)" if encounter_is_shiny else ""
+print(
+    f"\n✨ Random encounter: {random_choice.title()}{shiny_suffix} [{encounter_rarity}]"
+)
 random_pokemon_data = fetch_pokemon_data(random_choice)
+branching_paths_block = generate_branching_paths(
+    random_choice,
+    random_pokemon_data,
+    encounter_is_shiny,
+    encounter_rarity == "Legendary Sighting",
+)
 
 # Load template
 with open(os.path.join(root, "README.template.md")) as f:
@@ -346,11 +554,35 @@ for t_name, count in sorted(team_type_counts.items(), key=lambda item: (-item[1]
     coverage_lines.append(f"- {get_type_emoji(t_name)} **{t_name.upper()}** ×{count}")
 type_coverage_block = "\n".join(coverage_lines) if coverage_lines else "- Coverage telemetry unavailable"
 
+# Hyper-dynamic analytics and presentation flair
+team_size = len(chosen['team']) if chosen.get('team') else 0
+synergy_meter = create_flux_meter(unique_type_count, team_size or 1)
+speed_pulse = create_flux_meter(average_speed, 180)
+bst_overdrive = create_flux_meter(highest_bst_value, 720)
+
+if average_speed >= 130:
+    tempo_callsign = "Chrono-stream locked: squad bends turns before they exist."
+elif average_speed >= 110:
+    tempo_callsign = "Velocity nets deployed—tempo advantage sustained."
+elif average_speed >= 90:
+    tempo_callsign = "Adaptive cadence engaged; striking windows recalibrated live."
+else:
+    tempo_callsign = "Glacial recon mode; compensating via formation traps."
+
+hyperstream_metrics = [
+    f"- **Synergy Mesh:** {unique_type_count}/{team_size or 1} typings interlaced across the roster.",
+    f"- **Velocity Drift:** Average speed {average_speed:.1f} with {fastest_name} spiking {fastest_speed}.",
+    f"- **Apex Pressure:** {highest_bst_name} anchors {highest_bst_value} BST saturation."
+]
+hyperstream_block = "\n".join(hyperstream_metrics)
+
 bonkers_taglines = [
     "synthetic battle intel streamed straight from Kanto Mission Control",
     "orchestrated like a championship draft board with neon command prompts",
     "tuned for data maximalists chasing legendary-level dashboards",
-    "pulling PokéAPI signals into a holo-briefing worthy of a League HQ"
+    "pulling PokéAPI signals into a holo-briefing worthy of a League HQ",
+    "hyperlattice uplink thrumming with chrono-synced PokéAPI echoes",
+    "battle telemetry screaming through neon conduits in full-spectrum chaos"
 ]
 bonkers_tagline = random.choice(bonkers_taglines)
 
@@ -431,6 +663,12 @@ replacements = {
     '{HIGHEST_BST}': str(highest_bst_value),
     '{TEAM_DETAIL_BLOCK}': '\n\n'.join(team_dossiers) if team_dossiers else '- No squad dossiers available.',
     '{TYPE_COVERAGE_BLOCK}': type_coverage_block,
+    '{SYNERGY_METER}': synergy_meter,
+    '{SPEED_PULSE}': speed_pulse,
+    '{BST_OVERDRIVE}': bst_overdrive,
+    '{TEMPO_CALLSIGN}': tempo_callsign,
+    '{HYPERSTREAM_BLOCK}': hyperstream_block,
+    '{BRANCHING_STORY_BLOCK}': branching_paths_block,
     '{BONKERS_TAGLINE}': bonkers_tagline,
     '{ANALYTICS_BLURB}': analytics_blurb,
 }
@@ -444,11 +682,47 @@ for i, pokemon_name in enumerate(chosen['team'], 1):
     replacements[f'{{POKEMON_{i}_TYPES}}'] = types_str
     replacements[f'{{POKEMON_{i}_ASCII}}'] = get_pokemon_sprite_html(pdata.get('sprite'), pokemon_name, 120)
 
+legendary_mode = encounter_rarity == "Legendary Sighting"
+display_name = random_choice.upper()
+
+if encounter_is_shiny:
+    encounter_summary = f"✨ SHINY ALERT: {display_name}"
+elif legendary_mode:
+    encounter_summary = f"🌌 LEGENDARY SIGHTING: {display_name}"
+else:
+    encounter_summary = f"🎲 WILD ENCOUNTER: {display_name}"
+
+if encounter_is_shiny:
+    shiny_trigger_panel = (
+        "<details open>\n"
+        "<summary>✨ Shiny Trigger Online</summary>\n\n"
+        "- Status: ✅ Sparkle state locked in for this cycle.\n"
+        "- Tip: Archive the sprite before the glow collapses.\n"
+        "</details>"
+    )
+else:
+    charge_level = random.randint(25, 92)
+    shiny_trigger_panel = (
+        "<details>\n"
+        "<summary>✨ Prime the Shiny Trigger</summary>\n\n"
+        f"- Status: ⏳ Charge holding at {charge_level}%.\n"
+        "- Tip: Refresh the Command Center to reroll the pulse.\n"
+        "</details>"
+    )
+
+replacements['{ENCOUNTER_SUMMARY}'] = encounter_summary
+replacements['{ENCOUNTER_RARITY}'] = encounter_rarity
+replacements['{ENCOUNTER_SIGNAL}'] = encounter_callout
+replacements['{SHINY_TRIGGER_PANEL}'] = shiny_trigger_panel
+
 # Random Pokémon encounter
 if random_pokemon_data:
     random_types = ' '.join([get_type_emoji(t) + t.upper() for t in random_pokemon_data.get('types', ['normal'])])
+    sprite_source = random_pokemon_data.get('sprite')
+    if encounter_is_shiny and random_pokemon_data.get('shiny_sprite'):
+        sprite_source = random_pokemon_data.get('shiny_sprite')
     replacements['{RANDOM_POKEMON}'] = random_pokemon_data['name'].upper()
-    replacements['{RANDOM_POKEMON_ASCII}'] = get_pokemon_sprite_html(random_pokemon_data.get('sprite'), random_pokemon_data['name'], 150)
+    replacements['{RANDOM_POKEMON_ASCII}'] = get_pokemon_sprite_html(sprite_source, random_pokemon_data['name'], 150)
     replacements['{RANDOM_POKEMON_TYPES}'] = random_types
     replacements['{RANDOM_POKEMON_HEIGHT}'] = f"{random_pokemon_data['height']:.1f}m"
     replacements['{RANDOM_POKEMON_WEIGHT}'] = f"{random_pokemon_data['weight']:.1f}kg"

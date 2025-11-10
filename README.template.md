@@ -82,6 +82,20 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 
 ---
 
+## 🌀 Dynamism Overlay
+
+| Flux Channel | Status |
+| --- | --- |
+| Synergy Mesh | {SYNERGY_METER} |
+| Speed Pulse | {SPEED_PULSE} |
+| Apex Pressure | {BST_OVERDRIVE} |
+
+> {TEMPO_CALLSIGN}
+
+{HYPERSTREAM_BLOCK}
+
+---
+
 ## ⚙️ Competitive Systems Matrix
 
 | Mechanic | Status | Notes |
@@ -103,16 +117,27 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 
 ## 🎲 Encounter Terminal
 
-> Wild **{RANDOM_POKEMON}** appeared!
+<details open>
+  <summary>{ENCOUNTER_SUMMARY}</summary>
 
-<div align="center">
-{RANDOM_POKEMON_ASCII}
-</div>
+  <div align="center">
+  {RANDOM_POKEMON_ASCII}
+  </div>
 
-- **Type Signal:** {RANDOM_POKEMON_TYPES}
-- **Height / Weight:** {RANDOM_POKEMON_HEIGHT} · {RANDOM_POKEMON_WEIGHT}
-- **Abilities:** {RANDOM_POKEMON_ABILITIES}
-- **Pokédex Insight:** {RANDOM_POKEMON_FLAVOR}
+  - **Rarity Signal:** {ENCOUNTER_RARITY}
+  - **Type Signal:** {RANDOM_POKEMON_TYPES}
+  - **Height / Weight:** {RANDOM_POKEMON_HEIGHT} · {RANDOM_POKEMON_WEIGHT}
+  - **Abilities:** {RANDOM_POKEMON_ABILITIES}
+  - **Pokédex Insight:** {RANDOM_POKEMON_FLAVOR}
+  - **Encounter Telemetry:** {ENCOUNTER_SIGNAL}
+
+</details>
+
+{SHINY_TRIGGER_PANEL}
+
+### 🔀 Click-to-Choose Battle Routes
+
+{BRANCHING_STORY_BLOCK}
 
 ---
 
