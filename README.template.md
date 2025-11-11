@@ -53,20 +53,46 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 #### Signature Arsenal
 {LEAD_MOVES}
 
-### Party Holodeck
+### ⚔️ Battle Formation HUD
 
-<table>
-  <tr>
-    <td align="center">{POKEMON_1_ASCII}<br/><strong>{POKEMON_1_NAME}</strong><br/>{POKEMON_1_TYPES}</td>
-    <td align="center">{POKEMON_2_ASCII}<br/><strong>{POKEMON_2_NAME}</strong><br/>{POKEMON_2_TYPES}</td>
-    <td align="center">{POKEMON_3_ASCII}<br/><strong>{POKEMON_3_NAME}</strong><br/>{POKEMON_3_TYPES}</td>
-  </tr>
-  <tr>
-    <td align="center">{POKEMON_4_ASCII}<br/><strong>{POKEMON_4_NAME}</strong><br/>{POKEMON_4_TYPES}</td>
-    <td align="center">{POKEMON_5_ASCII}<br/><strong>{POKEMON_5_NAME}</strong><br/>{POKEMON_5_TYPES}</td>
-    <td align="center">{POKEMON_6_ASCII}<br/><strong>{POKEMON_6_NAME}</strong><br/>{POKEMON_6_TYPES}</td>
-  </tr>
-</table>
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; background:linear-gradient(135deg,#05040c,#16162b); padding:24px; border-radius:18px; border:1px solid rgba(138,110,255,0.4);">
+  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
+    <div>{POKEMON_1_ASCII}</div>
+    <p><strong>{POKEMON_1_NAME}</strong></p>
+    <p>{POKEMON_1_TYPES}</p>
+    <p><em>{POKEMON_1_ROLE}</em></p>
+  </div>
+  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
+    <div>{POKEMON_2_ASCII}</div>
+    <p><strong>{POKEMON_2_NAME}</strong></p>
+    <p>{POKEMON_2_TYPES}</p>
+    <p><em>{POKEMON_2_ROLE}</em></p>
+  </div>
+  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
+    <div>{POKEMON_3_ASCII}</div>
+    <p><strong>{POKEMON_3_NAME}</strong></p>
+    <p>{POKEMON_3_TYPES}</p>
+    <p><em>{POKEMON_3_ROLE}</em></p>
+  </div>
+  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
+    <div>{POKEMON_4_ASCII}</div>
+    <p><strong>{POKEMON_4_NAME}</strong></p>
+    <p>{POKEMON_4_TYPES}</p>
+    <p><em>{POKEMON_4_ROLE}</em></p>
+  </div>
+  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
+    <div>{POKEMON_5_ASCII}</div>
+    <p><strong>{POKEMON_5_NAME}</strong></p>
+    <p>{POKEMON_5_TYPES}</p>
+    <p><em>{POKEMON_5_ROLE}</em></p>
+  </div>
+  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
+    <div>{POKEMON_6_ASCII}</div>
+    <p><strong>{POKEMON_6_NAME}</strong></p>
+    <p>{POKEMON_6_TYPES}</p>
+    <p><em>{POKEMON_6_ROLE}</em></p>
+  </div>
+</div>
 
 ---
 

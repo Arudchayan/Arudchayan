@@ -11,6 +11,35 @@ from typing import Optional
 
 ROYAL = "#6A0DAD"
 
+VERSION_PRIORITY = [
+    "scarlet-violet",
+    "sword-shield",
+    "brilliant-diamond-and-shining-pearl",
+    "ultra-sun-ultra-moon",
+    "sun-moon",
+    "omega-ruby-alpha-sapphire",
+    "x-y",
+    "black-2-white-2",
+    "black-white",
+]
+
+MOVE_METHOD_PRIORITY = {
+    "level-up": 0,
+    "tutor": 1,
+    "machine": 2,
+    "egg": 3,
+}
+
+MOVE_CACHE: dict[str, dict] = {}
+
+ROLE_BY_STAT = {
+    'attack': 'Hyper-Offense Spearhead',
+    'special-attack': 'Arcane Artillery Node',
+    'defense': 'Fortified Bulwark Unit',
+    'special-defense': 'Psi-Shield Anchor',
+    'speed': 'Supersonic Initiator',
+}
+
 # Pokémon ASCII art library (simple versions)
 POKEMON_ASCII_ART = {
     "pikachu": """
@@ -188,13 +217,157 @@ TACTIC_LOADOUTS = [
     },
 ]
 
-def fetch_pokemon_data(pokemon_name):
+MEGA_NAME_OVERRIDES = {
+    "mega charizard x": "charizard-mega-x",
+    "mega charizard y": "charizard-mega-y",
+    "mega mewtwo x": "mewtwo-mega-x",
+    "mega mewtwo y": "mewtwo-mega-y",
+}
+
+
+def normalize_pokemon_identifier(pokemon_name: str) -> str:
+    """Return an API-friendly identifier for PokéAPI lookups."""
+
+    lower_name = pokemon_name.lower().strip()
+    if lower_name in MEGA_NAME_OVERRIDES:
+        return MEGA_NAME_OVERRIDES[lower_name]
+
+    if lower_name.startswith("mega "):
+        suffix = lower_name.replace("mega ", "", 1)
+        suffix = suffix.replace(" ", "-")
+        return f"{suffix}-mega"
+
+    return lower_name.replace(" ", "-")
+
+
+def get_version_priority(version_name: str) -> int:
+    """Return an ordering hint for move version groups."""
+
+    try:
+        return VERSION_PRIORITY.index(version_name)
+    except ValueError:
+        return len(VERSION_PRIORITY)
+
+
+def fetch_move_metadata(move_url: str) -> dict:
+    """Fetch minimal metadata for a move with caching."""
+
+    if move_url in MOVE_CACHE:
+        return MOVE_CACHE[move_url]
+
+    try:
+        with urllib.request.urlopen(move_url, timeout=5) as response:
+            payload = json.loads(response.read().decode())
+    except Exception as exc:  # pragma: no cover - defensive against flaky API
+        print(f"Warning: Could not fetch move data from {move_url}: {exc}")
+        payload = {}
+
+    metadata = {
+        "type": payload.get("type", {}).get("name"),
+        "power": payload.get("power"),
+        "damage_class": payload.get("damage_class", {}).get("name"),
+    }
+    MOVE_CACHE[move_url] = metadata
+    time.sleep(0.1)
+    return metadata
+
+
+def select_signature_moves(api_moves: list, pokemon_types: list[str]) -> list[dict]:
+    """Return a curated set of signature moves for display."""
+
+    scored_moves = []
+    seen_moves: set[str] = set()
+
+    for entry in api_moves:
+        move_name = entry.get("move", {}).get("name")
+        move_url = entry.get("move", {}).get("url")
+        if not move_name or not move_url or move_name in seen_moves:
+            continue
+
+        version_details = entry.get("version_group_details", [])
+        if not version_details:
+            continue
+
+        eligible_details = [
+            detail
+            for detail in version_details
+            if detail.get("move_learn_method", {}).get("name") in MOVE_METHOD_PRIORITY
+        ]
+        if not eligible_details:
+            continue
+
+        best_detail = min(
+            eligible_details,
+            key=lambda detail: (
+                get_version_priority(detail.get("version_group", {}).get("name", "")),
+                MOVE_METHOD_PRIORITY.get(detail.get("move_learn_method", {}).get("name", ""), 99),
+                -detail.get("level_learned_at", 0),
+            ),
+        )
+
+        seen_moves.add(move_name)
+        scored_moves.append(
+            (
+                get_version_priority(best_detail.get("version_group", {}).get("name", "")),
+                MOVE_METHOD_PRIORITY.get(best_detail.get("move_learn_method", {}).get("name", ""), 99),
+                -best_detail.get("level_learned_at", 0),
+                move_name,
+                move_url,
+                best_detail,
+            )
+        )
+
+    if not scored_moves:
+        return []
+
+    scored_moves.sort(key=lambda item: item[:4])
+    trimmed_moves = scored_moves[:36]
+
+    candidates: list[dict] = []
+    for _, _, _, move_name, move_url, best_detail in trimmed_moves:
+        metadata = fetch_move_metadata(move_url)
+        move_type = metadata.get("type")
+        power = metadata.get("power") or 0
+        damage_class = metadata.get("damage_class", "status")
+
+        candidates.append(
+            {
+                "name": move_name.replace("-", " ").title(),
+                "type": move_type,
+                "power": power,
+                "damage_class": damage_class,
+                "method": best_detail.get("move_learn_method", {}).get("name", "unknown"),
+                "level": best_detail.get("level_learned_at", 0),
+            }
+        )
+
+    if not candidates:
+        return []
+
+    def move_sort_key(item: dict) -> tuple:
+        stab = 1 if item.get("type") in pokemon_types else 0
+        damage_bias = 0 if item.get("damage_class") != "status" else 1
+        method_bias = MOVE_METHOD_PRIORITY.get(item.get("method"), 99)
+        return (
+            -stab,
+            damage_bias,
+            method_bias,
+            -item.get("power", 0),
+            -item.get("level", 0),
+            item.get("name", ""),
+        )
+
+    candidates.sort(key=move_sort_key)
+    return candidates[:4]
+
+def fetch_pokemon_data(pokemon_name: str, original_name: Optional[str] = None):
     """Fetch Pokémon data from PokéAPI"""
     try:
-        url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_name.lower()}"
+        identifier = normalize_pokemon_identifier(pokemon_name)
+        url = f"https://pokeapi.co/api/v2/pokemon/{identifier}"
         with urllib.request.urlopen(url, timeout=5) as response:
             data = json.loads(response.read().decode())
-            
+
         # Get species data for flavor text
         species_url = data['species']['url']
         with urllib.request.urlopen(species_url, timeout=5) as response:
@@ -217,14 +390,17 @@ def fetch_pokemon_data(pokemon_name):
         # Shiny sprite as backup option
         shiny_sprite = sprites.get('front_shiny')
         
+        pokemon_types = [t['type']['name'] for t in data['types']]
+        signature_moves = select_signature_moves(data['moves'], pokemon_types)
+
         return {
-            'name': data['name'].title(),
-            'types': [t['type']['name'] for t in data['types']],
+            'name': (original_name or data['name']).title(),
+            'types': pokemon_types,
             'height': data['height'] / 10,  # Convert to meters
             'weight': data['weight'] / 10,  # Convert to kg
             'stats': {s['stat']['name']: s['base_stat'] for s in data['stats']},
             'abilities': [a['ability']['name'].replace('-', ' ').title() for a in data['abilities']],
-            'moves': [m['move']['name'].replace('-', ' ').title() for m in data['moves'][:4]],
+            'signature_moves': signature_moves,
             'flavor_text': get_english_flavor_text(species_data),
             'sprite': sprite_url,
             'shiny_sprite': shiny_sprite,
@@ -301,10 +477,12 @@ def get_type_emoji(type_name):
     """Get emoji for a type"""
     return TYPE_EMOJIS.get(type_name, "⚪")
 
-def pick_index(n):
+def pick_index(n: int, day_seed: int) -> int:
     """Deterministic by date: different one each day"""
-    today = datetime.datetime.now(datetime.UTC).date().toordinal()
-    return today % n
+
+    if n == 0:
+        return 0
+    return day_seed % n
 
 
 def roll_random_encounter():
@@ -397,8 +575,14 @@ root = os.path.dirname(os.path.dirname(__file__))
 with open(os.path.join(root, "data", "archetypes.json")) as f:
     arc = json.load(f)
 
-idx = pick_index(len(arc))
+now_utc = datetime.datetime.now(datetime.UTC)
+day_number = now_utc.date().toordinal()
+
+idx = pick_index(len(arc), day_number)
 chosen = arc[idx]
+
+random_seed_basis = f"{day_number}-{chosen.get('id', idx)}"
+random.seed(random_seed_basis)
 
 print(f"🎯 Building README for archetype: {chosen['title']}")
 print(f"👑 Team Leader: {chosen['lead']}")
@@ -407,9 +591,8 @@ print(f"👑 Team Leader: {chosen['lead']}")
 print("\n🔍 Fetching Pokémon data from PokéAPI...")
 pokemon_data = {}
 for pokemon_name in chosen['team']:
-    clean_name = pokemon_name.lower().replace('mega ', '')
     print(f"  📡 Fetching {pokemon_name}...")
-    data = fetch_pokemon_data(clean_name)
+    data = fetch_pokemon_data(pokemon_name, original_name=pokemon_name)
     if data:
         pokemon_data[pokemon_name] = data
     else:
@@ -421,7 +604,12 @@ for pokemon_name in chosen['team']:
             'weight': 10.0,
             'stats': {'hp': 100, 'attack': 100, 'defense': 100, 'special-attack': 100, 'special-defense': 100, 'speed': 100},
             'abilities': ['Unknown'],
-            'moves': ['Tackle', 'Quick Attack', 'Hyper Beam', 'Rest'],
+            'signature_moves': [
+                {'name': 'Tackle', 'type': 'normal', 'power': 40, 'damage_class': 'physical', 'method': 'level-up', 'level': 1},
+                {'name': 'Quick Attack', 'type': 'normal', 'power': 40, 'damage_class': 'physical', 'method': 'level-up', 'level': 5},
+                {'name': 'Hyper Beam', 'type': 'normal', 'power': 150, 'damage_class': 'special', 'method': 'machine', 'level': 0},
+                {'name': 'Rest', 'type': 'psychic', 'power': 0, 'damage_class': 'status', 'method': 'machine', 'level': 0},
+            ],
             'flavor_text': 'A mysterious Pokémon!',
             'sprite': None,
             'shiny_sprite': None,
@@ -434,7 +622,7 @@ shiny_suffix = " (shiny)" if encounter_is_shiny else ""
 print(
     f"\n✨ Random encounter: {random_choice.title()}{shiny_suffix} [{encounter_rarity}]"
 )
-random_pokemon_data = fetch_pokemon_data(random_choice)
+random_pokemon_data = fetch_pokemon_data(random_choice, original_name=random_choice)
 branching_paths_block = generate_branching_paths(
     random_choice,
     random_pokemon_data,
@@ -447,8 +635,7 @@ with open(os.path.join(root, "README.template.md")) as f:
     template = f.read()
 
 # Current date info
-current_date = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M UTC")
-day_number = datetime.datetime.now(datetime.UTC).date().toordinal()
+current_date = now_utc.strftime("%Y-%m-%d %H:%M UTC")
 
 # Get lead Pokémon data
 lead_name = chosen['lead']
@@ -474,9 +661,7 @@ lead_spatk = lead_stats.get('special-attack', 100)
 lead_spdef = lead_stats.get('special-defense', 100)
 lead_speed = lead_stats.get('speed', 100)
 
-# Calculate power level
-power_level = sum([lead_hp, lead_attack, lead_defense, lead_spatk, lead_spdef, lead_speed])
-power_gauge = create_power_gauge(power_level)
+lead_bst = sum([lead_hp, lead_attack, lead_defense, lead_spatk, lead_spdef, lead_speed])
 
 # Create team visual
 team_visual = "\n".join([f"  [{i+1}] {p}" for i, p in enumerate(chosen['team'])])
@@ -495,13 +680,14 @@ fastest_member = (None, {'stats': {'speed': 0}})
 heaviest_member = (None, {'weight': 0})
 bst_member = (None, 0)
 total_speed = 0
+team_bst_total = 0
 
 for pokemon_name in chosen['team']:
     pdata = pokemon_data.get(pokemon_name, {})
     stats = pdata.get('stats', {})
     types = pdata.get('types', ['normal'])
     abilities = pdata.get('abilities', ['Unknown'])
-    moves = pdata.get('moves', ['Tackle'])[:4]
+    signature_moves = pdata.get('signature_moves') or []
     sprite_html = get_pokemon_sprite_html(pdata.get('sprite'), pokemon_name, 160)
 
     for t in types:
@@ -519,12 +705,30 @@ for pokemon_name in chosen['team']:
     if bst > bst_member[1]:
         bst_member = (pokemon_name, bst)
 
+    team_bst_total += bst
+
     total_speed += speed_value
 
     top_stat_key = max(stats, key=stats.get) if stats else 'hp'
     top_stat_value = stats.get(top_stat_key, 0)
     top_stat_label = top_stat_key.replace('-', ' ').title()
-    move_lines = "\n".join([f"  - {move}" for move in moves]) if moves else "  - (pending scouting)"
+    role = ROLE_BY_STAT.get(top_stat_key, 'Balanced Command Core')
+
+    formatted_moves = []
+    for move in signature_moves:
+        move_type = move.get('type', 'normal')
+        emoji = get_type_emoji(move_type)
+        power = move.get('power', 0)
+        if power:
+            power_text = f"{power} BP"
+        else:
+            power_text = "Utility"
+        damage_class = move.get('damage_class', 'status').replace('-', ' ').title()
+        formatted_moves.append(
+            f"  - {emoji} {move.get('name', 'Unknown')} · {damage_class} · {power_text}"
+        )
+
+    move_lines = "\n".join(formatted_moves) if formatted_moves else "  - (pending scouting)"
 
     dossier = (
         f"<details open>\n"
@@ -534,11 +738,14 @@ for pokemon_name in chosen['team']:
         f"<div align=\"center\">\n{sprite_html}\n</div>\n\n"
         f"- **Base Stat Total:** {bst}\n"
         f"- **Top Stat:** {top_stat_label} ({top_stat_value})\n"
+        f"- **Battle Role:** {role}\n"
         f"- **Abilities:** {', '.join(abilities)}\n"
         f"- **Signature Moves:**\n{move_lines}\n"
         f"</details>"
     )
     team_dossiers.append(dossier)
+
+    pokemon_data[pokemon_name]['role'] = role
 
 unique_type_count = len(team_type_counts)
 average_speed = (total_speed / len(chosen['team'])) if chosen['team'] else 0
@@ -548,6 +755,10 @@ heaviest_name = heaviest_member[0] or 'Unknown'
 heaviest_weight = heaviest_member[1].get('weight', 0) if heaviest_member[0] else 0
 highest_bst_name = bst_member[0] or 'Unknown'
 highest_bst_value = bst_member[1]
+
+max_team_bst = max(1, len(chosen['team'])) * 720
+power_level = team_bst_total
+power_gauge = create_power_gauge(power_level, max_value=max_team_bst)
 
 coverage_lines = []
 for t_name, count in sorted(team_type_counts.items(), key=lambda item: (-item[1], item[0])):
@@ -586,13 +797,6 @@ bonkers_taglines = [
 ]
 bonkers_tagline = random.choice(bonkers_taglines)
 
-lead_stat_roles = {
-    'attack': 'Hyper-Offense Spearhead',
-    'special-attack': 'Arcane Artillery Node',
-    'defense': 'Fortified Bulwark Unit',
-    'special-defense': 'Psi-Shield Anchor',
-    'speed': 'Supersonic Initiator'
-}
 lead_stat_map = {
     'attack': lead_attack,
     'special-attack': lead_spatk,
@@ -601,12 +805,29 @@ lead_stat_map = {
     'speed': lead_speed
 }
 lead_dominant_stat = max(lead_stat_map, key=lead_stat_map.get)
-lead_role = lead_stat_roles.get(lead_dominant_stat, 'Balanced Command Core')
+lead_role = ROLE_BY_STAT.get(lead_dominant_stat, 'Balanced Command Core')
 
 analytics_blurb = (
     f"{lead_name} fronts a {len(chosen['team'])}-unit strike team spanning {unique_type_count} unique typings "
     f"with an average Speed index of {average_speed:.1f}. Fastest scout: {fastest_name} ({fastest_speed} Speed)."
 )
+
+lead_signature_moves = lead_data.get('signature_moves') or []
+lead_move_lines = []
+for move in lead_signature_moves:
+    move_type = (move.get('type') or 'unknown').upper()
+    emoji = get_type_emoji(move.get('type', 'normal'))
+    power_value = move.get('power', 0)
+    power_text = f"{power_value} BP" if power_value else "Utility"
+    damage_class = move.get('damage_class', 'status').replace('-', ' ').title()
+    lead_move_lines.append(
+        f"- **{move.get('name', 'Unknown')}** · {emoji} {move_type} · {damage_class} · {power_text}"
+    )
+
+if not lead_move_lines:
+    lead_move_lines = ["- Recon uplink pending—signature arsenal unavailable."]
+
+lead_moves_block = "\n".join(lead_move_lines)
 
 # Replace template placeholders
 replacements = {
@@ -635,7 +856,7 @@ replacements = {
     '{LEAD_SPATK_BAR}': create_stat_bar(lead_spatk),
     '{LEAD_SPDEF_BAR}': create_stat_bar(lead_spdef),
     '{LEAD_SPEED_BAR}': create_stat_bar(lead_speed),
-    '{LEAD_MOVES}': '\n'.join([f"- **{move}**" for move in lead_data.get('moves', ['Tackle'])[:4]]),
+    '{LEAD_MOVES}': lead_moves_block,
     '{POWER_LEVEL}': str(power_level),
     '{POWER_LEVEL_BAR}': power_gauge,
     '{LEAD_ROLE}': lead_role,
@@ -677,10 +898,11 @@ replacements = {
 for i, pokemon_name in enumerate(chosen['team'], 1):
     pdata = pokemon_data.get(pokemon_name, {})
     types_str = ' '.join([get_type_emoji(t) for t in pdata.get('types', ['normal'])])
-    
+
     replacements[f'{{POKEMON_{i}_NAME}}'] = pokemon_name
     replacements[f'{{POKEMON_{i}_TYPES}}'] = types_str
     replacements[f'{{POKEMON_{i}_ASCII}}'] = get_pokemon_sprite_html(pdata.get('sprite'), pokemon_name, 120)
+    replacements[f'{{POKEMON_{i}_ROLE}}'] = pdata.get('role', 'Adaptive Operative')
 
 legendary_mode = encounter_rarity == "Legendary Sighting"
 display_name = random_choice.upper()
