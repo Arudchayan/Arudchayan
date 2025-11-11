@@ -7,7 +7,7 @@ import re
 import urllib.request
 import urllib.error
 import time
-from typing import Optional
+from typing import Dict, List, Optional, Set
 
 ROYAL = "#6A0DAD"
 
@@ -30,7 +30,7 @@ MOVE_METHOD_PRIORITY = {
     "egg": 3,
 }
 
-MOVE_CACHE: dict[str, dict] = {}
+MOVE_CACHE: Dict[str, dict] = {}
 
 ROLE_BY_STAT = {
     'attack': 'Hyper-Offense Spearhead',
@@ -272,11 +272,11 @@ def fetch_move_metadata(move_url: str) -> dict:
     return metadata
 
 
-def select_signature_moves(api_moves: list, pokemon_types: list[str]) -> list[dict]:
+def select_signature_moves(api_moves: list, pokemon_types: List[str]) -> List[dict]:
     """Return a curated set of signature moves for display."""
 
     scored_moves = []
-    seen_moves: set[str] = set()
+    seen_moves: Set[str] = set()
 
     for entry in api_moves:
         move_name = entry.get("move", {}).get("name")
@@ -323,7 +323,7 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str]) -> list[di
     scored_moves.sort(key=lambda item: item[:4])
     trimmed_moves = scored_moves[:36]
 
-    candidates: list[dict] = []
+    candidates: List[dict] = []
     for _, _, _, move_name, move_url, best_detail in trimmed_moves:
         metadata = fetch_move_metadata(move_url)
         move_type = metadata.get("type")
