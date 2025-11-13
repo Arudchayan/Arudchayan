@@ -30,6 +30,58 @@ MOVE_METHOD_PRIORITY = {
     "egg": 3,
 }
 
+# Competitive move priority - these moves should be heavily favored
+COMPETITIVE_PRIORITY_MOVES = {
+    # Entry Hazards
+    'stealth-rock', 'spikes', 'toxic-spikes', 'sticky-web',
+    # Hazard Removal
+    'rapid-spin', 'defog',
+    # Status Moves
+    'will-o-wisp', 'thunder-wave', 'toxic', 'spore', 'sleep-powder',
+    # Utility
+    'protect', 'detect', 'substitute', 'roost', 'recover', 'synthesis', 'moonlight',
+    'u-turn', 'volt-switch', 'flip-turn', 'teleport',
+    # Priority
+    'aqua-jet', 'mach-punch', 'bullet-punch', 'ice-shard', 'shadow-sneak',
+    'accelerock', 'sucker-punch', 'extreme-speed',
+    # Setup
+    'swords-dance', 'dragon-dance', 'nasty-plot', 'calm-mind', 'bulk-up',
+    'quiver-dance', 'shell-smash', 'shift-gear',
+    # Signature/Powerful
+    'earthquake', 'close-combat', 'flare-blitz', 'hydro-pump', 'ice-beam',
+    'thunderbolt', 'psychic', 'shadow-ball', 'dragon-claw', 'dragon-pulse',
+    'outrage', 'draco-meteor', 'flamethrower', 'surf', 'scald',
+}
+
+# Moves to avoid (competitively terrible)
+BAD_MOVES = {
+    'constrict', 'lick', 'pound', 'scratch', 'tackle', 'confusion',
+    'absorb', 'mega-punch', 'mega-kick', 'sonic-boom', 'dragon-rage',
+    'fury-attack', 'comet-punch', 'barrage', 'vice-grip',
+}
+
+# Competitive ability preferences (prefer these over others)
+COMPETITIVE_ABILITIES = {
+    'metagross': ['tough-claws', 'clear-body'],
+    'gengar': ['cursed-body', 'levitate'],
+    'rayquaza': ['air-lock'],
+    'zeraora': ['volt-absorb'],
+    'noivern': ['infiltrator', 'frisk'],
+    'decidueye': ['long-reach', 'overgrow'],
+}
+
+# Competitive nature selection
+PHYSICAL_NATURES = ['adamant', 'jolly', 'brave', 'impish', 'careful']
+SPECIAL_NATURES = ['modest', 'timid', 'quiet', 'bold', 'calm']
+MIXED_NATURES = ['hasty', 'naive', 'lonely', 'mild']
+
+# Competitive items by role
+COMPETITIVE_ITEMS = {
+    'offensive': ['Choice Band', 'Choice Specs', 'Life Orb', 'Choice Scarf', 'Expert Belt'],
+    'defensive': ['Leftovers', 'Heavy-Duty Boots', 'Rocky Helmet', 'Assault Vest'],
+    'utility': ['Focus Sash', 'Mental Herb', 'Light Clay', 'Eject Button'],
+}
+
 MOVE_CACHE: dict[str, dict] = {}
 
 ROLE_BY_STAT = {
@@ -272,16 +324,25 @@ def fetch_move_metadata(move_url: str) -> dict:
     return metadata
 
 
-def select_signature_moves(api_moves: list, pokemon_types: list[str]) -> list[dict]:
-    """Return a curated set of signature moves for display."""
+def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_stats: dict) -> list[dict]:
+    """Return a curated set of competitive moves for display."""
 
     scored_moves = []
     seen_moves: set[str] = set()
+
+    # Determine if Pokemon is physical or special attacker
+    attack = pokemon_stats.get('attack', 0)
+    sp_attack = pokemon_stats.get('special-attack', 0)
+    is_physical = attack > sp_attack
 
     for entry in api_moves:
         move_name = entry.get("move", {}).get("name")
         move_url = entry.get("move", {}).get("url")
         if not move_name or not move_url or move_name in seen_moves:
+            continue
+
+        # Skip terrible moves
+        if move_name in BAD_MOVES:
             continue
 
         version_details = entry.get("version_group_details", [])
@@ -321,7 +382,7 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str]) -> list[di
         return []
 
     scored_moves.sort(key=lambda item: item[:4])
-    trimmed_moves = scored_moves[:36]
+    trimmed_moves = scored_moves[:50]  # Increased pool for better selection
 
     candidates: list[dict] = []
     for _, _, _, move_name, move_url, best_detail in trimmed_moves:
@@ -333,6 +394,7 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str]) -> list[di
         candidates.append(
             {
                 "name": move_name.replace("-", " ").title(),
+                "raw_name": move_name,
                 "type": move_type,
                 "power": power,
                 "damage_class": damage_class,
@@ -345,20 +407,212 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str]) -> list[di
         return []
 
     def move_sort_key(item: dict) -> tuple:
-        stab = 1 if item.get("type") in pokemon_types else 0
-        damage_bias = 0 if item.get("damage_class") != "status" else 1
+        move_raw = item.get("raw_name", "")
+        
+        # Highest priority: competitive utility moves
+        is_priority = 0 if move_raw in COMPETITIVE_PRIORITY_MOVES else 1
+        
+        # STAB bonus
+        stab = 0 if item.get("type") in pokemon_types else 1
+        
+        # Match damage class to Pokemon's attacking stat
+        damage_class = item.get("damage_class", "status")
+        class_mismatch = 0
+        if damage_class == "physical" and not is_physical:
+            class_mismatch = 1
+        elif damage_class == "special" and is_physical:
+            class_mismatch = 1
+        
+        # Status moves are valuable
+        damage_bias = 0 if damage_class == "status" else 1
+        
         method_bias = MOVE_METHOD_PRIORITY.get(item.get("method"), 99)
+        
         return (
-            -stab,
-            damage_bias,
-            method_bias,
-            -item.get("power", 0),
+            is_priority,        # Competitive moves first
+            class_mismatch,     # Match attack stat
+            -stab,              # STAB preferred
+            damage_bias,        # Include status moves
+            method_bias,        # Learn method
+            -item.get("power", 0),  # Higher power
             -item.get("level", 0),
             item.get("name", ""),
         )
 
     candidates.sort(key=move_sort_key)
     return candidates[:4]
+
+
+def select_competitive_nature(stats: dict) -> str:
+    """Select optimal nature based on Pokemon's stat distribution."""
+    if not stats:
+        return 'Serious'
+    
+    attack = stats.get('attack', 0)
+    sp_attack = stats.get('special-attack', 0)
+    defense = stats.get('defense', 0)
+    sp_defense = stats.get('special-defense', 0)
+    speed = stats.get('speed', 0)
+    hp = stats.get('hp', 0)
+    
+    # Determine primary attacking stat
+    is_physical = attack > sp_attack
+    is_special = sp_attack > attack
+    is_mixed = abs(attack - sp_attack) < 20
+    
+    # Fast physical attacker
+    if is_physical and speed >= 100:
+        return 'Jolly'  # +Speed, -SpAtk
+    # Slow physical attacker
+    elif is_physical and speed < 100:
+        return 'Adamant'  # +Attack, -SpAtk
+    # Fast special attacker
+    elif is_special and speed >= 100:
+        return 'Timid'  # +Speed, -Attack
+    # Slow special attacker
+    elif is_special and speed < 100:
+        return 'Modest'  # +SpAtk, -Attack
+    # Defensive physical
+    elif defense > sp_defense and speed < 90:
+        return 'Impish'  # +Defense, -SpAtk
+    # Defensive special
+    elif sp_defense > defense and speed < 90:
+        return 'Careful'  # +SpDef, -SpAtk
+    # Mixed attacker
+    elif is_mixed:
+        return 'Hasty' if speed >= 100 else 'Mild'
+    
+    return 'Serious'  # Neutral
+
+
+def select_competitive_ability(pokemon_name: str, abilities: list[str]) -> str:
+    """Select best competitive ability for a Pokemon."""
+    if not abilities:
+        return 'Unknown'
+    
+    # Normalize pokemon name for lookup
+    normalized_name = pokemon_name.lower().replace(' ', '-')
+    base_name = normalized_name.replace('mega-', '').replace('-mega', '')
+    
+    # Check if we have preferred abilities for this Pokemon
+    if base_name in COMPETITIVE_ABILITIES:
+        preferred = COMPETITIVE_ABILITIES[base_name]
+        for ability in abilities:
+            normalized_ability = ability.lower().replace(' ', '-')
+            if normalized_ability in preferred:
+                return ability
+    
+    # Default to first ability
+    return abilities[0]
+
+
+def select_competitive_item(stats: dict, role: str) -> str:
+    """Select optimal held item based on Pokemon's role."""
+    if not stats:
+        return 'Leftovers'
+    
+    attack = stats.get('attack', 0)
+    sp_attack = stats.get('special-attack', 0)
+    defense = stats.get('defense', 0)
+    sp_defense = stats.get('special-defense', 0)
+    speed = stats.get('speed', 0)
+    hp = stats.get('hp', 0)
+    
+    # High speed offensive
+    if speed >= 110 and (attack >= 120 or sp_attack >= 120):
+        return random.choice(['Life Orb', 'Choice Specs' if sp_attack > attack else 'Choice Band'])
+    
+    # Medium speed offensive
+    elif speed >= 80 and (attack >= 100 or sp_attack >= 100):
+        return random.choice(['Choice Scarf', 'Expert Belt', 'Life Orb'])
+    
+    # Defensive/tank
+    elif (defense + sp_defense) >= 180:
+        return random.choice(['Leftovers', 'Heavy-Duty Boots', 'Assault Vest'])
+    
+    # Glass cannon
+    elif hp < 80 and (attack >= 130 or sp_attack >= 130):
+        return random.choice(['Focus Sash', 'Life Orb'])
+    
+    # Balanced
+    else:
+        return random.choice(['Leftovers', 'Heavy-Duty Boots', 'Life Orb'])
+
+
+def analyze_team_weaknesses(team_types: dict) -> dict:
+    """Analyze team's defensive weaknesses based on type chart."""
+    # Simplified type chart - defensive matchups
+    type_chart = {
+        'normal': {'fighting': 2},
+        'fire': {'water': 2, 'ground': 2, 'rock': 2},
+        'water': {'electric': 2, 'grass': 2},
+        'electric': {'ground': 2},
+        'grass': {'fire': 2, 'ice': 2, 'poison': 2, 'flying': 2, 'bug': 2},
+        'ice': {'fire': 2, 'fighting': 2, 'rock': 2, 'steel': 2},
+        'fighting': {'flying': 2, 'psychic': 2, 'fairy': 2},
+        'poison': {'ground': 2, 'psychic': 2},
+        'ground': {'water': 2, 'grass': 2, 'ice': 2},
+        'flying': {'electric': 2, 'ice': 2, 'rock': 2},
+        'psychic': {'bug': 2, 'ghost': 2, 'dark': 2},
+        'bug': {'fire': 2, 'flying': 2, 'rock': 2},
+        'rock': {'water': 2, 'grass': 2, 'fighting': 2, 'ground': 2, 'steel': 2},
+        'ghost': {'ghost': 2, 'dark': 2},
+        'dragon': {'ice': 2, 'dragon': 2, 'fairy': 2},
+        'dark': {'fighting': 2, 'bug': 2, 'fairy': 2},
+        'steel': {'fire': 2, 'fighting': 2, 'ground': 2},
+        'fairy': {'poison': 2, 'steel': 2},
+    }
+    
+    weakness_count = {}
+    
+    # Count how many Pokemon are weak to each type
+    for pokemon_types in team_types.values():
+        for ptype in pokemon_types:
+            if ptype in type_chart:
+                for weakness_type, multiplier in type_chart[ptype].items():
+                    weakness_count[weakness_type] = weakness_count.get(weakness_type, 0) + 1
+    
+    # Find critical weaknesses (3+ Pokemon weak)
+    critical_weaknesses = {t: count for t, count in weakness_count.items() if count >= 3}
+    moderate_weaknesses = {t: count for t, count in weakness_count.items() if count == 2}
+    
+    return {
+        'critical': critical_weaknesses,
+        'moderate': moderate_weaknesses,
+        'all': weakness_count
+    }
+
+
+def calculate_evs(stats: dict, role: str) -> dict:
+    """Calculate optimal EV spread based on stats and role."""
+    if not stats:
+        return {'HP': 0, 'Atk': 0, 'Def': 0, 'SpA': 0, 'SpD': 0, 'Spe': 0}
+    
+    attack = stats.get('attack', 0)
+    sp_attack = stats.get('special-attack', 0)
+    speed = stats.get('speed', 0)
+    defense = stats.get('defense', 0)
+    sp_defense = stats.get('special-defense', 0)
+    
+    is_physical = attack > sp_attack
+    is_fast = speed >= 100
+    
+    # Offensive spread
+    if is_physical and is_fast:
+        return {'HP': 0, 'Atk': 252, 'Def': 4, 'SpA': 0, 'SpD': 0, 'Spe': 252}
+    elif is_physical and not is_fast:
+        return {'HP': 252, 'Atk': 252, 'Def': 4, 'SpA': 0, 'SpD': 0, 'Spe': 0}
+    elif not is_physical and is_fast:
+        return {'HP': 0, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 252}
+    elif not is_physical and not is_fast:
+        return {'HP': 252, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 0}
+    
+    # Defensive spread
+    if defense > sp_defense:
+        return {'HP': 252, 'Atk': 0, 'Def': 252, 'SpA': 0, 'SpD': 4, 'Spe': 0}
+    else:
+        return {'HP': 252, 'Atk': 0, 'Def': 4, 'SpA': 0, 'SpD': 252, 'Spe': 0}
+
 
 def fetch_pokemon_data(pokemon_name: str, original_name: Optional[str] = None):
     """Fetch Pokémon data from PokéAPI"""
@@ -391,15 +645,42 @@ def fetch_pokemon_data(pokemon_name: str, original_name: Optional[str] = None):
         shiny_sprite = sprites.get('front_shiny')
         
         pokemon_types = [t['type']['name'] for t in data['types']]
-        signature_moves = select_signature_moves(data['moves'], pokemon_types)
+        stats = {s['stat']['name']: s['base_stat'] for s in data['stats']}
+        signature_moves = select_signature_moves(data['moves'], pokemon_types, stats)
+        
+        # Get all abilities
+        all_abilities = [a['ability']['name'].replace('-', ' ').title() for a in data['abilities']]
+        
+        # Select competitive ability
+        best_ability = select_competitive_ability(original_name or data['name'], all_abilities)
+        
+        # Select competitive nature
+        competitive_nature = select_competitive_nature(stats)
+        
+        # Determine role
+        if stats:
+            top_stat_key = max(stats, key=stats.get)
+            role = ROLE_BY_STAT.get(top_stat_key, 'Balanced Command Core')
+        else:
+            role = 'Balanced Command Core'
+        
+        # Select item
+        competitive_item = select_competitive_item(stats, role)
+        
+        # Calculate EVs
+        ev_spread = calculate_evs(stats, role)
 
         return {
             'name': (original_name or data['name']).title(),
             'types': pokemon_types,
             'height': data['height'] / 10,  # Convert to meters
             'weight': data['weight'] / 10,  # Convert to kg
-            'stats': {s['stat']['name']: s['base_stat'] for s in data['stats']},
-            'abilities': [a['ability']['name'].replace('-', ' ').title() for a in data['abilities']],
+            'stats': stats,
+            'abilities': all_abilities,
+            'best_ability': best_ability,
+            'nature': competitive_nature,
+            'item': competitive_item,
+            'evs': ev_spread,
             'signature_moves': signature_moves,
             'flavor_text': get_english_flavor_text(species_data),
             'sprite': sprite_url,
@@ -643,8 +924,10 @@ lead_data = pokemon_data.get(lead_name, {})
 
 # Prepare lead Pokémon info
 lead_types = ' '.join([get_type_emoji(t) + t.upper() for t in lead_data.get('types', ['normal'])])
-lead_ability = lead_data.get('abilities', ['Unknown'])[0]
-lead_nature = random.choice(['Adamant', 'Modest', 'Jolly', 'Timid', 'Bold', 'Calm', 'Careful', 'Hasty'])
+lead_ability = lead_data.get('best_ability', lead_data.get('abilities', ['Unknown'])[0])
+lead_nature = lead_data.get('nature', 'Serious')
+lead_item = lead_data.get('item', 'Leftovers')
+lead_evs = lead_data.get('evs', {})
 lead_stats = lead_data.get('stats', {})
 
 # Get lead emoji
@@ -675,6 +958,7 @@ archetype_section = (
 
 # Compute holistic team analytics
 team_type_counts = {}
+team_types_by_pokemon = {}
 team_dossiers = []
 fastest_member = (None, {'stats': {'speed': 0}})
 heaviest_member = (None, {'weight': 0})
@@ -690,6 +974,7 @@ for pokemon_name in chosen['team']:
     signature_moves = pdata.get('signature_moves') or []
     sprite_html = get_pokemon_sprite_html(pdata.get('sprite'), pokemon_name, 160)
 
+    team_types_by_pokemon[pokemon_name] = types
     for t in types:
         team_type_counts[t] = team_type_counts.get(t, 0) + 1
 
@@ -729,6 +1014,19 @@ for pokemon_name in chosen['team']:
         )
 
     move_lines = "\n".join(formatted_moves) if formatted_moves else "  - (pending scouting)"
+    
+    # Get competitive info
+    best_ability = pdata.get('best_ability', abilities[0] if abilities else 'Unknown')
+    nature = pdata.get('nature', 'Serious')
+    item = pdata.get('item', 'Leftovers')
+    evs = pdata.get('evs', {})
+    
+    # Format EV spread
+    ev_parts = []
+    for stat_name, ev_value in evs.items():
+        if ev_value > 0:
+            ev_parts.append(f"{ev_value} {stat_name}")
+    ev_spread_text = " / ".join(ev_parts) if ev_parts else "0 / 0 / 0 / 0 / 0 / 0"
 
     dossier = (
         f"<details open>\n"
@@ -739,7 +1037,10 @@ for pokemon_name in chosen['team']:
         f"- **Base Stat Total:** {bst}\n"
         f"- **Top Stat:** {top_stat_label} ({top_stat_value})\n"
         f"- **Battle Role:** {role}\n"
-        f"- **Abilities:** {', '.join(abilities)}\n"
+        f"- **Ability:** {best_ability}\n"
+        f"- **Nature:** {nature}\n"
+        f"- **Held Item:** {item}\n"
+        f"- **EV Spread:** {ev_spread_text}\n"
         f"- **Signature Moves:**\n{move_lines}\n"
         f"</details>"
     )
@@ -764,6 +1065,27 @@ coverage_lines = []
 for t_name, count in sorted(team_type_counts.items(), key=lambda item: (-item[1], item[0])):
     coverage_lines.append(f"- {get_type_emoji(t_name)} **{t_name.upper()}** ×{count}")
 type_coverage_block = "\n".join(coverage_lines) if coverage_lines else "- Coverage telemetry unavailable"
+
+# Analyze team weaknesses
+weakness_analysis = analyze_team_weaknesses(team_types_by_pokemon)
+critical_weaknesses = weakness_analysis['critical']
+moderate_weaknesses = weakness_analysis['moderate']
+
+weakness_lines = []
+if critical_weaknesses:
+    weakness_lines.append("### ⚠️ Critical Weaknesses (3+ Pokemon)")
+    for wtype, count in sorted(critical_weaknesses.items(), key=lambda x: -x[1]):
+        weakness_lines.append(f"- {get_type_emoji(wtype)} **{wtype.upper()}** threatens {count} team members")
+
+if moderate_weaknesses:
+    weakness_lines.append("\n### ⚡ Moderate Weaknesses (2 Pokemon)")
+    for wtype, count in sorted(moderate_weaknesses.items(), key=lambda x: -x[1]):
+        weakness_lines.append(f"- {get_type_emoji(wtype)} **{wtype.upper()}** hits {count} team members")
+
+if not weakness_lines:
+    weakness_lines.append("✅ No critical type weaknesses detected — balanced defensive coverage.")
+
+weakness_block = "\n".join(weakness_lines)
 
 # Hyper-dynamic analytics and presentation flair
 team_size = len(chosen['team']) if chosen.get('team') else 0
@@ -842,6 +1164,8 @@ replacements = {
     '{LEAD_TYPES}': lead_types,
     '{LEAD_ABILITY}': lead_ability,
     '{LEAD_NATURE}': lead_nature,
+    '{LEAD_ITEM}': lead_item,
+    '{LEAD_EVS}': ' / '.join([f"{v} {k}" for k, v in lead_evs.items() if v > 0]) if lead_evs else '0/0/0/0/0/0',
     '{LEAD_HEIGHT}': f"{lead_data.get('height', 1.0):.1f}m",
     '{LEAD_WEIGHT}': f"{lead_data.get('weight', 10.0):.1f}kg",
     '{LEAD_HP}': str(lead_hp),
@@ -884,6 +1208,7 @@ replacements = {
     '{HIGHEST_BST}': str(highest_bst_value),
     '{TEAM_DETAIL_BLOCK}': '\n\n'.join(team_dossiers) if team_dossiers else '- No squad dossiers available.',
     '{TYPE_COVERAGE_BLOCK}': type_coverage_block,
+    '{WEAKNESS_ANALYSIS}': weakness_block,
     '{SYNERGY_METER}': synergy_meter,
     '{SPEED_PULSE}': speed_pulse,
     '{BST_OVERDRIVE}': bst_overdrive,
