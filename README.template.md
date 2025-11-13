@@ -36,8 +36,10 @@
 ### Lead Strategy Module
 
 **Primary Types:** {LEAD_TYPES}
-**Ability Channel:** {LEAD_ABILITY}
-**Nature Alignment:** {LEAD_NATURE}
+**Ability:** {LEAD_ABILITY}
+**Nature:** {LEAD_NATURE}
+**Held Item:** {LEAD_ITEM}
+**EV Spread:** {LEAD_EVS}
 **Physical Specs:** {LEAD_HEIGHT} · {LEAD_WEIGHT}
 
 #### Stat Telemetry
@@ -105,6 +107,12 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 ## 🧪 Type Coverage Broadcast
 
 {TYPE_COVERAGE_BLOCK}
+
+---
+
+## 🛡️ Defensive Analysis
+
+{WEAKNESS_ANALYSIS}
 
 ---
 
