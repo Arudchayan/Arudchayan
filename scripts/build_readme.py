@@ -10,11 +10,28 @@ import time
 import math
 from typing import Optional, List, Dict, Tuple
 
-# Import the SVG generator (assuming it's in the same directory or path)
+# === 1. IMPORTS FOR NEW MODULES ===
 try:
     import svg_generator
 except ImportError:
     svg_generator = None
+
+try:
+    import github_metrics
+except ImportError:
+    github_metrics = None
+
+try:
+    import banner_generator
+except ImportError:
+    banner_generator = None
+
+try:
+    import coach
+except ImportError:
+    coach = None
+
+# ==================================
 
 ROYAL = "#6A0DAD"
 
@@ -655,7 +672,13 @@ def pick_index(n: int, day_seed: int) -> int:
     if n == 0: return 0
     return day_seed % n
 
-def roll_random_encounter():
+def roll_random_encounter(days_dry):
+    # === 3. SHINY PITY TIMER LOGIC ===
+    base_rate = SHINY_TRIGGER_RATE # 1/48
+    # Boost by 0.5% per dry day
+    bonus = days_dry * 0.005
+    trigger_rate = base_rate + bonus
+
     legendary_cutoff = 0.12
     roll = random.random()
     if roll < legendary_cutoff:
@@ -667,9 +690,13 @@ def roll_random_encounter():
         rarity = "Wild Encounter"
         callout = "Routine scouting ping—deploy capture drones at your discretion."
     species = random.choice(pool)
-    is_shiny = random.random() < SHINY_TRIGGER_RATE
+
+    shiny_roll = random.random()
+    is_shiny = shiny_roll < trigger_rate
+
     if is_shiny: callout += " ✨ Shiny trigger tripped!"
-    return species, rarity, callout, is_shiny
+
+    return species, rarity, callout, is_shiny, trigger_rate
 
 def describe_target(is_shiny: bool, legendary_mode: bool) -> str:
     if is_shiny: return "shimmering anomaly"
@@ -722,6 +749,16 @@ def generate_branching_paths(species: str, pokemon_info: Optional[dict], is_shin
 with open(os.path.join(root, "data", "archetypes.json")) as f:
     arc = json.load(f)
 
+# === 2. FETCH GENETICS STATS ===
+genetics_data = {}
+genetics_bonuses = {}
+if github_metrics:
+    genetics_data = github_metrics.get_github_stats()
+    genetics_bonuses = github_metrics.calculate_genetic_bonuses(genetics_data)
+    print(f"🧬 Genetics Loaded: {genetics_bonuses.get('desc')}")
+else:
+    genetics_bonuses = {'level': 50, 'attack_bonus': 0, 'defense_bonus': 0, 'sp_def_bonus': 0, 'desc': 'Standard Training'}
+
 now_utc = datetime.datetime.now(datetime.UTC)
 day_number = now_utc.date().toordinal()
 idx = pick_index(len(arc), day_number)
@@ -735,12 +772,15 @@ print(f"🎯 Building README for archetype: {chosen['title']}")
 print("\n🔍 Fetching Pokémon data from PokéAPI...")
 pokemon_data = {}
 team_list_data = [] # Store data for features
+sprite_urls = [] # For banner
+
 for pokemon_name in chosen['team']:
     print(f"  📡 Fetching {pokemon_name}...")
     data = fetch_pokemon_data(pokemon_name, chosen, original_name=pokemon_name)
     if data:
         pokemon_data[pokemon_name] = data
         team_list_data.append(data)
+        sprite_urls.append(data.get('sprite'))
     else:
         # Fallback
         fallback = {
@@ -756,6 +796,7 @@ for pokemon_name in chosen['team']:
         }
         pokemon_data[pokemon_name] = fallback
         team_list_data.append(fallback)
+        sprite_urls.append(None)
 
 # Advanced Features Generation
 weather = WeatherSystem.get_daily_weather(day_number)
@@ -763,13 +804,47 @@ quest = QuestGenerator.get_daily_quest(day_number)
 pokepaste_link = PokePasteGenerator.generate_paste(team_list_data)
 battle_log = BattleSimulator.simulate_battle(chosen['title'], "Blue", chosen['lead'])
 
-# Random Encounter
-random_choice, encounter_rarity, encounter_callout, encounter_is_shiny = roll_random_encounter()
+# === 4. BANNER GENERATION ===
+if banner_generator:
+    print("🖼️ Generating Team Banner...")
+    banner_generator.generate_team_banner(sprite_urls, weather['name'])
+
+# === 5. SHINY HUNT LOGIC ===
+trainer_history = load_trainer_history()
+shiny_hunt = trainer_history.get("shiny_hunt", {"encounters_since_last": 0, "last_found": None})
+days_dry = shiny_hunt.get("encounters_since_last", 0)
+
+random_choice, encounter_rarity, encounter_callout, encounter_is_shiny, trigger_rate = roll_random_encounter(days_dry)
+
+# Update History
+if encounter_is_shiny:
+    shiny_hunt["encounters_since_last"] = 0
+    shiny_hunt["last_found"] = now_utc.strftime("%Y-%m-%d")
+    print("✨ SHINY FOUND! Resetting counter.")
+else:
+    shiny_hunt["encounters_since_last"] = days_dry + 1
+
+trainer_history["shiny_hunt"] = shiny_hunt
+with open(os.path.join(root, "data", "trainer_history.json"), "w") as f:
+    json.dump(trainer_history, f, indent=2)
+
 print(f"\n✨ Random encounter: {random_choice.title()} [{encounter_rarity}]")
 random_pokemon_data = fetch_pokemon_data(random_choice, {}, original_name=random_choice)
 branching_paths_block = generate_branching_paths(
     random_choice, random_pokemon_data, encounter_is_shiny, encounter_rarity == "Legendary Sighting"
 )
+
+# === 6. GYM LEADER CHALLENGERS ===
+challenger_text = "No recent challengers recorded."
+challenger_path = os.path.join(root, "data", "challengers.json")
+if os.path.exists(challenger_path):
+    with open(challenger_path) as f:
+        challengers = json.load(f)
+        if challengers:
+            rows = ["| Date | Challenger | Team | Result |", "| --- | --- | --- | --- |"]
+            for c in challengers[:5]: # Top 5
+                rows.append(f"| {c['date']} | {c['challenger']} | {', '.join(c['team'])} | {c['result']} ({c['winner']}) |")
+            challenger_text = "\n".join(rows)
 
 # Load template
 with open(os.path.join(root, "README.template.md")) as f:
@@ -779,6 +854,12 @@ with open(os.path.join(root, "README.template.md")) as f:
 lead_name = chosen['lead']
 lead_data = pokemon_data.get(lead_name, {})
 lead_stats = lead_data.get('stats', {})
+
+# === 7. APPLY GENETICS STATS TO LEAD ===
+if lead_stats:
+    lead_stats['attack'] += genetics_bonuses['attack_bonus']
+    lead_stats['defense'] += genetics_bonuses['defense_bonus']
+    lead_stats['special-defense'] += genetics_bonuses['sp_def_bonus']
 
 team_type_counts = {}
 team_types_by_pokemon = {}
@@ -843,6 +924,15 @@ for pokemon_name in chosen['team']:
     )
     team_dossiers.append(dossier)
 
+# === 8. COACH'S ADVICE ===
+coach_tips = "Coach is offline."
+if coach:
+    coach_tips = coach.Coach.get_coach_advice(
+        lead_name,
+        lead_data.get('types', ['normal']),
+        lead_stats.get('speed', 90)
+    )
+
 # Replacements Dictionary
 replacements = {
     '{CURRENT_DATE}': now_utc.strftime("%Y-%m-%d %H:%M UTC"),
@@ -891,6 +981,11 @@ replacements = {
     '{QUEST_TEXT}': quest,
     '{BATTLE_LOG}': battle_log,
     '{POKEPASTE_LINK}': f"```\n{pokepaste_link}\n```",
+    '{GENETICS_LEVEL}': genetics_bonuses.get('level', '??'),
+    '{GENETICS_BONUS_DESC}': genetics_bonuses.get('desc', ''),
+    '{COACH_TIPS}': coach_tips,
+    '{CHALLENGER_LIST}': challenger_text,
+    '{SHINY_HUNT_STATUS}': f"Current Hunt: **{days_dry}** Days Dry. Odds: **{trigger_rate*100:.2f}%**",
 }
 
 # Lead Moves

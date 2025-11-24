@@ -2,8 +2,9 @@
 <h1 align="center">Arudchayan · BattleOps Command Center</h1>
 <p align="center"><em>{BONKERS_TAGLINE}</em></p>
 
+<!-- TEAM_BANNER_PLACEHOLDER -->
 <div align="center">
-{LEAD_ASCII}
+  <img src="assets/team_banner.png" width="100%" alt="Team Banner" />
 </div>
 
 ## 🧾 POKÉMON TRAINER PROFILE
@@ -14,6 +15,7 @@
 | Schedule Index | {DAY_NUMBER} |
 | Archetype | {ARCHETYPE_TITLE} |
 | Lead Operative | {LEAD_POKEMON} · {LEAD_ROLE} |
+| **Genetics Level** | **{GENETICS_LEVEL}** |
 | Power Core | {POWER_LEVEL} ({POWER_LEVEL_BAR}) |
 | Active Roster | {TEAM_LIST} |
 | Unique Typings | {UNIQUE_TYPE_COUNT} |
@@ -52,6 +54,8 @@
 **EV Spread:** {LEAD_EVS}
 **Physical Specs:** {LEAD_HEIGHT} · {LEAD_WEIGHT}
 
+> **Genetics Boost:** {GENETICS_BONUS_DESC}
+
 #### Stat Telemetry
 ```
 HP:     {LEAD_HP_BAR}  {LEAD_HP}
@@ -65,11 +69,10 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 #### Signature Arsenal
 {LEAD_MOVES}
 
-### ⚔️ Battle Formation HUD
+---
 
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; background:linear-gradient(135deg,#05040c,#16162b); padding:24px; border-radius:18px; border:1px solid rgba(138,110,255,0.4);">
-{TEAM_VISUAL}
-</div>
+## 🧠 Coach's Corner
+> **Coach's Analysis:** {COACH_TIPS}
 
 ---
 
@@ -105,7 +108,12 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 
 ---
 
-## 📋 BATTLE SIMULATION LOG
+## 🏟️ Recent Challengers (Gym Leader Mode)
+{CHALLENGER_LIST}
+
+---
+
+## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
 {BATTLE_LOG}
 ```
@@ -144,6 +152,8 @@ Copy this to import your team into Pokémon Showdown:
 
 </details>
 
+### ✨ Shiny Hunt Status
+{SHINY_HUNT_STATUS}
 {SHINY_TRIGGER_PANEL}
 
 ### 🔀 Click-to-Choose Battle Routes
