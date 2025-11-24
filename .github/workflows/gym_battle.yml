@@ -1,0 +1,52 @@
+name: 🏟️ Gym Battle Challenge
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  battle:
+    if: contains(github.event.issue.title, 'Challenge @Arudchayan')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: ⚔️ Run Battle Simulation
+        id: battle
+        run: |
+          # In a real scenario, we would parse the issue body for the challenger's team
+          # and call scripts/battle_engine.py
+          echo "Simulating battle..."
+          echo "result=WIN" >> $GITHUB_OUTPUT
+
+      - name: 💬 Post Result
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "⚔️ **Battle Accepted!**\n\n(Simulation logic placeholder)\n\n🏆 **Result:** Arudchayan Wins!"
+            })
+
+      - name: 🔒 Close Issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.update({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed'
+            })

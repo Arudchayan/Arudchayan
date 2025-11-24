@@ -23,6 +23,16 @@
 
 ---
 
+## ⚡ WEATHER REPORT: {WEATHER_EMOJI} {WEATHER_NAME}
+> **Field Condition:** {WEATHER_EFFECT}
+
+---
+
+## 📜 DAILY MISSION LOG
+### **Quest:** {QUEST_TEXT}
+
+---
+
 ## 🛡️ TEAM CONFIGURATION
 
 ### 🧭 Rotation Hologram
@@ -58,42 +68,7 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 ### ⚔️ Battle Formation HUD
 
 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; background:linear-gradient(135deg,#05040c,#16162b); padding:24px; border-radius:18px; border:1px solid rgba(138,110,255,0.4);">
-  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
-    <div>{POKEMON_1_ASCII}</div>
-    <p><strong>{POKEMON_1_NAME}</strong></p>
-    <p>{POKEMON_1_TYPES}</p>
-    <p><em>{POKEMON_1_ROLE}</em></p>
-  </div>
-  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
-    <div>{POKEMON_2_ASCII}</div>
-    <p><strong>{POKEMON_2_NAME}</strong></p>
-    <p>{POKEMON_2_TYPES}</p>
-    <p><em>{POKEMON_2_ROLE}</em></p>
-  </div>
-  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
-    <div>{POKEMON_3_ASCII}</div>
-    <p><strong>{POKEMON_3_NAME}</strong></p>
-    <p>{POKEMON_3_TYPES}</p>
-    <p><em>{POKEMON_3_ROLE}</em></p>
-  </div>
-  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
-    <div>{POKEMON_4_ASCII}</div>
-    <p><strong>{POKEMON_4_NAME}</strong></p>
-    <p>{POKEMON_4_TYPES}</p>
-    <p><em>{POKEMON_4_ROLE}</em></p>
-  </div>
-  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
-    <div>{POKEMON_5_ASCII}</div>
-    <p><strong>{POKEMON_5_NAME}</strong></p>
-    <p>{POKEMON_5_TYPES}</p>
-    <p><em>{POKEMON_5_ROLE}</em></p>
-  </div>
-  <div style="background:rgba(20,20,40,0.85); border:1px solid rgba(106,13,173,0.4); border-radius:14px; padding:16px; box-shadow:0 10px 25px rgba(0,0,0,0.35); text-align:center;">
-    <div>{POKEMON_6_ASCII}</div>
-    <p><strong>{POKEMON_6_NAME}</strong></p>
-    <p>{POKEMON_6_TYPES}</p>
-    <p><em>{POKEMON_6_ROLE}</em></p>
-  </div>
+{TEAM_VISUAL}
 </div>
 
 ---
@@ -130,6 +105,17 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 
 ---
 
+## 📋 BATTLE SIMULATION LOG
+```
+{BATTLE_LOG}
+```
+
+## 📥 POKÉPASTE EXPORT
+Copy this to import your team into Pokémon Showdown:
+{POKEPASTE_LINK}
+
+---
+
 ## ⚙️ Competitive Systems Matrix
 
 | Mechanic | Status | Notes |
@@ -137,15 +123,6 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 | Mega Evolution | {MEGA_VISUAL} | {MEGA_INFO} {MEGA_STONE_EMOJI} |
 | Z-Move | {ZMOVE_VISUAL} | {ZMOVE_INFO} {ZMOVE_EMOJI} |
 | Terastallization | {TERA_VISUAL} | {TERA_TYPE} {TERA_EMOJI} |
-
----
-
-## 🔭 Tactical Telemetry Highlights
-
-- 🚀 **Fastest Unit:** {FASTEST_MEMBER} clocks in at {FASTEST_SPEED} Speed.
-- 🛰️ **Heaviest Payload:** {HEAVIEST_MEMBER} weighs {HEAVIEST_WEIGHT}.
-- 🧠 **Highest Stat Engine:** {HIGHEST_BST_MEMBER} boasts a BST of {HIGHEST_BST}.
-- 🛡️ **Lead Doctrine:** {LEAD_POKEMON} operates as a {LEAD_ROLE}.
 
 ---
 
@@ -182,22 +159,6 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 | Daily build automation | Generates this README from live data and archetypes. | [`scripts/build_readme.py`](scripts/build_readme.py) |
 | Archetype rotation | Curated roster definitions for each featured team. | [`data/archetypes.json`](data/archetypes.json) |
 | Presentation layer | Markdown template for this command-center layout. | [`README.template.md`](README.template.md) |
-
-### Further Documentation
-
-- [Quickstart](QUICKSTART.md) – run the generator locally, update schedules, and troubleshoot API calls.
-- [Project Info](PROJECT_INFO.md) – deep dive into archetypes, workflow automation, and customization tips.
-- [Setup Guide](SETUP.md) – developer environment prerequisites and optional enhancements.
-- [Contributing](CONTRIBUTING.md) – guidelines for updating archetypes, templates, or workflows.
-
----
-
-## 🚀 Automation Control Room
-
-- **Workflow cadence:** Scheduled via GitHub Actions (`.github/workflows/update-readme.yml`) with manual dispatch support.
-- **API usage:** {API_CALLS} calls per build (lead + party + encounter) using cached fallbacks on failure.
-- **Version rotation:** Currently tracking Generation {GENERATION} sprites and mechanics metadata.
-- **Reliability:** Deterministic day index ensures every archetype receives equal exposure over time.
 
 ---
 
