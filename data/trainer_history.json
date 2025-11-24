@@ -8,5 +8,10 @@
   "pokedex_seen": 482,
   "pokedex_caught": 156,
   "start_date": "2024-01-01",
-  "last_active": "2025-11-13"
+  "last_active": "2025-11-13",
+  "shiny_hunt": {
+    "start_date": "2024-01-01",
+    "last_found": null,
+    "encounters_since_last": 44
+  }
 }

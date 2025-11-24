@@ -1,0 +1,55 @@
+name: Gym Leader Challenge
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  battle:
+    if: startsWith(github.event.issue.title, 'Challenge @')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Process Challenge
+        id: battle
+        env:
+          CHALLENGER_NAME: ${{ github.actor }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/process_challenge.py
+
+      - name: Post Battle Result
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const battleLog = "${{ steps.battle.outputs.battle_log }}";
+            const decodedLog = decodeURIComponent(battleLog.replace(/\+/g, ' '));
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: decodedLog
+            })
+
+      - name: Commit and Push History
+        run: |
+          git config --global user.name "Gym Leader Bot"
+          git config --global user.email "bot@example.com"
+          git add data/challengers.json
+          git commit -m "Update challengers history: ${{ github.actor }}" || exit 0
+          git push

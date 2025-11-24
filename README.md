@@ -2,19 +2,21 @@
 <h1 align="center">Arudchayan · BattleOps Command Center</h1>
 <p align="center"><em>battle telemetry screaming through neon conduits</em></p>
 
+<!-- TEAM_BANNER_PLACEHOLDER -->
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10038.gif" alt="Mega Gengar" width="200" height="200"/>
+  <img src="assets/team_banner.png" width="100%" alt="Team Banner" />
 </div>
 
 ## 🧾 POKÉMON TRAINER PROFILE
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2025-11-24 12:32 UTC |
+| Generated | 2025-11-24 14:19 UTC |
 | Schedule Index | 739579 |
 | Archetype | Nightfall Rift Summoner |
 | Lead Operative | Mega Gengar · Balanced Command Core |
-| Power Core | 3545 ([████████████████████████░░░░░░]  82.1% capacity) |
+| **Genetics Level** | **86** |
+| Power Core | 3695 ([█████████████████████████░░░░░]  85.5% capacity) |
 | Active Roster | Mega Gengar, Decidueye, Noivern, Rayquaza, Zeraora, Metagross |
 | Unique Typings | 8 |
 | Average Speed | 105.2 |
@@ -51,32 +53,28 @@
 **EV Spread:** 252 SpA / 4 SpD / 252 Spe
 **Physical Specs:** 1.4m · 40.5kg
 
+> **Genetics Boost:** Level 86 (Powered by 432 Contributions)
+
 #### Stat Telemetry
 ```
 HP:     [████░░░░░░░░░░░░░░░░]  60
-ATK:    [█████░░░░░░░░░░░░░░░] 65
-DEF:    [██████░░░░░░░░░░░░░░] 80
+ATK:    [█████████░░░░░░░░░░░] 115
+DEF:    [██████████░░░░░░░░░░] 130
 SP.ATK: [█████████████░░░░░░░] 170
-SP.DEF: [███████░░░░░░░░░░░░░] 95
+SP.DEF: [███████████░░░░░░░░░] 145
 SPEED:  [██████████░░░░░░░░░░] 130
 ```
 
 #### Signature Arsenal
 - **Shadow Ball** · 👻 Special · 80 BP
 - **Protect** · ⚪ Status · Utility
-- **Substitute** · ⚪ Status · Utility
 - **Taunt** · 🌙 Status · Utility
+- **Will O Wisp** · 🔥 Status · Utility
 
-### ⚔️ Battle Formation HUD
+---
 
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; background:linear-gradient(135deg,#05040c,#16162b); padding:24px; border-radius:18px; border:1px solid rgba(138,110,255,0.4);">
-  [1] Mega Gengar
-  [2] Decidueye
-  [3] Noivern
-  [4] Rayquaza
-  [5] Zeraora
-  [6] Metagross
-</div>
+## 🧠 Coach's Corner
+> **Coach's Analysis:** Simulating matchup vs **Hyper Offense** (Threat: **Iron Moth**). Your **Mega Gengar** outspeeds Iron Moth (Base 90). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
@@ -90,7 +88,7 @@ SPEED:  [██████████░░░░░░░░░░] 130
 <br/><img src="assets/stats_gengar-mega.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 600
+- **Base Stat Total:** 750
 - **Top Stat:** Special-Attack (170)
 - **Battle Role:** Unknown
 - **Ability:** Shadow Tag
@@ -100,8 +98,8 @@ SPEED:  [██████████░░░░░░░░░░] 130
 - **Signature Moves:**
   - 👻 Shadow Ball · Special · 80 BP
   - ⚪ Protect · Status · Utility
-  - ⚪ Substitute · Status · Utility
   - 🌙 Taunt · Status · Utility
+  - 🔥 Will O Wisp · Status · Utility
 </details>
 
 <details open>
@@ -145,7 +143,7 @@ SPEED:  [██████████░░░░░░░░░░] 130
   - 🕊️ Hurricane · Special · 110 BP
   - ✨ Moonlight · Status · Utility
   - ⚪ Protect · Status · Utility
-  - ⚪ Substitute · Status · Utility
+  - 🌙 Taunt · Status · Utility
 </details>
 
 <details open>
@@ -211,7 +209,7 @@ SPEED:  [██████████░░░░░░░░░░] 130
   - ⚙️ Bullet Punch · Physical · 40 BP
   - ⚪ Protect · Status · Utility
   - 🪨 Stealth Rock · Status · Utility
-  - ⚪ Substitute · Status · Utility
+  - 🌍 Earthquake · Physical · 100 BP
 </details>
 
 ---
@@ -253,7 +251,7 @@ SPEED:  [██████████░░░░░░░░░░] 130
 | --- | --- |
 | Synergy Mesh | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]  100% · Ω-OVERDRIVE |
 | Speed Pulse | [▓▓▓▓▓▓▓▓▓▓▓░░░░░░░]   58% · CRUISE |
-| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░]   94% · Ω-OVERDRIVE |
+| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]  100% · Ω-OVERDRIVE |
 
 > Adaptive cadence engaged.
 
@@ -262,7 +260,14 @@ SPEED:  [██████████░░░░░░░░░░] 130
 
 ---
 
-## 📋 BATTLE SIMULATION LOG
+## 🏟️ Recent Challengers (Gym Leader Mode)
+| Date | Challenger | Team | Result |
+| --- | --- | --- | --- |
+| 2025-11-24 | Gary Oak | Blastoise, Arcanine, Exeggutor | 3-0 (Arudchayan) |
+
+---
+
+## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
 ⚔️ **Battle Start!** Trainer Nightfall Rift Summoner vs Rival Blue!
 🔹 **Turn 1:** Mega Gengar Mega Evolves and uses **Dragon Ascent**!
@@ -282,8 +287,8 @@ EVs: 252 SpA / 4 SpD / 252 Spe
 Timid Nature
 - Shadow Ball
 - Protect
-- Substitute
 - Taunt
+- Will O Wisp
 
 Decidueye @ Leftovers
 Ability: Overgrow
@@ -301,7 +306,7 @@ Timid Nature
 - Hurricane
 - Moonlight
 - Protect
-- Substitute
+- Taunt
 
 Rayquaza @ Heavy-Duty Boots
 Ability: Air Lock
@@ -328,7 +333,7 @@ Adamant Nature
 - Bullet Punch
 - Protect
 - Stealth Rock
-- Substitute
+- Earthquake
 ```
 
 ---
@@ -361,6 +366,8 @@ Adamant Nature
 
 </details>
 
+### ✨ Shiny Hunt Status
+Current Hunt: **43** Days Dry. Odds: **23.58%**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
@@ -451,4 +458,4 @@ Shiny status: Checked.
 
 ---
 
-<sub>README last rebuilt on 2025-11-24 12:32 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2025-11-24 14:19 UTC. Next rotation triggers at midnight UTC.</sub>
