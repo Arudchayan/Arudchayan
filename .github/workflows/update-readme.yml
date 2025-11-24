@@ -47,12 +47,12 @@ jobs:
       - name: 📊 Check for Changes
         id: check_changes
         run: |
-          if git diff --quiet README.md; then
+          if git diff --quiet README.md assets/ data/; then
             echo "changed=false" >> $GITHUB_OUTPUT
-            echo "No changes detected in README.md"
+            echo "No changes detected."
           else
             echo "changed=true" >> $GITHUB_OUTPUT
-            echo "Changes detected in README.md"
+            echo "Changes detected in README.md or assets."
           fi
       
       - name: 💾 Commit and Push Changes
@@ -64,7 +64,7 @@ jobs:
           # Get current archetype info
           ARCHETYPE=$(grep -A 1 "CURRENT_ARCHETYPE_START" README.md | grep "Archetype:" | sed 's/.*Archetype: \*\*//; s/\*\*.*//')
           
-          git add README.md
+          git add README.md assets/ data/
           git commit -m "🎮 Daily Pokémon Profile Update
 
 ✨ Archetype: ${ARCHETYPE}
