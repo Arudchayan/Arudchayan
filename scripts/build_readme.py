@@ -100,7 +100,23 @@ COMPETITIVE_ITEMS = {
     'utility': ['Focus Sash', 'Mental Herb', 'Light Clay', 'Eject Button', 'Red Card'],
 }
 
-MOVE_CACHE: dict[str, dict] = {}
+MOVE_CACHE_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "move_cache.json")
+
+def load_move_cache():
+    if os.path.exists(MOVE_CACHE_FILE):
+        try:
+            with open(MOVE_CACHE_FILE, 'r') as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            return {}
+    return {}
+
+def save_move_cache():
+    # Sort keys for stable diffs
+    with open(MOVE_CACHE_FILE, 'w') as f:
+        json.dump(MOVE_CACHE, f, indent=2, sort_keys=True)
+
+MOVE_CACHE: dict[str, dict] = load_move_cache()
 
 ROLE_BY_STAT = {
     'attack': 'Hyper-Offense Spearhead',
@@ -1076,5 +1092,8 @@ output = re.sub(
 
 with open(os.path.join(root, "README.md"), "w") as f:
     f.write(output)
+
+save_move_cache()
+print(f"💾 Move cache saved ({len(MOVE_CACHE)} entries).")
 
 print("\n✅ README built successfully!")
