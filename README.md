@@ -11,27 +11,27 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-01-09 10:14 UTC |
-| Schedule Index | 739625 |
+| Generated | 2026-08-07 08:21 UTC |
+| Schedule Index | 739835 |
 | Archetype | Thunderborn Storm Raider |
 | Lead Operative | Zeraora · Balanced Command Core |
 | **Genetics Level** | **50** |
-| Power Core | 3445 ([███████████████████████░░░░░░░]  79.7% capacity) |
+| Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
 | Active Roster | Zeraora, Rayquaza, Noivern, Metagross, Gengar, Decidueye |
-| Unique Typings | 8 |
-| Average Speed | 101.8 |
+| Unique Typings | 1 |
+| Average Speed | 100.0 |
 
-> Squad average speed: 101.8.
+> Squad average speed: 100.0.
 
 ---
 
-## ⚡ WEATHER REPORT: ☀️ Clear Skies
-> **Field Condition:** Standard battle conditions.
+## ⚡ WEATHER REPORT: 🔥 Harsh Sunlight
+> **Field Condition:** Fire moves boosted 50%, Water moves weakened 50%.
 
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Optimize 3 functions to increase Metagross's calculation speed.
+### **Quest:** Push a commit before noon to outspeed Rival Weavile.
 
 ---
 
@@ -46,202 +46,211 @@
 
 ### Lead Strategy Module
 
-**Primary Types:** ⚡ELECTRIC
-**Ability:** Volt Absorb
-**Nature:** Jolly
-**Held Item:** Electricium Z
-**EV Spread:** 252 Atk / 4 Def / 252 Spe
-**Physical Specs:** 1.5m · 44.5kg
+**Primary Types:** ⚪NORMAL
+**Ability:** Unknown
+**Nature:** Serious
+**Held Item:** Leftovers
+**EV Spread:** 
+**Physical Specs:** 1.0m · 10.0kg
 
 > **Genetics Boost:** Standard Training
 
 #### Stat Telemetry
 ```
-HP:     [██████░░░░░░░░░░░░░░]  88
-ATK:    [████████░░░░░░░░░░░░] 112
-DEF:    [█████░░░░░░░░░░░░░░░] 75
-SP.ATK: [████████░░░░░░░░░░░░] 102
-SP.DEF: [██████░░░░░░░░░░░░░░] 80
-SPEED:  [███████████░░░░░░░░░] 143
+HP:     [███████░░░░░░░░░░░░░]  100
+ATK:    [███████░░░░░░░░░░░░░] 100
+DEF:    [███████░░░░░░░░░░░░░] 100
+SP.ATK: [███████░░░░░░░░░░░░░] 100
+SP.DEF: [███████░░░░░░░░░░░░░] 100
+SPEED:  [███████░░░░░░░░░░░░░] 100
 ```
 
 #### Signature Arsenal
-- **Plasma Fists** · ⚡ Physical · 100 BP
-- **Bulk Up** · 🥊 Status · Utility
-- **Calm Mind** · 🔮 Status · Utility
-- **Protect** · ⚪ Status · Utility
+- Recon uplink pending...
 
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Stall** (Threat: **Toxapex**). Your **Zeraora** outspeeds Toxapex (Base 90). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Stall** (Threat: **Blissey**). Your **Zeraora** outspeeds Blissey (Base 55). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚡ELECTRIC</summary>
+<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/807.gif" alt="Zeraora" width="160" height="160"/>
+```
+
+      ___
+     /   \
+    | O O |
+     \ ^ /
+      |||
+    
+```
 <br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
-- **Top Stat:** Speed (143)
+- **Top Stat:** Hp (100)
 - **Battle Role:** Unknown
-- **Ability:** Volt Absorb
-- **Nature:** Jolly
-- **Held Item:** Electricium Z
-- **EV Spread:** 252 Atk / 4 Def / 252 Spe
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
 - **Signature Moves:**
-  - ⚡ Plasma Fists · Physical · 100 BP
-  - 🥊 Bulk Up · Status · Utility
-  - 🔮 Calm Mind · Status · Utility
-  - ⚪ Protect · Status · Utility
+  - (pending scouting)
 </details>
 
 <details open>
-<summary>⚔️ <strong>Rayquaza</strong> · 🐉DRAGON / 🕊️FLYING</summary>
+<summary>⚔️ <strong>Rayquaza</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/384.gif" alt="Rayquaza" width="160" height="160"/>
+```
+
+      ___
+     /   \
+    | O O |
+     \ ^ /
+      |||
+    
+```
 <br/><img src="assets/stats_rayquaza.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 680
-- **Top Stat:** Attack (150)
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
 - **Battle Role:** Unknown
-- **Ability:** Air Lock
-- **Nature:** Mild
-- **Held Item:** Heavy-Duty Boots
-- **EV Spread:** 252 HP / 252 SpA / 4 SpD
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
 - **Signature Moves:**
-  - 🕊️ Dragon Ascent · Physical · 120 BP
-  - 🕊️ Hurricane · Special · 110 BP
-  - 🥊 Bulk Up · Status · Utility
-  - ⚪ Protect · Status · Utility
+  - (pending scouting)
 </details>
 
 <details open>
-<summary>⚔️ <strong>Noivern</strong> · 🕊️FLYING / 🐉DRAGON</summary>
+<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/715.gif" alt="Noivern" width="160" height="160"/>
+```
+
+      ___
+     /   \
+    | O O |
+     \ ^ /
+      |||
+    
+```
 <br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 535
-- **Top Stat:** Speed (123)
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
 - **Battle Role:** Unknown
-- **Ability:** Frisk
-- **Nature:** Timid
-- **Held Item:** Heavy-Duty Boots
-- **EV Spread:** 252 SpA / 4 SpD / 252 Spe
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
 - **Signature Moves:**
-  - 🕊️ Hurricane · Special · 110 BP
-  - ✨ Moonlight · Status · Utility
-  - ⚪ Protect · Status · Utility
-  - ⚪ Substitute · Status · Utility
+  - (pending scouting)
 </details>
 
 <details open>
-<summary>⚔️ <strong>Metagross</strong> · ⚙️STEEL / 🔮PSYCHIC</summary>
+<summary>⚔️ <strong>Metagross</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/376.gif" alt="Metagross" width="160" height="160"/>
+```
+
+      ___
+     /   \
+    | O O |
+     \ ^ /
+      |||
+    
+```
 <br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
-- **Top Stat:** Attack (135)
+- **Top Stat:** Hp (100)
 - **Battle Role:** Unknown
-- **Ability:** Clear Body
-- **Nature:** Adamant
+- **Ability:** Unknown
+- **Nature:** Serious
 - **Held Item:** Leftovers
-- **EV Spread:** 252 HP / 252 Atk / 4 Def
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
 - **Signature Moves:**
-  - ⚙️ Bullet Punch · Physical · 40 BP
-  - ⚪ Protect · Status · Utility
-  - 🪨 Stealth Rock · Status · Utility
-  - ⚪ Substitute · Status · Utility
+  - (pending scouting)
 </details>
 
 <details open>
-<summary>⚔️ <strong>Gengar</strong> · 👻GHOST / ☠️POISON</summary>
+<summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="160" height="160"/>
+```
+
+      ___
+     /   \
+    | O O |
+     \ ^ /
+      |||
+    
+```
 <br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 500
-- **Top Stat:** Special-Attack (130)
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
 - **Battle Role:** Unknown
-- **Ability:** Cursed Body
-- **Nature:** Timid
-- **Held Item:** Choice Specs
-- **EV Spread:** 252 SpA / 4 SpD / 252 Spe
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
 - **Signature Moves:**
-  - 👻 Shadow Ball · Special · 80 BP
-  - ⚪ Encore · Status · Utility
-  - 🌙 Nasty Plot · Status · Utility
-  - ⚪ Protect · Status · Utility
+  - (pending scouting)
 </details>
 
 <details open>
-<summary>⚔️ <strong>Decidueye</strong> · 🌿GRASS / 👻GHOST</summary>
+<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="160" height="160"/>
+```
+
+      ___
+     /   \
+    | O O |
+     \ ^ /
+      |||
+    
+```
 <br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 530
-- **Top Stat:** Attack (107)
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
 - **Battle Role:** Unknown
-- **Ability:** Overgrow
-- **Nature:** Adamant
+- **Ability:** Unknown
+- **Nature:** Serious
 - **Held Item:** Leftovers
-- **EV Spread:** 252 HP / 252 Atk / 4 Def
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
 - **Signature Moves:**
-  - 👻 Shadow Sneak · Physical · 40 BP
-  - 🌙 Nasty Plot · Status · Utility
-  - 🥊 Bulk Up · Status · Utility
-  - ⚪ Protect · Status · Utility
+  - (pending scouting)
 </details>
 
 ---
 
 ## 🧪 Type Coverage Broadcast
 
-- 🐉 **DRAGON** ×2
-- 🕊️ **FLYING** ×2
-- 👻 **GHOST** ×2
-- ⚡ **ELECTRIC** ×1
-- ⚙️ **STEEL** ×1
-- 🔮 **PSYCHIC** ×1
-- ☠️ **POISON** ×1
-- 🌿 **GRASS** ×1
+- ⚪ **NORMAL** ×6
 
 ---
 
 ## 🛡️ Defensive Analysis
 
 ### ⚠️ Critical Weaknesses (3+ Pokemon)
-- 🧊 **ICE** threatens 5 team members
-- 🌍 **GROUND** threatens 3 team members
-- 👻 **GHOST** threatens 3 team members
-- 🌙 **DARK** threatens 3 team members
-
-### ⚡ Moderate Weaknesses (2 Pokemon)
-- 🐉 **DRAGON** hits 2 team members
-- ✨ **FAIRY** hits 2 team members
-- ⚡ **ELECTRIC** hits 2 team members
-- 🪨 **ROCK** hits 2 team members
-- 🔥 **FIRE** hits 2 team members
-- 🐛 **BUG** hits 2 team members
+- 🥊 **FIGHTING** threatens 6 team members
 
 ---
 
@@ -249,14 +258,14 @@ SPEED:  [███████████░░░░░░░░░] 143
 
 | Flux Channel | Status |
 | --- | --- |
-| Synergy Mesh | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]  100% · Ω-OVERDRIVE |
-| Speed Pulse | [▓▓▓▓▓▓▓▓▓▓░░░░░░░░]   57% · CRUISE |
-| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░]   94% · Ω-OVERDRIVE |
+| Synergy Mesh | [▓▓▓░░░░░░░░░░░░░░░]   17% · WARMUP |
+| Speed Pulse | [▓▓▓▓▓▓▓▓▓▓░░░░░░░░]   56% · CRUISE |
+| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░]   83% · VORTEX |
 
 > Adaptive cadence engaged.
 
-- **Synergy:** 8 types.
-- **Speed:** Avg 101.8.
+- **Synergy:** 1 types.
+- **Speed:** Avg 100.0.
 
 ---
 
@@ -281,59 +290,35 @@ SPEED:  [███████████░░░░░░░░░] 143
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Zeraora @ Electricium Z
-Ability: Volt Absorb
-EVs: 252 Atk / 4 Def / 252 Spe
-Jolly Nature
-- Plasma Fists
-- Bulk Up
-- Calm Mind
-- Protect
+Zeraora @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
 
-Rayquaza @ Heavy-Duty Boots
-Ability: Air Lock
-EVs: 252 HP / 252 SpA / 4 SpD
-Mild Nature
-- Dragon Ascent
-- Hurricane
-- Bulk Up
-- Protect
+Rayquaza @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
 
-Noivern @ Heavy-Duty Boots
-Ability: Frisk
-EVs: 252 SpA / 4 SpD / 252 Spe
-Timid Nature
-- Hurricane
-- Moonlight
-- Protect
-- Substitute
+Noivern @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
 
 Metagross @ Leftovers
-Ability: Clear Body
-EVs: 252 HP / 252 Atk / 4 Def
-Adamant Nature
-- Bullet Punch
-- Protect
-- Stealth Rock
-- Substitute
+Ability: Unknown
+EVs: 
+Serious Nature
 
-Gengar @ Choice Specs
-Ability: Cursed Body
-EVs: 252 SpA / 4 SpD / 252 Spe
-Timid Nature
-- Shadow Ball
-- Encore
-- Nasty Plot
-- Protect
+Gengar @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
 
 Decidueye @ Leftovers
-Ability: Overgrow
-EVs: 252 HP / 252 Atk / 4 Def
-Adamant Nature
-- Shadow Sneak
-- Nasty Plot
-- Bulk Up
-- Protect
+Ability: Unknown
+EVs: 
+Serious Nature
 ```
 
 ---
@@ -351,46 +336,46 @@ Adamant Nature
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Dragonite</summary>
+  <summary>🎲 Encounter: Zacian</summary>
 
   <div align="center">
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/149.gif" alt="Dragonite" width="150" height="150"/>
+  ???
   </div>
 
-  - **Rarity Signal:** Wild Encounter
-  - **Type Signal:** 🐉DRAGON 🕊️FLYING
-  - **Height / Weight:** 2.2m · 210.0kg
-  - **Abilities:** Inner Focus, Multiscale
-  - **Pokédex Insight:** An extremely rarely seen marine POKéMON. Its intelligence is said to match that of humans.
-  - **Encounter Telemetry:** Routine scouting ping—deploy capture drones at your discretion.
+  - **Rarity Signal:** Legendary Sighting
+  - **Type Signal:** GLITCH
+  - **Height / Weight:** ??? · ???
+  - **Abilities:** ???
+  - **Pokédex Insight:** System Error
+  - **Encounter Telemetry:** Ultra-rare beacon detected—Command approves immediate containment.
 
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **45** Days Dry. Odds: **24.58%**
+Current Hunt: **46** Days Dry. Odds: **25.08%**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
 
 <details>
-  <summary>🌋 Path 1 — Magma Corridor</summary>
+  <summary>⚙️ Path 1 — Celadon Manufactory</summary>
 
-  - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
-  - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
-  - **Command Brief:** Track the Wild-class target — Dragonite (wild signal).
-  - **Type Intel:** Dragon / Flying
+  - **Battlefield State:** Servo arms reset the battlefield between each exchange.
+  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
+  - **Command Brief:** Track the Legendary-class target — Zacian (legendary beacon).
+  - **Type Intel:** Unknown
 
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 84% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 79% odds</summary>
 
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Dragonite's innate typing instead.
+    - **If it lands:** The legendary beacon is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Zacian slips free in a burst of light, boosting its Evasion and tempo.
   </details>
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 85% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 60% odds</summary>
 
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Dragonite a free setup turn to escalate pressure.
+    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
+    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
   </details>
 </details>
 
@@ -399,17 +384,17 @@ Shiny status: Checked.
 
   - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
   - **Encounter Twist:** Command authorises prototype gear if you can stall three turns.
-  - **Command Brief:** Track the Wild-class target — Dragonite (wild signal).
-  - **Type Intel:** Dragon / Flying
+  - **Command Brief:** Track the Legendary-class target — Zacian (legendary beacon).
+  - **Type Intel:** Unknown
 
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 81% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 72% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Dragonite's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Dragonite rallies.
+    - **If it lands:** Coordinated assaults land clean, dropping Zacian's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Zacian rallies.
   </details>
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 74% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 77% odds</summary>
 
     - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
     - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
@@ -417,24 +402,24 @@ Shiny status: Checked.
 </details>
 
 <details>
-  <summary>🌊 Path 3 — Tidal Resonance</summary>
+  <summary>❄️ Path 3 — Aurora Chasm</summary>
 
-  - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
-  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
-  - **Command Brief:** Track the Wild-class target — Dragonite (wild signal).
-  - **Type Intel:** Dragon / Flying
+  - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
+  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
+  - **Command Brief:** Track the Legendary-class target — Zacian (legendary beacon).
+  - **Type Intel:** Unknown
 
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 73% odds</summary>
+    <summary>🛡️ Raise Reflective Barriers · 62% odds</summary>
 
-    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Dragonite slips free in a burst of light, boosting its Evasion and tempo.
+    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
+    - **If it whiffs:** Barrier harmonics misalign, giving Zacian a free setup turn to escalate pressure.
   </details>
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 81% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 56% odds</summary>
 
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Dragonite's innate typing instead.
+    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
+    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
   </details>
 </details>
 
@@ -458,4 +443,4 @@ Shiny status: Checked.
 
 ---
 
-<sub>README last rebuilt on 2026-01-09 10:14 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-07 08:21 UTC. Next rotation triggers at midnight UTC.</sub>
