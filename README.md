@@ -11,7 +11,7 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-10 01:08 UTC |
+| Generated | 2026-08-10 18:12 UTC |
 | Schedule Index | 739838 |
 | Archetype | Sky Tyrant Ascendant |
 | Lead Operative | Mega Rayquaza · Balanced Command Core |
@@ -352,7 +352,7 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **49** Days Dry. Odds: **26.58%**
+Current Hunt: **50** Days Dry. Odds: **27.08%**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
@@ -443,4 +443,4 @@ Shiny status: Checked.
 
 ---
 
-<sub>README last rebuilt on 2026-08-10 01:08 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-10 18:12 UTC. Next rotation triggers at midnight UTC.</sub>
