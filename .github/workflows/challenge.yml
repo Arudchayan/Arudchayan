@@ -33,7 +33,7 @@ jobs:
         run: python scripts/process_challenge.py
 
       - name: Post Battle Result
-        uses: actions/github-script@v6
+        uses: actions/github-script@v9
         with:
           script: |
             const battleLog = "${{ steps.battle.outputs.battle_log }}";
