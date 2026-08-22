@@ -11,13 +11,13 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-21 00:52 UTC |
-| Schedule Index | 739849 |
-| Archetype | Nightfall Rift Summoner |
-| Lead Operative | Mega Gengar · Balanced Command Core |
+| Generated | 2026-08-22 00:47 UTC |
+| Schedule Index | 739850 |
+| Archetype | Sky Tyrant Ascendant |
+| Lead Operative | Mega Rayquaza · Balanced Command Core |
 | **Genetics Level** | **50** |
 | Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
-| Active Roster | Mega Gengar, Decidueye, Noivern, Rayquaza, Zeraora, Metagross |
+| Active Roster | Mega Rayquaza, Noivern, Zeraora, Metagross, Gengar, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
 
@@ -25,13 +25,13 @@
 
 ---
 
-## ⚡ WEATHER REPORT: ☀️ Clear Skies
-> **Field Condition:** Standard battle conditions.
+## ⚡ WEATHER REPORT: ❄️ Snow
+> **Field Condition:** Ice types get 50% Def boost.
 
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Optimize 3 functions to increase Metagross's calculation speed.
+### **Quest:** Review a PR to teach Alakazam 'Future Sight'.
 
 ---
 
@@ -40,8 +40,8 @@
 ### 🧭 Rotation Hologram
 
 <!-- CURRENT_ARCHETYPE_START -->
-> **Rotation Profile:** Nightfall Rift Summoner
-> **Command Lead:** Mega Gengar
+> **Rotation Profile:** Sky Tyrant Ascendant
+> **Command Lead:** Mega Rayquaza
 <!-- CURRENT_ARCHETYPE_END -->
 
 ### Lead Strategy Module
@@ -71,14 +71,14 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Standard OU Offense** (Threat: **Landorus-Therian**). Your **Mega Gengar** outspeeds Landorus-Therian (Base 91). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Sun Offense** (Threat: **Walking Wake**). Careful, **Walking Wake** is faster (Base 109). Consider defensive pivots. Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Mega Gengar</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Mega Rayquaza</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ```
@@ -90,34 +90,7 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
       |||
     
 ```
-<br/><img src="assets/stats_gengar-mega.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-    
-```
-<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_rayquaza-mega.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -145,33 +118,6 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
     
 ```
 <br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Rayquaza</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-    
-```
-<br/><img src="assets/stats_rayquaza.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -239,6 +185,60 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
   - (pending scouting)
 </details>
 
+<details open>
+<summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+```
+
+      ___
+     /   \
+    | O O |
+     \ ^ /
+      |||
+    
+```
+<br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Battle Role:** Unknown
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+```
+
+      ___
+     /   \
+    | O O |
+     \ ^ /
+      |||
+    
+```
+<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Battle Role:** Unknown
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
 ---
 
 ## 🧪 Type Coverage Broadcast
@@ -278,34 +278,24 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Nightfall Rift Summoner vs Rival Blue!
-🔹 **Turn 1:** Mega Gengar Mega Evolves and uses **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Sky Tyrant Ascendant vs Rival Blue!
+🔹 **Turn 1:** Mega Rayquaza Mega Evolves and uses **Dragon Ascent**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Mega Gengar uses **Extreme Speed** for the KO!
+🔹 **Turn 2:** Mega Rayquaza uses **Extreme Speed** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Mega Gengar switches to Landorus-T to Intimidate!
-🏆 **Result:** Rival forfeits! **Nightfall Rift Summoner Wins!**
+🔹 **Turn 3:** Mega Rayquaza switches to Landorus-T to Intimidate!
+🏆 **Result:** Rival forfeits! **Sky Tyrant Ascendant Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Mega Gengar @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Decidueye @ Leftovers
+Mega Rayquaza @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
 
 Noivern @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Rayquaza @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -319,6 +309,16 @@ Metagross @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
+
+Gengar @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Decidueye @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
 ```
 
 ---
@@ -327,16 +327,16 @@ Serious Nature
 
 | Mechanic | Status | Notes |
 | --- | --- | --- |
-| Mega Evolution | ◆ | Gengarite 💎 |
-| Z-Move | ▲ | Never-Ending Nightmare ⚡ |
-| Terastallization | ◇ | Ghost ✨ |
+| Mega Evolution | ◆ | Dragon Ascent (Primal Instinct) 💎 |
+| Z-Move | — | —  |
+| Terastallization | ◇ | Dragon ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Mimikyu</summary>
+  <summary>🎲 Encounter: Noivern</summary>
 
   <div align="center">
   ???
@@ -352,7 +352,7 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **9** Days Dry. Odds: **6.58%**
+Current Hunt: **10** Days Dry. Odds: **7.08%**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
@@ -361,21 +361,21 @@ Shiny status: Checked.
   <summary>🌊 Path 1 — Tidal Resonance</summary>
 
   - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
-  - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
-  - **Command Brief:** Track the Wild-class target — Mimikyu (wild signal).
+  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
+  - **Command Brief:** Track the Wild-class target — Noivern (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 58% odds</summary>
+    <summary>🛡️ Raise Reflective Barriers · 78% odds</summary>
 
     - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Mimikyu a free setup turn to escalate pressure.
+    - **If it whiffs:** Barrier harmonics misalign, giving Noivern a free setup turn to escalate pressure.
   </details>
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 61% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 75% odds</summary>
 
     - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Mimikyu's innate typing instead.
+    - **If it whiffs:** The sync desyncs, amplifying Noivern's innate typing instead.
   </details>
 </details>
 
@@ -383,43 +383,43 @@ Shiny status: Checked.
   <summary>🌲 Path 2 — Verdant Overwatch</summary>
 
   - **Battlefield State:** Bioluminescent spores swirl between ancient trunks.
-  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
-  - **Command Brief:** Track the Wild-class target — Mimikyu (wild signal).
+  - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
+  - **Command Brief:** Track the Wild-class target — Noivern (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 89% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 91% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Mimikyu's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Mimikyu rallies.
+    - **If it lands:** Coordinated assaults land clean, dropping Noivern's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Noivern rallies.
   </details>
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 82% odds</summary>
+    <summary>🛡️ Raise Reflective Barriers · 88% odds</summary>
 
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Mimikyu's innate typing instead.
+    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
+    - **If it whiffs:** Barrier harmonics misalign, giving Noivern a free setup turn to escalate pressure.
   </details>
 </details>
 
 <details>
-  <summary>❄️ Path 3 — Aurora Chasm</summary>
+  <summary>🌋 Path 3 — Magma Corridor</summary>
 
-  - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
-  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
-  - **Command Brief:** Track the Wild-class target — Mimikyu (wild signal).
+  - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
+  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
+  - **Command Brief:** Track the Wild-class target — Noivern (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 61% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 77% odds</summary>
 
     - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Mimikyu slips free in a burst of light, boosting its Evasion and tempo.
+    - **If it whiffs:** Noivern slips free in a burst of light, boosting its Evasion and tempo.
   </details>
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 87% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 74% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Mimikyu's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Mimikyu rallies.
+    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
+    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
   </details>
 </details>
 
@@ -443,4 +443,4 @@ Shiny status: Checked.
 
 ---
 
-<sub>README last rebuilt on 2026-08-21 00:52 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-22 00:47 UTC. Next rotation triggers at midnight UTC.</sub>
