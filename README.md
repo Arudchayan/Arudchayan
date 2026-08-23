@@ -11,13 +11,13 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-22 00:47 UTC |
-| Schedule Index | 739850 |
-| Archetype | Sky Tyrant Ascendant |
-| Lead Operative | Mega Rayquaza · Balanced Command Core |
+| Generated | 2026-08-23 00:52 UTC |
+| Schedule Index | 739851 |
+| Archetype | Emerald Forest Warden |
+| Lead Operative | Decidueye · Balanced Command Core |
 | **Genetics Level** | **50** |
 | Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
-| Active Roster | Mega Rayquaza, Noivern, Zeraora, Metagross, Gengar, Decidueye |
+| Active Roster | Decidueye, Rayquaza, Noivern, Metagross, Gengar, Zeraora |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
 
@@ -25,13 +25,13 @@
 
 ---
 
-## ⚡ WEATHER REPORT: ❄️ Snow
-> **Field Condition:** Ice types get 50% Def boost.
+## ⚡ WEATHER REPORT: ☀️ Clear Skies
+> **Field Condition:** Standard battle conditions.
 
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Review a PR to teach Alakazam 'Future Sight'.
+### **Quest:** Optimize 3 functions to increase Metagross's calculation speed.
 
 ---
 
@@ -40,8 +40,8 @@
 ### 🧭 Rotation Hologram
 
 <!-- CURRENT_ARCHETYPE_START -->
-> **Rotation Profile:** Sky Tyrant Ascendant
-> **Command Lead:** Mega Rayquaza
+> **Rotation Profile:** Emerald Forest Warden
+> **Command Lead:** Decidueye
 <!-- CURRENT_ARCHETYPE_END -->
 
 ### Lead Strategy Module
@@ -71,14 +71,14 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Sun Offense** (Threat: **Walking Wake**). Careful, **Walking Wake** is faster (Base 109). Consider defensive pivots. Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Hyper Offense** (Threat: **Dragonite**). Your **Decidueye** outspeeds Dragonite (Base 80). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Mega Rayquaza</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ```
@@ -90,7 +90,34 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
       |||
     
 ```
-<br/><img src="assets/stats_rayquaza-mega.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Battle Role:** Unknown
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Rayquaza</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+```
+
+      ___
+     /   \
+    | O O |
+     \ ^ /
+      |||
+    
+```
+<br/><img src="assets/stats_rayquaza.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -118,33 +145,6 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
     
 ```
 <br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-    
-```
-<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -213,7 +213,7 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ```
@@ -225,7 +225,7 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
       |||
     
 ```
-<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -278,29 +278,29 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Sky Tyrant Ascendant vs Rival Blue!
-🔹 **Turn 1:** Mega Rayquaza Mega Evolves and uses **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Emerald Forest Warden vs Rival Blue!
+🔹 **Turn 1:** Decidueye Mega Evolves and uses **Dragon Ascent**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Mega Rayquaza uses **Extreme Speed** for the KO!
+🔹 **Turn 2:** Decidueye uses **Extreme Speed** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Mega Rayquaza switches to Landorus-T to Intimidate!
-🏆 **Result:** Rival forfeits! **Sky Tyrant Ascendant Wins!**
+🔹 **Turn 3:** Decidueye switches to Landorus-T to Intimidate!
+🏆 **Result:** Rival forfeits! **Emerald Forest Warden Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Mega Rayquaza @ Leftovers
+Decidueye @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Rayquaza @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
 
 Noivern @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Zeraora @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -315,7 +315,7 @@ Ability: Unknown
 EVs: 
 Serious Nature
 
-Decidueye @ Leftovers
+Zeraora @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -327,16 +327,16 @@ Serious Nature
 
 | Mechanic | Status | Notes |
 | --- | --- | --- |
-| Mega Evolution | ◆ | Dragon Ascent (Primal Instinct) 💎 |
-| Z-Move | — | —  |
-| Terastallization | ◇ | Dragon ✨ |
+| Mega Evolution | — | —  |
+| Z-Move | ▲ | Sinister Arrow Raid ⚡ |
+| Terastallization | ◇ | Grass ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Noivern</summary>
+  <summary>🎲 Encounter: Dragonite</summary>
 
   <div align="center">
   ???
@@ -352,74 +352,74 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **10** Days Dry. Odds: **7.08%**
+Current Hunt: **11** Days Dry. Odds: **7.58%**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
 
 <details>
-  <summary>🌊 Path 1 — Tidal Resonance</summary>
+  <summary>🌌 Path 1 — Starfall Ridge</summary>
 
-  - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
-  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
-  - **Command Brief:** Track the Wild-class target — Noivern (wild signal).
+  - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
+  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
+  - **Command Brief:** Track the Wild-class target — Dragonite (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 78% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 63% odds</summary>
 
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Noivern a free setup turn to escalate pressure.
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Dragonite slips free in a burst of light, boosting its Evasion and tempo.
   </details>
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 75% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 78% odds</summary>
 
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Noivern's innate typing instead.
+    - **If it lands:** Coordinated assaults land clean, dropping Dragonite's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Dragonite rallies.
   </details>
 </details>
 
 <details>
-  <summary>🌲 Path 2 — Verdant Overwatch</summary>
-
-  - **Battlefield State:** Bioluminescent spores swirl between ancient trunks.
-  - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
-  - **Command Brief:** Track the Wild-class target — Noivern (wild signal).
-  - **Type Intel:** Unknown
-
-  <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 91% odds</summary>
-
-    - **If it lands:** Coordinated assaults land clean, dropping Noivern's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Noivern rallies.
-  </details>
-  <details>
-    <summary>🛡️ Raise Reflective Barriers · 88% odds</summary>
-
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Noivern a free setup turn to escalate pressure.
-  </details>
-</details>
-
-<details>
-  <summary>🌋 Path 3 — Magma Corridor</summary>
+  <summary>🌋 Path 2 — Magma Corridor</summary>
 
   - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
   - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
-  - **Command Brief:** Track the Wild-class target — Noivern (wild signal).
+  - **Command Brief:** Track the Wild-class target — Dragonite (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 77% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 84% odds</summary>
 
-    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Noivern slips free in a burst of light, boosting its Evasion and tempo.
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Dragonite's innate typing instead.
   </details>
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 74% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 67% odds</summary>
 
     - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
     - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
+  </details>
+</details>
+
+<details>
+  <summary>🌲 Path 3 — Verdant Overwatch</summary>
+
+  - **Battlefield State:** Bioluminescent spores swirl between ancient trunks.
+  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
+  - **Command Brief:** Track the Wild-class target — Dragonite (wild signal).
+  - **Type Intel:** Unknown
+
+  <details>
+    <summary>🪬 Invoke Terrain Sync Protocol · 61% odds</summary>
+
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Dragonite's innate typing instead.
+  </details>
+  <details>
+    <summary>⚡ Trigger Overclocked Strike Team · 64% odds</summary>
+
+    - **If it lands:** Coordinated assaults land clean, dropping Dragonite's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Dragonite rallies.
   </details>
 </details>
 
@@ -443,4 +443,4 @@ Shiny status: Checked.
 
 ---
 
-<sub>README last rebuilt on 2026-08-22 00:47 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-23 00:52 UTC. Next rotation triggers at midnight UTC.</sub>
