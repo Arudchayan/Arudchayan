@@ -68,7 +68,8 @@ class Coach:
         # Very rough inference of threat type (since we don't fetch meta data)
         # This is hardcoded for the demo to save API calls
 
-        danger = False        for tt in threat_type_list:
+        danger = False
+        for tt in threat_type_list:
             if tt in user_weaknesses:
                 danger = True
                 weakness_note = f"Warning: {meta_lead} has STAB **{tt.upper()}** moves that hit you for super-effective damage!"

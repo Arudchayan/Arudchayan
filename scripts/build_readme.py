@@ -278,7 +278,6 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
             MOVE_METHOD_PRIORITY.get(detail.get("move_learn_method", {}).get("name", ""), 99),
             -detail.get("level_learned_at", 0),
         )
-
     for entry in api_moves:
         move_name = entry.get("move", {}).get("name")
         move_url = entry.get("move", {}).get("url")
@@ -381,7 +380,6 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
 
     return final_moves
 
-# ... (Include other helper functions: select_competitive_nature, select_competitive_ability, etc.) ...
 def select_competitive_nature(stats: dict) -> str:
     if not stats: return 'Serious'
     attack = stats.get('attack', 0)
