@@ -1,9 +1,8 @@
 import math
 import os
 
-def generate_radar_chart(stats: dict, pokemon_name: str, normalize_name) -> str:
+def generate_radar_chart(stats: dict, clean_name: str) -> str:
     """Generate a simple SVG radar chart for stats."""
-    labels = ['HP', 'Atk', 'Def', 'Spe', 'SpD', 'SpA']
     keys = ['hp', 'attack', 'defense', 'speed', 'special-defense', 'special-attack']
     values = [stats.get(k, 0) for k in keys]
     max_val = 255
@@ -41,7 +40,6 @@ def generate_radar_chart(stats: dict, pokemon_name: str, normalize_name) -> str:
       <circle cx="{center}" cy="{center}" r="2" fill="#fff"/>
     </svg>"""
 
-    clean_name = normalize_name(pokemon_name)
     filename = f"assets/stats_{clean_name}.svg"
 
     os.makedirs("assets", exist_ok=True)

@@ -545,7 +545,7 @@ def fetch_pokemon_data(pokemon_name: str, archetype_data: dict, original_name: O
         ev_spread = calculate_evs(stats)
 
         # Generate SVG
-        svg_generator.generate_radar_chart(stats, original_name or data['name'], normalize_pokemon_identifier)
+        svg_generator.generate_radar_chart(stats, normalize_pokemon_identifier(original_name or data['name']))
 
         return {
             'name': (original_name or data['name']).title(),
