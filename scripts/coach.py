@@ -21,7 +21,8 @@ META_TEAMS = [
     }
 ]
 
-META_POKEMON = {
+# Hardcoded estimates for common meta threats: (base speed, types); defaults cover the rest.
+META_THREATS = {
     "Landorus-Therian": (91, ["ground", "flying"]),
     "Dragapult": (142, ["dragon", "ghost"]),
     "Kingambit": (50, ["dark", "steel"]),
@@ -45,7 +46,7 @@ def get_coach_advice(user_lead_name, user_lead_types, user_lead_speed):
     meta_team = random.choice(META_TEAMS)
     meta_lead = random.choice(meta_team['pokemon'])
 
-    meta_speed, threat_type_list = META_POKEMON.get(meta_lead, (90, ["normal"]))
+    meta_speed, threat_type_list = META_THREATS.get(meta_lead, (90, ["normal"]))
 
     advice_intro = f"Simulating matchup vs **{meta_team['name']}** (Threat: **{meta_lead}**)."
 

@@ -1,11 +1,8 @@
 import os
 import json
-import sys
 import datetime
-# Assuming this script is run from repo root
-sys.path.append(os.getcwd())
 
-from scripts.battle_engine import simulate_team_battle
+from battle_engine import simulate_team_battle
 
 def process_challenge():
     """

@@ -72,8 +72,7 @@ def generate_team_banner(pokemon_sprites, weather_type="Clear Skies"):
 
     # 3. Save
     output_dir = "assets"
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    os.makedirs(output_dir, exist_ok=True)
 
     output_path = os.path.join(output_dir, "team_banner.png")
     banner.save(output_path)

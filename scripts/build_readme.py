@@ -787,7 +787,7 @@ for pokemon_name in chosen['team']:
     team_dossiers.append(dossier)
 
 # === 8. COACH'S ADVICE ===
-coach_tips = coach.Coach.get_coach_advice(
+coach_tips = coach.get_coach_advice(
     lead_name,
     lead_data.get('types', ['normal']),
     lead_stats.get('speed', 90)
@@ -922,3 +922,4 @@ save_move_cache()
 print(f"💾 Move cache saved ({len(MOVE_CACHE)} entries).")
 
 print("\n✅ README built successfully!")
+

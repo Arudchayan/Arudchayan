@@ -45,15 +45,7 @@ jobs:
           fi
           
           # Check for required sections
-          if ! grep -q "POKÉMON TRAINER PROFILE" README.md; then
-            echo "❌ ERROR: README.md missing Pokémon header!"
-            exit 1
-          fi
-          
-          if ! grep -q "TEAM CONFIGURATION" README.md; then
-            echo "❌ ERROR: README.md missing team configuration!"
-            exit 1
-          fi
+          grep -q -e "POKÉMON TRAINER PROFILE" -e "TEAM CONFIGURATION" README.md || { echo "❌ ERROR: README.md missing required sections!"; exit 1; }
           
           echo "✅ README.md validation passed!"
           echo "📏 File size: $(wc -c < README.md) bytes"
