@@ -323,6 +323,7 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
         seen_moves.add(move_name)
         scored_moves.append((move_name, move_url, best_detail, rank(best_detail)))
 
+
     if not scored_moves:
         return []
 
