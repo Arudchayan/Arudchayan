@@ -196,17 +196,6 @@ def get_daily_weather(seed):
     random.seed(seed)
     return random.choice(WEATHER_TYPES)
 
-def simulate_battle(user_team_name, rival_name, user_lead):
-    return (
-        f"⚔️ **Battle Start!** Trainer {user_team_name} vs Rival {rival_name}!\n"
-        f"🔹 **Turn 1:** {user_lead} Mega Evolves and uses **Dragon Ascent**!\n"
-        "🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!\n"
-        f"🔹 **Turn 2:** {user_lead} uses **Extreme Speed** for the KO!\n"
-        "🔸 Rival sends out Tapu Koko. Electric Terrain activates!\n"
-        f"🔹 **Turn 3:** {user_lead} switches to Landorus-T to Intimidate!\n"
-        f"🏆 **Result:** Rival forfeits! **{user_team_name} Wins!**"
-    )
-
 QUESTS = [
     "Optimize 3 functions to increase Metagross's calculation speed.",
     "Push a commit before noon to outspeed Rival Weavile.",
@@ -708,7 +697,15 @@ for pokemon_name in chosen['team']:
 weather = get_daily_weather(day_number)
 quest = get_daily_quest(day_number)
 pokepaste_link = generate_paste(team_list_data)
-battle_log = simulate_battle(chosen['title'], "Blue", chosen['lead'])
+battle_log = (
+    f"⚔️ **Battle Start!** Trainer {chosen['title']} vs Rival Blue!\n"
+    f"🔹 **Turn 1:** {chosen['lead']} Mega Evolves and uses **Dragon Ascent**!\n"
+    "🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!\n"
+    f"🔹 **Turn 2:** {chosen['lead']} uses **Extreme Speed** for the KO!\n"
+    "🔸 Rival sends out Tapu Koko. Electric Terrain activates!\n"
+    f"🔹 **Turn 3:** {chosen['lead']} switches to Landorus-T to Intimidate!\n"
+    f"🏆 **Result:** Rival forfeits! **{chosen['title']} Wins!**"
+)
 
 # === 4. BANNER GENERATION ===
 print("🖼️ Generating Team Banner...")
