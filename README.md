@@ -11,12 +11,12 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-24 00:50 UTC |
+| Generated | 2026-08-24 21:06 UTC |
 | Schedule Index | 739852 |
 | Archetype | Ultrasonic Night Raider |
 | Lead Operative | Noivern · Balanced Command Core |
-| **Genetics Level** | **50** |
-| Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
+| **Genetics Level** | **86** |
+| Power Core | 3750 ([██████████████████████████░░░░]   0.9% capacity) |
 | Active Roster | Noivern, Rayquaza, Zeraora, Gengar, Metagross, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
@@ -53,16 +53,16 @@
 **EV Spread:** 
 **Physical Specs:** 1.0m · 10.0kg
 
-> **Genetics Boost:** Standard Training
+> **Genetics Boost:** Level 86 (Powered by 432 Contributions)
 
 #### Stat Telemetry
 ```
-HP:     [███████░░░░░░░░░░░░░]  100
-ATK:    [███████░░░░░░░░░░░░░] 100
-DEF:    [███████░░░░░░░░░░░░░] 100
-SP.ATK: [███████░░░░░░░░░░░░░] 100
-SP.DEF: [███████░░░░░░░░░░░░░] 100
-SPEED:  [███████░░░░░░░░░░░░░] 100
+HP:     [████████░░░░░░░░░░░░]  100
+ATK:    [████████████░░░░░░░░] 150
+DEF:    [████████████░░░░░░░░] 150
+SP.ATK: [████████░░░░░░░░░░░░] 100
+SP.DEF: [████████████░░░░░░░░] 150
+SPEED:  [████████░░░░░░░░░░░░] 100
 ```
 
 #### Signature Arsenal
@@ -88,13 +88,13 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
     | O O |
      \ ^ /
       |||
-    
+
 ```
 <br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
+- **Base Stat Total:** 750
+- **Top Stat:** Attack (150)
 - **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
@@ -115,7 +115,7 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
     | O O |
      \ ^ /
       |||
-    
+
 ```
 <br/><img src="assets/stats_rayquaza.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
@@ -142,7 +142,7 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
     | O O |
      \ ^ /
       |||
-    
+
 ```
 <br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
@@ -169,7 +169,7 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
     | O O |
      \ ^ /
       |||
-    
+
 ```
 <br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
@@ -196,7 +196,7 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
     | O O |
      \ ^ /
       |||
-    
+
 ```
 <br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
@@ -223,7 +223,7 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
     | O O |
      \ ^ /
       |||
-    
+
 ```
 <br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
@@ -260,7 +260,7 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 | --- | --- |
 | Synergy Mesh | [▓▓▓░░░░░░░░░░░░░░░]   17% · WARMUP |
 | Speed Pulse | [▓▓▓▓▓▓▓▓▓▓░░░░░░░░]   56% · CRUISE |
-| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░]   83% · VORTEX |
+| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]  100% · Ω-OVERDRIVE |
 
 > Adaptive cadence engaged.
 
@@ -352,7 +352,7 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **12** Days Dry. Odds: **8.08%**
+Current Hunt: **14** Days Dry. Odds: **9.08%**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
@@ -425,13 +425,9 @@ Shiny status: Checked.
 
 ---
 
-## 🗺️ Repository Flight Plan
+## 🗺️ How This Works
 
-| Area | Description | Key Files |
-| --- | --- | --- |
-| Daily build automation | Generates this README from live data and archetypes. | [`scripts/build_readme.py`](scripts/build_readme.py) |
-| Archetype rotation | Curated roster definitions for each featured team. | [`data/archetypes.json`](data/archetypes.json) |
-| Presentation layer | Markdown template for this command-center layout. | [`README.template.md`](README.template.md) |
+The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.py) (GitHub Action: `.github/workflows/update-readme.yml`, midnight UTC + manual trigger). It picks a team from [`data/archetypes.json`](data/archetypes.json), fetches live stats from PokéAPI, renders it through [`README.template.md`](README.template.md), and commits the result. Issues titled `Challenge @...` trigger `.github/workflows/challenge.yml`, which simulates a gym battle via `scripts/process_challenge.py`.
 
 ---
 
@@ -443,4 +439,4 @@ Shiny status: Checked.
 
 ---
 
-<sub>README last rebuilt on 2026-08-24 00:50 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-24 21:06 UTC. Next rotation triggers at midnight UTC.</sub>

@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-08-25",
+    "challenger": "TestTrainer",
+    "team": [
+      "Pikachu",
+      "Charizard",
+      "Mewtwo"
+    ],
+    "result": "3-0",
+    "winner": "Arudchayan"
+  },
+  {
     "date": "2025-11-24",
     "challenger": "Gary Oak",
     "team": [
