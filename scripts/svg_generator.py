@@ -1,10 +1,7 @@
 import math
 import os
 
-def normalize_name(name: str) -> str:
-    return name.lower().strip().replace(" ", "-").replace(".", "").replace("'", "")
-
-def generate_radar_chart(stats: dict, pokemon_name: str) -> str:
+def generate_radar_chart(stats: dict, pokemon_name: str, normalize_name) -> str:
     """Generate a simple SVG radar chart for stats."""
     labels = ['HP', 'Atk', 'Def', 'Spe', 'SpD', 'SpA']
     keys = ['hp', 'attack', 'defense', 'speed', 'special-defense', 'special-attack']
@@ -47,9 +44,7 @@ def generate_radar_chart(stats: dict, pokemon_name: str) -> str:
     clean_name = normalize_name(pokemon_name)
     filename = f"assets/stats_{clean_name}.svg"
 
-    # Ensure assets directory exists (though build script usually creates it)
-    if not os.path.exists("assets"):
-        os.makedirs("assets")
+    os.makedirs("assets", exist_ok=True)
 
     with open(filename, "w") as f:
         f.write(svg)

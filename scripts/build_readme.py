@@ -13,6 +13,7 @@ import svg_generator
 import github_metrics
 import banner_generator
 import coach
+import battle_engine
 
 VERSION_PRIORITY = [
     "scarlet-violet",
@@ -91,15 +92,13 @@ def save_move_cache():
 
 MOVE_CACHE: dict[str, dict] = load_move_cache()
 
-POKEMON_ASCII_ART = {
-    "default": """
+POKEMON_ASCII_ART = """
       ___
      /   \\
     | O O |
      \\ ^ /
       |||
-    """
-}
+"""
 
 TYPE_EMOJIS = {
     "normal": "⚪", "fire": "🔥", "water": "💧", "electric": "⚡",
@@ -497,7 +496,6 @@ def analyze_team_weaknesses(team_types: dict) -> dict:
     return {
         'critical': {t: count for t, count in weakness_count.items() if count >= 3},
         'moderate': {t: count for t, count in weakness_count.items() if count == 2},
-        'all': weakness_count
     }
 
 def calculate_evs(stats: dict) -> dict:
@@ -549,7 +547,7 @@ def fetch_pokemon_data(pokemon_name: str, archetype_data: dict, original_name: O
         ev_spread = calculate_evs(stats)
 
         # Generate SVG
-        svg_generator.generate_radar_chart(stats, original_name or data['name'])
+        svg_generator.generate_radar_chart(stats, original_name or data['name'], normalize_pokemon_identifier)
 
         return {
             'name': (original_name or data['name']).title(),
@@ -584,9 +582,6 @@ def bar(value, max_value, length=20, filled_char='█', suffix=""):
     filled = max(0, min(length, int(round(ratio * length))))
     return '[' + filled_char * filled + '░' * (length - filled) + ']' + suffix
 
-def create_stat_bar(value, max_value=255):
-    return bar(value, max_value)
-
 def create_power_gauge(value, max_value=1530, length=30):
     return bar(value, max_value, length, suffix=f" {ratio_pct(value, max_value):5.1f}% capacity")
 
@@ -607,7 +602,7 @@ def ratio_pct(value, max_value):
 def get_pokemon_sprite_html(sprite_url, name, size=150):
     if sprite_url:
         return f'<img src="{sprite_url}" alt="{name}" width="{size}" height="{size}"/>'
-    return f"```\n{POKEMON_ASCII_ART['default']}\n```"
+    return f"```\n{POKEMON_ASCII_ART}\n```"
 
 def get_type_emoji(type_name):
     return TYPE_EMOJIS.get(type_name, "⚪")
@@ -877,12 +872,12 @@ replacements = {
     '{LEAD_SPATK}': str(lead_stats.get('special-attack', 0)),
     '{LEAD_SPDEF}': str(lead_stats.get('special-defense', 0)),
     '{LEAD_SPEED}': str(lead_stats.get('speed', 0)),
-    '{LEAD_HP_BAR}': create_stat_bar(lead_stats.get('hp', 0)),
-    '{LEAD_ATK_BAR}': create_stat_bar(lead_stats.get('attack', 0)),
-    '{LEAD_DEF_BAR}': create_stat_bar(lead_stats.get('defense', 0)),
-    '{LEAD_SPATK_BAR}': create_stat_bar(lead_stats.get('special-attack', 0)),
-    '{LEAD_SPDEF_BAR}': create_stat_bar(lead_stats.get('special-defense', 0)),
-    '{LEAD_SPEED_BAR}': create_stat_bar(lead_stats.get('speed', 0)),
+    '{LEAD_HP_BAR}': bar(lead_stats.get('hp', 0), 255),
+    '{LEAD_ATK_BAR}': bar(lead_stats.get('attack', 0), 255),
+    '{LEAD_DEF_BAR}': bar(lead_stats.get('defense', 0), 255),
+    '{LEAD_SPATK_BAR}': bar(lead_stats.get('special-attack', 0), 255),
+    '{LEAD_SPDEF_BAR}': bar(lead_stats.get('special-defense', 0), 255),
+    '{LEAD_SPEED_BAR}': bar(lead_stats.get('speed', 0), 255),
     '{TEAM_LIST}': ', '.join(chosen['team']),
     '{MEGA_INFO}': chosen.get('mega') or '—',
     '{ZMOVE_INFO}': chosen.get('z_move') or '—',
