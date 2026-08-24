@@ -578,21 +578,16 @@ def bar(value, max_value, length=20, filled_char='█', suffix=""):
     return '[' + filled_char * filled + '░' * (length - filled) + ']' + suffix
 
 def create_power_gauge(value, max_value=1530, length=30):
-    return bar(value, max_value, length, suffix=f" {ratio_pct(value, max_value):5.1f}% capacity")
+    return bar(value, max_value, length, suffix=f" {min(value / max_value if max_value else 0, 1) * 100:5.1f}% capacity")
 
 def create_flux_meter(value, max_value, length=18):
-    if max_value <= 0:
-        return '[' + '░' * length + '] 0% · STANDBY'
-    pct = ratio_pct(value, max_value)
+    pct = min(value / max_value, 1) if max_value > 0 else 0
     if pct >= 0.9: mode = "Ω-OVERDRIVE"
     elif pct >= 0.7: mode = "VORTEX"
     elif pct >= 0.5: mode = "CRUISE"
     elif pct > 0: mode = "WARMUP"
     else: mode = "STANDBY"
     return bar(value, max_value, length, '▓', f" {pct * 100:4.0f}% · {mode}")
-
-def ratio_pct(value, max_value):
-    return min(value / max_value, 1) if max_value else 0
 
 def get_pokemon_sprite_html(sprite_url, name, size=150):
     if sprite_url:
