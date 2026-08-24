@@ -336,25 +336,20 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
         )
 
         seen_moves.add(move_name)
-        scored_moves.append(
-            (
-                get_version_priority(best_detail.get("version_group", {}).get("name", "")),
-                MOVE_METHOD_PRIORITY.get(best_detail.get("move_learn_method", {}).get("name", ""), 99),
-                -best_detail.get("level_learned_at", 0),
-                move_name,
-                move_url,
-                best_detail,
-            )
-        )
+        scored_moves.append((move_name, move_url, best_detail, (
+            get_version_priority(best_detail.get("version_group", {}).get("name", "")),
+            MOVE_METHOD_PRIORITY.get(best_detail.get("move_learn_method", {}).get("name", ""), 99),
+            -best_detail.get("level_learned_at", 0),
+        )))
 
     if not scored_moves:
         return []
 
-    scored_moves.sort(key=lambda item: item[:4])
+    scored_moves.sort(key=lambda item: item[3])
     trimmed_moves = scored_moves[:75]
 
     candidates: list[dict] = []
-    for _, _, _, move_name, move_url, best_detail in trimmed_moves:
+    for move_name, move_url, best_detail, _ in trimmed_moves:
         metadata = fetch_move_metadata(move_url)
         move_type = metadata.get("type")
         power = metadata.get("power") or 0
