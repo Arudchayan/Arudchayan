@@ -171,13 +171,6 @@ TACTIC_LOADOUTS = [
     },
 ]
 
-MEGA_NAME_OVERRIDES = {
-    "mega charizard x": "charizard-mega-x",
-    "mega charizard y": "charizard-mega-y",
-    "mega mewtwo x": "mewtwo-mega-x",
-    "mega mewtwo y": "mewtwo-mega-y",
-}
-
 root = os.path.dirname(os.path.dirname(__file__))
 
 # ==========================================
@@ -322,7 +315,6 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
 
         seen_moves.add(move_name)
         scored_moves.append((move_name, move_url, best_detail, rank(best_detail)))
-
 
     if not scored_moves:
         return []
