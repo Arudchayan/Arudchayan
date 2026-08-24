@@ -302,9 +302,12 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
     sp_attack = pokemon_stats.get('special-attack', 0)
     is_physical = attack > sp_attack
 
-    forced_moves = set()
-    if 'rayquaza' in pokemon_name.lower():
-        forced_moves.add('dragon-ascent')
+    def rank(detail):
+        return (
+            get_version_priority(detail.get("version_group", {}).get("name", "")),
+            MOVE_METHOD_PRIORITY.get(detail.get("move_learn_method", {}).get("name", ""), 99),
+            -detail.get("level_learned_at", 0),
+        )
 
     for entry in api_moves:
         move_name = entry.get("move", {}).get("name")
@@ -312,7 +315,7 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
         if not move_name or not move_url or move_name in seen_moves:
             continue
 
-        if move_name in BAD_MOVES and move_name not in forced_moves:
+        if move_name in BAD_MOVES:
             continue
 
         version_details = entry.get("version_group_details", [])
@@ -326,21 +329,10 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
         if not eligible_details:
             continue
 
-        best_detail = min(
-            eligible_details,
-            key=lambda detail: (
-                get_version_priority(detail.get("version_group", {}).get("name", "")),
-                MOVE_METHOD_PRIORITY.get(detail.get("move_learn_method", {}).get("name", ""), 99),
-                -detail.get("level_learned_at", 0),
-            ),
-        )
+        best_detail = min(eligible_details, key=rank)
 
         seen_moves.add(move_name)
-        scored_moves.append((move_name, move_url, best_detail, (
-            get_version_priority(best_detail.get("version_group", {}).get("name", "")),
-            MOVE_METHOD_PRIORITY.get(best_detail.get("move_learn_method", {}).get("name", ""), 99),
-            -best_detail.get("level_learned_at", 0),
-        )))
+        scored_moves.append((move_name, move_url, best_detail, rank(best_detail)))
 
     if not scored_moves:
         return []
@@ -367,9 +359,6 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
 
     def move_sort_key(item: dict) -> tuple:
         move_raw = item.get("raw_name", "")
-        if move_raw in forced_moves:
-            return (-10, 0, 0, 0, 0, 0, 0, "")
-
         is_priority = 0 if move_raw in COMPETITIVE_PRIORITY_MOVES else 1
         stab = 0 if item.get("type") in pokemon_types else 1
         damage_class = item.get("damage_class", "status")
@@ -396,11 +385,6 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
     final_names = set()
 
     for m in candidates:
-        if m['raw_name'] in forced_moves:
-            final_moves.append(m)
-            final_names.add(m['raw_name'])
-
-    for m in candidates:
         if len(final_moves) >= 4: break
         if m['raw_name'] not in final_names and m['type'] in pokemon_types and m['damage_class'] != 'status':
             if (is_physical and m['damage_class'] == 'physical') or (not is_physical and m['damage_class'] == 'special'):
@@ -420,6 +404,13 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
         if m['raw_name'] not in final_names:
             final_moves.append(m)
             final_names.add(m['raw_name'])
+
+    if 'rayquaza' in pokemon_name.lower():
+        final_moves = [m for m in final_moves if m['raw_name'] != 'dragon-ascent'][:3]
+        final_moves.insert(0, {
+            "name": "Dragon Ascent", "raw_name": "dragon-ascent", "type": "flying",
+            "power": 120, "damage_class": "physical", "method": "level-up", "level": 0,
+        })
 
     return final_moves
 
