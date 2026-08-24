@@ -31,8 +31,6 @@ def generate_team_banner(pokemon_sprites, weather_type="Clear Skies"):
         "Rain": [(25, 25, 112), (100, 149, 237)], # Dark Blue
         "Sandstorm": [(210, 180, 140), (139, 69, 19)], # Tan/Brown
         "Snow": [(224, 255, 255), (240, 255, 255)], # Light Cyan
-        "Hail": [(200, 230, 255), (255, 250, 250)],
-        "Fog": [(169, 169, 169), (211, 211, 211)]
     }
 
     colors = weather_colors.get(weather_type, [(50, 50, 50), (20, 20, 20)])
@@ -82,11 +80,3 @@ def generate_team_banner(pokemon_sprites, weather_type="Clear Skies"):
     print(f"Banner saved to {output_path}")
     return output_path
 
-if __name__ == "__main__":
-    # Test run
-    test_sprites = [
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
-    ]
-    generate_team_banner(test_sprites, "Harsh Sunlight")

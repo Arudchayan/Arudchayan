@@ -299,15 +299,15 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
             continue
         best_detail = min(eligible_details, key=rank)
         seen_moves.add(move_name)
-        scored_moves.append((move_name, move_url, best_detail, rank(best_detail)))
+        scored_moves.append((move_name, move_url, best_detail))
 
     if not scored_moves:
         return []
-    scored_moves.sort(key=lambda item: item[3])
+    scored_moves.sort(key=lambda item: rank(item[2]))
     trimmed_moves = scored_moves[:75]
 
     candidates: list[dict] = []
-    for move_name, move_url, best_detail, _ in trimmed_moves:
+    for move_name, move_url, best_detail in trimmed_moves:
         metadata = fetch_move_metadata(move_url)
         move_type = metadata.get("type")
         power = metadata.get("power") or 0
@@ -528,9 +528,6 @@ def bar(value, max_value, length=20, filled_char='█', suffix=""):
     filled = max(0, min(length, int(round(ratio * length))))
     return '[' + filled_char * filled + '░' * (length - filled) + ']' + suffix
 
-def create_power_gauge(value, max_value=1530, length=30):
-    return bar(value, max_value, length, suffix=f" {min(value / max_value if max_value else 0, 1) * 100:5.1f}% capacity")
-
 def create_flux_meter(value, max_value, length=18):
     pct = min(value / max_value, 1) if max_value > 0 else 0
     if pct >= 0.9: mode = "Ω-OVERDRIVE"
@@ -574,15 +571,10 @@ def roll_random_encounter(days_dry):
 
     return species, rarity, callout, is_shiny, trigger_rate
 
-def describe_target(is_shiny: bool, legendary_mode: bool) -> str:
-    if is_shiny: return "shimmering anomaly"
-    if legendary_mode: return "legendary beacon"
-    return "wild signal"
-
 def generate_branching_paths(species: str, pokemon_info: Optional[dict], is_shiny: bool, legendary_mode: bool) -> str:
     display_name = species.title()
     type_summary = " / ".join([t.title() for t in pokemon_info["types"]]) if pokemon_info else "Unknown"
-    target_descriptor = describe_target(is_shiny, legendary_mode)
+    target_descriptor = "shimmering anomaly" if is_shiny else "legendary beacon" if legendary_mode else "wild signal"
     legend_tag = "Legendary-class" if legendary_mode else "Wild-class"
     shiny_suffix = " with radiant sheen" if is_shiny else ""
 
@@ -882,15 +874,13 @@ avg_speed = total_speed / len(chosen['team'])
 replacements['{UNIQUE_TYPE_COUNT}'] = str(len(team_type_counts))
 replacements['{AVERAGE_SPEED}'] = f"{avg_speed:.1f}"
 replacements['{POWER_LEVEL}'] = str(team_bst_total)
-replacements['{POWER_LEVEL_BAR}'] = create_power_gauge(team_bst_total, max(1, len(chosen['team'])) * 720)
+replacements['{POWER_LEVEL_BAR}'] = bar(team_bst_total, max(1, len(chosen['team'])) * 720, 30, suffix=f" {min(team_bst_total / (max(1, len(chosen['team'])) * 720), 1) * 100:5.1f}% capacity")
 replacements['{SYNERGY_METER}'] = create_flux_meter(len(team_type_counts), len(chosen['team']))
 replacements['{SPEED_PULSE}'] = create_flux_meter(avg_speed, 180)
 replacements['{BST_OVERDRIVE}'] = create_flux_meter(max_bst, 720)
 replacements['{TEMPO_CALLSIGN}'] = "Adaptive cadence engaged." if avg_speed > 90 else "Glacial recon mode."
 replacements['{HYPERSTREAM_BLOCK}'] = f"- **Synergy:** {len(team_type_counts)} types.\n- **Speed:** Avg {avg_speed:.1f}."
-replacements['{BONKERS_TAGLINE}'] = "battle telemetry screaming through neon conduits"
 replacements['{ANALYTICS_BLURB}'] = f"Squad average speed: {avg_speed:.1f}."
-replacements['{LEAD_ROLE}'] = 'Balanced Command Core'
 
 # Random Pokemon replacements
 if random_pokemon_data:
@@ -911,7 +901,6 @@ else:
 replacements['{ENCOUNTER_SUMMARY}'] = f"🎲 Encounter: {random_choice.title()}"
 replacements['{ENCOUNTER_RARITY}'] = encounter_rarity
 replacements['{ENCOUNTER_SIGNAL}'] = encounter_callout
-replacements['{SHINY_TRIGGER_PANEL}'] = "Shiny status: Checked."
 
 # Apply replacements
 output = template
