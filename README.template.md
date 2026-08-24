@@ -162,13 +162,9 @@ Copy this to import your team into Pokémon Showdown:
 
 ---
 
-## 🗺️ Repository Flight Plan
+## 🗺️ How This Works
 
-| Area | Description | Key Files |
-| --- | --- | --- |
-| Daily build automation | Generates this README from live data and archetypes. | [`scripts/build_readme.py`](scripts/build_readme.py) |
-| Archetype rotation | Curated roster definitions for each featured team. | [`data/archetypes.json`](data/archetypes.json) |
-| Presentation layer | Markdown template for this command-center layout. | [`README.template.md`](README.template.md) |
+The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.py) (GitHub Action: `.github/workflows/update-readme.yml`, midnight UTC + manual trigger). It picks a team from [`data/archetypes.json`](data/archetypes.json), fetches live stats from PokéAPI, renders it through [`README.template.md`](README.template.md), and commits the result. Issues titled `Challenge @...` trigger `.github/workflows/challenge.yml`, which simulates a gym battle via `scripts/process_challenge.py`.
 
 ---
 

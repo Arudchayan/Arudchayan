@@ -1,13 +1,12 @@
 import os
 from PIL import Image, ImageDraw, ImageFont
-import requests
+import urllib.request
 from io import BytesIO
 
 def download_image(url):
     try:
-        response = requests.get(url, timeout=5)
-        response.raise_for_status()
-        return Image.open(BytesIO(response.content))
+        with urllib.request.urlopen(url, timeout=5) as response:
+            return Image.open(BytesIO(response.read()))
     except Exception as e:
         print(f"Failed to download image from {url}: {e}")
         return None

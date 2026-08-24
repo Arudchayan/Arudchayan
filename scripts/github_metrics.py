@@ -1,7 +1,7 @@
 import os
 import json
 import datetime
-import requests
+import urllib.request
 
 def get_github_stats(username="Arudchayan", token=None):
     """
@@ -43,56 +43,42 @@ def get_github_stats(username="Arudchayan", token=None):
     # or just use the mock logic/simple calc.
     # For this implementation, I'll stick to the metrics easily available.
 
-    headers = {"Authorization": f"Bearer {token}"}
+    headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
 
     try:
-        response = requests.post(
-            "https://api.github.com/graphql",
-            json={"query": query, "variables": {"login": username}},
-            headers=headers,
-            timeout=10
-        )
+        payload = json.dumps({"query": query, "variables": {"login": username}}).encode()
+        req = urllib.request.Request("https://api.github.com/graphql", data=payload, headers=headers, method="POST")
+        with urllib.request.urlopen(req, timeout=10) as response:
+            if response.status == 200:
+                data = json.loads(response.read().decode())
+                user_data = data.get("data", {}).get("user", {})
+                contribs = user_data.get("contributionsCollection", {})
 
-        if response.status_code == 200:
-            data = response.json()
-            user_data = data.get("data", {}).get("user", {})
-            contribs = user_data.get("contributionsCollection", {})
+                total_contribs = contribs.get("contributionCalendar", {}).get("totalContributions", 0)
+                prs = contribs.get("totalPullRequestContributions", 0)
+                reviews = contribs.get("totalPullRequestReviewContributions", 0)
 
-            total_contribs = contribs.get("contributionCalendar", {}).get("totalContributions", 0)
-            prs = contribs.get("totalPullRequestContributions", 0)
-            reviews = contribs.get("totalPullRequestReviewContributions", 0)
+                # Since streak calculation is complex via API, approximate it
+                streak = min(total_contribs // 20, 365)
 
-            # Since streak calculation is complex via API, we will randomize it slightly based on contribs
-            # or treat it as a placeholder unless we use a specialized action input.
-            # Let's assume a rough estimate:
-            streak = min(total_contribs // 20, 365)
-
-            return {
-                "total_contributions": total_contribs,
-                "commit_streak": streak,
-                "pull_requests": prs,
-                "code_reviews": reviews,
-                "mock": False
-            }
-        else:
-            print(f"Error fetching GitHub stats: {response.status_code}")
-            return {
-                "total_contributions": 0,
-                "commit_streak": 0,
-                "pull_requests": 0,
-                "code_reviews": 0,
-                "mock": True
-            }
-
+                return {
+                    "total_contributions": total_contribs,
+                    "commit_streak": streak,
+                    "pull_requests": prs,
+                    "code_reviews": reviews,
+                    "mock": False
+                }
+        print(f"Error fetching GitHub stats: {response.status}")
     except Exception as e:
         print(f"Exception fetching GitHub stats: {e}")
-        return {
-            "total_contributions": 0,
-            "commit_streak": 0,
-            "pull_requests": 0,
-            "code_reviews": 0,
-            "mock": True
-        }
+
+    return {
+        "total_contributions": 0,
+        "commit_streak": 0,
+        "pull_requests": 0,
+        "code_reviews": 0,
+        "mock": True
+    }
 
 def calculate_genetic_bonuses(stats):
     """

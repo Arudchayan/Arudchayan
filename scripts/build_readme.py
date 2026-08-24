@@ -7,31 +7,12 @@ import re
 import urllib.request
 import urllib.error
 import time
-import math
-from typing import Optional, List, Dict, Tuple
+from typing import Optional
 
-# === 1. IMPORTS FOR NEW MODULES ===
-try:
-    import svg_generator
-except ImportError:
-    svg_generator = None
-
-try:
-    import github_metrics
-except ImportError:
-    github_metrics = None
-
-try:
-    import banner_generator
-except ImportError:
-    banner_generator = None
-
-try:
-    import coach
-except ImportError:
-    coach = None
-
-# ==================================
+import svg_generator
+import github_metrics
+import banner_generator
+import coach
 
 ROYAL = "#6A0DAD"
 
@@ -117,14 +98,6 @@ def save_move_cache():
         json.dump(MOVE_CACHE, f, indent=2, sort_keys=True)
 
 MOVE_CACHE: dict[str, dict] = load_move_cache()
-
-ROLE_BY_STAT = {
-    'attack': 'Hyper-Offense Spearhead',
-    'special-attack': 'Arcane Artillery Node',
-    'defense': 'Fortified Bulwark Unit',
-    'special-defense': 'Psi-Shield Anchor',
-    'speed': 'Supersonic Initiator',
-}
 
 POKEMON_ASCII_ART = {
     "default": """
@@ -221,73 +194,65 @@ root = os.path.dirname(os.path.dirname(__file__))
 # ADVANCED GAME ENGINES
 # ==========================================
 
-class WeatherSystem:
-    WEATHER_TYPES = [
-        {"name": "Clear Skies", "emoji": "☀️", "effect": "Standard battle conditions."},
-        {"name": "Harsh Sunlight", "emoji": "🔥", "effect": "Fire moves boosted 50%, Water moves weakened 50%."},
-        {"name": "Rain", "emoji": "🌧️", "effect": "Water moves boosted 50%, Fire moves weakened 50%."},
-        {"name": "Sandstorm", "emoji": "🏜️", "effect": "Rock types get 50% Sp. Def boost. Chip damage active."},
-        {"name": "Snow", "emoji": "❄️", "effect": "Ice types get 50% Def boost."},
+WEATHER_TYPES = [
+    {"name": "Clear Skies", "emoji": "☀️", "effect": "Standard battle conditions."},
+    {"name": "Harsh Sunlight", "emoji": "🔥", "effect": "Fire moves boosted 50%, Water moves weakened 50%."},
+    {"name": "Rain", "emoji": "🌧️", "effect": "Water moves boosted 50%, Fire moves weakened 50%."},
+    {"name": "Sandstorm", "emoji": "🏜️", "effect": "Rock types get 50% Sp. Def boost. Chip damage active."},
+    {"name": "Snow", "emoji": "❄️", "effect": "Ice types get 50% Def boost."},
+]
+
+def get_daily_weather(seed):
+    random.seed(seed)
+    return random.choice(WEATHER_TYPES)
+
+def simulate_battle(user_team_name, rival_name, user_lead):
+    # Deterministic simulation based on day
+    events = [
+        f"⚔️ **Battle Start!** Trainer {user_team_name} vs Rival {rival_name}!",
+        f"🔹 **Turn 1:** {user_lead} Mega Evolves and uses **Dragon Ascent**!",
+        f"🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!",
+        f"🔹 **Turn 2:** {user_lead} uses **Extreme Speed** for the KO!",
+        f"🔸 Rival sends out Tapu Koko. Electric Terrain activates!",
+        f"🔹 **Turn 3:** {user_lead} switches to Landorus-T to Intimidate!",
+        f"🏆 **Result:** Rival forfeits! **{user_team_name} Wins!**"
     ]
+    return "\n".join(events)
 
-    @staticmethod
-    def get_daily_weather(seed):
-        random.seed(seed)
-        return random.choice(WeatherSystem.WEATHER_TYPES)
+QUESTS = [
+    "Optimize 3 functions to increase Metagross's calculation speed.",
+    "Push a commit before noon to outspeed Rival Weavile.",
+    "Refactor legacy code to clear Gengar's Cursed Body status.",
+    "Add unit tests to strengthen the team's Synergy Mesh.",
+    "Review a PR to teach Alakazam 'Future Sight'.",
+]
 
-class BattleSimulator:
-    @staticmethod
-    def simulate_battle(user_team_name, rival_name, user_lead):
-        # Deterministic simulation based on day
-        events = [
-            f"⚔️ **Battle Start!** Trainer {user_team_name} vs Rival {rival_name}!",
-            f"🔹 **Turn 1:** {user_lead} Mega Evolves and uses **Dragon Ascent**!",
-            f"🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!",
-            f"🔹 **Turn 2:** {user_lead} uses **Extreme Speed** for the KO!",
-            f"🔸 Rival sends out Tapu Koko. Electric Terrain activates!",
-            f"🔹 **Turn 3:** {user_lead} switches to Landorus-T to Intimidate!",
-            f"🏆 **Result:** Rival forfeits! **{user_team_name} Wins!**"
-        ]
-        return "\n".join(events)
+def get_daily_quest(seed):
+    random.seed(seed)
+    return random.choice(QUESTS)
 
-class QuestGenerator:
-    QUESTS = [
-        "Optimize 3 functions to increase Metagross's calculation speed.",
-        "Push a commit before noon to outspeed Rival Weavile.",
-        "Refactor legacy code to clear Gengar's Cursed Body status.",
-        "Add unit tests to strengthen the team's Synergy Mesh.",
-        "Review a PR to teach Alakazam 'Future Sight'.",
-    ]
+def generate_paste(pokemon_list: list[dict]) -> str:
+    paste_lines = []
+    for p in pokemon_list:
+        name = p['name']
+        item = p['item']
+        ability = p['best_ability']
+        nature = p['nature']
+        evs = p['evs']
+        moves = [m['name'] for m in p['signature_moves']]
 
-    @staticmethod
-    def get_daily_quest(seed):
-        random.seed(seed)
-        return random.choice(QuestGenerator.QUESTS)
+        # Format EV string
+        ev_list = []
+        for k, v in evs.items():
+            if v > 0: ev_list.append(f"{v} {k}")
+        ev_str = " / ".join(ev_list)
 
-class PokePasteGenerator:
-    @staticmethod
-    def generate_paste(pokemon_list: List[Dict]) -> str:
-        paste_lines = []
-        for p in pokemon_list:
-            name = p['name']
-            item = p['item']
-            ability = p['best_ability']
-            nature = p['nature']
-            evs = p['evs']
-            moves = [m['name'] for m in p['signature_moves']]
+        block = f"{name} @ {item}\nAbility: {ability}\nEVs: {ev_str}\n{nature} Nature"
+        for m in moves:
+            block += f"\n- {m}"
+        paste_lines.append(block)
 
-            # Format EV string
-            ev_list = []
-            for k, v in evs.items():
-                if v > 0: ev_list.append(f"{v} {k}")
-            ev_str = " / ".join(ev_list)
-
-            block = f"{name} @ {item}\nAbility: {ability}\nEVs: {ev_str}\n{nature} Nature"
-            for m in moves:
-                block += f"\n- {m}"
-            paste_lines.append(block)
-
-        return "\n\n".join(paste_lines)
+    return "\n\n".join(paste_lines)
 
 # ... (Previous helper functions like load_trainer_history, normalize_pokemon_identifier, etc.) ...
 def load_trainer_history():
@@ -504,7 +469,7 @@ def select_competitive_ability(pokemon_name: str, abilities: list[str]) -> str:
                 return ability
     return abilities[0]
 
-def select_competitive_item(stats: dict, role: str, pokemon_name: str, types: list[str], archetype_data: dict) -> str:
+def select_competitive_item(stats: dict, pokemon_name: str, types: list[str], archetype_data: dict) -> str:
     if archetype_data.get('mega') and archetype_data.get('lead') == pokemon_name:
         if 'rayquaza' not in pokemon_name.lower():
             return f"{pokemon_name.split()[1]}ite" if 'Mega' in pokemon_name else f"{pokemon_name}ite"
@@ -531,31 +496,11 @@ def select_competitive_item(stats: dict, role: str, pokemon_name: str, types: li
         return 'Leftovers'
 
 def analyze_team_weaknesses(team_types: dict) -> dict:
-    type_chart = {
-        'normal': {'fighting': 2},
-        'fire': {'water': 2, 'ground': 2, 'rock': 2},
-        'water': {'electric': 2, 'grass': 2},
-        'electric': {'ground': 2},
-        'grass': {'fire': 2, 'ice': 2, 'poison': 2, 'flying': 2, 'bug': 2},
-        'ice': {'fire': 2, 'fighting': 2, 'rock': 2, 'steel': 2},
-        'fighting': {'flying': 2, 'psychic': 2, 'fairy': 2},
-        'poison': {'ground': 2, 'psychic': 2},
-        'ground': {'water': 2, 'grass': 2, 'ice': 2},
-        'flying': {'electric': 2, 'ice': 2, 'rock': 2},
-        'psychic': {'bug': 2, 'ghost': 2, 'dark': 2},
-        'bug': {'fire': 2, 'flying': 2, 'rock': 2},
-        'rock': {'water': 2, 'grass': 2, 'fighting': 2, 'ground': 2, 'steel': 2},
-        'ghost': {'ghost': 2, 'dark': 2},
-        'dragon': {'ice': 2, 'dragon': 2, 'fairy': 2},
-        'dark': {'fighting': 2, 'bug': 2, 'fairy': 2},
-        'steel': {'fire': 2, 'fighting': 2, 'ground': 2},
-        'fairy': {'poison': 2, 'steel': 2},
-    }
     weakness_count = {}
     for pokemon_types in team_types.values():
         for ptype in pokemon_types:
-            if ptype in type_chart:
-                for weakness_type, multiplier in type_chart[ptype].items():
+            if ptype in battle_engine.TYPE_CHART:
+                for weakness_type in battle_engine.TYPE_CHART[ptype]['weak']:
                     weakness_count[weakness_type] = weakness_count.get(weakness_type, 0) + 1
     return {
         'critical': {t: count for t, count in weakness_count.items() if count >= 3},
@@ -563,7 +508,7 @@ def analyze_team_weaknesses(team_types: dict) -> dict:
         'all': weakness_count
     }
 
-def calculate_evs(stats: dict, role: str) -> dict:
+def calculate_evs(stats: dict) -> dict:
     if not stats: return {}
     attack = stats.get('attack', 0)
     sp_attack = stats.get('special-attack', 0)
@@ -607,19 +552,12 @@ def fetch_pokemon_data(pokemon_name: str, archetype_data: dict, original_name: O
         all_abilities = [a['ability']['name'].replace('-', ' ').title() for a in data['abilities']]
         best_ability = select_competitive_ability(original_name or data['name'], all_abilities)
         competitive_nature = select_competitive_nature(stats)
-        
-        if stats:
-            top_stat_key = max(stats, key=stats.get)
-            role = ROLE_BY_STAT.get(top_stat_key, 'Balanced Command Core')
-        else:
-            role = 'Balanced Command Core'
 
-        competitive_item = select_competitive_item(stats, role, original_name or data['name'], pokemon_types, archetype_data)
-        ev_spread = calculate_evs(stats, role)
+        competitive_item = select_competitive_item(stats, original_name or data['name'], pokemon_types, archetype_data)
+        ev_spread = calculate_evs(stats)
 
         # Generate SVG
-        if svg_generator:
-            svg_generator.generate_radar_chart(stats, original_name or data['name'])
+        svg_generator.generate_radar_chart(stats, original_name or data['name'])
 
         return {
             'name': (original_name or data['name']).title(),
@@ -648,33 +586,31 @@ def get_english_flavor_text(species_data):
             return entry['flavor_text'].replace('\n', ' ').replace('\f', ' ')
     return "A mysterious Pokémon that loves to code!"
 
-def create_stat_bar(value, max_value=255):
+def bar(value, max_value, length=20, filled_char='█', suffix=""):
     value = max(value, 0)
-    filled = int((value / max_value) * 20)
-    filled = max(0, min(20, filled))
-    return '[' + '█' * filled + '░' * (20 - filled) + ']'
+    ratio = min(value / max_value, 1) if max_value > 0 else 0
+    filled = max(0, min(length, int(round(ratio * length))))
+    return '[' + filled_char * filled + '░' * (length - filled) + ']' + suffix
+
+def create_stat_bar(value, max_value=255):
+    return bar(value, max_value)
 
 def create_power_gauge(value, max_value=1530, length=30):
-    value = max(value, 0)
-    ratio = min(value / max_value, 1) if max_value else 0
-    filled = int(ratio * length)
-    filled = max(0, min(length, filled))
-    bar = '[' + '█' * filled + '░' * (length - filled) + ']'
-    return f"{bar} {ratio * 100:5.1f}% capacity"
+    return bar(value, max_value, length, suffix=f" {ratio_pct(value, max_value):5.1f}% capacity")
 
 def create_flux_meter(value, max_value, length=18):
-    if max_value <= 0: return '[' + '░' * length + '] 0% · STANDBY'
-    value = max(value, 0)
-    ratio = min(value / max_value, 1)
-    filled = int(round(ratio * length))
-    filled = max(0, min(length, filled))
-    bar = '[' + '▓' * filled + '░' * (length - filled) + ']'
-    if ratio >= 0.9: mode = "Ω-OVERDRIVE"
-    elif ratio >= 0.7: mode = "VORTEX"
-    elif ratio >= 0.5: mode = "CRUISE"
-    elif ratio > 0: mode = "WARMUP"
+    if max_value <= 0:
+        return '[' + '░' * length + '] 0% · STANDBY'
+    pct = ratio_pct(value, max_value)
+    if pct >= 0.9: mode = "Ω-OVERDRIVE"
+    elif pct >= 0.7: mode = "VORTEX"
+    elif pct >= 0.5: mode = "CRUISE"
+    elif pct > 0: mode = "WARMUP"
     else: mode = "STANDBY"
-    return f"{bar} {ratio * 100:4.0f}% · {mode}"
+    return bar(value, max_value, length, '▓', f" {pct * 100:4.0f}% · {mode}")
+
+def ratio_pct(value, max_value):
+    return min(value / max_value, 1) if max_value else 0
 
 def get_pokemon_sprite_html(sprite_url, name, size=150):
     if sprite_url:
@@ -683,10 +619,6 @@ def get_pokemon_sprite_html(sprite_url, name, size=150):
 
 def get_type_emoji(type_name):
     return TYPE_EMOJIS.get(type_name, "⚪")
-
-def pick_index(n: int, day_seed: int) -> int:
-    if n == 0: return 0
-    return day_seed % n
 
 def roll_random_encounter(days_dry):
     # === 3. SHINY PITY TIMER LOGIC ===
@@ -766,18 +698,13 @@ with open(os.path.join(root, "data", "archetypes.json")) as f:
     arc = json.load(f)
 
 # === 2. FETCH GENETICS STATS ===
-genetics_data = {}
-genetics_bonuses = {}
-if github_metrics:
-    genetics_data = github_metrics.get_github_stats()
-    genetics_bonuses = github_metrics.calculate_genetic_bonuses(genetics_data)
-    print(f"🧬 Genetics Loaded: {genetics_bonuses.get('desc')}")
-else:
-    genetics_bonuses = {'level': 50, 'attack_bonus': 0, 'defense_bonus': 0, 'sp_def_bonus': 0, 'desc': 'Standard Training'}
+genetics_data = github_metrics.get_github_stats()
+genetics_bonuses = github_metrics.calculate_genetic_bonuses(genetics_data)
+print(f"🧬 Genetics Loaded: {genetics_bonuses.get('desc')}")
 
 now_utc = datetime.datetime.now(datetime.UTC)
 day_number = now_utc.date().toordinal()
-idx = pick_index(len(arc), day_number)
+idx = day_number % len(arc)
 chosen = arc[idx]
 
 random.seed(f"{day_number}-{chosen.get('id', idx)}")
@@ -815,15 +742,14 @@ for pokemon_name in chosen['team']:
         sprite_urls.append(None)
 
 # Advanced Features Generation
-weather = WeatherSystem.get_daily_weather(day_number)
-quest = QuestGenerator.get_daily_quest(day_number)
-pokepaste_link = PokePasteGenerator.generate_paste(team_list_data)
-battle_log = BattleSimulator.simulate_battle(chosen['title'], "Blue", chosen['lead'])
+weather = get_daily_weather(day_number)
+quest = get_daily_quest(day_number)
+pokepaste_link = generate_paste(team_list_data)
+battle_log = simulate_battle(chosen['title'], "Blue", chosen['lead'])
 
 # === 4. BANNER GENERATION ===
-if banner_generator:
-    print("🖼️ Generating Team Banner...")
-    banner_generator.generate_team_banner(sprite_urls, weather['name'])
+print("🖼️ Generating Team Banner...")
+banner_generator.generate_team_banner(sprite_urls, weather['name'])
 
 # === 5. SHINY HUNT LOGIC ===
 trainer_history = load_trainer_history()
@@ -882,9 +808,7 @@ team_types_by_pokemon = {}
 team_dossiers = []
 total_speed = 0
 team_bst_total = 0
-fastest_member = (None, 0)
-heaviest_member = (None, 0)
-bst_member = (None, 0)
+max_bst = 0
 
 for pokemon_name in chosen['team']:
     pdata = pokemon_data.get(pokemon_name, {})
@@ -894,16 +818,11 @@ for pokemon_name in chosen['team']:
     team_types_by_pokemon[pokemon_name] = types
     for t in types: team_type_counts[t] = team_type_counts.get(t, 0) + 1
 
-    speed_value = stats.get('speed', 0)
-    total_speed += speed_value
-    if speed_value > fastest_member[1]: fastest_member = (pokemon_name, speed_value)
-
-    weight = pdata.get('weight', 0)
-    if weight > heaviest_member[1]: heaviest_member = (pokemon_name, weight)
+    total_speed += stats.get('speed', 0)
 
     bst = sum(stats.values()) if stats else 0
     team_bst_total += bst
-    if bst > bst_member[1]: bst_member = (pokemon_name, bst)
+    max_bst = max(max_bst, bst)
 
     formatted_moves = []
     for move in pdata.get('signature_moves', []):
@@ -941,24 +860,18 @@ for pokemon_name in chosen['team']:
     team_dossiers.append(dossier)
 
 # === 8. COACH'S ADVICE ===
-coach_tips = "Coach is offline."
-if coach:
-    coach_tips = coach.Coach.get_coach_advice(
-        lead_name,
-        lead_data.get('types', ['normal']),
-        lead_stats.get('speed', 90)
-    )
+coach_tips = coach.Coach.get_coach_advice(
+    lead_name,
+    lead_data.get('types', ['normal']),
+    lead_stats.get('speed', 90)
+)
 
 # Replacements Dictionary
 replacements = {
     '{CURRENT_DATE}': now_utc.strftime("%Y-%m-%d %H:%M UTC"),
     '{DAY_NUMBER}': str(day_number),
-    '{POKEDEX_COUNT}': str(len(pokemon_data)),
     '{ARCHETYPE_TITLE}': chosen['title'],
-    '{ARCHETYPE_EMOJI}': get_type_emoji(lead_data.get('types', ['normal'])[0]),
     '{LEAD_POKEMON}': lead_name,
-    '{LEAD_EMOJI}': get_type_emoji(lead_data.get('types', ['normal'])[0]),
-    '{LEAD_ASCII}': get_pokemon_sprite_html(lead_data.get('sprite'), lead_name, 200),
     '{LEAD_TYPES}': ' '.join([get_type_emoji(t) + t.upper() for t in lead_data.get('types', ['normal'])]),
     '{LEAD_ABILITY}': lead_data.get('best_ability', 'Unknown'),
     '{LEAD_NATURE}': lead_data.get('nature', 'Serious'),
@@ -978,7 +891,6 @@ replacements = {
     '{LEAD_SPATK_BAR}': create_stat_bar(lead_stats.get('special-attack', 0)),
     '{LEAD_SPDEF_BAR}': create_stat_bar(lead_stats.get('special-defense', 0)),
     '{LEAD_SPEED_BAR}': create_stat_bar(lead_stats.get('speed', 0)),
-    '{TEAM_VISUAL}': "\n".join([f"  [{i+1}] {p}" for i, p in enumerate(chosen['team'])]),
     '{TEAM_LIST}': ', '.join(chosen['team']),
     '{MEGA_INFO}': chosen.get('mega') or '—',
     '{ZMOVE_INFO}': chosen.get('z_move') or '—',
@@ -1034,29 +946,19 @@ replacements['{TYPE_COVERAGE_BLOCK}'] = "\n".join(c_lines)
 avg_speed = total_speed / len(chosen['team'])
 replacements['{UNIQUE_TYPE_COUNT}'] = str(len(team_type_counts))
 replacements['{AVERAGE_SPEED}'] = f"{avg_speed:.1f}"
-replacements['{FASTEST_MEMBER}'] = fastest_member[0] or "Unknown"
-replacements['{FASTEST_SPEED}'] = str(fastest_member[1])
-replacements['{HEAVIEST_MEMBER}'] = heaviest_member[0] or "Unknown"
-replacements['{HEAVIEST_WEIGHT}'] = f"{heaviest_member[1]:.1f}kg"
-replacements['{HIGHEST_BST_MEMBER}'] = bst_member[0] or "Unknown"
-replacements['{HIGHEST_BST}'] = str(bst_member[1])
 replacements['{POWER_LEVEL}'] = str(team_bst_total)
 replacements['{POWER_LEVEL_BAR}'] = create_power_gauge(team_bst_total, max(1, len(chosen['team'])) * 720)
 replacements['{SYNERGY_METER}'] = create_flux_meter(len(team_type_counts), len(chosen['team']))
 replacements['{SPEED_PULSE}'] = create_flux_meter(avg_speed, 180)
-replacements['{BST_OVERDRIVE}'] = create_flux_meter(bst_member[1], 720)
+replacements['{BST_OVERDRIVE}'] = create_flux_meter(max_bst, 720)
 replacements['{TEMPO_CALLSIGN}'] = "Adaptive cadence engaged." if avg_speed > 90 else "Glacial recon mode."
 replacements['{HYPERSTREAM_BLOCK}'] = f"- **Synergy:** {len(team_type_counts)} types.\n- **Speed:** Avg {avg_speed:.1f}."
 replacements['{BONKERS_TAGLINE}'] = "battle telemetry screaming through neon conduits"
 replacements['{ANALYTICS_BLURB}'] = f"Squad average speed: {avg_speed:.1f}."
 replacements['{LEAD_ROLE}'] = lead_data.get('role', 'Balanced Command Core')
-replacements['{GENERATION}'] = str(random.randint(1, 9))
-replacements['{API_CALLS}'] = str(len(pokemon_data) + 1)
-replacements['{ACHIEVEMENT_DATE}'] = now_utc.strftime("%Y-%m-%d")
 
 # Random Pokemon replacements
 if random_pokemon_data:
-    replacements['{RANDOM_POKEMON}'] = random_pokemon_data['name'].upper()
     replacements['{RANDOM_POKEMON_ASCII}'] = get_pokemon_sprite_html(random_pokemon_data.get('sprite'), random_pokemon_data['name'], 150)
     replacements['{RANDOM_POKEMON_TYPES}'] = ' '.join([get_type_emoji(t) + t.upper() for t in random_pokemon_data.get('types', ['normal'])])
     replacements['{RANDOM_POKEMON_HEIGHT}'] = f"{random_pokemon_data['height']:.1f}m"
@@ -1064,7 +966,6 @@ if random_pokemon_data:
     replacements['{RANDOM_POKEMON_ABILITIES}'] = ', '.join(random_pokemon_data['abilities'])
     replacements['{RANDOM_POKEMON_FLAVOR}'] = random_pokemon_data['flavor_text']
 else:
-    replacements['{RANDOM_POKEMON}'] = 'MISSINGNO'
     replacements['{RANDOM_POKEMON_ASCII}'] = '???'
     replacements['{RANDOM_POKEMON_TYPES}'] = 'GLITCH'
     replacements['{RANDOM_POKEMON_HEIGHT}'] = '???'

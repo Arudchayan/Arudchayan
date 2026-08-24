@@ -1,5 +1,7 @@
 import random
 
+from battle_engine import TYPE_CHART
+
 class Coach:
     META_TEAMS = [
         {
@@ -70,7 +72,7 @@ class Coach:
         weakness_note = ""
         user_weaknesses = set()
         for t in user_lead_types:
-            user_weaknesses.update(Coach.TYPE_CHART.get(t, {}).get('weak', []))
+            user_weaknesses.update(TYPE_CHART.get(t, {}).get('weak', []))
 
         # Very rough inference of threat type (since we don't fetch meta data)
         # This is hardcoded for the demo to save API calls
