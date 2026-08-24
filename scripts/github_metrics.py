@@ -1,6 +1,5 @@
 import os
 import json
-import datetime
 import urllib.request
 
 def get_github_stats(username="Arudchayan", token=None):

@@ -5,7 +5,6 @@ import datetime
 import random
 import re
 import urllib.request
-import urllib.error
 import time
 from typing import Optional
 
