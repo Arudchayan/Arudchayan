@@ -560,9 +560,7 @@ def fetch_pokemon_data(pokemon_name: str, archetype_data: dict, original_name: O
             'evs': ev_spread,
             'signature_moves': signature_moves,
             'flavor_text': get_english_flavor_text(species_data),
-            'sprite': sprite_url,
-            'shiny_sprite': sprites.get('front_shiny'),
-            'id': data['id']
+            'sprite': sprite_url
         }
     except Exception as e:
         print(f"Warning: Could not fetch data for {pokemon_name}: {e}")
@@ -719,7 +717,7 @@ for pokemon_name in chosen['team']:
             'abilities': ['Unknown'],
             'signature_moves': [],
             'flavor_text': 'A mysterious Pokémon!',
-            'sprite': None, 'shiny_sprite': None, 'id': 0,
+            'sprite': None,
             'item': 'Leftovers', 'best_ability': 'Unknown', 'nature': 'Serious', 'evs': {}
         }
         pokemon_data[pokemon_name] = fallback
@@ -834,7 +832,6 @@ for pokemon_name in chosen['team']:
         f"<br/><img src=\"{stat_radar}\" width=\"200\" height=\"200\" alt=\"Stats Radar\"/>\n</div>\n\n"
         f"- **Base Stat Total:** {bst}\n"
         f"- **Top Stat:** {top_stat_key.title()} ({top_stat_val})\n"
-        f"- **Battle Role:** {pdata.get('role', 'Unknown')}\n"
         f"- **Ability:** {pdata.get('best_ability', 'Unknown')}\n"
         f"- **Nature:** {pdata.get('nature', 'Serious')}\n"
         f"- **Held Item:** {pdata.get('item', 'Leftovers')}\n"
@@ -940,7 +937,7 @@ replacements['{TEMPO_CALLSIGN}'] = "Adaptive cadence engaged." if avg_speed > 90
 replacements['{HYPERSTREAM_BLOCK}'] = f"- **Synergy:** {len(team_type_counts)} types.\n- **Speed:** Avg {avg_speed:.1f}."
 replacements['{BONKERS_TAGLINE}'] = "battle telemetry screaming through neon conduits"
 replacements['{ANALYTICS_BLURB}'] = f"Squad average speed: {avg_speed:.1f}."
-replacements['{LEAD_ROLE}'] = lead_data.get('role', 'Balanced Command Core')
+replacements['{LEAD_ROLE}'] = 'Balanced Command Core'
 
 # Random Pokemon replacements
 if random_pokemon_data:
