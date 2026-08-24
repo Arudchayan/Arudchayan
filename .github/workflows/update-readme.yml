@@ -77,17 +77,4 @@ jobs:
           )"
           
           git push
-      
-      - name: 🎉 Success!
-        if: steps.check_changes.outputs.changed == 'true'
-        run: |
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "🎮 Pokémon Trainer Profile Updated!"
-          echo "⚡ README.md has been regenerated!"
-          echo "💜 GOTTA CODE 'EM ALL!"
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-      
-      - name: 😴 No Changes
-        if: steps.check_changes.outputs.changed == 'false'
-        run: |
-          echo "ℹ️  No changes needed - README is up to date!"
+

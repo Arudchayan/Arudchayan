@@ -1,20 +1,15 @@
-# Ponytail Audit — Arudchayan/Arudchayan
+# Ponytail Audit — over-engineering findings (ranked)
 
-Ranked, biggest cut first. Scope: over-engineering only. Findings listed, nothing applied.
+- `delete:` Duplicated type chart in `Coach.TYPE_CHART`; module already imports `TYPE_CHART` from battle_engine and uses it at coach.py:75. Delete lines 25-44, use the import. [scripts/coach.py]
+- `delete:` Decorative workflow steps that only echo banners ("Show Sample Output", "Test Passed!", "Success!", "No Changes"). Nothing depends on their output. [`.github/workflows/test-build.yml`, `.github/workflows/update-readme.yml`]
+- `yagni:` Dependabot `pip` ecosystem block grouping requests/aiohttp/colorama/rich/Pillow — no manifest exists (no requirements.txt/pyproject.toml); only Pillow is used and undeclared. Delete the pip watcher or add a requirements.txt with just Pillow. [.github/dependabot.yml]
+- `delete:` Dead constants `COMPETITIVE_ITEMS` and `ROYAL` — referenced nowhere. [scripts/build_readme.py:17,78]
+- `yagni:` `BattleEngine` class wrapping a single `@staticmethod` with zero state. Replace with a module-level `simulate_team_battle()` function; also drop its unused `json`/`os` imports. [scripts/battle_engine.py:26]
+- `native:` Challenge result passed via deprecated `::set-output` with manual `%0A` encoding, then decoded in bash with `decodeURIComponent`. Write multiline log straight to `$GITHUB_OUTPUT`; delete the decode step. [scripts/process_challenge.py:79, `.github/workflows/challenge.yml`]
+- `delete:` Unused env `GITHUB_TOKEN` injected into process_challenge step — script never reads it. [.github/workflows/challenge.yml]
+- `shrink:` `fetch-depth: 0` full-history checkout just to regenerate README from APIs. Drop it (default depth suffices). [.github/workflows/update-readme.yml]
+- `yagni:` `create_stat_bar` delegates 1:1 to `bar()`, and `analyze_team_weaknesses` builds an `'all'` key nobody reads. Call `bar()` directly; return only critical/moderate. [scripts/build_readme.py:595,508]
+- `shrink:` Two parallel Pokémon-name normalizers (`svg_generator.normalize_name` vs `normalize_pokemon_identifier`). Keep one in build_readme and pass it down. [scripts/svg_generator.py:4]
+- `delete:` Single-key dict `POKEMON_ASCII_ART{"default": ...}` used once — make it a plain string constant. [scripts/build_readme.py:102]
 
-- delete: five overlapping docs files (IMPROVEMENTS/PROJECT_INFO/SETUP/QUICKSTART/.github/WORKFLOWS, ~1030 lines re-explaining one cron script). Fold a short "how it works" section into README. [IMPROVEMENTS.md, PROJECT_INFO.md, SETUP.md, QUICKSTART.md, .github/WORKFLOWS.md]
-- delete: manual-update.yml duplicates update-readme.yml, which already has workflow_dispatch. Delete the file. [.github/workflows/manual-update.yml]
-- yagni: 15 replacement keys computed but absent from template ({FASTEST_*}, {HEAVIEST_*}, {HIGHEST_BST*}, {API_CALLS}, {ACHIEVEMENT_DATE}, {GENERATION}, {TEAM_VISUAL}, {LEAD_ASCII}, {LEAD_EMOJI}, {ARCHETYPE_EMOJI}, {POKEDEX_COUNT}, {RANDOM_POKEMON}); the fastest/heaviest/bst tracking loops feed only these dead keys. Cut keys and trackers. [scripts/build_readme.py:885-906,1037-1059]
-- stdlib: `requests` in two modules while the rest of the repo uses urllib (and requirements.txt installs nothing, so these imports silently fail in CI). Use urllib.request, drop the dep. [scripts/github_metrics.py:4, scripts/banner_generator.py:3]
-- delete: TYPE_CHART copy-pasted 3x (battle_engine, coach, inline in analyze_team_weaknesses). One shared table in one module. [scripts/battle_engine.py:6-25, scripts/coach.py:23-42, scripts/build_readme.py:534-553]
-- delete: compiled .pyc committed to git. Add .gitignore entry, `git rm -r --cached`. [scripts/__pycache__/]
-- delete: try/except ImportError guards around four same-repo sibling modules that are always importable; they only mask real breakage (e.g. the requests failure above). Plain imports. [scripts/build_readme.py:14-32]
-- delete: COMPETITIVE_ITEMS dict defined, never read. Nothing. [scripts/build_readme.py:97-101]
-- yagni: WeatherSystem/BattleSimulator/QuestGenerator/PokePasteGenerator are classes of staticmethods with one call site each returning hardcoded/pure data. Plain functions or literals. [scripts/build_readme.py:224-290]
-- shrink: create_stat_bar / create_power_gauge / create_flux_meter are the same bar renderer thrice. One `def bar(value, max, length, chars)` helper. [scripts/build_readme.py:651-677]
-- shrink: requirements.txt is a 22-line comment wishlist advertising deps the code needs but never declares. Go stdlib-only and delete the file plus the `pip install` CI step. [requirements.txt]
-- shrink: pick_index(n, seed) is `seed % n` with one caller; inline it. [scripts/build_readme.py:687-689]
-- yagni: `role` param threaded into calculate_evs and select_competitive_item but never used in either body. Drop param. [scripts/build_readme.py:507,566]
-- shrink: `from typing import List, Dict, Tuple` on Python 3.12; use builtins, drop import. Unused `math` import too. [scripts/build_readme.py:10-11]
-
-net: -1250 lines, -1 dep possible.
+net: -90 lines, -0 deps possible.

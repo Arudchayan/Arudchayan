@@ -26,21 +26,19 @@ jobs:
         env:
           CHALLENGER_NAME: ${{ github.actor }}
           ISSUE_BODY: ${{ github.event.issue.body }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/process_challenge.py
 
       - name: Post Battle Result
         uses: actions/github-script@v9
         with:
           script: |
-            const battleLog = "${{ steps.battle.outputs.battle_log }}";
-            const decodedLog = decodeURIComponent(battleLog.replace(/\+/g, ' '));
+            const battleLog = `${{ steps.battle.outputs.battle_log }}`;
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: decodedLog
+              body: battleLog
             })
 
       - name: Commit and Push History

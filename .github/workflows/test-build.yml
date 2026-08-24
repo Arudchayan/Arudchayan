@@ -58,19 +58,4 @@ jobs:
           echo "✅ README.md validation passed!"
           echo "📏 File size: $(wc -c < README.md) bytes"
           echo "📄 Line count: $(wc -l < README.md) lines"
-      
-      - name: 🔍 Show Sample Output
-        run: |
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "📝 First 50 lines of generated README:"
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          head -50 README.md
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-      
-      - name: 🎉 Test Passed!
-        run: |
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "✅ All tests passed!"
-          echo "🎮 README generation works perfectly!"
-          echo "💜 GOTTA CODE 'EM ALL!"
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+

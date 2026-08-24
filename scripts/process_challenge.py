@@ -5,7 +5,7 @@ import datetime
 # Assuming this script is run from repo root
 sys.path.append(os.getcwd())
 
-from scripts.battle_engine import BattleEngine
+from scripts.battle_engine import simulate_team_battle
 
 def process_challenge():
     """
@@ -43,7 +43,7 @@ def process_challenge():
         gym_names = gym_data['team']
 
         # We need stats for the engine, but battle_engine uses simple logic mostly
-        # Let's mock the dict structure expected by BattleEngine
+        # Let's mock the dict structure expected by simulate_team_battle
         gym_team_objs = [{'name': n, 'stats': {'total': 550}} for n in gym_names]
 
     except Exception as e:
@@ -51,7 +51,7 @@ def process_challenge():
         return
 
     # 4. Simulate
-    result = BattleEngine.simulate_team_battle(gym_team_objs, team)
+    result = simulate_team_battle(gym_team_objs, team)
 
     # 5. Save Record
     record = {
@@ -76,7 +76,8 @@ def process_challenge():
 
     print(f"Battle processed. Winner: {result['winner']}")
     # Output for GitHub Action to use in comment
-    print(f"::set-output name=battle_log::{result['log'].replace(chr(10), '%0A')}")
+    with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+        f.write(f"battle_log<<EOF\n{result['log']}\nEOF\n")
 
 if __name__ == "__main__":
     process_challenge()

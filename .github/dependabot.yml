@@ -1,27 +1,6 @@
 version: 2
 
 updates:
-  # pip (Python) dependencies
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "Etc/UTC"
-    labels:
-      - "dependencies"
-      - "python"
-    open-pull-requests-limit: 5
-    groups:
-      dev-dependencies:
-        patterns:
-          - "requests*"
-          - "aiohttp*"
-          - "Pillow*"
-          - "colorama*"
-          - "rich*"
-
   # GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"

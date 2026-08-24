@@ -14,8 +14,6 @@ import github_metrics
 import banner_generator
 import coach
 
-ROYAL = "#6A0DAD"
-
 VERSION_PRIORITY = [
     "scarlet-violet",
     "sword-shield",
@@ -73,12 +71,6 @@ COMPETITIVE_ABILITIES = {
     'gyarados': ['moxie', 'intimidate'],
     'charizard': ['solar-power', 'drought'],
     'lucario': ['justified', 'inner-focus'],
-}
-
-COMPETITIVE_ITEMS = {
-    'offensive': ['Choice Band', 'Choice Specs', 'Life Orb', 'Choice Scarf', 'Expert Belt', 'White Herb'],
-    'defensive': ['Leftovers', 'Heavy-Duty Boots', 'Rocky Helmet', 'Assault Vest', 'Black Sludge'],
-    'utility': ['Focus Sash', 'Mental Herb', 'Light Clay', 'Eject Button', 'Red Card'],
 }
 
 MOVE_CACHE_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "move_cache.json")
