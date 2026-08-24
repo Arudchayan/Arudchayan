@@ -491,7 +491,7 @@ def analyze_team_weaknesses(team_types: dict) -> dict:
     for pokemon_types in team_types.values():
         for ptype in pokemon_types:
             if ptype in battle_engine.TYPE_CHART:
-                for weakness_type in battle_engine.TYPE_CHART[ptype]['weak']:
+                for weakness_type in battle_engine.TYPE_CHART[ptype]:
                     weakness_count[weakness_type] = weakness_count.get(weakness_type, 0) + 1
     return {
         'critical': {t: count for t, count in weakness_count.items() if count >= 3},
