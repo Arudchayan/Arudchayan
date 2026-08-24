@@ -11,12 +11,12 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-24 21:06 UTC |
+| Generated | 2026-08-24 21:21 UTC |
 | Schedule Index | 739852 |
 | Archetype | Ultrasonic Night Raider |
 | Lead Operative | Noivern · Balanced Command Core |
 | **Genetics Level** | **86** |
-| Power Core | 3750 ([██████████████████████████░░░░]   0.9% capacity) |
+| Power Core | 3750 ([██████████████████████████░░░░]  86.8% capacity) |
 | Active Roster | Noivern, Rayquaza, Zeraora, Gengar, Metagross, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
@@ -95,7 +95,6 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 
 - **Base Stat Total:** 750
 - **Top Stat:** Attack (150)
-- **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -122,7 +121,6 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 
 - **Base Stat Total:** 600
 - **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -149,7 +147,6 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 
 - **Base Stat Total:** 600
 - **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -176,7 +173,6 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 
 - **Base Stat Total:** 600
 - **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -203,7 +199,6 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 
 - **Base Stat Total:** 600
 - **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -230,7 +225,6 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 
 - **Base Stat Total:** 600
 - **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -272,6 +266,7 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 ## 🏟️ Recent Challengers (Gym Leader Mode)
 | Date | Challenger | Team | Result |
 | --- | --- | --- | --- |
+| 2026-08-25 | TestTrainer | Pikachu, Charizard, Mewtwo | 3-0 (Arudchayan) |
 | 2025-11-24 | Gary Oak | Blastoise, Arcanine, Exeggutor | 3-0 (Arudchayan) |
 
 ---
@@ -352,7 +347,7 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **14** Days Dry. Odds: **9.08%**
+Current Hunt: **15** Days Dry. Odds: **9.58%**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
@@ -439,4 +434,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-08-24 21:06 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-24 21:21 UTC. Next rotation triggers at midnight UTC.</sub>
