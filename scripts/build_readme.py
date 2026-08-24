@@ -185,10 +185,6 @@ WEATHER_TYPES = [
     {"name": "Snow", "emoji": "❄️", "effect": "Ice types get 50% Def boost."},
 ]
 
-def get_daily_weather(seed):
-    random.seed(seed)
-    return random.choice(WEATHER_TYPES)
-
 QUESTS = [
     "Optimize 3 functions to increase Metagross's calculation speed.",
     "Push a commit before noon to outspeed Rival Weavile.",
@@ -196,10 +192,6 @@ QUESTS = [
     "Add unit tests to strengthen the team's Synergy Mesh.",
     "Review a PR to teach Alakazam 'Future Sight'.",
 ]
-
-def get_daily_quest(seed):
-    random.seed(seed)
-    return random.choice(QUESTS)
 
 def generate_paste(pokemon_list: list[dict]) -> str:
     paste_lines = []
@@ -224,7 +216,6 @@ def generate_paste(pokemon_list: list[dict]) -> str:
 
     return "\n\n".join(paste_lines)
 
-# ... (Previous helper functions like load_trainer_history, normalize_pokemon_identifier, etc.) ...
 def load_trainer_history():
     history_path = os.path.join(root, "data", "trainer_history.json")
     if os.path.exists(history_path):
@@ -243,8 +234,6 @@ def load_trainer_history():
 
 def normalize_pokemon_identifier(pokemon_name: str) -> str:
     lower_name = pokemon_name.lower().strip()
-    if lower_name in MEGA_NAME_OVERRIDES:
-        return MEGA_NAME_OVERRIDES[lower_name]
     if lower_name.startswith("mega "):
         suffix = lower_name.replace("mega ", "", 1)
         suffix = suffix.replace(" ", "-")
@@ -276,7 +265,6 @@ def fetch_move_metadata(move_url: str) -> dict:
     return metadata
 
 def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_stats: dict, pokemon_name: str) -> list[dict]:
-    # ... (Same as updated previously) ...
     scored_moves = []
     seen_moves: set[str] = set()
 
@@ -310,15 +298,12 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
         ]
         if not eligible_details:
             continue
-
         best_detail = min(eligible_details, key=rank)
-
         seen_moves.add(move_name)
         scored_moves.append((move_name, move_url, best_detail, rank(best_detail)))
 
     if not scored_moves:
         return []
-
     scored_moves.sort(key=lambda item: item[3])
     trimmed_moves = scored_moves[:75]
 
@@ -653,6 +638,8 @@ idx = day_number % len(arc)
 chosen = arc[idx]
 
 random.seed(f"{day_number}-{chosen.get('id', idx)}")
+weather = random.choice(WEATHER_TYPES)
+quest = random.choice(QUESTS)
 
 print(f"🎯 Building README for archetype: {chosen['title']}")
 
@@ -687,8 +674,6 @@ for pokemon_name in chosen['team']:
         sprite_urls.append(None)
 
 # Advanced Features Generation
-weather = get_daily_weather(day_number)
-quest = get_daily_quest(day_number)
 pokepaste_link = generate_paste(team_list_data)
 battle_log = (
     f"⚔️ **Battle Start!** Trainer {chosen['title']} vs Rival Blue!\n"

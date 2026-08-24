@@ -1,12 +1,25 @@
-# Ponytail Audit 2 — over-engineering findings (ranked)
+# Ponytail Audit 2 — over-engineering findings (ranked, current tree)
 
-- `delete:` Committed `__pycache__/` .pyc files for 5 modules — build artifacts in git. Delete the directory; `.gitignore` already covers it. [scripts/__pycache__/]
-- `delete:` `TYPE_CHART['resist']`/`'immune'` lists (≈40 of 91 lines) — only `'weak'` is ever read (coach.py:54, build_readme.py:494). Store just the weak lists. [scripts/battle_engine.py]
-- `delete:` `simulate_battle()` returns a fully hardcoded battle log — the "simulation" is one static string; nothing varies. Inline the constant or cut the feature. [scripts/build_readme.py:200]
-- `yagni:` `svg_generator.generate_radar_chart(stats, name, normalize_name)` takes a function parameter to call a 3-line name-mangler that has exactly one caller shape. Pass the string back and normalize at the caller. [scripts/svg_generator.py:4]
-- `yagni:` Unused payload fields fetched and threaded through every Pokémon dict (`shiny_sprite`, `id`, `role`) but never rendered anywhere. Cut from dict + fallback. [scripts/build_readme.py:566,724,839,945]
-- `yagni:` Unused imports `urllib.error`, `datetime` (github_metrics.py), `Optional` re-exported... actually used once; cut the first two plus `labels` var in svg_generator. [scripts/github_metrics.py:3, scripts/build_readme.py:8, scripts/svg_generator.py:6]
-- `shrink:` `bar`/`create_power_gauge`/`create_flux_meter`/`ratio_pct` — four helpers where two suffice; gauge/meter are bar + suffix. Fold into `bar(value, max, length, char, suffix)`. [scripts/build_readme.py:579-600]
-- `shrink:` `select_signature_moves` builds 6-tuples then sorts on `item[:4]` and unpacks with `_, _, _, move_name, ...`; a small dataclass or plain dicts would drop ~15 lines of index juggling. [scripts/build_readme.py:342-360]
+- `shrink:` `get_github_stats` carries a 5-line prose comment about streak options, a redundant `if response.status == 200` inside `urlopen` (it raises non-2xx), and two identical zero-stat dicts (mock path + fallthrough). Delete comment block, status check, and merge dicts into one `return`. [scripts/github_metrics.py:39]
+- `yagni:` `MEGA_NAME_OVERRIDES` plus the `"mega "` prefix branch in `normalize_pokemon_identifier` — rosters/archetypes only contain Mega Metagross/Gengar/Rayquaza, which the generic branch already maps correctly; the four charizard/mewtwo overrides are unreachable. Delete dict + lookup. [scripts/build_readme.py:174]
+- `yagni:` `load_trainer_history` seeds 9 fields (`rank`, `wins`, `pokedex_*`, …) that nothing ever reads — only `shiny_hunt` is consumed or written. Trim the default dict to what's used. [scripts/build_readme.py:246]
+- `yagni:` `get_daily_weather(seed)`/`get_daily_quest(seed)` are `random.seed(x); random.choice(...)` wrappers whose seed work duplicates the `random.seed` already done in main. Inline `random.choice(WEATHER_TYPES)` / `random.choice(QUESTS)`. [scripts/build_readme.py:195]
+- `shrink:` `create_power_gauge`/`create_flux_meter` are `bar()` plus a suffix string (flux adds a 5-line mode ladder). Fold into direct `bar(v, max, len, char, suffix=f"...")` calls; keep the mode ladder as one expression. [scripts/build_readme.py:555]
+- `delete:` `if __name__ == "__main__"` scratch block with three hardcoded sprite URLs — dev leftover; nothing in CI invokes the module. [scripts/banner_generator.py:85]
+- `yagni:` Post-replacement `re.sub` rewriting the `CURRENT_ARCHETYPE` block — the template placeholders inside those markers were already substituted two lines earlier; the regex just re-emits the same text minus one line. Delete the re.sub (or the placeholder block). [scripts/build_readme.py:946]
+- `yagni:` Commit-message step greps/seds README to echo the archetype into the body. Hardcode "Daily profile update"; delete the extraction pipeline. [.github/workflows/update-readme.yml:63]
+- `shrink:` Four sequential `if ! grep -q …; exit` blocks in Validate Output — one `grep -q -e X -e Y` plus the existing `-s` empty check asserts the same in a third of the lines. [.github/workflows/test-build.yml:36]
+- `delete:` `class Coach` wrapping a single `@staticmethod` with zero state (same shape as the already-flattened BattleEngine). Module-level `def get_coach_advice(...)`; call site drops `coach.Coach.`. [scripts/coach.py:5]
+- `delete:` `ImageFont` import — unused; banner draws no text. Also `Hail`/`Fog` palette entries — unreachable, `WEATHER_TYPES` never yields either. [scripts/banner_generator.py:2,34]
+- `shrink:` Move-formatting loop duplicated verbatim for dossiers and lead moves (emoji · class · BP). Extract one `format_move(move)` helper used twice. [scripts/build_readme.py:787]
+- `shrink:` `select_competitive_nature` — `Impish`/`Careful` branches are dead (any stat split reaching them is already caught by `is_mixed`), and `defense`/`sp_defense` reads feed nothing. Collapse to three returns. [scripts/build_readme.py:416]
+- `shrink:` `calculate_evs` — the four `if` arms cover every input, so the trailing two returns are unreachable; remaining arms compress to computed HP/Atk/SpA values. [scripts/build_readme.py:473]
+- `shrink:` Background-hexagon loop recomputes the six trig points the data loop already computes, at full radius. Derive both point strings from one comprehension over `(r,)`. [scripts/svg_generator.py:29]
+- `yagni:` Static placeholder pipeline entries `{BONKERS_TAGLINE}`, `{LEAD_ROLE}`, `{SHINY_TRIGGER_PANEL}` — always constant strings. Put literals in the template, drop the dict entries. [scripts/build_readme.py:915]
+- `stdlib:` `analyze_team_weaknesses` hand-rolls counter nesting; `collections.Counter(w for ts in d.values() for t in ts for w in CHART.get(t, []))` replaces the loops and the `.get` dance. [scripts/build_readme.py:461]
+- `native:` Vertical gradient drawn line-by-line via `draw.line` — PIL ships `Image.linear_gradient("L").resize((w,h))` + `ImageOps.colorize(img, black=c0, white=c1)`: two calls, no loop. [scripts/banner_generator.py:41]
+- `delete:` `sys.path.append(os.getcwd())` hack — running `python scripts/process_challenge.py` already puts `scripts/` first on `sys.path`; import `battle_engine` plainly, drop `sys`. [scripts/process_challenge.py:6]
+- `delete:` `COMPETITIVE_ABILITIES['charizard']` — charizard appears in no archetype, wild roster, or legendary roster; unreachable key. [scripts/build_readme.py:72]
+- `shrink:` `describe_target` — 4-line helper with one caller mapping two bools to strings; inline ternary chain. [scripts/build_readme.py:601]
 
-net: -120 lines, -0 deps possible.
+net: -118 lines, -0 deps possible.

@@ -28,14 +28,26 @@ class Coach:
         meta_lead = random.choice(meta_team['pokemon']) # Pick a random threat from the meta team
 
         # Simplified speed tier check (hardcoded estimates for common meta threats)
-        meta_speeds = {
-            "Landorus-Therian": 91, "Dragapult": 142, "Kingambit": 50, "Great Tusk": 87,
-            "Iron Valiant": 116, "Gholdengo": 84, "Flutter Mane": 135, "Walking Wake": 109,
-            "Roaring Moon": 119, "Ribombee": 124, "Dragonite": 80, "Volcarona": 100,
-            "Alomomola": 65, "Blissey": 55, "Dondozo": 35, "Clodsire": 20
+        meta_pokemon = {
+            "Landorus-Therian": (91, ["ground", "flying"]),
+            "Dragapult": (142, ["dragon", "ghost"]),
+            "Kingambit": (50, ["dark", "steel"]),
+            "Great Tusk": (87, ["ground", "fighting"]),
+            "Iron Valiant": (116, ["fairy", "fighting"]),
+            "Gholdengo": (84, ["normal"]),
+            "Flutter Mane": (135, ["ghost", "fairy"]),
+            "Walking Wake": (109, ["water", "dragon"]),
+            "Roaring Moon": (119, ["dragon", "dark"]),
+            "Ribombee": (124, ["bug", "fairy"]),
+            "Dragonite": (80, ["dragon", "flying"]),
+            "Volcarona": (100, ["bug", "fire"]),
+            "Alomomola": (65, ["water"]),
+            "Blissey": (55, ["normal"]),
+            "Dondozo": (35, ["water"]),
+            "Clodsire": (20, ["poison", "ground"]),
         }
-
-        meta_speed = meta_speeds.get(meta_lead, 90) # Default to 90 if unknown
+        meta_speed, threat_types = meta_pokemon.get(meta_lead, (90, None))
+        threat_type_list = threat_types or ["normal"]
 
         advice_intro = f"Simulating matchup vs **{meta_team['name']}** (Threat: **{meta_lead}**)."
 
@@ -55,19 +67,8 @@ class Coach:
 
         # Very rough inference of threat type (since we don't fetch meta data)
         # This is hardcoded for the demo to save API calls
-        threat_types = {
-            "Landorus-Therian": ["ground", "flying"],
-            "Dragapult": ["dragon", "ghost"],
-            "Kingambit": ["dark", "steel"],
-            "Great Tusk": ["ground", "fighting"],
-            "Flutter Mane": ["ghost", "fairy"],
-            "Iron Valiant": ["fairy", "fighting"]
-        }
 
-        threat_type_list = threat_types.get(meta_lead, ["normal"])
-
-        danger = False
-        for tt in threat_type_list:
+        danger = False        for tt in threat_type_list:
             if tt in user_weaknesses:
                 danger = True
                 weakness_note = f"Warning: {meta_lead} has STAB **{tt.upper()}** moves that hit you for super-effective damage!"
