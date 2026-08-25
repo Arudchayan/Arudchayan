@@ -69,7 +69,6 @@ COMPETITIVE_ABILITIES = {
     'decidueye': ['long-reach', 'overgrow'],
     'dragonite': ['multiscale'],
     'gyarados': ['moxie', 'intimidate'],
-    'charizard': ['solar-power', 'drought'],
     'lucario': ['justified', 'inner-focus'],
 }
 

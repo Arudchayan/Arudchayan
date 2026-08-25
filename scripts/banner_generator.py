@@ -1,5 +1,5 @@
 import os
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageOps
 import urllib.request
 from io import BytesIO
 
@@ -36,11 +36,8 @@ def generate_team_banner(pokemon_sprites, weather_type="Clear Skies"):
     colors = weather_colors.get(weather_type, [(50, 50, 50), (20, 20, 20)])
 
     # Simple Vertical Gradient
-    for y in range(height):
-        r = int(colors[0][0] + (colors[1][0] - colors[0][0]) * y / height)
-        g = int(colors[0][1] + (colors[1][1] - colors[0][1]) * y / height)
-        b = int(colors[0][2] + (colors[1][2] - colors[0][2]) * y / height)
-        draw.line([(0, y), (width, y)], fill=(r, g, b))
+    gradient = Image.linear_gradient("L").resize((width, height))
+    banner.paste(ImageOps.colorize(gradient, black=colors[0], white=colors[1]))
 
     # Add simplified "Ground"
     draw.rectangle([(0, height - 50), (width, height)], fill=(40, 40, 40, 200))
