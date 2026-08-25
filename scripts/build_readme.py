@@ -719,9 +719,9 @@ replacements['{UNIQUE_TYPE_COUNT}'] = str(len(team_type_counts))
 replacements['{AVERAGE_SPEED}'] = f"{avg_speed:.1f}"
 replacements['{POWER_LEVEL}'] = str(team_bst_total)
 replacements['{POWER_LEVEL_BAR}'] = bar(team_bst_total, max(1, len(chosen['team'])) * 720, 30, suffix=f" {min(team_bst_total / (max(1, len(chosen['team'])) * 720), 1) * 100:5.1f}% capacity")
-replacements['{SYNERGY_METER}'] = create_flux_meter(len(team_type_counts), len(chosen['team']))
-replacements['{SPEED_PULSE}'] = create_flux_meter(avg_speed, 180)
-replacements['{BST_OVERDRIVE}'] = create_flux_meter(max_bst, 720)
+replacements['{SYNERGY_METER}'] = bar(len(team_type_counts), len(chosen['team']), 18, '▓', flux_suffix(min(len(team_type_counts) / len(chosen['team']), 1)))
+replacements['{SPEED_PULSE}'] = bar(avg_speed, 180, 18, '▓', flux_suffix(min(avg_speed / 180, 1)))
+replacements['{BST_OVERDRIVE}'] = bar(max_bst, 720, 18, '▓', flux_suffix(min(max_bst / 720, 1)))
 replacements['{TEMPO_CALLSIGN}'] = "Adaptive cadence engaged." if avg_speed > 90 else "Glacial recon mode."
 replacements['{HYPERSTREAM_BLOCK}'] = f"- **Synergy:** {len(team_type_counts)} types.\n- **Speed:** Avg {avg_speed:.1f}."
 replacements['{ANALYTICS_BLURB}'] = f"Squad average speed: {avg_speed:.1f}."
