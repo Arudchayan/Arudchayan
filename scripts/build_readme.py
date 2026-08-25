@@ -268,30 +268,7 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
         })
     candidates.sort(key=lambda m: m.pop("key"))
 
-    final_moves: list[dict] = []
-    final_names: set[str] = set()
-
-    def take(m):
-        final_moves.append(m)
-        final_names.add(m['raw_name'])
-
-    def eligible(m):
-        return ((m['type'] in pokemon_types and m['damage_class'] != 'status'
-                 and (m['damage_class'] == 'physical') == is_physical)
-                or (m['damage_class'] == 'status' and m['raw_name'] in COMPETITIVE_PRIORITY_MOVES))
-
-    for m in candidates:
-        if len(final_moves) >= 4:
-            break
-        # First two slots go to the top-ranked STAB damager and competitive status move;
-        # remaining slots are filled by whatever sorts next.
-        if len(final_moves) < 2 or eligible(m) and m['raw_name'] not in final_names:
-            take(m)
-
-    for m in candidates:
-        if len(final_moves) >= 4: break
-        if m['raw_name'] not in final_names:
-            take(m)
+    final_moves = candidates[:4]
 
     if 'rayquaza' in pokemon_name.lower():
         final_moves = [m for m in final_moves if m['raw_name'] != 'dragon-ascent'][:3]
