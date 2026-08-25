@@ -40,7 +40,6 @@ Edit `data/archetypes.json`:
 Edit `README.template.md` and use these placeholders:
 - `{LEAD_POKEMON}` - Lead Pokémon name
 - `{TEAM_LIST}` - Comma-separated team
-- `{LEAD_ASCII}` - Pokémon sprite/image
 - See `scripts/build_readme.py` for full list
 
 ### Testing Workflows

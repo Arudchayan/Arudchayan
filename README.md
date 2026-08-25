@@ -2,7 +2,6 @@
 <h1 align="center">Arudchayan · BattleOps Command Center</h1>
 <p align="center"><em>battle telemetry screaming through neon conduits</em></p>
 
-<!-- TEAM_BANNER_PLACEHOLDER -->
 <div align="center">
   <img src="assets/team_banner.png" width="100%" alt="Team Banner" />
 </div>
@@ -11,17 +10,15 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-25 00:49 UTC |
+| Generated | 2026-08-25 14:55 UTC |
 | Schedule Index | 739853 |
 | Archetype | Thunderborn Storm Raider |
 | Lead Operative | Zeraora · Balanced Command Core |
-| **Genetics Level** | **50** |
-| Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
+| **Genetics Level** | **86** |
+| Power Core | 3750 ([██████████████████████████░░░░]  86.8% capacity) |
 | Active Roster | Zeraora, Rayquaza, Noivern, Metagross, Gengar, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
-
-> Squad average speed: 100.0.
 
 ---
 
@@ -31,7 +28,7 @@
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Optimize 3 functions to increase Metagross's calculation speed.
+### **Quest:** Push a commit before noon to outspeed Rival Weavile.
 
 ---
 
@@ -39,10 +36,8 @@
 
 ### 🧭 Rotation Hologram
 
-<!-- CURRENT_ARCHETYPE_START -->
 > **Rotation Profile:** Thunderborn Storm Raider
 > **Command Lead:** Zeraora
-<!-- CURRENT_ARCHETYPE_END -->
 
 ### Lead Strategy Module
 
@@ -53,15 +48,15 @@
 **EV Spread:** 
 **Physical Specs:** 1.0m · 10.0kg
 
-> **Genetics Boost:** Standard Training
+> **Genetics Boost:** Level 86 (Powered by 432 Contributions)
 
 #### Stat Telemetry
 ```
 HP:     [███████░░░░░░░░░░░░░]  100
-ATK:    [███████░░░░░░░░░░░░░] 100
-DEF:    [███████░░░░░░░░░░░░░] 100
+ATK:    [███████████░░░░░░░░░] 150
+DEF:    [███████████░░░░░░░░░] 150
 SP.ATK: [███████░░░░░░░░░░░░░] 100
-SP.DEF: [███████░░░░░░░░░░░░░] 100
+SP.DEF: [███████████░░░░░░░░░] 150
 SPEED:  [███████░░░░░░░░░░░░░] 100
 ```
 
@@ -71,7 +66,7 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Hyper Offense** (Threat: **Volcarona**). Speed tie alert! Both sit around Base 100. It's a coin flip. Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Standard OU Offense** (Threat: **Landorus-Therian**). Your **Zeraora** outspeeds Landorus-Therian (Base 91). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
@@ -81,21 +76,12 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-    
-```
+???
 <br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
+- **Base Stat Total:** 750
+- **Top Stat:** Attack (150)
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -108,21 +94,12 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Rayquaza</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-    
-```
+???
 <br/><img src="assets/stats_rayquaza.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
 - **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -135,21 +112,12 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-    
-```
+???
 <br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
 - **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -162,21 +130,12 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Metagross</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-    
-```
+???
 <br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
 - **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -189,21 +148,12 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-    
-```
+???
 <br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
 - **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -216,21 +166,12 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-    
-```
+???
 <br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
 - **Top Stat:** Hp (100)
-- **Battle Role:** Unknown
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -260,18 +201,16 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 | --- | --- |
 | Synergy Mesh | [▓▓▓░░░░░░░░░░░░░░░]   17% · WARMUP |
 | Speed Pulse | [▓▓▓▓▓▓▓▓▓▓░░░░░░░░]   56% · CRUISE |
-| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░]   83% · VORTEX |
+| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]  100% · Ω-OVERDRIVE |
 
 > Adaptive cadence engaged.
-
-- **Synergy:** 1 types.
-- **Speed:** Avg 100.0.
 
 ---
 
 ## 🏟️ Recent Challengers (Gym Leader Mode)
 | Date | Challenger | Team | Result |
 | --- | --- | --- | --- |
+| 2026-08-25 | TestTrainer | Pikachu, Charizard, Mewtwo | 3-0 (Arudchayan) |
 | 2025-11-24 | Gary Oak | Blastoise, Arcanine, Exeggutor | 3-0 (Arudchayan) |
 
 ---
@@ -325,18 +264,18 @@ Serious Nature
 
 ## ⚙️ Competitive Systems Matrix
 
-| Mechanic | Status | Notes |
-| --- | --- | --- |
-| Mega Evolution | — | —  |
-| Z-Move | ▲ | Gigavolt Havoc ⚡ |
-| Terastallization | ◇ | Electric ✨ |
+| Mechanic | Loadout |
+| --- | --- |
+| Mega Evolution | — |
+| Z-Move | ▲ Gigavolt Havoc ⚡ |
+| Terastallization | ◇ Electric ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Mienshao</summary>
+  <summary>🎲 Encounter: Snorlax</summary>
 
   <div align="center">
   ???
@@ -352,7 +291,7 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **13** Days Dry. Odds: **8.58%**
+Current Hunt: **33** Days Dry. Odds: **2.08**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
@@ -362,42 +301,42 @@ Shiny status: Checked.
 
   - **Battlefield State:** Bioluminescent spores swirl between ancient trunks.
   - **Encounter Twist:** Command authorises prototype gear if you can stall three turns.
-  - **Command Brief:** Track the Wild-class target — Mienshao (wild signal).
+  - **Command Brief:** Track the Wild-class target — Snorlax (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 74% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 77% odds</summary>
 
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Mienshao a free setup turn to escalate pressure.
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Snorlax's innate typing instead.
   </details>
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 83% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 67% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Mienshao's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Mienshao rallies.
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Snorlax slips free in a burst of light, boosting its Evasion and tempo.
   </details>
 </details>
 
 <details>
-  <summary>⚙️ Path 2 — Celadon Manufactory</summary>
+  <summary>❄️ Path 2 — Aurora Chasm</summary>
 
-  - **Battlefield State:** Servo arms reset the battlefield between each exchange.
-  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
-  - **Command Brief:** Track the Wild-class target — Mienshao (wild signal).
+  - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
+  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
+  - **Command Brief:** Track the Wild-class target — Snorlax (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 76% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 71% odds</summary>
 
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Mienshao a free setup turn to escalate pressure.
+    - **If it lands:** Coordinated assaults land clean, dropping Snorlax's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Snorlax rallies.
   </details>
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 77% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 80% odds</summary>
 
-    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
-    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Snorlax's innate typing instead.
   </details>
 </details>
 
@@ -405,33 +344,29 @@ Shiny status: Checked.
   <summary>🌊 Path 3 — Tidal Resonance</summary>
 
   - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
-  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
-  - **Command Brief:** Track the Wild-class target — Mienshao (wild signal).
+  - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
+  - **Command Brief:** Track the Wild-class target — Snorlax (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 78% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 63% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Mienshao's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Mienshao rallies.
+    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
+    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
   </details>
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 71% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 60% odds</summary>
 
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Mienshao a free setup turn to escalate pressure.
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Snorlax slips free in a burst of light, boosting its Evasion and tempo.
   </details>
 </details>
 
 ---
 
-## 🗺️ Repository Flight Plan
+## 🗺️ How This Works
 
-| Area | Description | Key Files |
-| --- | --- | --- |
-| Daily build automation | Generates this README from live data and archetypes. | [`scripts/build_readme.py`](scripts/build_readme.py) |
-| Archetype rotation | Curated roster definitions for each featured team. | [`data/archetypes.json`](data/archetypes.json) |
-| Presentation layer | Markdown template for this command-center layout. | [`README.template.md`](README.template.md) |
+The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.py) (GitHub Action: `.github/workflows/update-readme.yml`, midnight UTC + manual trigger). It picks a team from [`data/archetypes.json`](data/archetypes.json), fetches live stats from PokéAPI, renders it through [`README.template.md`](README.template.md), and commits the result. Issues titled `Challenge @...` trigger `.github/workflows/challenge.yml`, which simulates a gym battle via `scripts/process_challenge.py`.
 
 ---
 
@@ -443,4 +378,4 @@ Shiny status: Checked.
 
 ---
 
-<sub>README last rebuilt on 2026-08-25 00:49 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-25 14:55 UTC. Next rotation triggers at midnight UTC.</sub>
