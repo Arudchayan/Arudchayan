@@ -205,12 +205,6 @@ def normalize_pokemon_identifier(pokemon_name: str) -> str:
         return f"{suffix}-mega"
     return lower_name.replace(" ", "-")
 
-def get_version_priority(version_name: str) -> int:
-    try:
-        return VERSION_PRIORITY.index(version_name)
-    except ValueError:
-        return len(VERSION_PRIORITY)
-
 def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_stats: dict, pokemon_name: str) -> list[dict]:
     attack = pokemon_stats.get('attack', 0)
     is_physical = attack > pokemon_stats.get('special-attack', 0)
@@ -230,7 +224,9 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
             continue
         seen_moves.add(move_name)
         best_detail = min(eligible_details, key=lambda detail: (
-            get_version_priority(detail.get("version_group", {}).get("name", "")),
+            VERSION_PRIORITY.index(detail.get("version_group", {}).get("name", ""))
+            if detail.get("version_group", {}).get("name", "") in VERSION_PRIORITY
+            else len(VERSION_PRIORITY),
             MOVE_METHOD_PRIORITY.get(detail.get("move_learn_method", {}).get("name", ""), 99),
             -detail.get("level_learned_at", 0),
         ))
@@ -244,8 +240,6 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
             "type": metadata.get("type"),
             "power": power,
             "damage_class": damage_class,
-            "method": method,
-            "level": best_detail.get("level_learned_at", 0),
             "key": (
                 0 if move_name in COMPETITIVE_PRIORITY_MOVES else 1,
                 0 if damage_class == "status" or (damage_class == "physical") == is_physical else 1,
@@ -258,15 +252,12 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
             ),
         })
 
-    def eligible(m):
-        return m["raw_name"] != 'dragon-ascent'
-
     final_moves = sorted(candidates, key=lambda m: m.pop("key"))[:4]
     if 'rayquaza' in pokemon_name.lower():
-        final_moves = list(filter(eligible, final_moves))[:3]
+        final_moves = [m for m in final_moves if m["raw_name"] != 'dragon-ascent'][:3]
         final_moves.insert(0, {
             "name": "Dragon Ascent", "raw_name": "dragon-ascent", "type": "flying",
-            "power": 120, "damage_class": "physical", "method": "level-up", "level": 0,
+            "power": 120, "damage_class": "physical",
         })
 
     return final_moves
@@ -334,7 +325,7 @@ def calculate_evs(stats: dict) -> dict:
     elif not is_physical and is_fast: return {'HP': 0, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 252}
     else: return {'HP': 252, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 0}
 
-def fetch_pokemon_data(pokemon_name: str, original_name: str):
+def fetch_pokemon_data(pokemon_name: str):
     try:
         identifier = normalize_pokemon_identifier(pokemon_name)
         url = f"https://pokeapi.co/api/v2/pokemon/{identifier}"
@@ -358,19 +349,19 @@ def fetch_pokemon_data(pokemon_name: str, original_name: str):
         pokemon_types = [t['type']['name'] for t in data['types']]
         stats = {s['stat']['name']: s['base_stat'] for s in data['stats']}
         
-        signature_moves = select_signature_moves(data['moves'], pokemon_types, stats, original_name)
+        signature_moves = select_signature_moves(data['moves'], pokemon_types, stats, pokemon_name)
         all_abilities = [a['ability']['name'].replace('-', ' ').title() for a in data['abilities']]
-        best_ability = select_competitive_ability(original_name, all_abilities)
+        best_ability = select_competitive_ability(pokemon_name, all_abilities)
         competitive_nature = select_competitive_nature(stats)
 
         competitive_item = select_competitive_item(stats, pokemon_types)
         ev_spread = calculate_evs(stats)
 
         # Generate SVG
-        svg_generator.generate_radar_chart(stats, normalize_pokemon_identifier(original_name))
+        svg_generator.generate_radar_chart(stats, normalize_pokemon_identifier(pokemon_name))
 
         return {
-            'name': original_name.title(),
+            'name': pokemon_name.title(),
             'types': pokemon_types,
             'height': data['height'] / 10,
             'weight': data['weight'] / 10,
@@ -500,7 +491,7 @@ pokemon_data = {}
 
 for pokemon_name in chosen['team']:
     print(f"  📡 Fetching {pokemon_name}...")
-    data = fetch_pokemon_data(pokemon_name, original_name=pokemon_name)
+    data = fetch_pokemon_data(pokemon_name)
     if not data:
         # Fallback
         data = {
@@ -554,7 +545,7 @@ with open(os.path.join(root, "data", "trainer_history.json"), "w") as f:
     json.dump(trainer_history, f, indent=2)
 
 print(f"\n✨ Random encounter: {random_choice.title()} [{encounter_rarity}]")
-random_pokemon_data = fetch_pokemon_data(random_choice, original_name=random_choice)
+random_pokemon_data = fetch_pokemon_data(random_choice)
 branching_paths_block = generate_branching_paths(
     random_choice, random_pokemon_data, encounter_is_shiny, encounter_rarity == "Legendary Sighting"
 )
@@ -718,8 +709,6 @@ replacements['{SYNERGY_METER}'] = bar(len(team_type_counts), len(chosen['team'])
 replacements['{SPEED_PULSE}'] = bar(avg_speed, 180, 18, '▓', flux_suffix(min(avg_speed / 180, 1)))
 replacements['{BST_OVERDRIVE}'] = bar(max_bst, 720, 18, '▓', flux_suffix(min(max_bst / 720, 1)))
 replacements['{TEMPO_CALLSIGN}'] = "Adaptive cadence engaged." if avg_speed > 90 else "Glacial recon mode."
-replacements['{HYPERSTREAM_BLOCK}'] = f"- **Synergy:** {len(team_type_counts)} types.\n- **Speed:** Avg {avg_speed:.1f}."
-replacements['{ANALYTICS_BLURB}'] = f"Squad average speed: {avg_speed:.1f}."
 
 # Random Pokemon replacements
 if random_pokemon_data:

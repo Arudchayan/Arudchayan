@@ -20,8 +20,6 @@
 | Unique Typings | {UNIQUE_TYPE_COUNT} |
 | Average Speed | {AVERAGE_SPEED} |
 
-> {ANALYTICS_BLURB}
-
 ---
 
 ## ⚡ WEATHER REPORT: {WEATHER_EMOJI} {WEATHER_NAME}
@@ -99,8 +97,6 @@ SPEED:  {LEAD_SPEED_BAR} {LEAD_SPEED}
 | Apex Pressure | {BST_OVERDRIVE} |
 
 > {TEMPO_CALLSIGN}
-
-{HYPERSTREAM_BLOCK}
 
 ---
 

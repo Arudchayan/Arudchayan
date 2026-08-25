@@ -31,28 +31,16 @@ META_LEADS = [
 # Hardcoded estimates for common meta threats: (base speed, types); defaults cover the rest.
 META_THREATS = {
     "Landorus-Therian": (91, ["ground", "flying"]),
-    "Dragapult": (142, ["dragon", "ghost"]),
-    "Kingambit": (50, ["dark", "steel"]),
-    "Great Tusk": (87, ["ground", "fighting"]),
-    "Iron Valiant": (116, ["fairy", "fighting"]),
-    "Gholdengo": (84, ["normal"]),
-    "Flutter Mane": (135, ["ghost", "fairy"]),
-    "Walking Wake": (109, ["normal"]),
-    "Roaring Moon": (119, ["normal"]),
-    "Ribombee": (124, ["normal"]),
-    "Dragonite": (80, ["normal"]),
-    "Volcarona": (100, ["normal"]),
+    "Torkoal": (20, ["fire"]),
     "Alomomola": (65, ["normal"]),
-    "Blissey": (55, ["normal"]),
-    "Dondozo": (35, ["normal"]),
-    "Clodsire": (20, ["normal"]),
+    "Ribombee": (124, ["normal"]),
 }
 
 
 def get_coach_advice(user_lead_name, user_lead_types, user_lead_speed):
     meta_name, meta_lead = random.choice(META_LEADS)
 
-    meta_speed, threat_type_list = META_THREATS.get(meta_lead, (90, ["normal"]))
+    meta_speed, threat_type_list = META_THREATS[meta_lead]
 
     advice_intro = f"Simulating matchup vs **{meta_name}** (Threat: **{meta_lead}**)."
 

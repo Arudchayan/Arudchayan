@@ -74,5 +74,4 @@ def generate_team_banner(pokemon_sprites, weather_type="Clear Skies"):
     output_path = os.path.join(output_dir, "team_banner.png")
     banner.save(output_path)
     print(f"Banner saved to {output_path}")
-    return output_path
 
