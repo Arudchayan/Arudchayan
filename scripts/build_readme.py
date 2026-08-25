@@ -192,11 +192,14 @@ def generate_paste(pokemon_list: list[dict]) -> str:
     return "\n\n".join(paste_lines)
 
 def load_trainer_history():
+    default = {"shiny_hunt": {"encounters_since_last": 0, "last_found": None}}
     history_path = os.path.join(root, "data", "trainer_history.json")
     if os.path.exists(history_path):
         with open(history_path) as f:
-            return json.load(f)
-    return {"shiny_hunt": {"encounters_since_last": 0, "last_found": None}}
+            loaded = json.load(f)
+        loaded.setdefault("shiny_hunt", default["shiny_hunt"])
+        return loaded
+    return default
 def normalize_pokemon_identifier(pokemon_name: str) -> str:
     lower_name = pokemon_name.lower().strip()
     if lower_name.startswith("mega "):
@@ -528,7 +531,6 @@ banner_generator.generate_team_banner(sprite_urls, weather['name'])
 # === 5. SHINY HUNT LOGIC ===
 trainer_history = load_trainer_history()
 shiny_hunt = trainer_history["shiny_hunt"]
-days_dry = shiny_hunt.get("encounters_since_last", 0)
 
 random_choice, encounter_rarity, encounter_callout, encounter_is_shiny = roll_random_encounter()
 
@@ -538,9 +540,8 @@ if encounter_is_shiny:
     shiny_hunt["last_found"] = now_utc.strftime("%Y-%m-%d")
     print("✨ SHINY FOUND! Resetting counter.")
 else:
-    shiny_hunt["encounters_since_last"] = days_dry + 1
+    shiny_hunt["encounters_since_last"] += 1
 
-trainer_history["shiny_hunt"] = shiny_hunt
 with open(os.path.join(root, "data", "trainer_history.json"), "w") as f:
     json.dump(trainer_history, f, indent=2)
 

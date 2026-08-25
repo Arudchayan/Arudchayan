@@ -21,7 +21,7 @@ jobs:
         env:
           CHALLENGER_NAME: ${{ github.actor }}
           ISSUE_BODY: ${{ github.event.issue.body }}
-        run: python scripts/process_challenge.py
+        run: python3 scripts/process_challenge.py
 
       - name: Post Battle Result
         env:
