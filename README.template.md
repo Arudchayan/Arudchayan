@@ -42,7 +42,6 @@
 <!-- CURRENT_ARCHETYPE_START -->
 > **Rotation Profile:** {ARCHETYPE_TITLE}
 > **Command Lead:** {LEAD_POKEMON}
-> **Roster Online:** {TEAM_LIST}
 <!-- CURRENT_ARCHETYPE_END -->
 
 ### Lead Strategy Module

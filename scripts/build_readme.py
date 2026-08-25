@@ -3,7 +3,6 @@ import json
 import os
 import datetime
 import random
-import re
 import urllib.request
 import time
 from typing import Optional
@@ -221,16 +220,7 @@ def load_trainer_history():
     if os.path.exists(history_path):
         with open(history_path) as f:
             return json.load(f)
-    return {
-        "trainer_name": "Arudchayan",
-        "rank": "Rookie",
-        "total_battles": 0,
-        "wins": 0,
-        "losses": 0,
-        "badges_earned": 0,
-        "pokedex_seen": 0,
-        "pokedex_caught": 0
-    }
+    return {"shiny_hunt": {"encounters_since_last": 0, "last_found": None}}
 
 def normalize_pokemon_identifier(pokemon_name: str) -> str:
     lower_name = pokemon_name.lower().strip()
@@ -906,14 +896,6 @@ replacements['{ENCOUNTER_SIGNAL}'] = encounter_callout
 output = template
 for key, value in replacements.items():
     output = output.replace(key, str(value))
-
-# Update archetype section
-output = re.sub(
-    r"<!-- CURRENT_ARCHETYPE_START -->.*?<!-- CURRENT_ARCHETYPE_END -->",
-    f"<!-- CURRENT_ARCHETYPE_START -->\n> **Rotation Profile:** {chosen['title']}\n> **Command Lead:** {lead_name}\n<!-- CURRENT_ARCHETYPE_END -->",
-    output,
-    flags=re.S
-)
 
 with open(os.path.join(root, "README.md"), "w") as f:
     f.write(output)
