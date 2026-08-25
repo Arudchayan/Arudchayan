@@ -375,17 +375,10 @@ def select_competitive_nature(stats: dict) -> str:
     if not stats: return 'Serious'
     attack = stats.get('attack', 0)
     sp_attack = stats.get('special-attack', 0)
-    defense = stats.get('defense', 0)
-    sp_defense = stats.get('special-defense', 0)
     speed = stats.get('speed', 0)
-    is_physical = attack > sp_attack
-    is_special = sp_attack > attack
-    is_mixed = abs(attack - sp_attack) < 20
-    if is_physical: return 'Jolly' if speed >= 100 else 'Adamant'
-    elif is_special: return 'Timid' if speed >= 100 else 'Modest'
-    elif is_mixed: return 'Hasty' if speed >= 100 else 'Mild'
-    elif defense > sp_defense: return 'Impish'
-    else: return 'Careful'
+    if attack > sp_attack: return 'Jolly' if speed >= 100 else 'Adamant'
+    elif sp_attack > attack: return 'Timid' if speed >= 100 else 'Modest'
+    else: return 'Hasty' if speed >= 100 else 'Mild'
 
 def select_competitive_ability(pokemon_name: str, abilities: list[str]) -> str:
     if not abilities: return 'Unknown'
