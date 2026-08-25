@@ -2,7 +2,6 @@
 <h1 align="center">Arudchayan · BattleOps Command Center</h1>
 <p align="center"><em>battle telemetry screaming through neon conduits</em></p>
 
-<!-- TEAM_BANNER_PLACEHOLDER -->
 <div align="center">
   <img src="assets/team_banner.png" width="100%" alt="Team Banner" />
 </div>
@@ -11,7 +10,7 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-25 11:39 UTC |
+| Generated | 2026-08-25 12:19 UTC |
 | Schedule Index | 739853 |
 | Archetype | Thunderborn Storm Raider |
 | Lead Operative | Zeraora · Balanced Command Core |
@@ -39,10 +38,8 @@
 
 ### 🧭 Rotation Hologram
 
-<!-- CURRENT_ARCHETYPE_START -->
 > **Rotation Profile:** Thunderborn Storm Raider
 > **Command Lead:** Zeraora
-<!-- CURRENT_ARCHETYPE_END -->
 
 ### Lead Strategy Module
 
@@ -299,7 +296,7 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **18** Days Dry. Odds: **2.08**
+Current Hunt: **19** Days Dry. Odds: **2.08**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
@@ -386,4 +383,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-08-25 11:39 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-25 12:19 UTC. Next rotation triggers at midnight UTC.</sub>

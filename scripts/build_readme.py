@@ -220,113 +220,76 @@ def get_version_priority(version_name: str) -> int:
     except ValueError:
         return len(VERSION_PRIORITY)
 
-def fetch_move_metadata(move_url: str) -> dict:
-    return MOVE_CACHE.get(move_url, {})
-
 def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_stats: dict, pokemon_name: str) -> list[dict]:
-    scored_moves = []
-    seen_moves: set[str] = set()
-
     attack = pokemon_stats.get('attack', 0)
-    sp_attack = pokemon_stats.get('special-attack', 0)
-    is_physical = attack > sp_attack
+    is_physical = attack > pokemon_stats.get('special-attack', 0)
 
-    def rank(detail):
-        return (
-            get_version_priority(detail.get("version_group", {}).get("name", "")),
-            MOVE_METHOD_PRIORITY.get(detail.get("move_learn_method", {}).get("name", ""), 99),
-            -detail.get("level_learned_at", 0),
-        )
+    candidates: list[dict] = []
+    seen_moves: set[str] = set()
     for entry in api_moves:
         move_name = entry.get("move", {}).get("name")
         move_url = entry.get("move", {}).get("url")
-        if not move_name or not move_url or move_name in seen_moves:
+        if not move_name or not move_url or move_name in seen_moves or move_name in BAD_MOVES:
             continue
-
-        if move_name in BAD_MOVES:
-            continue
-
-        version_details = entry.get("version_group_details", [])
-        if not version_details:
-            continue
-
         eligible_details = [
-            detail for detail in version_details
+            detail for detail in entry.get("version_group_details", [])
             if detail.get("move_learn_method", {}).get("name") in MOVE_METHOD_PRIORITY
         ]
         if not eligible_details:
             continue
-        best_detail = min(eligible_details, key=rank)
         seen_moves.add(move_name)
-        scored_moves.append((move_name, move_url, best_detail))
-
-    if not scored_moves:
-        return []
-    scored_moves.sort(key=lambda item: rank(item[2]))
-    trimmed_moves = scored_moves[:75]
-
-    candidates: list[dict] = []
-    for move_name, move_url, best_detail in trimmed_moves:
-        metadata = fetch_move_metadata(move_url)
-        move_type = metadata.get("type")
-        power = metadata.get("power") or 0
+        best_detail = min(eligible_details, key=lambda detail: (
+            get_version_priority(detail.get("version_group", {}).get("name", "")),
+            MOVE_METHOD_PRIORITY.get(detail.get("move_learn_method", {}).get("name", ""), 99),
+            -detail.get("level_learned_at", 0),
+        ))
+        metadata = MOVE_CACHE.get(move_url, {})
         damage_class = metadata.get("damage_class", "status")
-
+        power = metadata.get("power") or 0
+        method = best_detail.get("move_learn_method", {}).get("name", "unknown")
         candidates.append({
             "name": move_name.replace("-", " ").title(),
             "raw_name": move_name,
-            "type": move_type,
+            "type": metadata.get("type"),
             "power": power,
             "damage_class": damage_class,
-            "method": best_detail.get("move_learn_method", {}).get("name", "unknown"),
+            "method": method,
             "level": best_detail.get("level_learned_at", 0),
+            "key": (
+                0 if move_name in COMPETITIVE_PRIORITY_MOVES else 1,
+                0 if damage_class == "status" or (damage_class == "physical") == is_physical else 1,
+                0 if metadata.get("type") in pokemon_types else 1,
+                0 if damage_class == "status" else 1,
+                MOVE_METHOD_PRIORITY.get(method, 99),
+                -power,
+                -best_detail.get("level_learned_at", 0),
+                move_name.replace("-", " ").title(),
+            ),
         })
+    candidates.sort(key=lambda m: m.pop("key"))
 
-    def move_sort_key(item: dict) -> tuple:
-        move_raw = item.get("raw_name", "")
-        is_priority = 0 if move_raw in COMPETITIVE_PRIORITY_MOVES else 1
-        stab = 0 if item.get("type") in pokemon_types else 1
-        damage_class = item.get("damage_class", "status")
-        class_mismatch = 0
-        if damage_class == "physical" and not is_physical:
-            class_mismatch = 1
-        elif damage_class == "special" and is_physical:
-            class_mismatch = 1
-        damage_bias = 0 if damage_class == "status" else 1
-        return (
-            is_priority,
-            class_mismatch,
-            -stab,
-            damage_bias,
-            MOVE_METHOD_PRIORITY.get(item.get("method"), 99),
-            -item.get("power", 0),
-            -item.get("level", 0),
-            item.get("name", ""),
-        )
+    final_moves: list[dict] = []
+    final_names: set[str] = set()
 
-    candidates.sort(key=move_sort_key)
-
-    final_moves = []
-    final_names = set()
+    def take(m):
+        final_moves.append(m)
+        final_names.add(m['raw_name'])
 
     for m in candidates:
-        if m['raw_name'] not in final_names and m['type'] in pokemon_types and m['damage_class'] != 'status':
-            if (is_physical and m['damage_class'] == 'physical') or (not is_physical and m['damage_class'] == 'special'):
-                final_moves.append(m)
-                final_names.add(m['raw_name'])
-                break
+        if m['type'] in pokemon_types and m['damage_class'] != 'status' \
+                and (m['damage_class'] == 'physical') == is_physical:
+            take(m)
+            break
 
     for m in candidates:
-        if m['raw_name'] not in final_names and m['damage_class'] == 'status' and m['raw_name'] in COMPETITIVE_PRIORITY_MOVES:
-            final_moves.append(m)
-            final_names.add(m['raw_name'])
+        if m['damage_class'] == 'status' and m['raw_name'] in COMPETITIVE_PRIORITY_MOVES:
+            take(m)
             break
 
     for m in candidates:
         if len(final_moves) >= 4: break
         if m['raw_name'] not in final_names:
-            final_moves.append(m)
-            final_names.add(m['raw_name'])
+            take(m)
 
     if 'rayquaza' in pokemon_name.lower():
         final_moves = [m for m in final_moves if m['raw_name'] != 'dragon-ascent'][:3]
@@ -358,12 +321,7 @@ def select_competitive_ability(pokemon_name: str, abilities: list[str]) -> str:
                 return ability
     return abilities[0]
 
-def select_competitive_item(stats: dict, pokemon_name: str, types: list[str], archetype_data: dict) -> str:
-    lead_pick = archetype_data.get('lead') == pokemon_name
-    if lead_pick and archetype_data.get('mega') and 'rayquaza' not in pokemon_name.lower():
-        return f"{pokemon_name.split()[1]}ite" if 'Mega' in pokemon_name else f"{pokemon_name}ite"
-    if lead_pick and archetype_data.get('z_move'):
-        return f"{archetype_data.get('tera_type', 'Normal')}ium Z"
+def select_competitive_item(stats: dict, types: list[str]) -> str:
     if not stats: return 'Leftovers'
     attack = stats.get('attack', 0)
     sp_attack = stats.get('special-attack', 0)
@@ -433,7 +391,7 @@ def fetch_pokemon_data(pokemon_name: str, archetype_data: dict, original_name: s
         best_ability = select_competitive_ability(original_name, all_abilities)
         competitive_nature = select_competitive_nature(stats)
 
-        competitive_item = select_competitive_item(stats, original_name, pokemon_types, archetype_data)
+        competitive_item = select_competitive_item(stats, pokemon_types)
         ev_spread = calculate_evs(stats)
 
         # Generate SVG
@@ -561,7 +519,7 @@ day_number = now_utc.date().toordinal()
 idx = day_number % len(arc)
 chosen = arc[idx]
 
-random.seed(f"{day_number}-{chosen.get('id', idx)}")
+random.seed(f"{day_number}-{chosen['id']}")
 weather = random.choice(WEATHER_TYPES)
 quest = random.choice(QUESTS)
 
@@ -590,7 +548,6 @@ for pokemon_name in chosen['team']:
     pokemon_data[pokemon_name] = data
 
 # Advanced Features Generation
-pokemon_data = {n: pokemon_data[n] for n in chosen['team']}
 team_list_data = list(pokemon_data.values())
 sprite_urls = [d.get('sprite') for d in team_list_data]
 pokepaste_link = generate_paste(team_list_data)

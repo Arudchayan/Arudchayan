@@ -2,6 +2,8 @@ import os
 import json
 import urllib.request
 
+_FALLBACK = {"total_contributions": 0, "commit_streak": 0, "pull_requests": 0, "code_reviews": 0}
+
 def get_github_stats():
     """
     Fetches GitHub contribution stats using GraphQL API.
@@ -59,13 +61,9 @@ def get_github_stats():
             }
     except Exception as e:
         print(f"Exception fetching GitHub stats: {e}")
+        return _FALLBACK
 
-    return {
-        "total_contributions": 0,
-        "commit_streak": 0,
-        "pull_requests": 0,
-        "code_reviews": 0,
-    }
+    return _FALLBACK
 
 def calculate_genetic_bonuses(stats):
     """

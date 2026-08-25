@@ -2,7 +2,6 @@
 <h1 align="center">Arudchayan · BattleOps Command Center</h1>
 <p align="center"><em>battle telemetry screaming through neon conduits</em></p>
 
-<!-- TEAM_BANNER_PLACEHOLDER -->
 <div align="center">
   <img src="assets/team_banner.png" width="100%" alt="Team Banner" />
 </div>
@@ -39,10 +38,8 @@
 
 ### 🧭 Rotation Hologram
 
-<!-- CURRENT_ARCHETYPE_START -->
 > **Rotation Profile:** {ARCHETYPE_TITLE}
 > **Command Lead:** {LEAD_POKEMON}
-<!-- CURRENT_ARCHETYPE_END -->
 
 ### Lead Strategy Module
 
