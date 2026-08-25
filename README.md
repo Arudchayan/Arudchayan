@@ -2,20 +2,15 @@
 <h1 align="center">Arudchayan · BattleOps Command Center</h1>
 <p align="center"><em>battle telemetry screaming through neon conduits</em></p>
 
-<div align="center">
-  <img src="assets/team_banner.png" width="100%" alt="Team Banner" />
-</div>
-
 ## 🧾 POKÉMON TRAINER PROFILE
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-25 14:55 UTC |
+| Generated | 2026-08-25 20:40 UTC |
 | Schedule Index | 739853 |
 | Archetype | Thunderborn Storm Raider |
 | Lead Operative | Zeraora · Balanced Command Core |
-| **Genetics Level** | **86** |
-| Power Core | 3750 ([██████████████████████████░░░░]  86.8% capacity) |
+| Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
 | Active Roster | Zeraora, Rayquaza, Noivern, Metagross, Gengar, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
@@ -48,15 +43,13 @@
 **EV Spread:** 
 **Physical Specs:** 1.0m · 10.0kg
 
-> **Genetics Boost:** Level 86 (Powered by 432 Contributions)
-
 #### Stat Telemetry
 ```
 HP:     [███████░░░░░░░░░░░░░]  100
-ATK:    [███████████░░░░░░░░░] 150
-DEF:    [███████████░░░░░░░░░] 150
+ATK:    [███████░░░░░░░░░░░░░] 100
+DEF:    [███████░░░░░░░░░░░░░] 100
 SP.ATK: [███████░░░░░░░░░░░░░] 100
-SP.DEF: [███████████░░░░░░░░░] 150
+SP.DEF: [███████░░░░░░░░░░░░░] 100
 SPEED:  [███████░░░░░░░░░░░░░] 100
 ```
 
@@ -80,8 +73,8 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 750
-- **Top Stat:** Attack (150)
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
 - **Ability:** Unknown
 - **Nature:** Serious
 - **Held Item:** Leftovers
@@ -201,7 +194,7 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 | --- | --- |
 | Synergy Mesh | [▓▓▓░░░░░░░░░░░░░░░]   17% · WARMUP |
 | Speed Pulse | [▓▓▓▓▓▓▓▓▓▓░░░░░░░░]   56% · CRUISE |
-| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]  100% · Ω-OVERDRIVE |
+| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░]   83% · VORTEX |
 
 > Adaptive cadence engaged.
 
@@ -291,8 +284,7 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **33** Days Dry. Odds: **2.08**
-Shiny status: Checked.
+Current Hunt: **34** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
@@ -378,4 +370,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-08-25 14:55 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-25 20:40 UTC. Next rotation triggers at midnight UTC.</sub>
