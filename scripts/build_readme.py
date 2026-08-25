@@ -6,7 +6,6 @@ import random
 import urllib.request
 import time
 from collections import Counter
-from typing import Optional
 
 import svg_generator
 import github_metrics
@@ -68,21 +67,16 @@ COMPETITIVE_ABILITIES = {
     'zeraora': ['volt-absorb'],
     'noivern': ['infiltrator', 'frisk'],
     'decidueye': ['long-reach', 'overgrow'],
-    'dragonite': ['multiscale'],
-    'gyarados': ['moxie', 'intimidate'],
-    'lucario': ['justified', 'inner-focus'],
 }
 
 MOVE_CACHE_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "move_cache.json")
 
 def load_move_cache():
-    if os.path.exists(MOVE_CACHE_FILE):
-        try:
-            with open(MOVE_CACHE_FILE, 'r') as f:
-                return json.load(f)
-        except json.JSONDecodeError:
-            return {}
-    return {}
+    try:
+        with open(MOVE_CACHE_FILE, 'r') as f:
+            return json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return {}
 
 MOVE_CACHE: dict[str, dict] = load_move_cache()
 
@@ -266,12 +260,13 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
                 move_name.replace("-", " ").title(),
             ),
         })
-    candidates.sort(key=lambda m: m.pop("key"))
 
-    final_moves = candidates[:4]
+    def eligible(m):
+        return m["raw_name"] != 'dragon-ascent'
 
+    final_moves = sorted(candidates, key=lambda m: m.pop("key"))[:4]
     if 'rayquaza' in pokemon_name.lower():
-        final_moves = [m for m in final_moves if m['raw_name'] != 'dragon-ascent'][:3]
+        final_moves = list(filter(eligible, final_moves))[:3]
         final_moves.insert(0, {
             "name": "Dragon Ascent", "raw_name": "dragon-ascent", "type": "flying",
             "power": 120, "damage_class": "physical", "method": "level-up", "level": 0,
