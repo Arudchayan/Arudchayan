@@ -440,7 +440,7 @@ def calculate_evs(stats: dict) -> dict:
     elif not is_physical and is_fast: return {'HP': 0, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 252}
     else: return {'HP': 252, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 0}
 
-def fetch_pokemon_data(pokemon_name: str, archetype_data: dict, original_name: Optional[str] = None):
+def fetch_pokemon_data(pokemon_name: str, archetype_data: dict, original_name: str):
     try:
         identifier = normalize_pokemon_identifier(pokemon_name)
         url = f"https://pokeapi.co/api/v2/pokemon/{identifier}"
@@ -464,19 +464,19 @@ def fetch_pokemon_data(pokemon_name: str, archetype_data: dict, original_name: O
         pokemon_types = [t['type']['name'] for t in data['types']]
         stats = {s['stat']['name']: s['base_stat'] for s in data['stats']}
         
-        signature_moves = select_signature_moves(data['moves'], pokemon_types, stats, original_name or data['name'])
+        signature_moves = select_signature_moves(data['moves'], pokemon_types, stats, original_name)
         all_abilities = [a['ability']['name'].replace('-', ' ').title() for a in data['abilities']]
-        best_ability = select_competitive_ability(original_name or data['name'], all_abilities)
+        best_ability = select_competitive_ability(original_name, all_abilities)
         competitive_nature = select_competitive_nature(stats)
 
-        competitive_item = select_competitive_item(stats, original_name or data['name'], pokemon_types, archetype_data)
+        competitive_item = select_competitive_item(stats, original_name, pokemon_types, archetype_data)
         ev_spread = calculate_evs(stats)
 
         # Generate SVG
-        svg_generator.generate_radar_chart(stats, normalize_pokemon_identifier(original_name or data['name']))
+        svg_generator.generate_radar_chart(stats, normalize_pokemon_identifier(original_name))
 
         return {
-            'name': (original_name or data['name']).title(),
+            'name': original_name.title(),
             'types': pokemon_types,
             'height': data['height'] / 10,
             'weight': data['weight'] / 10,
