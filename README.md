@@ -10,7 +10,7 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-25 13:26 UTC |
+| Generated | 2026-08-25 14:00 UTC |
 | Schedule Index | 739853 |
 | Archetype | Thunderborn Storm Raider |
 | Lead Operative | Zeraora · Balanced Command Core |
@@ -19,8 +19,6 @@
 | Active Roster | Zeraora, Rayquaza, Noivern, Metagross, Gengar, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
-
-> Squad average speed: 100.0.
 
 ---
 
@@ -207,9 +205,6 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 > Adaptive cadence engaged.
 
-- **Synergy:** 1 types.
-- **Speed:** Avg 100.0.
-
 ---
 
 ## 🏟️ Recent Challengers (Gym Leader Mode)
@@ -296,7 +291,7 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **28** Days Dry. Odds: **2.08**
+Current Hunt: **29** Days Dry. Odds: **2.08**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
@@ -383,4 +378,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-08-25 13:26 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-25 14:00 UTC. Next rotation triggers at midnight UTC.</sub>
