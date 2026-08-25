@@ -437,7 +437,7 @@ def roll_random_encounter():
 
     return species, rarity, callout, is_shiny
 
-def generate_branching_paths(species: str, pokemon_info: Optional[dict], is_shiny: bool, legendary_mode: bool) -> str:
+def generate_branching_paths(species: str, pokemon_info: dict, is_shiny: bool, legendary_mode: bool) -> str:
     display_name = species.title()
     type_summary = " / ".join([t.title() for t in pokemon_info["types"]]) if pokemon_info else "Unknown"
     target_descriptor = "shimmering anomaly" if is_shiny else "legendary beacon" if legendary_mode else "wild signal"
@@ -460,16 +460,14 @@ def generate_branching_paths(species: str, pokemon_info: Optional[dict], is_shin
             f"  - **Type Intel:** {type_summary}"
         ]
 
-        def render_tactic(tactic: dict, odds: int) -> str:
-            return (
-                "  <details>\n"
-                f"    <summary>{tactic['icon']} {tactic['title']} · {odds}% odds</summary>\n\n"
-                f"    - **If it lands:** {tactic['success'].format(target=target_descriptor, pokemon=display_name)}\n"
-                f"    - **If it whiffs:** {tactic['fallback'].format(pokemon=display_name)}\n"
-                "  </details>"
-            )
-
-        tactics_block = "\n".join([render_tactic(tactic_left, odds_left), render_tactic(tactic_right, odds_right)])
+        tactics_block = "\n".join(
+            "  <details>\n"
+            f"    <summary>{tactic['icon']} {tactic['title']} · {odds}% odds</summary>\n\n"
+            f"    - **If it lands:** {tactic['success'].format(target=target_descriptor, pokemon=display_name)}\n"
+            f"    - **If it whiffs:** {tactic['fallback'].format(pokemon=display_name)}\n"
+            "  </details>"
+            for tactic, odds in ((tactic_left, odds_left), (tactic_right, odds_right))
+        )
         path_block = f"<details>\n  <summary>{emoji} Path {idx} — {title}</summary>\n\n" + "\n".join(body_lines) + "\n\n" + tactics_block + "\n</details>"
         path_blocks.append(path_block)
 
