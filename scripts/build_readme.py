@@ -13,6 +13,8 @@ import github_metrics
 import banner_generator
 import coach
 
+from coach import TYPE_CHART
+
 VERSION_PRIORITY = [
     "scarlet-violet",
     "sword-shield",
@@ -82,20 +84,7 @@ def load_move_cache():
             return {}
     return {}
 
-def save_move_cache():
-    # Sort keys for stable diffs
-    with open(MOVE_CACHE_FILE, 'w') as f:
-        json.dump(MOVE_CACHE, f, indent=2, sort_keys=True)
-
 MOVE_CACHE: dict[str, dict] = load_move_cache()
-
-POKEMON_ASCII_ART = """
-      ___
-     /   \\
-    | O O |
-     \\ ^ /
-      |||
-"""
 
 TYPE_EMOJIS = {
     "normal": "⚪", "fire": "🔥", "water": "💧", "electric": "⚡",
@@ -103,27 +92,6 @@ TYPE_EMOJIS = {
     "ground": "🌍", "flying": "🕊️", "psychic": "🔮", "bug": "🐛",
     "rock": "🪨", "ghost": "👻", "dragon": "🐉", "dark": "🌙",
     "steel": "⚙️", "fairy": "✨"
-}
-
-WEAKNESS_CHART = {
-    'normal': ['fighting'],
-    'fire': ['water', 'ground', 'rock'],
-    'water': ['electric', 'grass'],
-    'electric': ['ground'],
-    'grass': ['fire', 'ice', 'poison', 'flying', 'bug'],
-    'ice': ['fire', 'fighting', 'rock', 'steel'],
-    'fighting': ['flying', 'psychic', 'fairy'],
-    'poison': ['ground', 'psychic'],
-    'ground': ['water', 'grass', 'ice'],
-    'flying': ['electric', 'ice', 'rock'],
-    'psychic': ['bug', 'ghost', 'dark'],
-    'bug': ['fire', 'flying', 'rock'],
-    'rock': ['water', 'grass', 'fighting', 'ground', 'steel'],
-    'ghost': ['ghost', 'dark'],
-    'dragon': ['ice', 'dragon', 'fairy'],
-    'dark': ['fighting', 'bug', 'fairy'],
-    'steel': ['fire', 'fighting', 'ground'],
-    'fairy': ['poison', 'steel'],
 }
 
 LEGENDARY_ROSTER = [
@@ -257,22 +225,7 @@ def get_version_priority(version_name: str) -> int:
         return len(VERSION_PRIORITY)
 
 def fetch_move_metadata(move_url: str) -> dict:
-    if move_url in MOVE_CACHE:
-        return MOVE_CACHE[move_url]
-    try:
-        with urllib.request.urlopen(move_url, timeout=5) as response:
-            payload = json.loads(response.read().decode())
-    except Exception as exc:
-        print(f"Warning: Could not fetch move data from {move_url}: {exc}")
-        payload = {}
-    metadata = {
-        "type": payload.get("type", {}).get("name"),
-        "power": payload.get("power"),
-        "damage_class": payload.get("damage_class", {}).get("name"),
-    }
-    MOVE_CACHE[move_url] = metadata
-    time.sleep(0.05)
-    return metadata
+    return MOVE_CACHE.get(move_url, {})
 
 def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_stats: dict, pokemon_name: str) -> list[dict]:
     scored_moves = []
@@ -440,7 +393,7 @@ def analyze_team_weaknesses(team_types: dict) -> dict:
         w
         for pokemon_types in team_types.values()
         for ptype in pokemon_types
-        for w in WEAKNESS_CHART.get(ptype, [])
+        for w in TYPE_CHART.get(ptype, [])
     )
     return {
         'critical': {t: count for t, count in weakness_count.items() if count >= 3},
