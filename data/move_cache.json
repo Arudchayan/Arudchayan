@@ -1,8 +1,28 @@
 {
+  "https://pokeapi.co/api/v2/move/1/": {
+    "damage_class": "physical",
+    "power": 40,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/10/": {
+    "damage_class": "physical",
+    "power": 40,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/100/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
   "https://pokeapi.co/api/v2/move/101/": {
     "damage_class": "special",
     "power": null,
     "type": "ghost"
+  },
+  "https://pokeapi.co/api/v2/move/102/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/103/": {
     "damage_class": "status",
@@ -14,10 +34,35 @@
     "power": null,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/105/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/106/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/108/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/109/": {
     "damage_class": "status",
     "power": null,
     "type": "ghost"
+  },
+  "https://pokeapi.co/api/v2/move/111/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/112/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
   },
   "https://pokeapi.co/api/v2/move/113/": {
     "damage_class": "status",
@@ -34,6 +79,16 @@
     "power": null,
     "type": "psychic"
   },
+  "https://pokeapi.co/api/v2/move/116/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/117/": {
+    "damage_class": "physical",
+    "power": null,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/118/": {
     "damage_class": "status",
     "power": null,
@@ -44,15 +99,25 @@
     "power": 200,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/122/": {
+    "damage_class": "physical",
+    "power": 30,
+    "type": "ghost"
+  },
+  "https://pokeapi.co/api/v2/move/123/": {
+    "damage_class": "special",
+    "power": 30,
+    "type": "poison"
+  },
   "https://pokeapi.co/api/v2/move/126/": {
     "damage_class": "special",
     "power": 110,
     "type": "fire"
   },
   "https://pokeapi.co/api/v2/move/127/": {
-    "damage_class": null,
-    "power": null,
-    "type": null
+    "damage_class": "physical",
+    "power": 80,
+    "type": "water"
   },
   "https://pokeapi.co/api/v2/move/129/": {
     "damage_class": "special",
@@ -64,10 +129,30 @@
     "power": 80,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/130/": {
+    "damage_class": "physical",
+    "power": 130,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/133/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/136/": {
+    "damage_class": "physical",
+    "power": 130,
+    "type": "fighting"
+  },
   "https://pokeapi.co/api/v2/move/138/": {
     "damage_class": "special",
     "power": 100,
     "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/139/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "poison"
   },
   "https://pokeapi.co/api/v2/move/14/": {
     "damage_class": "status",
@@ -83,6 +168,36 @@
     "damage_class": "physical",
     "power": 140,
     "type": "flying"
+  },
+  "https://pokeapi.co/api/v2/move/144/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/145/": {
+    "damage_class": "special",
+    "power": 40,
+    "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/148/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/149/": {
+    "damage_class": "special",
+    "power": null,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/15/": {
+    "damage_class": "physical",
+    "power": 50,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/150/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/153/": {
     "damage_class": "physical",
@@ -109,6 +224,11 @@
     "power": 40,
     "type": "flying"
   },
+  "https://pokeapi.co/api/v2/move/161/": {
+    "damage_class": "special",
+    "power": 80,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/162/": {
     "damage_class": "physical",
     "power": null,
@@ -134,6 +254,16 @@
     "power": 60,
     "type": "flying"
   },
+  "https://pokeapi.co/api/v2/move/171/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "ghost"
+  },
+  "https://pokeapi.co/api/v2/move/172/": {
+    "damage_class": "physical",
+    "power": 60,
+    "type": "fire"
+  },
   "https://pokeapi.co/api/v2/move/173/": {
     "damage_class": "special",
     "power": 50,
@@ -143,6 +273,16 @@
     "damage_class": "status",
     "power": null,
     "type": "ghost"
+  },
+  "https://pokeapi.co/api/v2/move/175/": {
+    "damage_class": "physical",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/177/": {
+    "damage_class": "special",
+    "power": 100,
+    "type": "flying"
   },
   "https://pokeapi.co/api/v2/move/179/": {
     "damage_class": "physical",
@@ -164,7 +304,27 @@
     "power": null,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/183/": {
+    "damage_class": "physical",
+    "power": 40,
+    "type": "fighting"
+  },
   "https://pokeapi.co/api/v2/move/184/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/185/": {
+    "damage_class": "physical",
+    "power": 60,
+    "type": "dark"
+  },
+  "https://pokeapi.co/api/v2/move/186/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "fairy"
+  },
+  "https://pokeapi.co/api/v2/move/187/": {
     "damage_class": "status",
     "power": null,
     "type": "normal"
@@ -178,6 +338,26 @@
     "damage_class": "special",
     "power": 20,
     "type": "ground"
+  },
+  "https://pokeapi.co/api/v2/move/19/": {
+    "damage_class": "physical",
+    "power": 90,
+    "type": "flying"
+  },
+  "https://pokeapi.co/api/v2/move/191/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "ground"
+  },
+  "https://pokeapi.co/api/v2/move/192/": {
+    "damage_class": "special",
+    "power": 120,
+    "type": "electric"
+  },
+  "https://pokeapi.co/api/v2/move/193/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/194/": {
     "damage_class": "status",
@@ -193,6 +373,26 @@
     "damage_class": "special",
     "power": 55,
     "type": "ice"
+  },
+  "https://pokeapi.co/api/v2/move/197/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/198/": {
+    "damage_class": "physical",
+    "power": 25,
+    "type": "ground"
+  },
+  "https://pokeapi.co/api/v2/move/199/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/20/": {
+    "damage_class": "physical",
+    "power": 15,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/200/": {
     "damage_class": "physical",
@@ -214,9 +414,24 @@
     "power": null,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/204/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "fairy"
+  },
+  "https://pokeapi.co/api/v2/move/205/": {
+    "damage_class": "physical",
+    "power": 30,
+    "type": "rock"
+  },
   "https://pokeapi.co/api/v2/move/206/": {
     "damage_class": "physical",
     "power": 40,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/207/": {
+    "damage_class": "status",
+    "power": null,
     "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/209/": {
@@ -228,6 +443,11 @@
     "damage_class": "physical",
     "power": 80,
     "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/210/": {
+    "damage_class": "physical",
+    "power": 40,
+    "type": "bug"
   },
   "https://pokeapi.co/api/v2/move/211/": {
     "damage_class": "physical",
@@ -249,6 +469,16 @@
     "power": null,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/215/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/216/": {
+    "damage_class": "physical",
+    "power": null,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/218/": {
     "damage_class": "physical",
     "power": null,
@@ -264,6 +494,26 @@
     "power": null,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/221/": {
+    "damage_class": "physical",
+    "power": 100,
+    "type": "fire"
+  },
+  "https://pokeapi.co/api/v2/move/223/": {
+    "damage_class": "physical",
+    "power": 100,
+    "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/224/": {
+    "damage_class": "physical",
+    "power": 120,
+    "type": "bug"
+  },
+  "https://pokeapi.co/api/v2/move/225/": {
+    "damage_class": "special",
+    "power": 60,
+    "type": "dragon"
+  },
   "https://pokeapi.co/api/v2/move/226/": {
     "damage_class": "status",
     "power": null,
@@ -273,6 +523,11 @@
     "damage_class": "status",
     "power": null,
     "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/228/": {
+    "damage_class": "physical",
+    "power": 40,
+    "type": "dark"
   },
   "https://pokeapi.co/api/v2/move/231/": {
     "damage_class": "physical",
@@ -294,10 +549,20 @@
     "power": null,
     "type": "fairy"
   },
+  "https://pokeapi.co/api/v2/move/237/": {
+    "damage_class": "special",
+    "power": 60,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/239/": {
     "damage_class": "special",
     "power": 40,
     "type": "dragon"
+  },
+  "https://pokeapi.co/api/v2/move/24/": {
+    "damage_class": "physical",
+    "power": 30,
+    "type": "fighting"
   },
   "https://pokeapi.co/api/v2/move/240/": {
     "damage_class": "status",
@@ -339,10 +604,25 @@
     "power": 120,
     "type": "psychic"
   },
+  "https://pokeapi.co/api/v2/move/249/": {
+    "damage_class": "physical",
+    "power": 40,
+    "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/25/": {
+    "damage_class": "physical",
+    "power": 120,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/250/": {
     "damage_class": "special",
     "power": 35,
     "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/251/": {
+    "damage_class": "physical",
+    "power": null,
+    "type": "dark"
   },
   "https://pokeapi.co/api/v2/move/252/": {
     "damage_class": "physical",
@@ -354,10 +634,35 @@
     "power": 90,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/254/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/256/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/257/": {
     "damage_class": "special",
     "power": 95,
     "type": "fire"
+  },
+  "https://pokeapi.co/api/v2/move/258/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "ice"
+  },
+  "https://pokeapi.co/api/v2/move/259/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "dark"
+  },
+  "https://pokeapi.co/api/v2/move/26/": {
+    "damage_class": "physical",
+    "power": 100,
+    "type": "fighting"
   },
   "https://pokeapi.co/api/v2/move/261/": {
     "damage_class": "status",
@@ -373,6 +678,11 @@
     "damage_class": "physical",
     "power": 150,
     "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/267/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/268/": {
     "damage_class": "status",
@@ -394,20 +704,55 @@
     "power": null,
     "type": "psychic"
   },
+  "https://pokeapi.co/api/v2/move/272/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/273/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/275/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "grass"
+  },
   "https://pokeapi.co/api/v2/move/276/": {
     "damage_class": "physical",
     "power": 120,
     "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/277/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/278/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/279/": {
     "damage_class": "physical",
     "power": 60,
     "type": "fighting"
   },
+  "https://pokeapi.co/api/v2/move/28/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "ground"
+  },
   "https://pokeapi.co/api/v2/move/280/": {
     "damage_class": "physical",
     "power": 75,
     "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/281/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/282/": {
     "damage_class": "physical",
@@ -429,15 +774,30 @@
     "power": null,
     "type": "psychic"
   },
+  "https://pokeapi.co/api/v2/move/287/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/289/": {
     "damage_class": "status",
     "power": null,
     "type": "dark"
   },
+  "https://pokeapi.co/api/v2/move/29/": {
+    "damage_class": "physical",
+    "power": 70,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/290/": {
+    "damage_class": "physical",
+    "power": 70,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/291/": {
-    "damage_class": null,
-    "power": null,
-    "type": null
+    "damage_class": "physical",
+    "power": 80,
+    "type": "water"
   },
   "https://pokeapi.co/api/v2/move/297/": {
     "damage_class": "status",
@@ -449,20 +809,50 @@
     "power": 85,
     "type": "fire"
   },
+  "https://pokeapi.co/api/v2/move/3/": {
+    "damage_class": "physical",
+    "power": 15,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/304/": {
     "damage_class": "special",
     "power": 90,
     "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/308/": {
+    "damage_class": "special",
+    "power": 150,
+    "type": "water"
   },
   "https://pokeapi.co/api/v2/move/309/": {
     "damage_class": "physical",
     "power": 90,
     "type": "steel"
   },
+  "https://pokeapi.co/api/v2/move/31/": {
+    "damage_class": "physical",
+    "power": 15,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/310/": {
     "damage_class": "physical",
     "power": 30,
     "type": "ghost"
+  },
+  "https://pokeapi.co/api/v2/move/311/": {
+    "damage_class": "special",
+    "power": 50,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/312/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "grass"
+  },
+  "https://pokeapi.co/api/v2/move/313/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "dark"
   },
   "https://pokeapi.co/api/v2/move/314/": {
     "damage_class": "special",
@@ -479,15 +869,60 @@
     "power": 60,
     "type": "rock"
   },
+  "https://pokeapi.co/api/v2/move/318/": {
+    "damage_class": "special",
+    "power": 60,
+    "type": "bug"
+  },
+  "https://pokeapi.co/api/v2/move/319/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "steel"
+  },
+  "https://pokeapi.co/api/v2/move/32/": {
+    "damage_class": "physical",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/321/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/322/": {
     "damage_class": "status",
     "power": null,
     "type": "psychic"
   },
+  "https://pokeapi.co/api/v2/move/324/": {
+    "damage_class": "special",
+    "power": 75,
+    "type": "bug"
+  },
   "https://pokeapi.co/api/v2/move/325/": {
     "damage_class": "physical",
     "power": 60,
     "type": "ghost"
+  },
+  "https://pokeapi.co/api/v2/move/326/": {
+    "damage_class": "special",
+    "power": 80,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/328/": {
+    "damage_class": "physical",
+    "power": 35,
+    "type": "ground"
+  },
+  "https://pokeapi.co/api/v2/move/33/": {
+    "damage_class": "physical",
+    "power": 40,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/330/": {
+    "damage_class": "special",
+    "power": 90,
+    "type": "water"
   },
   "https://pokeapi.co/api/v2/move/331/": {
     "damage_class": "physical",
@@ -503,6 +938,16 @@
     "damage_class": "status",
     "power": null,
     "type": "steel"
+  },
+  "https://pokeapi.co/api/v2/move/335/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/336/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/337/": {
     "damage_class": "physical",
@@ -529,6 +974,26 @@
     "power": 85,
     "type": "flying"
   },
+  "https://pokeapi.co/api/v2/move/341/": {
+    "damage_class": "special",
+    "power": 55,
+    "type": "ground"
+  },
+  "https://pokeapi.co/api/v2/move/342/": {
+    "damage_class": "physical",
+    "power": 50,
+    "type": "poison"
+  },
+  "https://pokeapi.co/api/v2/move/343/": {
+    "damage_class": "physical",
+    "power": 60,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/344/": {
+    "damage_class": "physical",
+    "power": 120,
+    "type": "electric"
+  },
   "https://pokeapi.co/api/v2/move/345/": {
     "damage_class": "special",
     "power": 60,
@@ -553,6 +1018,11 @@
     "damage_class": "physical",
     "power": 15,
     "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/350/": {
+    "damage_class": "physical",
+    "power": 25,
+    "type": "rock"
   },
   "https://pokeapi.co/api/v2/move/351/": {
     "damage_class": "special",
@@ -594,6 +1064,26 @@
     "power": null,
     "type": "steel"
   },
+  "https://pokeapi.co/api/v2/move/361/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/362/": {
+    "damage_class": "special",
+    "power": 65,
+    "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/363/": {
+    "damage_class": "physical",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/364/": {
+    "damage_class": "physical",
+    "power": 30,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/365/": {
     "damage_class": "physical",
     "power": 60,
@@ -604,10 +1094,20 @@
     "power": null,
     "type": "flying"
   },
+  "https://pokeapi.co/api/v2/move/368/": {
+    "damage_class": "physical",
+    "power": null,
+    "type": "steel"
+  },
   "https://pokeapi.co/api/v2/move/369/": {
     "damage_class": "physical",
     "power": 70,
     "type": "bug"
+  },
+  "https://pokeapi.co/api/v2/move/37/": {
+    "damage_class": "physical",
+    "power": 120,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/370/": {
     "damage_class": "physical",
@@ -624,35 +1124,115 @@
     "power": 60,
     "type": "dark"
   },
+  "https://pokeapi.co/api/v2/move/373/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "dark"
+  },
   "https://pokeapi.co/api/v2/move/374/": {
     "damage_class": "physical",
     "power": null,
     "type": "dark"
+  },
+  "https://pokeapi.co/api/v2/move/376/": {
+    "damage_class": "special",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/377/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
   },
   "https://pokeapi.co/api/v2/move/38/": {
     "damage_class": "physical",
     "power": 120,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/380/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "poison"
+  },
+  "https://pokeapi.co/api/v2/move/382/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/383/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/384/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/385/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/386/": {
+    "damage_class": "physical",
+    "power": null,
+    "type": "dark"
+  },
+  "https://pokeapi.co/api/v2/move/387/": {
+    "damage_class": "physical",
+    "power": 140,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/388/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "grass"
+  },
   "https://pokeapi.co/api/v2/move/389/": {
     "damage_class": "physical",
     "power": 70,
     "type": "dark"
+  },
+  "https://pokeapi.co/api/v2/move/39/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/390/": {
     "damage_class": "status",
     "power": null,
     "type": "poison"
   },
+  "https://pokeapi.co/api/v2/move/392/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "water"
+  },
   "https://pokeapi.co/api/v2/move/393/": {
     "damage_class": "status",
     "power": null,
     "type": "electric"
   },
+  "https://pokeapi.co/api/v2/move/394/": {
+    "damage_class": "physical",
+    "power": 120,
+    "type": "fire"
+  },
+  "https://pokeapi.co/api/v2/move/395/": {
+    "damage_class": "physical",
+    "power": 60,
+    "type": "fighting"
+  },
   "https://pokeapi.co/api/v2/move/396/": {
     "damage_class": "special",
     "power": 80,
     "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/397/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "rock"
   },
   "https://pokeapi.co/api/v2/move/398/": {
     "damage_class": "physical",
@@ -662,6 +1242,11 @@
   "https://pokeapi.co/api/v2/move/399/": {
     "damage_class": "special",
     "power": 80,
+    "type": "dark"
+  },
+  "https://pokeapi.co/api/v2/move/400/": {
+    "damage_class": "physical",
+    "power": 70,
     "type": "dark"
   },
   "https://pokeapi.co/api/v2/move/401/": {
@@ -684,6 +1269,11 @@
     "power": 80,
     "type": "bug"
   },
+  "https://pokeapi.co/api/v2/move/405/": {
+    "damage_class": "special",
+    "power": 90,
+    "type": "bug"
+  },
   "https://pokeapi.co/api/v2/move/406/": {
     "damage_class": "special",
     "power": 85,
@@ -694,9 +1284,19 @@
     "power": 100,
     "type": "dragon"
   },
+  "https://pokeapi.co/api/v2/move/408/": {
+    "damage_class": "special",
+    "power": 80,
+    "type": "rock"
+  },
   "https://pokeapi.co/api/v2/move/409/": {
     "damage_class": "physical",
     "power": 75,
+    "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/410/": {
+    "damage_class": "special",
+    "power": 40,
     "type": "fighting"
   },
   "https://pokeapi.co/api/v2/move/411/": {
@@ -718,6 +1318,11 @@
     "damage_class": "special",
     "power": 90,
     "type": "ground"
+  },
+  "https://pokeapi.co/api/v2/move/415/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "dark"
   },
   "https://pokeapi.co/api/v2/move/416/": {
     "damage_class": "physical",
@@ -744,6 +1349,21 @@
     "power": 70,
     "type": "ghost"
   },
+  "https://pokeapi.co/api/v2/move/422/": {
+    "damage_class": "physical",
+    "power": 65,
+    "type": "electric"
+  },
+  "https://pokeapi.co/api/v2/move/423/": {
+    "damage_class": "physical",
+    "power": 65,
+    "type": "ice"
+  },
+  "https://pokeapi.co/api/v2/move/424/": {
+    "damage_class": "physical",
+    "power": 65,
+    "type": "fire"
+  },
   "https://pokeapi.co/api/v2/move/425/": {
     "damage_class": "physical",
     "power": 40,
@@ -768,6 +1388,11 @@
     "damage_class": "special",
     "power": 80,
     "type": "steel"
+  },
+  "https://pokeapi.co/api/v2/move/431/": {
+    "damage_class": "physical",
+    "power": 90,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/432/": {
     "damage_class": "status",
@@ -794,10 +1419,20 @@
     "power": 130,
     "type": "grass"
   },
+  "https://pokeapi.co/api/v2/move/438/": {
+    "damage_class": "physical",
+    "power": 120,
+    "type": "grass"
+  },
   "https://pokeapi.co/api/v2/move/44/": {
     "damage_class": "physical",
     "power": 60,
     "type": "dark"
+  },
+  "https://pokeapi.co/api/v2/move/440/": {
+    "damage_class": "physical",
+    "power": 70,
+    "type": "poison"
   },
   "https://pokeapi.co/api/v2/move/441/": {
     "damage_class": "physical",
@@ -814,6 +1449,11 @@
     "power": 100,
     "type": "rock"
   },
+  "https://pokeapi.co/api/v2/move/445/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/446/": {
     "damage_class": "status",
     "power": null,
@@ -829,15 +1469,60 @@
     "power": null,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/450/": {
+    "damage_class": "physical",
+    "power": 60,
+    "type": "bug"
+  },
+  "https://pokeapi.co/api/v2/move/451/": {
+    "damage_class": "special",
+    "power": 50,
+    "type": "electric"
+  },
+  "https://pokeapi.co/api/v2/move/453/": {
+    "damage_class": "physical",
+    "power": 40,
+    "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/458/": {
+    "damage_class": "physical",
+    "power": 35,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/459/": {
+    "damage_class": "special",
+    "power": 150,
+    "type": "dragon"
+  },
   "https://pokeapi.co/api/v2/move/46/": {
     "damage_class": "status",
     "power": null,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/460/": {
+    "damage_class": "special",
+    "power": 100,
+    "type": "dragon"
+  },
+  "https://pokeapi.co/api/v2/move/466/": {
+    "damage_class": "special",
+    "power": 60,
+    "type": "ghost"
+  },
   "https://pokeapi.co/api/v2/move/468/": {
     "damage_class": "status",
     "power": null,
     "type": "dark"
+  },
+  "https://pokeapi.co/api/v2/move/469/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "rock"
+  },
+  "https://pokeapi.co/api/v2/move/472/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
   },
   "https://pokeapi.co/api/v2/move/473/": {
     "damage_class": "special",
@@ -848,6 +1533,21 @@
     "damage_class": "special",
     "power": 65,
     "type": "poison"
+  },
+  "https://pokeapi.co/api/v2/move/476/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "bug"
+  },
+  "https://pokeapi.co/api/v2/move/477/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/478/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
   },
   "https://pokeapi.co/api/v2/move/479/": {
     "damage_class": "physical",
@@ -864,15 +1564,30 @@
     "power": 95,
     "type": "poison"
   },
+  "https://pokeapi.co/api/v2/move/483/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "bug"
+  },
   "https://pokeapi.co/api/v2/move/484/": {
     "damage_class": "physical",
     "power": null,
     "type": "steel"
   },
+  "https://pokeapi.co/api/v2/move/485/": {
+    "damage_class": "special",
+    "power": 120,
+    "type": "psychic"
+  },
   "https://pokeapi.co/api/v2/move/486/": {
     "damage_class": "special",
     "power": null,
     "type": "electric"
+  },
+  "https://pokeapi.co/api/v2/move/488/": {
+    "damage_class": "physical",
+    "power": 50,
+    "type": "fire"
   },
   "https://pokeapi.co/api/v2/move/490/": {
     "damage_class": "physical",
@@ -889,6 +1604,11 @@
     "power": 95,
     "type": "dark"
   },
+  "https://pokeapi.co/api/v2/move/495/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/496/": {
     "damage_class": "special",
     "power": 60,
@@ -898,6 +1618,26 @@
     "damage_class": "special",
     "power": 40,
     "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/498/": {
+    "damage_class": "physical",
+    "power": 70,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/5/": {
+    "damage_class": "physical",
+    "power": 80,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/50/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/500/": {
+    "damage_class": "special",
+    "power": 20,
+    "type": "psychic"
   },
   "https://pokeapi.co/api/v2/move/501/": {
     "damage_class": "status",
@@ -909,10 +1649,30 @@
     "power": null,
     "type": "psychic"
   },
+  "https://pokeapi.co/api/v2/move/503/": {
+    "damage_class": "special",
+    "power": 80,
+    "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/505/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
   "https://pokeapi.co/api/v2/move/506/": {
     "damage_class": "special",
     "power": 65,
     "type": "ghost"
+  },
+  "https://pokeapi.co/api/v2/move/507/": {
+    "damage_class": "physical",
+    "power": 60,
+    "type": "flying"
+  },
+  "https://pokeapi.co/api/v2/move/510/": {
+    "damage_class": "special",
+    "power": 60,
+    "type": "fire"
   },
   "https://pokeapi.co/api/v2/move/512/": {
     "damage_class": "physical",
@@ -924,6 +1684,26 @@
     "power": null,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/514/": {
+    "damage_class": "physical",
+    "power": 70,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/515/": {
+    "damage_class": "special",
+    "power": null,
+    "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/518/": {
+    "damage_class": "special",
+    "power": 80,
+    "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/52/": {
+    "damage_class": "special",
+    "power": 40,
+    "type": "fire"
+  },
   "https://pokeapi.co/api/v2/move/520/": {
     "damage_class": "special",
     "power": 80,
@@ -933,6 +1713,11 @@
     "damage_class": "special",
     "power": 70,
     "type": "electric"
+  },
+  "https://pokeapi.co/api/v2/move/522/": {
+    "damage_class": "special",
+    "power": 50,
+    "type": "bug"
   },
   "https://pokeapi.co/api/v2/move/523/": {
     "damage_class": "physical",
@@ -965,34 +1750,119 @@
     "type": "fire"
   },
   "https://pokeapi.co/api/v2/move/530/": {
-    "damage_class": null,
+    "damage_class": "physical",
+    "power": 40,
+    "type": "dragon"
+  },
+  "https://pokeapi.co/api/v2/move/532/": {
+    "damage_class": "physical",
+    "power": 75,
+    "type": "grass"
+  },
+  "https://pokeapi.co/api/v2/move/533/": {
+    "damage_class": "physical",
+    "power": 90,
+    "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/535/": {
+    "damage_class": "physical",
     "power": null,
-    "type": null
+    "type": "fire"
+  },
+  "https://pokeapi.co/api/v2/move/54/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "ice"
+  },
+  "https://pokeapi.co/api/v2/move/540/": {
+    "damage_class": "special",
+    "power": 100,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/541/": {
+    "damage_class": "physical",
+    "power": 25,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/542/": {
     "damage_class": "special",
     "power": 110,
     "type": "flying"
   },
+  "https://pokeapi.co/api/v2/move/55/": {
+    "damage_class": "special",
+    "power": 40,
+    "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/550/": {
+    "damage_class": "physical",
+    "power": 130,
+    "type": "electric"
+  },
+  "https://pokeapi.co/api/v2/move/551/": {
+    "damage_class": "special",
+    "power": 130,
+    "type": "fire"
+  },
+  "https://pokeapi.co/api/v2/move/552/": {
+    "damage_class": "special",
+    "power": 80,
+    "type": "fire"
+  },
   "https://pokeapi.co/api/v2/move/555/": {
     "damage_class": "special",
     "power": 55,
     "type": "dark"
+  },
+  "https://pokeapi.co/api/v2/move/558/": {
+    "damage_class": "special",
+    "power": 100,
+    "type": "fire"
+  },
+  "https://pokeapi.co/api/v2/move/559/": {
+    "damage_class": "physical",
+    "power": 100,
+    "type": "electric"
   },
   "https://pokeapi.co/api/v2/move/56/": {
     "damage_class": "special",
     "power": 110,
     "type": "water"
   },
+  "https://pokeapi.co/api/v2/move/561/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/562/": {
+    "damage_class": "special",
+    "power": 120,
+    "type": "poison"
+  },
   "https://pokeapi.co/api/v2/move/566/": {
     "damage_class": "physical",
     "power": 90,
     "type": "ghost"
   },
+  "https://pokeapi.co/api/v2/move/568/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/57/": {
     "damage_class": "special",
     "power": 90,
     "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/574/": {
+    "damage_class": "special",
+    "power": 40,
+    "type": "fairy"
+  },
+  "https://pokeapi.co/api/v2/move/577/": {
+    "damage_class": "special",
+    "power": 50,
+    "type": "fairy"
   },
   "https://pokeapi.co/api/v2/move/58/": {
     "damage_class": "special",
@@ -1004,14 +1874,29 @@
     "power": null,
     "type": "grass"
   },
+  "https://pokeapi.co/api/v2/move/581/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "fairy"
+  },
   "https://pokeapi.co/api/v2/move/583/": {
     "damage_class": "physical",
     "power": 90,
     "type": "fairy"
   },
+  "https://pokeapi.co/api/v2/move/585/": {
+    "damage_class": "special",
+    "power": 95,
+    "type": "fairy"
+  },
   "https://pokeapi.co/api/v2/move/586/": {
     "damage_class": "special",
     "power": 140,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/589/": {
+    "damage_class": "status",
+    "power": null,
     "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/59/": {
@@ -1024,10 +1909,40 @@
     "power": null,
     "type": "normal"
   },
+  "https://pokeapi.co/api/v2/move/594/": {
+    "damage_class": "special",
+    "power": 15,
+    "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/595/": {
+    "damage_class": "special",
+    "power": 75,
+    "type": "fire"
+  },
+  "https://pokeapi.co/api/v2/move/598/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "electric"
+  },
+  "https://pokeapi.co/api/v2/move/599/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "poison"
+  },
   "https://pokeapi.co/api/v2/move/6/": {
     "damage_class": "physical",
     "power": 40,
     "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/60/": {
+    "damage_class": "special",
+    "power": 65,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/601/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "fairy"
   },
   "https://pokeapi.co/api/v2/move/604/": {
     "damage_class": "status",
@@ -1039,10 +1954,40 @@
     "power": 80,
     "type": "fairy"
   },
+  "https://pokeapi.co/api/v2/move/608/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "fairy"
+  },
+  "https://pokeapi.co/api/v2/move/609/": {
+    "damage_class": "physical",
+    "power": 20,
+    "type": "electric"
+  },
+  "https://pokeapi.co/api/v2/move/61/": {
+    "damage_class": "special",
+    "power": 65,
+    "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/611/": {
+    "damage_class": "special",
+    "power": 20,
+    "type": "bug"
+  },
   "https://pokeapi.co/api/v2/move/612/": {
     "damage_class": "physical",
     "power": 40,
     "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/613/": {
+    "damage_class": "special",
+    "power": 80,
+    "type": "flying"
+  },
+  "https://pokeapi.co/api/v2/move/62/": {
+    "damage_class": "special",
+    "power": 65,
+    "type": "ice"
   },
   "https://pokeapi.co/api/v2/move/620/": {
     "damage_class": "physical",
@@ -1059,10 +2004,25 @@
     "power": 35,
     "type": "flying"
   },
+  "https://pokeapi.co/api/v2/move/66/": {
+    "damage_class": "physical",
+    "power": 80,
+    "type": "fighting"
+  },
   "https://pokeapi.co/api/v2/move/662/": {
     "damage_class": "physical",
     "power": 80,
     "type": "ghost"
+  },
+  "https://pokeapi.co/api/v2/move/663/": {
+    "damage_class": "physical",
+    "power": 85,
+    "type": "dark"
+  },
+  "https://pokeapi.co/api/v2/move/667/": {
+    "damage_class": "physical",
+    "power": 95,
+    "type": "ground"
   },
   "https://pokeapi.co/api/v2/move/669/": {
     "damage_class": "physical",
@@ -1089,6 +2049,41 @@
     "power": 80,
     "type": "dark"
   },
+  "https://pokeapi.co/api/v2/move/678/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/679/": {
+    "damage_class": "physical",
+    "power": 80,
+    "type": "bug"
+  },
+  "https://pokeapi.co/api/v2/move/68/": {
+    "damage_class": "physical",
+    "power": null,
+    "type": "fighting"
+  },
+  "https://pokeapi.co/api/v2/move/682/": {
+    "damage_class": "special",
+    "power": 130,
+    "type": "fire"
+  },
+  "https://pokeapi.co/api/v2/move/683/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/684/": {
+    "damage_class": "physical",
+    "power": 70,
+    "type": "steel"
+  },
+  "https://pokeapi.co/api/v2/move/69/": {
+    "damage_class": "physical",
+    "power": null,
+    "type": "fighting"
+  },
   "https://pokeapi.co/api/v2/move/693/": {
     "damage_class": "physical",
     "power": 60,
@@ -1098,6 +2093,11 @@
     "damage_class": "physical",
     "power": 75,
     "type": "fire"
+  },
+  "https://pokeapi.co/api/v2/move/70/": {
+    "damage_class": "physical",
+    "power": 80,
+    "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/706/": {
     "damage_class": "physical",
@@ -1109,15 +2109,40 @@
     "power": 75,
     "type": "ground"
   },
+  "https://pokeapi.co/api/v2/move/71/": {
+    "damage_class": "special",
+    "power": 20,
+    "type": "grass"
+  },
+  "https://pokeapi.co/api/v2/move/710/": {
+    "damage_class": "physical",
+    "power": 85,
+    "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/72/": {
+    "damage_class": "special",
+    "power": 40,
+    "type": "grass"
+  },
   "https://pokeapi.co/api/v2/move/721/": {
     "damage_class": "physical",
     "power": 100,
     "type": "electric"
   },
+  "https://pokeapi.co/api/v2/move/744/": {
+    "damage_class": "special",
+    "power": 100,
+    "type": "dragon"
+  },
   "https://pokeapi.co/api/v2/move/75/": {
     "damage_class": "physical",
     "power": 55,
     "type": "grass"
+  },
+  "https://pokeapi.co/api/v2/move/751/": {
+    "damage_class": "physical",
+    "power": 50,
+    "type": "dragon"
   },
   "https://pokeapi.co/api/v2/move/76/": {
     "damage_class": "special",
@@ -1132,6 +2157,16 @@
   "https://pokeapi.co/api/v2/move/784/": {
     "damage_class": "physical",
     "power": 60,
+    "type": "dragon"
+  },
+  "https://pokeapi.co/api/v2/move/791/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "water"
+  },
+  "https://pokeapi.co/api/v2/move/795/": {
+    "damage_class": "special",
+    "power": 160,
     "type": "dragon"
   },
   "https://pokeapi.co/api/v2/move/796/": {
@@ -1164,6 +2199,11 @@
     "power": 120,
     "type": "rock"
   },
+  "https://pokeapi.co/api/v2/move/802/": {
+    "damage_class": "special",
+    "power": 100,
+    "type": "fairy"
+  },
   "https://pokeapi.co/api/v2/move/803/": {
     "damage_class": "physical",
     "power": 55,
@@ -1174,15 +2214,30 @@
     "power": 70,
     "type": "electric"
   },
+  "https://pokeapi.co/api/v2/move/805/": {
+    "damage_class": "special",
+    "power": 50,
+    "type": "normal"
+  },
   "https://pokeapi.co/api/v2/move/806/": {
     "damage_class": "physical",
     "power": 70,
     "type": "bug"
   },
+  "https://pokeapi.co/api/v2/move/808/": {
+    "damage_class": "physical",
+    "power": 75,
+    "type": "dark"
+  },
   "https://pokeapi.co/api/v2/move/809/": {
     "damage_class": "physical",
     "power": 110,
     "type": "ghost"
+  },
+  "https://pokeapi.co/api/v2/move/81/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "bug"
   },
   "https://pokeapi.co/api/v2/move/810/": {
     "damage_class": "status",
@@ -1194,20 +2249,40 @@
     "power": null,
     "type": "fighting"
   },
+  "https://pokeapi.co/api/v2/move/813/": {
+    "damage_class": "physical",
+    "power": 20,
+    "type": "ice"
+  },
   "https://pokeapi.co/api/v2/move/814/": {
     "damage_class": "physical",
     "power": 40,
     "type": "flying"
+  },
+  "https://pokeapi.co/api/v2/move/815/": {
+    "damage_class": "special",
+    "power": 70,
+    "type": "ground"
+  },
+  "https://pokeapi.co/api/v2/move/82/": {
+    "damage_class": "special",
+    "power": null,
+    "type": "dragon"
   },
   "https://pokeapi.co/api/v2/move/83/": {
     "damage_class": "special",
     "power": 35,
     "type": "fire"
   },
+  "https://pokeapi.co/api/v2/move/84/": {
+    "damage_class": "special",
+    "power": 40,
+    "type": "electric"
+  },
   "https://pokeapi.co/api/v2/move/85/": {
-    "damage_class": null,
-    "power": null,
-    "type": null
+    "damage_class": "special",
+    "power": 90,
+    "type": "electric"
   },
   "https://pokeapi.co/api/v2/move/851/": {
     "damage_class": "special",
@@ -1215,9 +2290,9 @@
     "type": "normal"
   },
   "https://pokeapi.co/api/v2/move/86/": {
-    "damage_class": null,
+    "damage_class": "status",
     "power": null,
-    "type": null
+    "type": "electric"
   },
   "https://pokeapi.co/api/v2/move/861/": {
     "damage_class": "physical",
@@ -1229,10 +2304,20 @@
     "power": 110,
     "type": "electric"
   },
+  "https://pokeapi.co/api/v2/move/88/": {
+    "damage_class": "physical",
+    "power": 50,
+    "type": "rock"
+  },
   "https://pokeapi.co/api/v2/move/883/": {
     "damage_class": "status",
     "power": 0,
     "type": "ice"
+  },
+  "https://pokeapi.co/api/v2/move/884/": {
+    "damage_class": "physical",
+    "power": 50,
+    "type": "bug"
   },
   "https://pokeapi.co/api/v2/move/885/": {
     "damage_class": "physical",
@@ -1254,6 +2339,16 @@
     "power": 75,
     "type": "electric"
   },
+  "https://pokeapi.co/api/v2/move/90/": {
+    "damage_class": "physical",
+    "power": null,
+    "type": "ground"
+  },
+  "https://pokeapi.co/api/v2/move/91/": {
+    "damage_class": "physical",
+    "power": 80,
+    "type": "ground"
+  },
   "https://pokeapi.co/api/v2/move/912/": {
     "damage_class": "physical",
     "power": 0,
@@ -1264,15 +2359,40 @@
     "power": 0,
     "type": "dragon"
   },
+  "https://pokeapi.co/api/v2/move/914/": {
+    "damage_class": "special",
+    "power": 80,
+    "type": "fairy"
+  },
+  "https://pokeapi.co/api/v2/move/915/": {
+    "damage_class": "physical",
+    "power": 75,
+    "type": "fire"
+  },
+  "https://pokeapi.co/api/v2/move/916/": {
+    "damage_class": "physical",
+    "power": 100,
+    "type": "electric"
+  },
   "https://pokeapi.co/api/v2/move/917/": {
     "damage_class": "special",
     "power": 75,
     "type": "psychic"
   },
+  "https://pokeapi.co/api/v2/move/918/": {
+    "damage_class": "physical",
+    "power": 65,
+    "type": "fighting"
+  },
   "https://pokeapi.co/api/v2/move/92/": {
     "damage_class": "status",
     "power": null,
     "type": "poison"
+  },
+  "https://pokeapi.co/api/v2/move/93/": {
+    "damage_class": "special",
+    "power": 50,
+    "type": "psychic"
   },
   "https://pokeapi.co/api/v2/move/94/": {
     "damage_class": "special",
@@ -1280,6 +2400,11 @@
     "type": "psychic"
   },
   "https://pokeapi.co/api/v2/move/95/": {
+    "damage_class": "status",
+    "power": null,
+    "type": "psychic"
+  },
+  "https://pokeapi.co/api/v2/move/96/": {
     "damage_class": "status",
     "power": null,
     "type": "psychic"
@@ -1292,6 +2417,11 @@
   "https://pokeapi.co/api/v2/move/98/": {
     "damage_class": "physical",
     "power": 40,
+    "type": "normal"
+  },
+  "https://pokeapi.co/api/v2/move/99/": {
+    "damage_class": "physical",
+    "power": 20,
     "type": "normal"
   }
 }

@@ -21,23 +21,11 @@ TYPE_CHART = {
     'fairy': ['poison', 'steel'],
 }
 
-META_TEAMS = [
-    {
-        "name": "Standard OU Offense",
-        "pokemon": ["Landorus-Therian", "Dragapult", "Kingambit", "Great Tusk", "Iron Valiant", "Gholdengo"]
-    },
-    {
-        "name": "Sun Offense",
-        "pokemon": ["Torkoal", "Flutter Mane", "Walking Wake", "Roaring Moon", "Lilligant-Hisui", "Great Tusk"]
-    },
-    {
-        "name": "Stall",
-        "pokemon": ["Alomomola", "Blissey", "Dondozo", "Clodsire", "Toxapex", "Corviknight"]
-    },
-    {
-        "name": "Hyper Offense",
-        "pokemon": ["Ribombee", "Gholdengo", "Dragonite", "Volcarona", "Iron Moth", "Ogerpon-Wellspring"]
-    }
+META_LEADS = [
+    ("Standard OU Offense", "Landorus-Therian"),
+    ("Sun Offense", "Torkoal"),
+    ("Stall", "Alomomola"),
+    ("Hyper Offense", "Ribombee"),
 ]
 
 # Hardcoded estimates for common meta threats: (base speed, types); defaults cover the rest.
@@ -62,12 +50,11 @@ META_THREATS = {
 
 
 def get_coach_advice(user_lead_name, user_lead_types, user_lead_speed):
-    meta_team = random.choice(META_TEAMS)
-    meta_lead = random.choice(meta_team['pokemon'])
+    meta_name, meta_lead = random.choice(META_LEADS)
 
     meta_speed, threat_type_list = META_THREATS.get(meta_lead, (90, ["normal"]))
 
-    advice_intro = f"Simulating matchup vs **{meta_team['name']}** (Threat: **{meta_lead}**)."
+    advice_intro = f"Simulating matchup vs **{meta_name}** (Threat: **{meta_lead}**)."
 
     if user_lead_speed > meta_speed:
         speed_note = f"Your **{user_lead_name}** outspeeds {meta_lead} (Base {meta_speed}). Strike first!"

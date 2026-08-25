@@ -17,7 +17,6 @@ def get_github_stats():
             "commit_streak": 12,
             "pull_requests": 15,
             "code_reviews": 8,
-            "mock": True
         }
 
     # GraphQL Query
@@ -57,7 +56,6 @@ def get_github_stats():
                 "commit_streak": streak,
                 "pull_requests": prs,
                 "code_reviews": reviews,
-                "mock": False
             }
     except Exception as e:
         print(f"Exception fetching GitHub stats: {e}")
@@ -67,7 +65,6 @@ def get_github_stats():
         "commit_streak": 0,
         "pull_requests": 0,
         "code_reviews": 0,
-        "mock": True
     }
 
 def calculate_genetic_bonuses(stats):

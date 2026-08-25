@@ -180,6 +180,9 @@ QUESTS = [
     "Review a PR to teach Alakazam 'Future Sight'.",
 ]
 
+def ev_string(evs: dict) -> str:
+    return " / ".join(f"{v} {k}" for k, v in evs.items() if v > 0)
+
 def generate_paste(pokemon_list: list[dict]) -> str:
     paste_lines = []
     for p in pokemon_list:
@@ -187,16 +190,9 @@ def generate_paste(pokemon_list: list[dict]) -> str:
         item = p['item']
         ability = p['best_ability']
         nature = p['nature']
-        evs = p['evs']
         moves = [m['name'] for m in p['signature_moves']]
 
-        # Format EV string
-        ev_list = []
-        for k, v in evs.items():
-            if v > 0: ev_list.append(f"{v} {k}")
-        ev_str = " / ".join(ev_list)
-
-        block = f"{name} @ {item}\nAbility: {ability}\nEVs: {ev_str}\n{nature} Nature"
+        block = f"{name} @ {item}\nAbility: {ability}\nEVs: {ev_string(p['evs'])}\n{nature} Nature"
         for m in moves:
             block += f"\n- {m}"
         paste_lines.append(block)
@@ -363,22 +359,18 @@ def select_competitive_ability(pokemon_name: str, abilities: list[str]) -> str:
     return abilities[0]
 
 def select_competitive_item(stats: dict, pokemon_name: str, types: list[str], archetype_data: dict) -> str:
-    if archetype_data.get('mega') and archetype_data.get('lead') == pokemon_name:
-        if 'rayquaza' not in pokemon_name.lower():
-            return f"{pokemon_name.split()[1]}ite" if 'Mega' in pokemon_name else f"{pokemon_name}ite"
-    if archetype_data.get('z_move') and archetype_data.get('lead') == pokemon_name:
-        type_name = archetype_data.get('tera_type', 'Normal')
-        return f"{type_name}ium Z"
+    lead_pick = archetype_data.get('lead') == pokemon_name
+    if lead_pick and archetype_data.get('mega') and 'rayquaza' not in pokemon_name.lower():
+        return f"{pokemon_name.split()[1]}ite" if 'Mega' in pokemon_name else f"{pokemon_name}ite"
+    if lead_pick and archetype_data.get('z_move'):
+        return f"{archetype_data.get('tera_type', 'Normal')}ium Z"
     if not stats: return 'Leftovers'
     attack = stats.get('attack', 0)
     sp_attack = stats.get('special-attack', 0)
     speed = stats.get('speed', 0)
     hp = stats.get('hp', 0)
-    weak_to_rocks = False
-    for t in types:
-        if t in ['fire', 'ice', 'flying', 'bug']:
-            weak_to_rocks = True
-    if weak_to_rocks and hp > 80: return 'Heavy-Duty Boots'
+    if any(t in ['fire', 'ice', 'flying', 'bug'] for t in types) and hp > 80:
+        return 'Heavy-Duty Boots'
     if speed >= 110 and (attack >= 120 or sp_attack >= 120):
         return random.choice(['Life Orb', 'Choice Specs' if sp_attack > attack else 'Choice Band'])
     elif speed >= 80 and (attack >= 100 or sp_attack >= 100):
@@ -478,35 +470,24 @@ def format_move(move: dict) -> str:
     return f"{emoji} {move.get('name')} · {move.get('damage_class').title()} · {power}"
 
 def bar(value, max_value, length=20, filled_char='█', suffix=""):
-    value = max(value, 0)
-    ratio = min(value / max_value, 1) if max_value > 0 else 0
-    filled = max(0, min(length, int(round(ratio * length))))
+    filled = int(min(max(value, 0) / max_value, 1) * length) if max_value > 0 else 0
     return '[' + filled_char * filled + '░' * (length - filled) + ']' + suffix
 
 def create_flux_meter(value, max_value, length=18):
     pct = min(value / max_value, 1) if max_value > 0 else 0
-    if pct >= 0.9: mode = "Ω-OVERDRIVE"
-    elif pct >= 0.7: mode = "VORTEX"
-    elif pct >= 0.5: mode = "CRUISE"
-    elif pct > 0: mode = "WARMUP"
-    else: mode = "STANDBY"
+    mode = ("Ω-OVERDRIVE" if pct >= 0.9 else "VORTEX" if pct >= 0.7
+            else "CRUISE" if pct >= 0.5 else "WARMUP" if pct > 0 else "STANDBY")
     return bar(value, max_value, length, '▓', f" {pct * 100:4.0f}% · {mode}")
 
 def get_pokemon_sprite_html(sprite_url, name, size=150):
     if sprite_url:
         return f'<img src="{sprite_url}" alt="{name}" width="{size}" height="{size}"/>'
-    return f"```\n{POKEMON_ASCII_ART}\n```"
+    return '???'
 
 def get_type_emoji(type_name):
     return TYPE_EMOJIS.get(type_name, "⚪")
 
-def roll_random_encounter(days_dry):
-    # === 3. SHINY PITY TIMER LOGIC ===
-    base_rate = SHINY_TRIGGER_RATE # 1/48
-    # Boost by 0.5% per dry day
-    bonus = days_dry * 0.005
-    trigger_rate = base_rate + bonus
-
+def roll_random_encounter():
     legendary_cutoff = 0.12
     roll = random.random()
     if roll < legendary_cutoff:
@@ -519,12 +500,10 @@ def roll_random_encounter(days_dry):
         callout = "Routine scouting ping—deploy capture drones at your discretion."
     species = random.choice(pool)
 
-    shiny_roll = random.random()
-    is_shiny = shiny_roll < trigger_rate
-
+    is_shiny = random.random() < SHINY_TRIGGER_RATE
     if is_shiny: callout += " ✨ Shiny trigger tripped!"
 
-    return species, rarity, callout, is_shiny, trigger_rate
+    return species, rarity, callout, is_shiny
 
 def generate_branching_paths(species: str, pokemon_info: Optional[dict], is_shiny: bool, legendary_mode: bool) -> str:
     display_name = species.title()
@@ -591,19 +570,13 @@ print(f"🎯 Building README for archetype: {chosen['title']}")
 # Fetch Pokémon data
 print("\n🔍 Fetching Pokémon data from PokéAPI...")
 pokemon_data = {}
-team_list_data = [] # Store data for features
-sprite_urls = [] # For banner
 
 for pokemon_name in chosen['team']:
     print(f"  📡 Fetching {pokemon_name}...")
     data = fetch_pokemon_data(pokemon_name, chosen, original_name=pokemon_name)
-    if data:
-        pokemon_data[pokemon_name] = data
-        team_list_data.append(data)
-        sprite_urls.append(data.get('sprite'))
-    else:
+    if not data:
         # Fallback
-        fallback = {
+        data = {
             'name': pokemon_name,
             'types': ['normal'],
             'height': 1.0, 'weight': 10.0,
@@ -614,11 +587,12 @@ for pokemon_name in chosen['team']:
             'sprite': None,
             'item': 'Leftovers', 'best_ability': 'Unknown', 'nature': 'Serious', 'evs': {}
         }
-        pokemon_data[pokemon_name] = fallback
-        team_list_data.append(fallback)
-        sprite_urls.append(None)
+    pokemon_data[pokemon_name] = data
 
 # Advanced Features Generation
+pokemon_data = {n: pokemon_data[n] for n in chosen['team']}
+team_list_data = list(pokemon_data.values())
+sprite_urls = [d.get('sprite') for d in team_list_data]
 pokepaste_link = generate_paste(team_list_data)
 battle_log = (
     f"⚔️ **Battle Start!** Trainer {chosen['title']} vs Rival Blue!\n"
@@ -639,7 +613,7 @@ trainer_history = load_trainer_history()
 shiny_hunt = trainer_history.get("shiny_hunt", {"encounters_since_last": 0, "last_found": None})
 days_dry = shiny_hunt.get("encounters_since_last", 0)
 
-random_choice, encounter_rarity, encounter_callout, encounter_is_shiny, trigger_rate = roll_random_encounter(days_dry)
+random_choice, encounter_rarity, encounter_callout, encounter_is_shiny = roll_random_encounter()
 
 # Update History
 if encounter_is_shiny:
@@ -709,8 +683,7 @@ for pokemon_name in chosen['team']:
 
     move_lines = "\n".join(f"  - {format_move(m)}" for m in pdata.get('signature_moves', [])) or "  - (pending scouting)"
 
-    ev_parts = [f"{v} {k}" for k, v in pdata.get('evs', {}).items() if v > 0]
-    ev_text = " / ".join(ev_parts) if ev_parts else "0 / 0 / 0 / 0 / 0 / 0"
+    ev_text = ev_string(pdata.get('evs', {})) or "0 / 0 / 0 / 0 / 0 / 0"
     
     top_stat_key = max(stats, key=stats.get) if stats else 'hp'
     top_stat_val = stats.get(top_stat_key, 0)
@@ -753,7 +726,7 @@ replacements = {
     '{LEAD_ABILITY}': lead_data.get('best_ability', 'Unknown'),
     '{LEAD_NATURE}': lead_data.get('nature', 'Serious'),
     '{LEAD_ITEM}': lead_data.get('item', 'Leftovers'),
-    '{LEAD_EVS}': ' / '.join([f"{v} {k}" for k, v in lead_data.get('evs', {}).items() if v > 0]),
+    '{LEAD_EVS}': ev_string(lead_data.get('evs', {})),
     '{LEAD_HEIGHT}': f"{lead_data.get('height', 1.0):.1f}m",
     '{LEAD_WEIGHT}': f"{lead_data.get('weight', 10.0):.1f}kg",
     '{LEAD_HP}': str(lead_stats.get('hp', 0)),
@@ -790,7 +763,7 @@ replacements = {
     '{GENETICS_BONUS_DESC}': genetics_bonuses.get('desc', ''),
     '{COACH_TIPS}': coach_tips,
     '{CHALLENGER_LIST}': challenger_text,
-    '{SHINY_HUNT_STATUS}': f"Current Hunt: **{days_dry}** Days Dry. Odds: **{trigger_rate*100:.2f}%**",
+    '{SHINY_HUNT_STATUS}': f"Current Hunt: **{days_dry}** Days Dry. Odds: **{1/48*100:.2f}**",
 }
 
 # Lead Moves
@@ -855,9 +828,6 @@ for key, value in replacements.items():
 
 with open(os.path.join(root, "README.md"), "w") as f:
     f.write(output)
-
-save_move_cache()
-print(f"💾 Move cache saved ({len(MOVE_CACHE)} entries).")
 
 print("\n✅ README built successfully!")
 

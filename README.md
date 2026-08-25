@@ -11,7 +11,7 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-25 10:25 UTC |
+| Generated | 2026-08-25 11:39 UTC |
 | Schedule Index | 739853 |
 | Archetype | Thunderborn Storm Raider |
 | Lead Operative | Zeraora · Balanced Command Core |
@@ -57,12 +57,12 @@
 
 #### Stat Telemetry
 ```
-HP:     [████████░░░░░░░░░░░░]  100
-ATK:    [████████████░░░░░░░░] 150
-DEF:    [████████████░░░░░░░░] 150
-SP.ATK: [████████░░░░░░░░░░░░] 100
-SP.DEF: [████████████░░░░░░░░] 150
-SPEED:  [████████░░░░░░░░░░░░] 100
+HP:     [███████░░░░░░░░░░░░░]  100
+ATK:    [███████████░░░░░░░░░] 150
+DEF:    [███████████░░░░░░░░░] 150
+SP.ATK: [███████░░░░░░░░░░░░░] 100
+SP.DEF: [███████████░░░░░░░░░] 150
+SPEED:  [███████░░░░░░░░░░░░░] 100
 ```
 
 #### Signature Arsenal
@@ -71,7 +71,7 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Standard OU Offense** (Threat: **Dragapult**). Careful, **Dragapult** is faster (Base 142). Consider defensive pivots. Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Standard OU Offense** (Threat: **Landorus-Therian**). Your **Zeraora** outspeeds Landorus-Therian (Base 91). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
@@ -81,15 +81,7 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-
-```
+???
 <br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
@@ -107,15 +99,7 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Rayquaza</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-
-```
+???
 <br/><img src="assets/stats_rayquaza.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
@@ -133,15 +117,7 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-
-```
+???
 <br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
@@ -159,15 +135,7 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Metagross</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-
-```
+???
 <br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
@@ -185,15 +153,7 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-
-```
+???
 <br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
@@ -211,15 +171,7 @@ SPEED:  [████████░░░░░░░░░░░░] 100
 <summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
 
 <div align="center">
-```
-
-      ___
-     /   \
-    | O O |
-     \ ^ /
-      |||
-
-```
+???
 <br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
@@ -347,7 +299,7 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **16** Days Dry. Odds: **10.08%**
+Current Hunt: **18** Days Dry. Odds: **2.08**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
@@ -434,4 +386,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-08-25 10:25 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-25 11:39 UTC. Next rotation triggers at midnight UTC.</sub>
