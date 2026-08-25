@@ -342,7 +342,6 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
     final_names = set()
 
     for m in candidates:
-        if len(final_moves) >= 4: break
         if m['raw_name'] not in final_names and m['type'] in pokemon_types and m['damage_class'] != 'status':
             if (is_physical and m['damage_class'] == 'physical') or (not is_physical and m['damage_class'] == 'special'):
                 final_moves.append(m)
@@ -350,7 +349,6 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
                 break
 
     for m in candidates:
-        if len(final_moves) >= 4: break
         if m['raw_name'] not in final_names and m['damage_class'] == 'status' and m['raw_name'] in COMPETITIVE_PRIORITY_MOVES:
             final_moves.append(m)
             final_names.add(m['raw_name'])
