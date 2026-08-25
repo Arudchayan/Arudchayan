@@ -178,13 +178,9 @@ def ev_string(evs: dict) -> str:
 def generate_paste(pokemon_list: list[dict]) -> str:
     paste_lines = []
     for p in pokemon_list:
-        name = p['name']
-        item = p['item']
-        ability = p['best_ability']
-        nature = p['nature']
         moves = [m['name'] for m in p['signature_moves']]
 
-        block = f"{name} @ {item}\nAbility: {ability}\nEVs: {ev_string(p['evs'])}\n{nature} Nature"
+        block = f"{p['name']} @ {p['item']}\nAbility: {p['best_ability']}\nEVs: {ev_string(p['evs'])}\n{p['nature']} Nature"
         for m in moves:
             block += f"\n- {m}"
         paste_lines.append(block)
@@ -323,10 +319,10 @@ def calculate_evs(stats: dict) -> dict:
     speed = stats.get('speed', 0)
     is_physical = attack > sp_attack
     is_fast = speed >= 100
-    if is_physical and is_fast: return {'HP': 0, 'Atk': 252, 'Def': 4, 'SpA': 0, 'SpD': 0, 'Spe': 252}
-    elif is_physical and not is_fast: return {'HP': 252, 'Atk': 252, 'Def': 4, 'SpA': 0, 'SpD': 0, 'Spe': 0}
-    elif not is_physical and is_fast: return {'HP': 0, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 252}
-    else: return {'HP': 252, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 0}
+    return {
+        'HP': 0 if is_fast else 252, 'Atk': 252 if is_physical else 0, 'Def': 4 if is_physical else 0,
+        'SpA': 0 if is_physical else 252, 'SpD': 0 if is_physical else 4, 'Spe': 252 if is_fast else 0,
+    }
 
 def fetch_pokemon_data(pokemon_name: str):
     try:
@@ -341,13 +337,11 @@ def fetch_pokemon_data(pokemon_name: str):
             
         time.sleep(0.5)
         sprites = data['sprites']
-        sprite_url = None
-        if sprites.get('versions', {}).get('generation-v', {}).get('black-white', {}).get('animated', {}).get('front_default'):
-            sprite_url = sprites['versions']['generation-v']['black-white']['animated']['front_default']
-        elif sprites.get('other', {}).get('showdown', {}).get('front_default'):
-            sprite_url = sprites['other']['showdown']['front_default']
-        elif sprites.get('front_default'):
-            sprite_url = sprites['front_default']
+        sprite_url = (
+            sprites.get('versions', {}).get('generation-v', {}).get('black-white', {}).get('animated', {}).get('front_default')
+            or sprites.get('other', {}).get('showdown', {}).get('front_default')
+            or sprites.get('front_default')
+        )
         
         pokemon_types = [t['type']['name'] for t in data['types']]
         stats = {s['stat']['name']: s['base_stat'] for s in data['stats']}

@@ -21,26 +21,17 @@ TYPE_CHART = {
     'fairy': ['poison', 'steel'],
 }
 
+# Hardcoded estimates for common meta threats: (label, threat, base speed, types).
 META_LEADS = [
-    ("Standard OU Offense", "Landorus-Therian"),
-    ("Sun Offense", "Torkoal"),
-    ("Stall", "Alomomola"),
-    ("Hyper Offense", "Ribombee"),
+    ("Standard OU Offense", "Landorus-Therian", 91, ["ground", "flying"]),
+    ("Sun Offense", "Torkoal", 20, ["fire"]),
+    ("Stall", "Alomomola", 65, ["normal"]),
+    ("Hyper Offense", "Ribombee", 124, ["normal"]),
 ]
-
-# Hardcoded estimates for common meta threats: (base speed, types); defaults cover the rest.
-META_THREATS = {
-    "Landorus-Therian": (91, ["ground", "flying"]),
-    "Torkoal": (20, ["fire"]),
-    "Alomomola": (65, ["normal"]),
-    "Ribombee": (124, ["normal"]),
-}
 
 
 def get_coach_advice(user_lead_name, user_lead_types, user_lead_speed):
-    meta_name, meta_lead = random.choice(META_LEADS)
-
-    meta_speed, threat_type_list = META_THREATS[meta_lead]
+    meta_name, meta_lead, meta_speed, threat_type_list = random.choice(META_LEADS)
 
     advice_intro = f"Simulating matchup vs **{meta_name}** (Threat: **{meta_lead}**)."
 

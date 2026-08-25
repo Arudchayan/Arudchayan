@@ -1,16 +1,5 @@
 {
-  "trainer_name": "Arudchayan",
-  "rank": "Champion",
-  "total_battles": 142,
-  "wins": 98,
-  "losses": 44,
-  "badges_earned": 8,
-  "pokedex_seen": 482,
-  "pokedex_caught": 156,
-  "start_date": "2024-01-01",
-  "last_active": "2025-11-13",
   "shiny_hunt": {
-    "start_date": "2024-01-01",
     "last_found": "2026-08-11",
     "encounters_since_last": 32
   }
