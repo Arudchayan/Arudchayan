@@ -157,11 +157,11 @@ root = os.path.dirname(os.path.dirname(__file__))
 # ==========================================
 
 WEATHER_TYPES = [
-    {"name": "Clear Skies", "emoji": "☀️", "effect": "Standard battle conditions."},
-    {"name": "Harsh Sunlight", "emoji": "🔥", "effect": "Fire moves boosted 50%, Water moves weakened 50%."},
-    {"name": "Rain", "emoji": "🌧️", "effect": "Water moves boosted 50%, Fire moves weakened 50%."},
-    {"name": "Sandstorm", "emoji": "🏜️", "effect": "Rock types get 50% Sp. Def boost. Chip damage active."},
-    {"name": "Snow", "emoji": "❄️", "effect": "Ice types get 50% Def boost."},
+    {"name": "Clear Skies", "emoji": "☀️", "effect": "Standard battle conditions.", "colors": [(135, 206, 235), (255, 255, 255)]},
+    {"name": "Harsh Sunlight", "emoji": "🔥", "effect": "Fire moves boosted 50%, Water moves weakened 50%.", "colors": [(255, 165, 0), (255, 69, 0)]},
+    {"name": "Rain", "emoji": "🌧️", "effect": "Water moves boosted 50%, Fire moves weakened 50%.", "colors": [(25, 25, 112), (100, 149, 237)]},
+    {"name": "Sandstorm", "emoji": "🏜️", "effect": "Rock types get 50% Sp. Def boost. Chip damage active.", "colors": [(210, 180, 140), (139, 69, 19)]},
+    {"name": "Snow", "emoji": "❄️", "effect": "Ice types get 50% Def boost.", "colors": [(224, 255, 255), (240, 255, 255)]},
 ]
 
 QUESTS = [
@@ -467,8 +467,7 @@ with open(os.path.join(root, "data", "archetypes.json")) as f:
     arc = json.load(f)
 
 # === 2. FETCH GENETICS STATS ===
-genetics_data = github_metrics.get_github_stats()
-genetics_bonuses = github_metrics.calculate_genetic_bonuses(genetics_data)
+genetics_bonuses = github_metrics.calculate_genetic_bonuses(github_metrics.get_github_stats())
 print(f"🧬 Genetics Loaded: {genetics_bonuses.get('desc')}")
 
 now_utc = datetime.datetime.now(datetime.UTC)
@@ -506,7 +505,6 @@ for pokemon_name in chosen['team']:
 
 # Advanced Features Generation
 team_list_data = list(pokemon_data.values())
-sprite_urls = [d.get('sprite') for d in team_list_data]
 pokepaste_link = generate_paste(team_list_data)
 battle_log = (
     f"⚔️ **Battle Start!** Trainer {chosen['title']} vs Rival Blue!\n"
@@ -520,7 +518,7 @@ battle_log = (
 
 # === 4. BANNER GENERATION ===
 print("🖼️ Generating Team Banner...")
-banner_generator.generate_team_banner(sprite_urls, weather['name'])
+banner_generator.generate_team_banner([d.get('sprite') for d in team_list_data], weather['colors'])
 
 # === 5. SHINY HUNT LOGIC ===
 trainer_history = load_trainer_history()
@@ -535,7 +533,6 @@ if encounter_is_shiny:
     print("✨ SHINY FOUND! Resetting counter.")
 else:
     shiny_hunt["encounters_since_last"] += 1
-days_dry = shiny_hunt["encounters_since_last"]
 
 with open(os.path.join(root, "data", "trainer_history.json"), "w") as f:
     json.dump(trainer_history, f, indent=2)
@@ -670,12 +667,10 @@ replacements = {
     '{GENETICS_BONUS_DESC}': genetics_bonuses.get('desc', ''),
     '{COACH_TIPS}': coach_tips,
     '{CHALLENGER_LIST}': challenger_text,
-    '{SHINY_HUNT_STATUS}': f"Current Hunt: **{days_dry}** Days Dry. Odds: **{SHINY_TRIGGER_RATE*100:.2f}**",
+    '{SHINY_HUNT_STATUS}': f"Current Hunt: **{shiny_hunt['encounters_since_last']}** Days Dry. Odds: **{SHINY_TRIGGER_RATE*100:.2f}**",
 }
 
-# Lead Moves
-lead_moves_fmt = [f"- **{format_move(m)}**" for m in lead_data.get('signature_moves', [])]
-replacements['{LEAD_MOVES}'] = "\n".join(lead_moves_fmt) or "- Recon uplink pending..."
+replacements['{LEAD_MOVES}'] = "\n".join(f"- **{format_move(m)}**" for m in lead_data.get('signature_moves', [])) or "- Recon uplink pending..."
 
 # Weakness Analysis
 w_analysis = analyze_team_weaknesses(team_types_by_pokemon)

@@ -11,11 +11,11 @@ def download_image(url):
         print(f"Failed to download image from {url}: {e}")
         return None
 
-def generate_team_banner(pokemon_sprites, weather_type="Clear Skies"):
+def generate_team_banner(pokemon_sprites, colors=((50, 50, 50), (20, 20, 20))):
     """
     Generates a composite team banner.
     pokemon_sprites: List of URLs or Image objects.
-    weather_type: String determining background color/style.
+    colors: Background gradient (black, white) RGB pair.
     """
 
     # Canvas Settings
@@ -23,17 +23,6 @@ def generate_team_banner(pokemon_sprites, weather_type="Clear Skies"):
     height = 300
     banner = Image.new('RGBA', (width, height), (0, 0, 0, 0))
     draw = ImageDraw.Draw(banner)
-
-    # 1. Background Generation
-    weather_colors = {
-        "Clear Skies": [(135, 206, 235), (255, 255, 255)], # Sky Blue
-        "Harsh Sunlight": [(255, 165, 0), (255, 69, 0)], # Orange/Red
-        "Rain": [(25, 25, 112), (100, 149, 237)], # Dark Blue
-        "Sandstorm": [(210, 180, 140), (139, 69, 19)], # Tan/Brown
-        "Snow": [(224, 255, 255), (240, 255, 255)], # Light Cyan
-    }
-
-    colors = weather_colors.get(weather_type, [(50, 50, 50), (20, 20, 20)])
 
     # Simple Vertical Gradient
     gradient = Image.linear_gradient("L").resize((width, height))
