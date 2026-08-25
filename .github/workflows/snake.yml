@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: Create assets directory
-        run: mkdir -p assets
       - uses: Platane/snk@v3
         with:
           github_user_name: Arudchayan
