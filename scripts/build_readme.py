@@ -301,10 +301,11 @@ def select_competitive_item(stats: dict, types: list[str]) -> str:
     sp_attack = stats.get('special-attack', 0)
     speed = stats.get('speed', 0)
     hp = stats.get('hp', 0)
+    specs_or_band = 'Choice Specs' if sp_attack > attack else 'Choice Band'
     if any(t in ['fire', 'ice', 'flying', 'bug'] for t in types) and hp > 80:
         return 'Heavy-Duty Boots'
     if speed >= 110 and (attack >= 120 or sp_attack >= 120):
-        return random.choice(['Life Orb', 'Choice Specs' if sp_attack > attack else 'Choice Band'])
+        return random.choice(['Life Orb', specs_or_band])
     elif speed >= 80 and (attack >= 100 or sp_attack >= 100):
         return random.choice(['Choice Scarf', 'Expert Belt', 'Life Orb'])
     elif hp < 80 and (attack >= 130 or sp_attack >= 130):
@@ -405,11 +406,10 @@ def bar(value, max_value, length=20, filled_char='█', suffix=""):
     filled = int(min(max(value, 0) / max_value, 1) * length) if max_value > 0 else 0
     return '[' + filled_char * filled + '░' * (length - filled) + ']' + suffix
 
-def create_flux_meter(value, max_value, length=18):
-    pct = min(value / max_value, 1) if max_value > 0 else 0
+def flux_suffix(pct: float) -> str:
     mode = ("Ω-OVERDRIVE" if pct >= 0.9 else "VORTEX" if pct >= 0.7
             else "CRUISE" if pct >= 0.5 else "WARMUP" if pct > 0 else "STANDBY")
-    return bar(value, max_value, length, '▓', f" {pct * 100:4.0f}% · {mode}")
+    return f" {pct * 100:4.0f}% · {mode}"
 
 def get_pokemon_sprite_html(sprite_url, name, size=150):
     if sprite_url:
