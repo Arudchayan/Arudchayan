@@ -500,6 +500,11 @@ def get_english_flavor_text(species_data):
             return entry['flavor_text'].replace('\n', ' ').replace('\f', ' ')
     return "A mysterious Pokémon that loves to code!"
 
+def format_move(move: dict) -> str:
+    emoji = get_type_emoji(move.get('type', 'normal'))
+    power = f"{move.get('power')} BP" if move.get('power') else "Utility"
+    return f"{emoji} {move.get('name')} · {move.get('damage_class').title()} · {power}"
+
 def bar(value, max_value, length=20, filled_char='█', suffix=""):
     value = max(value, 0)
     ratio = min(value / max_value, 1) if max_value > 0 else 0
@@ -730,12 +735,7 @@ for pokemon_name in chosen['team']:
     team_bst_total += bst
     max_bst = max(max_bst, bst)
 
-    formatted_moves = []
-    for move in pdata.get('signature_moves', []):
-        emoji = get_type_emoji(move.get('type', 'normal'))
-        power_text = f"{move.get('power')} BP" if move.get('power') else "Utility"
-        formatted_moves.append(f"  - {emoji} {move.get('name')} · {move.get('damage_class').title()} · {power_text}")
-    move_lines = "\n".join(formatted_moves) or "  - (pending scouting)"
+    move_lines = "\n".join(f"  - {format_move(m)}" for m in pdata.get('signature_moves', [])) or "  - (pending scouting)"
 
     ev_parts = [f"{v} {k}" for k, v in pdata.get('evs', {}).items() if v > 0]
     ev_text = " / ".join(ev_parts) if ev_parts else "0 / 0 / 0 / 0 / 0 / 0"
@@ -822,11 +822,7 @@ replacements = {
 }
 
 # Lead Moves
-lead_moves_fmt = []
-for move in lead_data.get('signature_moves', []):
-    emoji = get_type_emoji(move.get('type', 'normal'))
-    power = f"{move.get('power')} BP" if move.get('power') else "Utility"
-    lead_moves_fmt.append(f"- **{move.get('name')}** · {emoji} {move.get('damage_class').title()} · {power}")
+lead_moves_fmt = [f"- **{format_move(m)}**" for m in lead_data.get('signature_moves', [])]
 replacements['{LEAD_MOVES}'] = "\n".join(lead_moves_fmt) or "- Recon uplink pending..."
 
 # Weakness Analysis
