@@ -122,11 +122,11 @@ Copy this to import your team into Pokémon Showdown:
 
 ## ⚙️ Competitive Systems Matrix
 
-| Mechanic | Status | Notes |
-| --- | --- | --- |
-| Mega Evolution | {MEGA_VISUAL} | {MEGA_INFO} {MEGA_STONE_EMOJI} |
-| Z-Move | {ZMOVE_VISUAL} | {ZMOVE_INFO} {ZMOVE_EMOJI} |
-| Terastallization | {TERA_VISUAL} | {TERA_TYPE} {TERA_EMOJI} |
+| Mechanic | Loadout |
+| --- | --- |
+| Mega Evolution | {MEGA_INFO} |
+| Z-Move | {ZMOVE_INFO} |
+| Terastallization | {TERA_INFO} |
 
 ---
 

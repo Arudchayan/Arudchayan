@@ -268,28 +268,7 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
         })
     candidates.sort(key=lambda m: m.pop("key"))
 
-    final_moves: list[dict] = []
-    final_names: set[str] = set()
-
-    def take(m):
-        final_moves.append(m)
-        final_names.add(m['raw_name'])
-
-    for m in candidates:
-        if m['type'] in pokemon_types and m['damage_class'] != 'status' \
-                and (m['damage_class'] == 'physical') == is_physical:
-            take(m)
-            break
-
-    for m in candidates:
-        if m['damage_class'] == 'status' and m['raw_name'] in COMPETITIVE_PRIORITY_MOVES:
-            take(m)
-            break
-
-    for m in candidates:
-        if len(final_moves) >= 4: break
-        if m['raw_name'] not in final_names:
-            take(m)
+    final_moves = candidates[:4]
 
     if 'rayquaza' in pokemon_name.lower():
         final_moves = [m for m in final_moves if m['raw_name'] != 'dragon-ascent'][:3]
@@ -362,7 +341,7 @@ def calculate_evs(stats: dict) -> dict:
     elif not is_physical and is_fast: return {'HP': 0, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 252}
     else: return {'HP': 252, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 0}
 
-def fetch_pokemon_data(pokemon_name: str, archetype_data: dict, original_name: str):
+def fetch_pokemon_data(pokemon_name: str, original_name: str):
     try:
         identifier = normalize_pokemon_identifier(pokemon_name)
         url = f"https://pokeapi.co/api/v2/pokemon/{identifier}"
@@ -531,7 +510,7 @@ pokemon_data = {}
 
 for pokemon_name in chosen['team']:
     print(f"  📡 Fetching {pokemon_name}...")
-    data = fetch_pokemon_data(pokemon_name, chosen, original_name=pokemon_name)
+    data = fetch_pokemon_data(pokemon_name, original_name=pokemon_name)
     if not data:
         # Fallback
         data = {
@@ -585,7 +564,7 @@ with open(os.path.join(root, "data", "trainer_history.json"), "w") as f:
     json.dump(trainer_history, f, indent=2)
 
 print(f"\n✨ Random encounter: {random_choice.title()} [{encounter_rarity}]")
-random_pokemon_data = fetch_pokemon_data(random_choice, {}, original_name=random_choice)
+random_pokemon_data = fetch_pokemon_data(random_choice, original_name=random_choice)
 branching_paths_block = generate_branching_paths(
     random_choice, random_pokemon_data, encounter_is_shiny, encounter_rarity == "Legendary Sighting"
 )
@@ -699,15 +678,9 @@ replacements = {
     '{LEAD_SPDEF_BAR}': bar(lead_stats.get('special-defense', 0), 255),
     '{LEAD_SPEED_BAR}': bar(lead_stats.get('speed', 0), 255),
     '{TEAM_LIST}': ', '.join(chosen['team']),
-    '{MEGA_INFO}': chosen.get('mega') or '—',
-    '{ZMOVE_INFO}': chosen.get('z_move') or '—',
-    '{TERA_TYPE}': chosen.get('tera_type') or '—',
-    '{MEGA_VISUAL}': '◆' if chosen.get('mega') else '—',
-    '{ZMOVE_VISUAL}': '▲' if chosen.get('z_move') else '—',
-    '{TERA_VISUAL}': '◇' if chosen.get('tera_type') else '—',
-    '{MEGA_STONE_EMOJI}': '💎' if chosen.get('mega') else '',
-    '{ZMOVE_EMOJI}': '⚡' if chosen.get('z_move') else '',
-    '{TERA_EMOJI}': '✨' if chosen.get('tera_type') else '',
+    '{MEGA_INFO}': f"◆ {chosen['mega']} 💎" if chosen.get('mega') else '—',
+    '{ZMOVE_INFO}': f"▲ {chosen['z_move']} ⚡" if chosen.get('z_move') else '—',
+    '{TERA_INFO}': f"◇ {chosen['tera_type']} ✨" if chosen.get('tera_type') else '—',
     '{TEAM_DETAIL_BLOCK}': '\n\n'.join(team_dossiers),
     '{BRANCHING_STORY_BLOCK}': branching_paths_block,
     '{WEATHER_EMOJI}': weather['emoji'],
@@ -720,7 +693,7 @@ replacements = {
     '{GENETICS_BONUS_DESC}': genetics_bonuses.get('desc', ''),
     '{COACH_TIPS}': coach_tips,
     '{CHALLENGER_LIST}': challenger_text,
-    '{SHINY_HUNT_STATUS}': f"Current Hunt: **{days_dry}** Days Dry. Odds: **{1/48*100:.2f}**",
+    '{SHINY_HUNT_STATUS}': f"Current Hunt: **{days_dry}** Days Dry. Odds: **{SHINY_TRIGGER_RATE*100:.2f}**",
 }
 
 # Lead Moves

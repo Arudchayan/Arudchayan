@@ -52,7 +52,7 @@ META_THREATS = {
 def get_coach_advice(user_lead_name, user_lead_types, user_lead_speed):
     meta_name, meta_lead = random.choice(META_LEADS)
 
-    meta_speed, threat_type_list = META_THREATS[meta_lead]
+    meta_speed, threat_type_list = META_THREATS.get(meta_lead, (90, ["normal"]))
 
     advice_intro = f"Simulating matchup vs **{meta_name}** (Threat: **{meta_lead}**)."
 

@@ -11,15 +11,11 @@ def get_github_stats():
     """
     token = os.environ.get("GITHUB_TOKEN")
 
-    # Mock data for sandbox testing or if no token is present
+    # No token (sandbox/testing): fall back to representative mock values
     if not token:
         print("⚠️ No GITHUB_TOKEN found. Using mock genetics data.")
-        return {
-            "total_contributions": 432,
-            "commit_streak": 12,
-            "pull_requests": 15,
-            "code_reviews": 8,
-        }
+        return {**_FALLBACK, "total_contributions": 432, "commit_streak": 12,
+                "pull_requests": 15, "code_reviews": 8}
 
     # GraphQL Query
     query = """
@@ -63,17 +59,16 @@ def get_github_stats():
         print(f"Exception fetching GitHub stats: {e}")
         return _FALLBACK
 
-    return _FALLBACK
-
 def calculate_genetic_bonuses(stats):
     """
     Calculates stat bonuses based on GitHub activity.
     """
+    level = min(100, stats["total_contributions"] // 5)
     bonuses = {
-        "level": min(100, stats["total_contributions"] // 5),
+        "level": level,
         "attack_bonus": 50 if stats["commit_streak"] > 7 else 0,
         "defense_bonus": 50 if stats["pull_requests"] > 10 else 0,
         "sp_def_bonus": 50 if stats["code_reviews"] > 5 else 0,
-        "desc": f"Level {min(100, stats['total_contributions'] // 5)} (Powered by {stats['total_contributions']} Contributions)"
+        "desc": f"Level {level} (Powered by {stats['total_contributions']} Contributions)"
     }
     return bonuses

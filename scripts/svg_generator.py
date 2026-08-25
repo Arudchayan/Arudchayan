@@ -31,11 +31,7 @@ def generate_radar_chart(stats: dict, clean_name: str) -> str:
       <circle cx="{center}" cy="{center}" r="2" fill="#fff"/>
     </svg>"""
 
-    filename = f"assets/stats_{clean_name}.svg"
-
     os.makedirs("assets", exist_ok=True)
 
-    with open(filename, "w") as f:
+    with open(f"assets/stats_{clean_name}.svg", "w") as f:
         f.write(svg)
-
-    return filename
