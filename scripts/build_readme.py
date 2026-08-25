@@ -5,6 +5,7 @@ import datetime
 import random
 import urllib.request
 import time
+from collections import Counter
 from typing import Optional
 
 import svg_generator
@@ -425,12 +426,12 @@ def select_competitive_item(stats: dict, pokemon_name: str, types: list[str], ar
         return 'Leftovers'
 
 def analyze_team_weaknesses(team_types: dict) -> dict:
-    weakness_count = {}
-    for pokemon_types in team_types.values():
-        for ptype in pokemon_types:
-            if ptype in battle_engine.TYPE_CHART:
-                for weakness_type in battle_engine.TYPE_CHART[ptype]:
-                    weakness_count[weakness_type] = weakness_count.get(weakness_type, 0) + 1
+    weakness_count = Counter(
+        w
+        for pokemon_types in team_types.values()
+        for ptype in pokemon_types
+        for w in battle_engine.TYPE_CHART.get(ptype, [])
+    )
     return {
         'critical': {t: count for t, count in weakness_count.items() if count >= 3},
         'moderate': {t: count for t, count in weakness_count.items() if count == 2},
@@ -441,16 +442,12 @@ def calculate_evs(stats: dict) -> dict:
     attack = stats.get('attack', 0)
     sp_attack = stats.get('special-attack', 0)
     speed = stats.get('speed', 0)
-    defense = stats.get('defense', 0)
-    sp_defense = stats.get('special-defense', 0)
     is_physical = attack > sp_attack
     is_fast = speed >= 100
     if is_physical and is_fast: return {'HP': 0, 'Atk': 252, 'Def': 4, 'SpA': 0, 'SpD': 0, 'Spe': 252}
     elif is_physical and not is_fast: return {'HP': 252, 'Atk': 252, 'Def': 4, 'SpA': 0, 'SpD': 0, 'Spe': 0}
     elif not is_physical and is_fast: return {'HP': 0, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 252}
-    elif not is_physical and not is_fast: return {'HP': 252, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 0}
-    if defense > sp_defense: return {'HP': 252, 'Atk': 0, 'Def': 252, 'SpA': 0, 'SpD': 4, 'Spe': 0}
-    else: return {'HP': 252, 'Atk': 0, 'Def': 4, 'SpA': 0, 'SpD': 252, 'Spe': 0}
+    else: return {'HP': 252, 'Atk': 0, 'Def': 0, 'SpA': 252, 'SpD': 4, 'Spe': 0}
 
 def fetch_pokemon_data(pokemon_name: str, archetype_data: dict, original_name: Optional[str] = None):
     try:
