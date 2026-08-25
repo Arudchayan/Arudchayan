@@ -10,7 +10,7 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-25 13:17 UTC |
+| Generated | 2026-08-25 13:26 UTC |
 | Schedule Index | 739853 |
 | Archetype | Thunderborn Storm Raider |
 | Lead Operative | Zeraora · Balanced Command Core |
@@ -296,7 +296,7 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **26** Days Dry. Odds: **2.08**
+Current Hunt: **28** Days Dry. Odds: **2.08**
 Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
@@ -383,4 +383,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-08-25 13:17 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-25 13:26 UTC. Next rotation triggers at midnight UTC.</sub>
