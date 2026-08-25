@@ -1,8 +1,8 @@
 import os
 import json
 import datetime
+import random
 
-from battle_engine import simulate_team_battle
 
 def process_challenge():
     """
@@ -29,34 +29,47 @@ def process_challenge():
     team = team[:6] # Cap at 6
 
     # 3. Load Gym Team (Current Archetype)
-    # We need to peek at archetypes.json and pick the current daily one
-    # Or just load a fallback for the simulation script independent of the main build
     try:
         with open("data/archetypes.json") as f:
             arcs = json.load(f)
-        # Just pick a random strong one for the defense
-        # In a real scenario, we'd match the 'active' one
-        gym_data = arcs[0]
-        gym_names = gym_data['team']
-
-        # We need stats for the engine, but battle_engine uses simple logic mostly
-        # Let's mock the dict structure expected by simulate_team_battle
-        gym_team_objs = [{'name': n, 'stats': {'total': 550}} for n in gym_names]
-
+        gym_names = arcs[0]['team']
     except Exception as e:
         print(f"Error loading archetypes: {e}")
         return
 
-    # 4. Simulate
-    result = simulate_team_battle(gym_team_objs, team)
+    # 4. Simulate: coin-flip rounds with a slight edge to the house
+    score_gym = score_challenger = 0
+    log = ["⚔️ **Battle Start!** Leader Arudchayan vs Challenger!"]
+    for i, (gym_mon, chall_name) in enumerate(zip(gym_names[:6], team), start=1):
+        log.append(f"🔹 **Round {i}:** {gym_mon} vs {chall_name}!")
+        if random.random() < 0.55:
+            score_gym += 1
+            log.append(f"  > {gym_mon} lands a decisive blow!")
+        else:
+            score_challenger += 1
+            log.append(f"  > {chall_name} breaks through the defenses!")
+
+    if score_gym > score_challenger:
+        winner = "Arudchayan"
+    elif score_challenger > score_gym:
+        winner = "Challenger"
+    else:
+        winner = "Draw"
+    score = f"{score_gym}-{score_challenger}"
+    result_line = {
+        "Arudchayan": f"🏆 **Gym Leader Wins {score}!**",
+        "Challenger": f"🏆 **Challenger Wins {score_challenger}-{score_gym}!**",
+        "Draw": "🤝 **It's a Draw!**",
+    }[winner]
+    log.append(result_line)
 
     # 5. Save Record
     record = {
         "date": datetime.date.today().isoformat(),
         "challenger": challenger_name,
         "team": team,
-        "result": result['score'],
-        "winner": result['winner']
+        "result": score,
+        "winner": winner
     }
 
     history_file = "data/challengers.json"
@@ -71,10 +84,10 @@ def process_challenge():
     with open(history_file, "w") as f:
         json.dump(history, f, indent=2)
 
-    print(f"Battle processed. Winner: {result['winner']}")
+    print(f"Battle processed. Winner: {winner}")
     # Output for GitHub Action to use in comment
     with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-        f.write(f"battle_log<<EOF\n{result['log']}\nEOF\n")
+        f.write(f"battle_log<<EOF\n" + "\n".join(log) + "\nEOF\n")
 
 if __name__ == "__main__":
     process_challenge()

@@ -1,6 +1,6 @@
 import random
 
-from battle_engine import TYPE_CHART
+from build_readme import WEAKNESS_CHART as TYPE_CHART
 
 META_TEAMS = [
     {

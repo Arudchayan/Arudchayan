@@ -12,7 +12,6 @@ import svg_generator
 import github_metrics
 import banner_generator
 import coach
-import battle_engine
 
 VERSION_PRIORITY = [
     "scarlet-violet",
@@ -104,6 +103,27 @@ TYPE_EMOJIS = {
     "ground": "🌍", "flying": "🕊️", "psychic": "🔮", "bug": "🐛",
     "rock": "🪨", "ghost": "👻", "dragon": "🐉", "dark": "🌙",
     "steel": "⚙️", "fairy": "✨"
+}
+
+WEAKNESS_CHART = {
+    'normal': ['fighting'],
+    'fire': ['water', 'ground', 'rock'],
+    'water': ['electric', 'grass'],
+    'electric': ['ground'],
+    'grass': ['fire', 'ice', 'poison', 'flying', 'bug'],
+    'ice': ['fire', 'fighting', 'rock', 'steel'],
+    'fighting': ['flying', 'psychic', 'fairy'],
+    'poison': ['ground', 'psychic'],
+    'ground': ['water', 'grass', 'ice'],
+    'flying': ['electric', 'ice', 'rock'],
+    'psychic': ['bug', 'ghost', 'dark'],
+    'bug': ['fire', 'flying', 'rock'],
+    'rock': ['water', 'grass', 'fighting', 'ground', 'steel'],
+    'ghost': ['ghost', 'dark'],
+    'dragon': ['ice', 'dragon', 'fairy'],
+    'dark': ['fighting', 'bug', 'fairy'],
+    'steel': ['fire', 'fighting', 'ground'],
+    'fairy': ['poison', 'steel'],
 }
 
 LEGENDARY_ROSTER = [
@@ -420,7 +440,7 @@ def analyze_team_weaknesses(team_types: dict) -> dict:
         w
         for pokemon_types in team_types.values()
         for ptype in pokemon_types
-        for w in battle_engine.TYPE_CHART.get(ptype, [])
+        for w in WEAKNESS_CHART.get(ptype, [])
     )
     return {
         'critical': {t: count for t, count in weakness_count.items() if count >= 3},
