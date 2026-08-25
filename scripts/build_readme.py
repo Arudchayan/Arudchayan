@@ -8,8 +8,6 @@ import time
 from collections import Counter
 
 import svg_generator
-import github_metrics
-import banner_generator
 import coach
 
 VERSION_PRIORITY = [
@@ -466,10 +464,6 @@ def generate_branching_paths(species: str, pokemon_info: dict, is_shiny: bool, l
 with open(os.path.join(root, "data", "archetypes.json")) as f:
     arc = json.load(f)
 
-# === 2. FETCH GENETICS STATS ===
-genetics_bonuses = github_metrics.calculate_genetic_bonuses(github_metrics.get_github_stats())
-print(f"🧬 Genetics Loaded: {genetics_bonuses.get('desc')}")
-
 now_utc = datetime.datetime.now(datetime.UTC)
 day_number = now_utc.date().toordinal()
 idx = day_number % len(arc)
@@ -516,10 +510,6 @@ battle_log = (
     f"🏆 **Result:** Rival forfeits! **{chosen['title']} Wins!**"
 )
 
-# === 4. BANNER GENERATION ===
-print("🖼️ Generating Team Banner...")
-banner_generator.generate_team_banner([d.get('sprite') for d in team_list_data], weather['colors'])
-
 # === 5. SHINY HUNT LOGIC ===
 trainer_history = load_trainer_history()
 shiny_hunt = trainer_history["shiny_hunt"]
@@ -563,12 +553,6 @@ with open(os.path.join(root, "README.template.md")) as f:
 lead_name = chosen['lead']
 lead_data = pokemon_data.get(lead_name, {})
 lead_stats = lead_data.get('stats', {})
-
-# === 7. APPLY GENETICS STATS TO LEAD ===
-if lead_stats:
-    lead_stats['attack'] += genetics_bonuses['attack_bonus']
-    lead_stats['defense'] += genetics_bonuses['defense_bonus']
-    lead_stats['special-defense'] += genetics_bonuses['sp_def_bonus']
 
 team_type_counts = {}
 team_types_by_pokemon = {}
@@ -663,8 +647,6 @@ replacements = {
     '{QUEST_TEXT}': quest,
     '{BATTLE_LOG}': battle_log,
     '{POKEPASTE_LINK}': f"```\n{pokepaste_link}\n```",
-    '{GENETICS_LEVEL}': genetics_bonuses.get('level', '??'),
-    '{GENETICS_BONUS_DESC}': genetics_bonuses.get('desc', ''),
     '{COACH_TIPS}': coach_tips,
     '{CHALLENGER_LIST}': challenger_text,
     '{SHINY_HUNT_STATUS}': f"Current Hunt: **{shiny_hunt['encounters_since_last']}** Days Dry. Odds: **{SHINY_TRIGGER_RATE*100:.2f}**",

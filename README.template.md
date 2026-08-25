@@ -2,10 +2,6 @@
 <h1 align="center">Arudchayan · BattleOps Command Center</h1>
 <p align="center"><em>battle telemetry screaming through neon conduits</em></p>
 
-<div align="center">
-  <img src="assets/team_banner.png" width="100%" alt="Team Banner" />
-</div>
-
 ## 🧾 POKÉMON TRAINER PROFILE
 
 | Signal | Readout |
@@ -14,7 +10,6 @@
 | Schedule Index | {DAY_NUMBER} |
 | Archetype | {ARCHETYPE_TITLE} |
 | Lead Operative | {LEAD_POKEMON} · Balanced Command Core |
-| **Genetics Level** | **{GENETICS_LEVEL}** |
 | Power Core | {POWER_LEVEL} ({POWER_LEVEL_BAR}) |
 | Active Roster | {TEAM_LIST} |
 | Unique Typings | {UNIQUE_TYPE_COUNT} |
@@ -47,8 +42,6 @@
 **Held Item:** {LEAD_ITEM}
 **EV Spread:** {LEAD_EVS}
 **Physical Specs:** {LEAD_HEIGHT} · {LEAD_WEIGHT}
-
-> **Genetics Boost:** {GENETICS_BONUS_DESC}
 
 #### Stat Telemetry
 ```
@@ -146,7 +139,6 @@ Copy this to import your team into Pokémon Showdown:
 
 ### ✨ Shiny Hunt Status
 {SHINY_HUNT_STATUS}
-Shiny status: Checked.
 
 ### 🔀 Click-to-Choose Battle Routes
 
