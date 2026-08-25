@@ -1,13 +1,9 @@
-# Ponytail Audit 5 — over-engineering findings (ranked, current tree)
+# Ponytail Audit 5 — over-engineering findings (ranked)
 
-- `yagni:` `COMPETITIVE_ABILITIES` maps 9 Pokémon to ability lists, but the roster (`data/archetypes.json`) only fields metagross/gengar/rayquaza/zeraora/noivern/decidueye — dragonite, gyarados and lucario entries can never be hit. Cut those three keys; the loop in `select_competitive_ability` stays as-is. [scripts/build_readme.py:64]
-- `shrink:` `select_signature_moves` still carries ceremony after two audits of trims: a `take()` closure plus parallel `final_names` set, three sequential passes over the same sorted candidates list, and per-candidate dicts that exist to pop a sort key. One pass over `candidates[:4]` with an `eligible()` guard picks the same four — `final_moves = candidates[:4]` is already the fallback shape. [scripts/build_readme.py:223]
-- `delete:` `scripts/__pycache__/` shipped in the tree (6 `.pyc` files) while `.gitignore` lists `__pycache__/` — untracked build artifacts nobody should commit. `git rm -r scripts/__pycache__`. [scripts/__pycache__]
-- `shrink:` `create_flux_meter` is a one-caller wrapper around `bar()` that only precomputes mode labels and a percent suffix; fold its body into the `{SYNERGY_METER}` / `{SPEED_PULSE}` / `{BST_OVERDRIVE}` call sites or delete the intermediate function layer. Three callers, but each is a single expression — inline it. [scripts/build_readname.py:436]
-- `shrink:` `select_competitive_item`'s random.choice ternary `random.choice(['Life Orb', 'Choice Specs' if sp_attack > attack else 'Choice Band'])` re-evaluates the class comparison inside the choice; hoist `specs_or_band = 'Choice Specs' if sp_attack > attack else 'Choice Band'` once and reuse in both branches. [scripts/build_readme.py:335]
-- `shrink:` `generate_branching_paths` builds a nested `render_tactic` closure per path iteration just to format two strings; a plain loop over `(tactic_left, odds_left), (tactic_right, odds_right)` with an f-string does it without the inner def. [scripts/build_readme.py:491]
-- `shrink:` `{SHINY_HUNT_STATUS}` hardcodes `1/48` while `SHINY_TRIGGER_RATE` is defined at line 108 — use the constant so display odds can't drift from roll odds. Re-flagged from audit 4, unfixed. [scripts/build_readme.py:719]
-- `yagni:` `Optional[dict]` import + annotation on `generate_branching_paths` — the only import from `typing`, and the parameter is never None at any call site. Delete the import and the annotation. [scripts/build_readme.py:9]
-- `stdlib:` `load_move_cache` hand-rolls exists-check + try/except JSON load; `json.load` on a missing file raises FileNotFoundError which the existing except can't catch anyway. Simpler: try/open/read except OSError/json.JSONDecodeError → {}. Or drop the exists check entirely since MOVE_CACHE_FILE ships in-repo. [scripts/build_readme.py:78]
+- `shrink:` `get_version_priority` is a 5-line one-caller wrapper around `VERSION_PRIORITY.index` with a ValueError catch. Inline the lookup in the sort-key lambda: `(VERSION_PRIORITY.index(n) if n in VERSION_PRIORITY else len(VERSION_PRIORITY))` and delete the function. [scripts/build_readme.py:211]
+- `yagni:` `eligible()` is a named def used exactly once to drop `dragon-ascent`; replace `final_moves = list(filter(eligible, final_moves))[:3]` with `[m for m in final_moves if m["raw_name"] != 'dragon-ascent'][:3]` and delete the def. [scripts/build_readme.py:264]
+- `shrink:` `import coach` and `from coach import TYPE_CHART` both appear; drop the from-import and call `coach.TYPE_CHART` at the one weakness-analysis site. [scripts/build_readme.py:15]
+- `shrink:` challengers loader guards `os.path.exists(challenger_path)` for a file that ships in-repo; open it directly like every other data file (`archetypes.json` has no such guard) and drop the branch. [scripts/build_readme.py:568]
+- `delete:` `assets/.gitkeep` — the directory holds seven tracked files (snake.svg, team_banner.png, six stats SVGs), so the keep-file is vestigial. Remove it. [assets/.gitkeep]
 
-net: -45 lines, -0 deps possible.
+net: -10 lines, -0 deps possible.

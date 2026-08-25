@@ -14,7 +14,7 @@ def get_github_stats():
     # No token (sandbox/testing): fall back to representative mock values
     if not token:
         print("⚠️ No GITHUB_TOKEN found. Using mock genetics data.")
-        return {**_FALLBACK, "total_contributions": 432, "commit_streak": 12,
+        return {"total_contributions": 432, "commit_streak": 12,
                 "pull_requests": 15, "code_reviews": 8}
 
     # GraphQL Query

@@ -12,8 +12,6 @@ import github_metrics
 import banner_generator
 import coach
 
-from coach import TYPE_CHART
-
 VERSION_PRIORITY = [
     "scarlet-violet",
     "sword-shield",
@@ -199,7 +197,6 @@ def load_trainer_history():
         with open(history_path) as f:
             return json.load(f)
     return {"shiny_hunt": {"encounters_since_last": 0, "last_found": None}}
-
 def normalize_pokemon_identifier(pokemon_name: str) -> str:
     lower_name = pokemon_name.lower().strip()
     if lower_name.startswith("mega "):
@@ -318,7 +315,7 @@ def analyze_team_weaknesses(team_types: dict) -> dict:
         w
         for pokemon_types in team_types.values()
         for ptype in pokemon_types
-        for w in TYPE_CHART.get(ptype, [])
+        for w in coach.TYPE_CHART.get(ptype, [])
     )
     return {
         'critical': {t: count for t, count in weakness_count.items() if count >= 3},
@@ -539,7 +536,7 @@ banner_generator.generate_team_banner(sprite_urls, weather['name'])
 
 # === 5. SHINY HUNT LOGIC ===
 trainer_history = load_trainer_history()
-shiny_hunt = trainer_history.get("shiny_hunt", {"encounters_since_last": 0, "last_found": None})
+shiny_hunt = trainer_history["shiny_hunt"]
 days_dry = shiny_hunt.get("encounters_since_last", 0)
 
 random_choice, encounter_rarity, encounter_callout, encounter_is_shiny = roll_random_encounter()
