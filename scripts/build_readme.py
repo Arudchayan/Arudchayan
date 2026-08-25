@@ -541,6 +541,7 @@ if encounter_is_shiny:
     print("✨ SHINY FOUND! Resetting counter.")
 else:
     shiny_hunt["encounters_since_last"] += 1
+days_dry = shiny_hunt["encounters_since_last"]
 
 with open(os.path.join(root, "data", "trainer_history.json"), "w") as f:
     json.dump(trainer_history, f, indent=2)
