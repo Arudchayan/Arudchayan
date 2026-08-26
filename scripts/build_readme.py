@@ -155,11 +155,11 @@ root = os.path.dirname(os.path.dirname(__file__))
 # ==========================================
 
 WEATHER_TYPES = [
-    {"name": "Clear Skies", "emoji": "☀️", "effect": "Standard battle conditions.", "colors": [(135, 206, 235), (255, 255, 255)]},
-    {"name": "Harsh Sunlight", "emoji": "🔥", "effect": "Fire moves boosted 50%, Water moves weakened 50%.", "colors": [(255, 165, 0), (255, 69, 0)]},
-    {"name": "Rain", "emoji": "🌧️", "effect": "Water moves boosted 50%, Fire moves weakened 50%.", "colors": [(25, 25, 112), (100, 149, 237)]},
-    {"name": "Sandstorm", "emoji": "🏜️", "effect": "Rock types get 50% Sp. Def boost. Chip damage active.", "colors": [(210, 180, 140), (139, 69, 19)]},
-    {"name": "Snow", "emoji": "❄️", "effect": "Ice types get 50% Def boost.", "colors": [(224, 255, 255), (240, 255, 255)]},
+    {"name": "Clear Skies", "emoji": "☀️", "effect": "Standard battle conditions."},
+    {"name": "Harsh Sunlight", "emoji": "🔥", "effect": "Fire moves boosted 50%, Water moves weakened 50%."},
+    {"name": "Rain", "emoji": "🌧️", "effect": "Water moves boosted 50%, Fire moves weakened 50%."},
+    {"name": "Sandstorm", "emoji": "🏜️", "effect": "Rock types get 50% Sp. Def boost. Chip damage active."},
+    {"name": "Snow", "emoji": "❄️", "effect": "Ice types get 50% Def boost."},
 ]
 
 QUESTS = [
