@@ -6,12 +6,12 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-29 05:00 UTC |
-| Schedule Index | 739857 |
-| Archetype | Emerald Forest Warden |
-| Lead Operative | Decidueye · Balanced Command Core |
+| Generated | 2026-08-30 02:49 UTC |
+| Schedule Index | 739858 |
+| Archetype | Ultrasonic Night Raider |
+| Lead Operative | Noivern · Balanced Command Core |
 | Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
-| Active Roster | Decidueye, Rayquaza, Noivern, Metagross, Gengar, Zeraora |
+| Active Roster | Noivern, Rayquaza, Zeraora, Gengar, Metagross, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
 
@@ -31,8 +31,8 @@
 
 ### 🧭 Rotation Hologram
 
-> **Rotation Profile:** Emerald Forest Warden
-> **Command Lead:** Decidueye
+> **Rotation Profile:** Ultrasonic Night Raider
+> **Command Lead:** Noivern
 
 ### Lead Strategy Module
 
@@ -59,18 +59,18 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Stall** (Threat: **Alomomola**). Your **Decidueye** outspeeds Alomomola (Base 65). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Standard OU Offense** (Threat: **Landorus-Therian**). Your **Noivern** outspeeds Landorus-Therian (Base 91). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -102,29 +102,11 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Metagross</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -156,11 +138,29 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Metagross</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -210,19 +210,19 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Emerald Forest Warden vs Rival Blue!
-🔹 **Turn 1:** Decidueye Mega Evolves and uses **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Ultrasonic Night Raider vs Rival Blue!
+🔹 **Turn 1:** Noivern Mega Evolves and uses **Dragon Ascent**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Decidueye uses **Extreme Speed** for the KO!
+🔹 **Turn 2:** Noivern uses **Extreme Speed** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Decidueye switches to Landorus-T to Intimidate!
-🏆 **Result:** Rival forfeits! **Emerald Forest Warden Wins!**
+🔹 **Turn 3:** Noivern switches to Landorus-T to Intimidate!
+🏆 **Result:** Rival forfeits! **Ultrasonic Night Raider Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Decidueye @ Leftovers
+Noivern @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -232,12 +232,7 @@ Ability: Unknown
 EVs: 
 Serious Nature
 
-Noivern @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Metagross @ Leftovers
+Zeraora @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -247,7 +242,12 @@ Ability: Unknown
 EVs: 
 Serious Nature
 
-Zeraora @ Leftovers
+Metagross @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Decidueye @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -260,15 +260,15 @@ Serious Nature
 | Mechanic | Loadout |
 | --- | --- |
 | Mega Evolution | — |
-| Z-Move | ▲ Sinister Arrow Raid ⚡ |
-| Terastallization | ◇ Grass ✨ |
+| Z-Move | ▲ Supersonic Skystrike ⚡ |
+| Terastallization | ◇ Flying ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Snorlax</summary>
+  <summary>🎲 Encounter: Tyranitar</summary>
 
   <div align="center">
   ???
@@ -284,26 +284,48 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **39** Days Dry. Odds: **2.08**
+Current Hunt: **40** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
 <details>
-  <summary>🌌 Path 1 — Starfall Ridge</summary>
+  <summary>⚙️ Path 1 — Celadon Manufactory</summary>
 
-  - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
-  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
-  - **Command Brief:** Track the Wild-class target — Snorlax (wild signal).
+  - **Battlefield State:** Servo arms reset the battlefield between each exchange.
+  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
+  - **Command Brief:** Track the Wild-class target — Tyranitar (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 81% odds</summary>
+    <summary>🛡️ Raise Reflective Barriers · 92% odds</summary>
 
-    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Snorlax slips free in a burst of light, boosting its Evasion and tempo.
+    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
+    - **If it whiffs:** Barrier harmonics misalign, giving Tyranitar a free setup turn to escalate pressure.
   </details>
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 88% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 68% odds</summary>
+
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Tyranitar's innate typing instead.
+  </details>
+</details>
+
+<details>
+  <summary>❄️ Path 2 — Aurora Chasm</summary>
+
+  - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
+  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
+  - **Command Brief:** Track the Wild-class target — Tyranitar (wild signal).
+  - **Type Intel:** Unknown
+
+  <details>
+    <summary>⚡ Trigger Overclocked Strike Team · 67% odds</summary>
+
+    - **If it lands:** Coordinated assaults land clean, dropping Tyranitar's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Tyranitar rallies.
+  </details>
+  <details>
+    <summary>🛰️ Call Orbital Survey Assist · 59% odds</summary>
 
     - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
     - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
@@ -311,46 +333,24 @@ Current Hunt: **39** Days Dry. Odds: **2.08**
 </details>
 
 <details>
-  <summary>🌲 Path 2 — Verdant Overwatch</summary>
+  <summary>🌊 Path 3 — Tidal Resonance</summary>
 
-  - **Battlefield State:** Bioluminescent spores swirl between ancient trunks.
-  - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
-  - **Command Brief:** Track the Wild-class target — Snorlax (wild signal).
+  - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
+  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
+  - **Command Brief:** Track the Wild-class target — Tyranitar (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 83% odds</summary>
-
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Snorlax's innate typing instead.
-  </details>
-  <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 85% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 77% odds</summary>
 
     - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Snorlax slips free in a burst of light, boosting its Evasion and tempo.
-  </details>
-</details>
-
-<details>
-  <summary>⚙️ Path 3 — Celadon Manufactory</summary>
-
-  - **Battlefield State:** Servo arms reset the battlefield between each exchange.
-  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
-  - **Command Brief:** Track the Wild-class target — Snorlax (wild signal).
-  - **Type Intel:** Unknown
-
-  <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 77% odds</summary>
-
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Snorlax's innate typing instead.
+    - **If it whiffs:** Tyranitar slips free in a burst of light, boosting its Evasion and tempo.
   </details>
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 59% odds</summary>
+    <summary>🛡️ Raise Reflective Barriers · 79% odds</summary>
 
     - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Snorlax a free setup turn to escalate pressure.
+    - **If it whiffs:** Barrier harmonics misalign, giving Tyranitar a free setup turn to escalate pressure.
   </details>
 </details>
 
@@ -370,4 +370,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-08-29 05:00 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-30 02:49 UTC. Next rotation triggers at midnight UTC.</sub>
