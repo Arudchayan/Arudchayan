@@ -6,24 +6,24 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-08-30 02:49 UTC |
-| Schedule Index | 739858 |
-| Archetype | Ultrasonic Night Raider |
-| Lead Operative | Noivern · Balanced Command Core |
+| Generated | 2026-08-31 02:42 UTC |
+| Schedule Index | 739859 |
+| Archetype | Thunderborn Storm Raider |
+| Lead Operative | Zeraora · Balanced Command Core |
 | Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
-| Active Roster | Noivern, Rayquaza, Zeraora, Gengar, Metagross, Decidueye |
+| Active Roster | Zeraora, Rayquaza, Noivern, Metagross, Gengar, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
 
 ---
 
-## ⚡ WEATHER REPORT: 🔥 Harsh Sunlight
-> **Field Condition:** Fire moves boosted 50%, Water moves weakened 50%.
+## ⚡ WEATHER REPORT: 🏜️ Sandstorm
+> **Field Condition:** Rock types get 50% Sp. Def boost. Chip damage active.
 
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Push a commit before noon to outspeed Rival Weavile.
+### **Quest:** Add unit tests to strengthen the team's Synergy Mesh.
 
 ---
 
@@ -31,8 +31,8 @@
 
 ### 🧭 Rotation Hologram
 
-> **Rotation Profile:** Ultrasonic Night Raider
-> **Command Lead:** Noivern
+> **Rotation Profile:** Thunderborn Storm Raider
+> **Command Lead:** Zeraora
 
 ### Lead Strategy Module
 
@@ -59,18 +59,18 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Standard OU Offense** (Threat: **Landorus-Therian**). Your **Noivern** outspeeds Landorus-Therian (Base 91). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Stall** (Threat: **Alomomola**). Your **Zeraora** outspeeds Alomomola (Base 65). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -102,29 +102,11 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -143,6 +125,24 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <div align="center">
 ???
 <br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -210,19 +210,19 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Ultrasonic Night Raider vs Rival Blue!
-🔹 **Turn 1:** Noivern Mega Evolves and uses **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Thunderborn Storm Raider vs Rival Blue!
+🔹 **Turn 1:** Zeraora Mega Evolves and uses **Dragon Ascent**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Noivern uses **Extreme Speed** for the KO!
+🔹 **Turn 2:** Zeraora uses **Extreme Speed** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Noivern switches to Landorus-T to Intimidate!
-🏆 **Result:** Rival forfeits! **Ultrasonic Night Raider Wins!**
+🔹 **Turn 3:** Zeraora switches to Landorus-T to Intimidate!
+🏆 **Result:** Rival forfeits! **Thunderborn Storm Raider Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Noivern @ Leftovers
+Zeraora @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -232,17 +232,17 @@ Ability: Unknown
 EVs: 
 Serious Nature
 
-Zeraora @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Gengar @ Leftovers
+Noivern @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
 
 Metagross @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Gengar @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -260,15 +260,15 @@ Serious Nature
 | Mechanic | Loadout |
 | --- | --- |
 | Mega Evolution | — |
-| Z-Move | ▲ Supersonic Skystrike ⚡ |
-| Terastallization | ◇ Flying ✨ |
+| Z-Move | ▲ Gigavolt Havoc ⚡ |
+| Terastallization | ◇ Electric ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Tyranitar</summary>
+  <summary>🎲 Encounter: Noivern</summary>
 
   <div align="center">
   ???
@@ -284,51 +284,51 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **40** Days Dry. Odds: **2.08**
+Current Hunt: **41** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
 <details>
-  <summary>⚙️ Path 1 — Celadon Manufactory</summary>
+  <summary>🌋 Path 1 — Magma Corridor</summary>
 
-  - **Battlefield State:** Servo arms reset the battlefield between each exchange.
-  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
-  - **Command Brief:** Track the Wild-class target — Tyranitar (wild signal).
-  - **Type Intel:** Unknown
-
-  <details>
-    <summary>🛡️ Raise Reflective Barriers · 92% odds</summary>
-
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Tyranitar a free setup turn to escalate pressure.
-  </details>
-  <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 68% odds</summary>
-
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Tyranitar's innate typing instead.
-  </details>
-</details>
-
-<details>
-  <summary>❄️ Path 2 — Aurora Chasm</summary>
-
-  - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
-  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
-  - **Command Brief:** Track the Wild-class target — Tyranitar (wild signal).
+  - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
+  - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
+  - **Command Brief:** Track the Wild-class target — Noivern (wild signal).
   - **Type Intel:** Unknown
 
   <details>
     <summary>⚡ Trigger Overclocked Strike Team · 67% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Tyranitar's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Tyranitar rallies.
+    - **If it lands:** Coordinated assaults land clean, dropping Noivern's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Noivern rallies.
   </details>
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 59% odds</summary>
+    <summary>🛡️ Raise Reflective Barriers · 84% odds</summary>
+
+    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
+    - **If it whiffs:** Barrier harmonics misalign, giving Noivern a free setup turn to escalate pressure.
+  </details>
+</details>
+
+<details>
+  <summary>🌌 Path 2 — Starfall Ridge</summary>
+
+  - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
+  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
+  - **Command Brief:** Track the Wild-class target — Noivern (wild signal).
+  - **Type Intel:** Unknown
+
+  <details>
+    <summary>🛰️ Call Orbital Survey Assist · 90% odds</summary>
 
     - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
     - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
+  </details>
+  <details>
+    <summary>🛡️ Raise Reflective Barriers · 68% odds</summary>
+
+    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
+    - **If it whiffs:** Barrier harmonics misalign, giving Noivern a free setup turn to escalate pressure.
   </details>
 </details>
 
@@ -336,21 +336,21 @@ Current Hunt: **40** Days Dry. Odds: **2.08**
   <summary>🌊 Path 3 — Tidal Resonance</summary>
 
   - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
-  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
-  - **Command Brief:** Track the Wild-class target — Tyranitar (wild signal).
+  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
+  - **Command Brief:** Track the Wild-class target — Noivern (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 77% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 69% odds</summary>
 
-    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Tyranitar slips free in a burst of light, boosting its Evasion and tempo.
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Noivern's innate typing instead.
   </details>
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 79% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 60% odds</summary>
 
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Tyranitar a free setup turn to escalate pressure.
+    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
+    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
   </details>
 </details>
 
@@ -370,4 +370,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-08-30 02:49 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-08-31 02:42 UTC. Next rotation triggers at midnight UTC.</sub>
