@@ -6,24 +6,24 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-09-02 02:14 UTC |
-| Schedule Index | 739861 |
-| Archetype | Nightfall Rift Summoner |
-| Lead Operative | Mega Gengar · Balanced Command Core |
+| Generated | 2026-09-03 02:22 UTC |
+| Schedule Index | 739862 |
+| Archetype | Sky Tyrant Ascendant |
+| Lead Operative | Mega Rayquaza · Balanced Command Core |
 | Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
-| Active Roster | Mega Gengar, Decidueye, Noivern, Rayquaza, Zeraora, Metagross |
+| Active Roster | Mega Rayquaza, Noivern, Zeraora, Metagross, Gengar, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
 
 ---
 
-## ⚡ WEATHER REPORT: 🔥 Harsh Sunlight
-> **Field Condition:** Fire moves boosted 50%, Water moves weakened 50%.
+## ⚡ WEATHER REPORT: 🌧️ Rain
+> **Field Condition:** Water moves boosted 50%, Fire moves weakened 50%.
 
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Add unit tests to strengthen the team's Synergy Mesh.
+### **Quest:** Push a commit before noon to outspeed Rival Weavile.
 
 ---
 
@@ -31,8 +31,8 @@
 
 ### 🧭 Rotation Hologram
 
-> **Rotation Profile:** Nightfall Rift Summoner
-> **Command Lead:** Mega Gengar
+> **Rotation Profile:** Sky Tyrant Ascendant
+> **Command Lead:** Mega Rayquaza
 
 ### Lead Strategy Module
 
@@ -59,36 +59,18 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Sun Offense** (Threat: **Torkoal**). Your **Mega Gengar** outspeeds Torkoal (Base 20). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Hyper Offense** (Threat: **Ribombee**). Careful, **Ribombee** is faster (Base 124). Consider defensive pivots. Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Mega Gengar</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Mega Rayquaza</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_gengar-mega.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_rayquaza-mega.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -107,24 +89,6 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <div align="center">
 ???
 <br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Rayquaza</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_rayquaza.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -161,6 +125,42 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <div align="center">
 ???
 <br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -210,34 +210,24 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Nightfall Rift Summoner vs Rival Blue!
-🔹 **Turn 1:** Mega Gengar Mega Evolves and uses **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Sky Tyrant Ascendant vs Rival Blue!
+🔹 **Turn 1:** Mega Rayquaza Mega Evolves and uses **Dragon Ascent**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Mega Gengar uses **Extreme Speed** for the KO!
+🔹 **Turn 2:** Mega Rayquaza uses **Extreme Speed** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Mega Gengar switches to Landorus-T to Intimidate!
-🏆 **Result:** Rival forfeits! **Nightfall Rift Summoner Wins!**
+🔹 **Turn 3:** Mega Rayquaza switches to Landorus-T to Intimidate!
+🏆 **Result:** Rival forfeits! **Sky Tyrant Ascendant Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Mega Gengar @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Decidueye @ Leftovers
+Mega Rayquaza @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
 
 Noivern @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Rayquaza @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -251,6 +241,16 @@ Metagross @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
+
+Gengar @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Decidueye @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
 ```
 
 ---
@@ -259,16 +259,16 @@ Serious Nature
 
 | Mechanic | Loadout |
 | --- | --- |
-| Mega Evolution | ◆ Gengarite 💎 |
-| Z-Move | ▲ Never-Ending Nightmare ⚡ |
-| Terastallization | ◇ Ghost ✨ |
+| Mega Evolution | ◆ Dragon Ascent (Primal Instinct) 💎 |
+| Z-Move | — |
+| Terastallization | ◇ Dragon ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Magikarp</summary>
+  <summary>🎲 Encounter: Tyranitar</summary>
 
   <div align="center">
   ???
@@ -284,29 +284,29 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **43** Days Dry. Odds: **2.08**
+Current Hunt: **44** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
 <details>
-  <summary>🌊 Path 1 — Tidal Resonance</summary>
+  <summary>❄️ Path 1 — Aurora Chasm</summary>
 
-  - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
-  - **Encounter Twist:** Command authorises prototype gear if you can stall three turns.
-  - **Command Brief:** Track the Wild-class target — Magikarp (wild signal).
+  - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
+  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
+  - **Command Brief:** Track the Wild-class target — Tyranitar (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 64% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 70% odds</summary>
+
+    - **If it lands:** Coordinated assaults land clean, dropping Tyranitar's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Tyranitar rallies.
+  </details>
+  <details>
+    <summary>🛰️ Call Orbital Survey Assist · 55% odds</summary>
 
     - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
     - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
-  </details>
-  <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 73% odds</summary>
-
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Magikarp's innate typing instead.
   </details>
 </details>
 
@@ -314,43 +314,43 @@ Current Hunt: **43** Days Dry. Odds: **2.08**
   <summary>🌲 Path 2 — Verdant Overwatch</summary>
 
   - **Battlefield State:** Bioluminescent spores swirl between ancient trunks.
-  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
-  - **Command Brief:** Track the Wild-class target — Magikarp (wild signal).
+  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
+  - **Command Brief:** Track the Wild-class target — Tyranitar (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 64% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 69% odds</summary>
 
-    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Magikarp slips free in a burst of light, boosting its Evasion and tempo.
+    - **If it lands:** Coordinated assaults land clean, dropping Tyranitar's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Tyranitar rallies.
   </details>
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 81% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 69% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Magikarp's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Magikarp rallies.
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Tyranitar's innate typing instead.
   </details>
 </details>
 
 <details>
-  <summary>⚙️ Path 3 — Celadon Manufactory</summary>
+  <summary>🌋 Path 3 — Magma Corridor</summary>
 
-  - **Battlefield State:** Servo arms reset the battlefield between each exchange.
-  - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
-  - **Command Brief:** Track the Wild-class target — Magikarp (wild signal).
+  - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
+  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
+  - **Command Brief:** Track the Wild-class target — Tyranitar (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 79% odds</summary>
-
-    - **If it lands:** Coordinated assaults land clean, dropping Magikarp's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Magikarp rallies.
-  </details>
-  <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 87% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 77% odds</summary>
 
     - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Magikarp's innate typing instead.
+    - **If it whiffs:** The sync desyncs, amplifying Tyranitar's innate typing instead.
+  </details>
+  <details>
+    <summary>🛡️ Raise Reflective Barriers · 68% odds</summary>
+
+    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
+    - **If it whiffs:** Barrier harmonics misalign, giving Tyranitar a free setup turn to escalate pressure.
   </details>
 </details>
 
@@ -370,4 +370,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-09-02 02:14 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-09-03 02:22 UTC. Next rotation triggers at midnight UTC.</sub>
