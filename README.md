@@ -6,12 +6,12 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-09-05 02:17 UTC |
-| Schedule Index | 739864 |
-| Archetype | Ultrasonic Night Raider |
-| Lead Operative | Noivern · Balanced Command Core |
+| Generated | 2026-09-06 02:13 UTC |
+| Schedule Index | 739865 |
+| Archetype | Thunderborn Storm Raider |
+| Lead Operative | Zeraora · Balanced Command Core |
 | Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
-| Active Roster | Noivern, Rayquaza, Zeraora, Gengar, Metagross, Decidueye |
+| Active Roster | Zeraora, Rayquaza, Noivern, Metagross, Gengar, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
 
@@ -23,7 +23,7 @@
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Optimize 3 functions to increase Metagross's calculation speed.
+### **Quest:** Refactor legacy code to clear Gengar's Cursed Body status.
 
 ---
 
@@ -31,8 +31,8 @@
 
 ### 🧭 Rotation Hologram
 
-> **Rotation Profile:** Ultrasonic Night Raider
-> **Command Lead:** Noivern
+> **Rotation Profile:** Thunderborn Storm Raider
+> **Command Lead:** Zeraora
 
 ### Lead Strategy Module
 
@@ -59,18 +59,18 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Stall** (Threat: **Alomomola**). Your **Noivern** outspeeds Alomomola (Base 65). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Sun Offense** (Threat: **Torkoal**). Your **Zeraora** outspeeds Torkoal (Base 20). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -102,29 +102,11 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -143,6 +125,24 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <div align="center">
 ???
 <br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -210,19 +210,19 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Ultrasonic Night Raider vs Rival Blue!
-🔹 **Turn 1:** Noivern Mega Evolves and uses **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Thunderborn Storm Raider vs Rival Blue!
+🔹 **Turn 1:** Zeraora Mega Evolves and uses **Dragon Ascent**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Noivern uses **Extreme Speed** for the KO!
+🔹 **Turn 2:** Zeraora uses **Extreme Speed** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Noivern switches to Landorus-T to Intimidate!
-🏆 **Result:** Rival forfeits! **Ultrasonic Night Raider Wins!**
+🔹 **Turn 3:** Zeraora switches to Landorus-T to Intimidate!
+🏆 **Result:** Rival forfeits! **Thunderborn Storm Raider Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Noivern @ Leftovers
+Zeraora @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -232,17 +232,17 @@ Ability: Unknown
 EVs: 
 Serious Nature
 
-Zeraora @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Gengar @ Leftovers
+Noivern @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
 
 Metagross @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Gengar @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -260,15 +260,15 @@ Serious Nature
 | Mechanic | Loadout |
 | --- | --- |
 | Mega Evolution | — |
-| Z-Move | ▲ Supersonic Skystrike ⚡ |
-| Terastallization | ◇ Flying ✨ |
+| Z-Move | ▲ Gigavolt Havoc ⚡ |
+| Terastallization | ◇ Electric ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Scizor</summary>
+  <summary>🎲 Encounter: Pikachu</summary>
 
   <div align="center">
   ???
@@ -279,34 +279,34 @@ Serious Nature
   - **Height / Weight:** ??? · ???
   - **Abilities:** ???
   - **Pokédex Insight:** System Error
-  - **Encounter Telemetry:** Routine scouting ping—deploy capture drones at your discretion. ✨ Shiny trigger tripped!
+  - **Encounter Telemetry:** Routine scouting ping—deploy capture drones at your discretion.
 
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **0** Days Dry. Odds: **2.08**
+Current Hunt: **1** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
 <details>
-  <summary>🌊 Path 1 — Tidal Resonance</summary>
+  <summary>🌋 Path 1 — Magma Corridor</summary>
 
-  - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
-  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
-  - **Command Brief:** Track the Wild-class target — Scizor (shimmering anomaly with radiant sheen).
+  - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
+  - **Encounter Twist:** Command authorises prototype gear if you can stall three turns.
+  - **Command Brief:** Track the Wild-class target — Pikachu (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 92% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 69% odds</summary>
 
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Scizor's innate typing instead.
+    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
+    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
   </details>
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 57% odds</summary>
+    <summary>🛡️ Raise Reflective Barriers · 71% odds</summary>
 
     - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Scizor a free setup turn to escalate pressure.
+    - **If it whiffs:** Barrier harmonics misalign, giving Pikachu a free setup turn to escalate pressure.
   </details>
 </details>
 
@@ -314,43 +314,43 @@ Current Hunt: **0** Days Dry. Odds: **2.08**
   <summary>🌌 Path 2 — Starfall Ridge</summary>
 
   - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
-  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
-  - **Command Brief:** Track the Wild-class target — Scizor (shimmering anomaly with radiant sheen).
+  - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
+  - **Command Brief:** Track the Wild-class target — Pikachu (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 88% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 87% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Scizor's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Scizor rallies.
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Pikachu slips free in a burst of light, boosting its Evasion and tempo.
   </details>
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 72% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 68% odds</summary>
 
-    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
-    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Pikachu's innate typing instead.
   </details>
 </details>
 
 <details>
-  <summary>❄️ Path 3 — Aurora Chasm</summary>
+  <summary>🌊 Path 3 — Tidal Resonance</summary>
 
-  - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
-  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
-  - **Command Brief:** Track the Wild-class target — Scizor (shimmering anomaly with radiant sheen).
+  - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
+  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
+  - **Command Brief:** Track the Wild-class target — Pikachu (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 59% odds</summary>
+    <summary>🛡️ Raise Reflective Barriers · 77% odds</summary>
 
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Scizor's innate typing instead.
+    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
+    - **If it whiffs:** Barrier harmonics misalign, giving Pikachu a free setup turn to escalate pressure.
   </details>
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 65% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 83% odds</summary>
 
-    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
-    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
+    - **If it lands:** Coordinated assaults land clean, dropping Pikachu's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Pikachu rallies.
   </details>
 </details>
 
@@ -370,4 +370,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-09-05 02:17 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-09-06 02:13 UTC. Next rotation triggers at midnight UTC.</sub>
