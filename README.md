@@ -6,24 +6,24 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-09-06 02:13 UTC |
-| Schedule Index | 739865 |
-| Archetype | Thunderborn Storm Raider |
-| Lead Operative | Zeraora · Balanced Command Core |
+| Generated | 2026-09-07 02:10 UTC |
+| Schedule Index | 739866 |
+| Archetype | Quantum Steel Prophet |
+| Lead Operative | Mega Metagross · Balanced Command Core |
 | Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
-| Active Roster | Zeraora, Rayquaza, Noivern, Metagross, Gengar, Decidueye |
+| Active Roster | Mega Metagross, Rayquaza, Gengar, Zeraora, Noivern, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
 
 ---
 
-## ⚡ WEATHER REPORT: 🔥 Harsh Sunlight
-> **Field Condition:** Fire moves boosted 50%, Water moves weakened 50%.
+## ⚡ WEATHER REPORT: ☀️ Clear Skies
+> **Field Condition:** Standard battle conditions.
 
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Refactor legacy code to clear Gengar's Cursed Body status.
+### **Quest:** Add unit tests to strengthen the team's Synergy Mesh.
 
 ---
 
@@ -31,8 +31,8 @@
 
 ### 🧭 Rotation Hologram
 
-> **Rotation Profile:** Thunderborn Storm Raider
-> **Command Lead:** Zeraora
+> **Rotation Profile:** Quantum Steel Prophet
+> **Command Lead:** Mega Metagross
 
 ### Lead Strategy Module
 
@@ -59,18 +59,18 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Sun Offense** (Threat: **Torkoal**). Your **Zeraora** outspeeds Torkoal (Base 20). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Stall** (Threat: **Alomomola**). Your **Mega Metagross** outspeeds Alomomola (Base 65). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Mega Metagross</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_metagross-mega.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -102,47 +102,47 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Metagross</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
 <summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
 <br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -210,19 +210,19 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Thunderborn Storm Raider vs Rival Blue!
-🔹 **Turn 1:** Zeraora Mega Evolves and uses **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Quantum Steel Prophet vs Rival Blue!
+🔹 **Turn 1:** Mega Metagross Mega Evolves and uses **Dragon Ascent**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Zeraora uses **Extreme Speed** for the KO!
+🔹 **Turn 2:** Mega Metagross uses **Extreme Speed** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Zeraora switches to Landorus-T to Intimidate!
-🏆 **Result:** Rival forfeits! **Thunderborn Storm Raider Wins!**
+🔹 **Turn 3:** Mega Metagross switches to Landorus-T to Intimidate!
+🏆 **Result:** Rival forfeits! **Quantum Steel Prophet Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Zeraora @ Leftovers
+Mega Metagross @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -232,17 +232,17 @@ Ability: Unknown
 EVs: 
 Serious Nature
 
-Noivern @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Metagross @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
 Gengar @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Zeraora @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Noivern @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -259,32 +259,32 @@ Serious Nature
 
 | Mechanic | Loadout |
 | --- | --- |
-| Mega Evolution | — |
-| Z-Move | ▲ Gigavolt Havoc ⚡ |
-| Terastallization | ◇ Electric ✨ |
+| Mega Evolution | ◆ Metagrossite 💎 |
+| Z-Move | — |
+| Terastallization | ◇ Steel ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Pikachu</summary>
+  <summary>🎲 Encounter: Zacian</summary>
 
   <div align="center">
   ???
   </div>
 
-  - **Rarity Signal:** Wild Encounter
+  - **Rarity Signal:** Legendary Sighting
   - **Type Signal:** GLITCH
   - **Height / Weight:** ??? · ???
   - **Abilities:** ???
   - **Pokédex Insight:** System Error
-  - **Encounter Telemetry:** Routine scouting ping—deploy capture drones at your discretion.
+  - **Encounter Telemetry:** Ultra-rare beacon detected—Command approves immediate containment.
 
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **1** Days Dry. Odds: **2.08**
+Current Hunt: **2** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
@@ -292,65 +292,65 @@ Current Hunt: **1** Days Dry. Odds: **2.08**
   <summary>🌋 Path 1 — Magma Corridor</summary>
 
   - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
-  - **Encounter Twist:** Command authorises prototype gear if you can stall three turns.
-  - **Command Brief:** Track the Wild-class target — Pikachu (wild signal).
+  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
+  - **Command Brief:** Track the Legendary-class target — Zacian (legendary beacon).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 69% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 62% odds</summary>
 
     - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
     - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
   </details>
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 71% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 74% odds</summary>
 
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Pikachu a free setup turn to escalate pressure.
+    - **If it lands:** Coordinated assaults land clean, dropping Zacian's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Zacian rallies.
   </details>
 </details>
 
 <details>
-  <summary>🌌 Path 2 — Starfall Ridge</summary>
+  <summary>🌲 Path 2 — Verdant Overwatch</summary>
 
-  - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
-  - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
-  - **Command Brief:** Track the Wild-class target — Pikachu (wild signal).
+  - **Battlefield State:** Bioluminescent spores swirl between ancient trunks.
+  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
+  - **Command Brief:** Track the Legendary-class target — Zacian (legendary beacon).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 87% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 69% odds</summary>
 
-    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Pikachu slips free in a burst of light, boosting its Evasion and tempo.
+    - **If it lands:** Coordinated assaults land clean, dropping Zacian's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Zacian rallies.
   </details>
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 68% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 65% odds</summary>
 
     - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Pikachu's innate typing instead.
+    - **If it whiffs:** The sync desyncs, amplifying Zacian's innate typing instead.
   </details>
 </details>
 
 <details>
-  <summary>🌊 Path 3 — Tidal Resonance</summary>
+  <summary>❄️ Path 3 — Aurora Chasm</summary>
 
-  - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
-  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
-  - **Command Brief:** Track the Wild-class target — Pikachu (wild signal).
+  - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
+  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
+  - **Command Brief:** Track the Legendary-class target — Zacian (legendary beacon).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 77% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 62% odds</summary>
 
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Pikachu a free setup turn to escalate pressure.
+    - **If it lands:** Coordinated assaults land clean, dropping Zacian's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Zacian rallies.
   </details>
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 83% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 74% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Pikachu's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Pikachu rallies.
+    - **If it lands:** The legendary beacon is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Zacian slips free in a burst of light, boosting its Evasion and tempo.
   </details>
 </details>
 
@@ -370,4 +370,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-09-06 02:13 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-09-07 02:10 UTC. Next rotation triggers at midnight UTC.</sub>
