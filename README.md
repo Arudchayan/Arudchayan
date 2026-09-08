@@ -6,12 +6,12 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-09-07 02:10 UTC |
-| Schedule Index | 739866 |
-| Archetype | Quantum Steel Prophet |
-| Lead Operative | Mega Metagross · Balanced Command Core |
+| Generated | 2026-09-08 02:22 UTC |
+| Schedule Index | 739867 |
+| Archetype | Nightfall Rift Summoner |
+| Lead Operative | Mega Gengar · Balanced Command Core |
 | Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
-| Active Roster | Mega Metagross, Rayquaza, Gengar, Zeraora, Noivern, Decidueye |
+| Active Roster | Mega Gengar, Decidueye, Noivern, Rayquaza, Zeraora, Metagross |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
 
@@ -23,7 +23,7 @@
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Add unit tests to strengthen the team's Synergy Mesh.
+### **Quest:** Push a commit before noon to outspeed Rival Weavile.
 
 ---
 
@@ -31,8 +31,8 @@
 
 ### 🧭 Rotation Hologram
 
-> **Rotation Profile:** Quantum Steel Prophet
-> **Command Lead:** Mega Metagross
+> **Rotation Profile:** Nightfall Rift Summoner
+> **Command Lead:** Mega Gengar
 
 ### Lead Strategy Module
 
@@ -59,18 +59,18 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Stall** (Threat: **Alomomola**). Your **Mega Metagross** outspeeds Alomomola (Base 65). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Hyper Offense** (Threat: **Ribombee**). Careful, **Ribombee** is faster (Base 124). Consider defensive pivots. Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Mega Metagross</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Mega Gengar</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_metagross-mega.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_gengar-mega.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -84,47 +84,11 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Rayquaza</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_rayquaza.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -156,11 +120,47 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Rayquaza</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_rayquaza.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Metagross</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -210,34 +210,24 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Quantum Steel Prophet vs Rival Blue!
-🔹 **Turn 1:** Mega Metagross Mega Evolves and uses **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Nightfall Rift Summoner vs Rival Blue!
+🔹 **Turn 1:** Mega Gengar Mega Evolves and uses **Dragon Ascent**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Mega Metagross uses **Extreme Speed** for the KO!
+🔹 **Turn 2:** Mega Gengar uses **Extreme Speed** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Mega Metagross switches to Landorus-T to Intimidate!
-🏆 **Result:** Rival forfeits! **Quantum Steel Prophet Wins!**
+🔹 **Turn 3:** Mega Gengar switches to Landorus-T to Intimidate!
+🏆 **Result:** Rival forfeits! **Nightfall Rift Summoner Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Mega Metagross @ Leftovers
+Mega Gengar @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
 
-Rayquaza @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Gengar @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Zeraora @ Leftovers
+Decidueye @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -247,7 +237,17 @@ Ability: Unknown
 EVs: 
 Serious Nature
 
-Decidueye @ Leftovers
+Rayquaza @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Zeraora @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Metagross @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -259,32 +259,32 @@ Serious Nature
 
 | Mechanic | Loadout |
 | --- | --- |
-| Mega Evolution | ◆ Metagrossite 💎 |
-| Z-Move | — |
-| Terastallization | ◇ Steel ✨ |
+| Mega Evolution | ◆ Gengarite 💎 |
+| Z-Move | ▲ Never-Ending Nightmare ⚡ |
+| Terastallization | ◇ Ghost ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Zacian</summary>
+  <summary>🎲 Encounter: Gardevoir</summary>
 
   <div align="center">
   ???
   </div>
 
-  - **Rarity Signal:** Legendary Sighting
+  - **Rarity Signal:** Wild Encounter
   - **Type Signal:** GLITCH
   - **Height / Weight:** ??? · ???
   - **Abilities:** ???
   - **Pokédex Insight:** System Error
-  - **Encounter Telemetry:** Ultra-rare beacon detected—Command approves immediate containment.
+  - **Encounter Telemetry:** Routine scouting ping—deploy capture drones at your discretion.
 
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **2** Days Dry. Odds: **2.08**
+Current Hunt: **3** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
@@ -292,43 +292,43 @@ Current Hunt: **2** Days Dry. Odds: **2.08**
   <summary>🌋 Path 1 — Magma Corridor</summary>
 
   - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
-  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
-  - **Command Brief:** Track the Legendary-class target — Zacian (legendary beacon).
+  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
+  - **Command Brief:** Track the Wild-class target — Gardevoir (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 62% odds</summary>
+    <summary>🛡️ Raise Reflective Barriers · 90% odds</summary>
 
-    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
-    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
+    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
+    - **If it whiffs:** Barrier harmonics misalign, giving Gardevoir a free setup turn to escalate pressure.
   </details>
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 74% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 84% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Zacian's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Zacian rallies.
+    - **If it lands:** Coordinated assaults land clean, dropping Gardevoir's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Gardevoir rallies.
   </details>
 </details>
 
 <details>
-  <summary>🌲 Path 2 — Verdant Overwatch</summary>
+  <summary>🌌 Path 2 — Starfall Ridge</summary>
 
-  - **Battlefield State:** Bioluminescent spores swirl between ancient trunks.
-  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
-  - **Command Brief:** Track the Legendary-class target — Zacian (legendary beacon).
+  - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
+  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
+  - **Command Brief:** Track the Wild-class target — Gardevoir (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 69% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 87% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Zacian's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Zacian rallies.
+    - **If it lands:** Coordinated assaults land clean, dropping Gardevoir's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Gardevoir rallies.
   </details>
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 65% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 54% odds</summary>
 
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Zacian's innate typing instead.
+    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
+    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
   </details>
 </details>
 
@@ -336,21 +336,21 @@ Current Hunt: **2** Days Dry. Odds: **2.08**
   <summary>❄️ Path 3 — Aurora Chasm</summary>
 
   - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
-  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
-  - **Command Brief:** Track the Legendary-class target — Zacian (legendary beacon).
+  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
+  - **Command Brief:** Track the Wild-class target — Gardevoir (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 62% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 73% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Zacian's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Zacian rallies.
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Gardevoir's innate typing instead.
   </details>
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 74% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 75% odds</summary>
 
-    - **If it lands:** The legendary beacon is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Zacian slips free in a burst of light, boosting its Evasion and tempo.
+    - **If it lands:** Coordinated assaults land clean, dropping Gardevoir's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Gardevoir rallies.
   </details>
 </details>
 
@@ -370,4 +370,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-09-07 02:10 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-09-08 02:22 UTC. Next rotation triggers at midnight UTC.</sub>
