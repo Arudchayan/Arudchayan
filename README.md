@@ -6,12 +6,12 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-09-23 02:41 UTC |
-| Schedule Index | 739882 |
-| Archetype | Ultrasonic Night Raider |
-| Lead Operative | Noivern · Balanced Command Core |
+| Generated | 2026-09-24 02:30 UTC |
+| Schedule Index | 739883 |
+| Archetype | Thunderborn Storm Raider |
+| Lead Operative | Zeraora · Balanced Command Core |
 | Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
-| Active Roster | Noivern, Rayquaza, Zeraora, Gengar, Metagross, Decidueye |
+| Active Roster | Zeraora, Rayquaza, Noivern, Metagross, Gengar, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
 
@@ -23,7 +23,7 @@
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Refactor legacy code to clear Gengar's Cursed Body status.
+### **Quest:** Add unit tests to strengthen the team's Synergy Mesh.
 
 ---
 
@@ -31,8 +31,8 @@
 
 ### 🧭 Rotation Hologram
 
-> **Rotation Profile:** Ultrasonic Night Raider
-> **Command Lead:** Noivern
+> **Rotation Profile:** Thunderborn Storm Raider
+> **Command Lead:** Zeraora
 
 ### Lead Strategy Module
 
@@ -59,18 +59,18 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Standard OU Offense** (Threat: **Landorus-Therian**). Your **Noivern** outspeeds Landorus-Therian (Base 91). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Sun Offense** (Threat: **Torkoal**). Your **Zeraora** outspeeds Torkoal (Base 20). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -102,29 +102,11 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -143,6 +125,24 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 <div align="center">
 ???
 <br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -210,19 +210,19 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Ultrasonic Night Raider vs Rival Blue!
-🔹 **Turn 1:** Noivern Mega Evolves and uses **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Thunderborn Storm Raider vs Rival Blue!
+🔹 **Turn 1:** Zeraora Mega Evolves and uses **Dragon Ascent**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Noivern uses **Extreme Speed** for the KO!
+🔹 **Turn 2:** Zeraora uses **Extreme Speed** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Noivern switches to Landorus-T to Intimidate!
-🏆 **Result:** Rival forfeits! **Ultrasonic Night Raider Wins!**
+🔹 **Turn 3:** Zeraora switches to Landorus-T to Intimidate!
+🏆 **Result:** Rival forfeits! **Thunderborn Storm Raider Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Noivern @ Leftovers
+Zeraora @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -232,17 +232,17 @@ Ability: Unknown
 EVs: 
 Serious Nature
 
-Zeraora @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Gengar @ Leftovers
+Noivern @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
 
 Metagross @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Gengar @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -260,15 +260,15 @@ Serious Nature
 | Mechanic | Loadout |
 | --- | --- |
 | Mega Evolution | — |
-| Z-Move | ▲ Supersonic Skystrike ⚡ |
-| Terastallization | ◇ Flying ✨ |
+| Z-Move | ▲ Gigavolt Havoc ⚡ |
+| Terastallization | ◇ Electric ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Snorlax</summary>
+  <summary>🎲 Encounter: Magikarp</summary>
 
   <div align="center">
   ???
@@ -284,29 +284,29 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **18** Days Dry. Odds: **2.08**
+Current Hunt: **19** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
 <details>
-  <summary>🌌 Path 1 — Starfall Ridge</summary>
+  <summary>🌲 Path 1 — Verdant Overwatch</summary>
 
-  - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
+  - **Battlefield State:** Bioluminescent spores swirl between ancient trunks.
   - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
-  - **Command Brief:** Track the Wild-class target — Snorlax (wild signal).
+  - **Command Brief:** Track the Wild-class target — Magikarp (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 92% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 92% odds</summary>
 
-    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Snorlax slips free in a burst of light, boosting its Evasion and tempo.
+    - **If it lands:** Coordinated assaults land clean, dropping Magikarp's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Magikarp rallies.
   </details>
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 77% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 65% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Snorlax's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Snorlax rallies.
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Magikarp slips free in a burst of light, boosting its Evasion and tempo.
   </details>
 </details>
 
@@ -315,42 +315,42 @@ Current Hunt: **18** Days Dry. Odds: **2.08**
 
   - **Battlefield State:** Servo arms reset the battlefield between each exchange.
   - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
-  - **Command Brief:** Track the Wild-class target — Snorlax (wild signal).
+  - **Command Brief:** Track the Wild-class target — Magikarp (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 92% odds</summary>
+    <summary>🛡️ Raise Reflective Barriers · 77% odds</summary>
 
     - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Snorlax a free setup turn to escalate pressure.
+    - **If it whiffs:** Barrier harmonics misalign, giving Magikarp a free setup turn to escalate pressure.
   </details>
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 74% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 56% odds</summary>
 
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Snorlax's innate typing instead.
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Magikarp slips free in a burst of light, boosting its Evasion and tempo.
   </details>
 </details>
 
 <details>
-  <summary>🌋 Path 3 — Magma Corridor</summary>
+  <summary>🌌 Path 3 — Starfall Ridge</summary>
 
-  - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
-  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
-  - **Command Brief:** Track the Wild-class target — Snorlax (wild signal).
+  - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
+  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
+  - **Command Brief:** Track the Wild-class target — Magikarp (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 73% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 63% odds</summary>
 
-    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Snorlax slips free in a burst of light, boosting its Evasion and tempo.
+    - **If it lands:** Coordinated assaults land clean, dropping Magikarp's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Magikarp rallies.
   </details>
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 66% odds</summary>
+    <summary>🛡️ Raise Reflective Barriers · 66% odds</summary>
 
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Snorlax's innate typing instead.
+    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
+    - **If it whiffs:** Barrier harmonics misalign, giving Magikarp a free setup turn to escalate pressure.
   </details>
 </details>
 
@@ -370,4 +370,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-09-23 02:41 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-09-24 02:30 UTC. Next rotation triggers at midnight UTC.</sub>
