@@ -6,12 +6,12 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-09-30 03:18 UTC |
-| Schedule Index | 739889 |
-| Archetype | Thunderborn Storm Raider |
-| Lead Operative | Zeraora · Balanced Command Core |
+| Generated | 2026-10-01 03:25 UTC |
+| Schedule Index | 739890 |
+| Archetype | Quantum Steel Prophet |
+| Lead Operative | Mega Metagross · Balanced Command Core |
 | Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
-| Active Roster | Zeraora, Rayquaza, Noivern, Metagross, Gengar, Decidueye |
+| Active Roster | Mega Metagross, Rayquaza, Gengar, Zeraora, Noivern, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
 
@@ -23,7 +23,7 @@
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Refactor legacy code to clear Gengar's Cursed Body status.
+### **Quest:** Optimize 3 functions to increase Metagross's calculation speed.
 
 ---
 
@@ -31,8 +31,8 @@
 
 ### 🧭 Rotation Hologram
 
-> **Rotation Profile:** Thunderborn Storm Raider
-> **Command Lead:** Zeraora
+> **Rotation Profile:** Quantum Steel Prophet
+> **Command Lead:** Mega Metagross
 
 ### Lead Strategy Module
 
@@ -59,18 +59,18 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Sun Offense** (Threat: **Torkoal**). Your **Zeraora** outspeeds Torkoal (Base 20). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Hyper Offense** (Threat: **Ribombee**). Careful, **Ribombee** is faster (Base 124). Consider defensive pivots. Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Mega Metagross</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_metagross-mega.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -102,47 +102,47 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Metagross</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
 <summary>⚔️ <strong>Gengar</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
 <br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -210,19 +210,19 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Thunderborn Storm Raider vs Rival Blue!
-🔹 **Turn 1:** Zeraora Mega Evolves and uses **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Quantum Steel Prophet vs Rival Blue!
+🔹 **Turn 1:** Mega Metagross Mega Evolves and uses **Dragon Ascent**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Zeraora uses **Extreme Speed** for the KO!
+🔹 **Turn 2:** Mega Metagross uses **Extreme Speed** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Zeraora switches to Landorus-T to Intimidate!
-🏆 **Result:** Rival forfeits! **Thunderborn Storm Raider Wins!**
+🔹 **Turn 3:** Mega Metagross switches to Landorus-T to Intimidate!
+🏆 **Result:** Rival forfeits! **Quantum Steel Prophet Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Zeraora @ Leftovers
+Mega Metagross @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -232,17 +232,17 @@ Ability: Unknown
 EVs: 
 Serious Nature
 
-Noivern @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Metagross @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
 Gengar @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Zeraora @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Noivern @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -259,16 +259,16 @@ Serious Nature
 
 | Mechanic | Loadout |
 | --- | --- |
-| Mega Evolution | — |
-| Z-Move | ▲ Gigavolt Havoc ⚡ |
-| Terastallization | ◇ Electric ✨ |
+| Mega Evolution | ◆ Metagrossite 💎 |
+| Z-Move | — |
+| Terastallization | ◇ Steel ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Gardevoir</summary>
+  <summary>🎲 Encounter: Magikarp</summary>
 
   <div align="center">
   ???
@@ -284,48 +284,26 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **25** Days Dry. Odds: **2.08**
+Current Hunt: **26** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
 <details>
-  <summary>⚙️ Path 1 — Celadon Manufactory</summary>
+  <summary>🌲 Path 1 — Verdant Overwatch</summary>
 
-  - **Battlefield State:** Servo arms reset the battlefield between each exchange.
+  - **Battlefield State:** Bioluminescent spores swirl between ancient trunks.
   - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
-  - **Command Brief:** Track the Wild-class target — Gardevoir (wild signal).
+  - **Command Brief:** Track the Wild-class target — Magikarp (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 89% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 82% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Gardevoir's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Gardevoir rallies.
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Magikarp slips free in a burst of light, boosting its Evasion and tempo.
   </details>
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 67% odds</summary>
-
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Gardevoir's innate typing instead.
-  </details>
-</details>
-
-<details>
-  <summary>🌊 Path 2 — Tidal Resonance</summary>
-
-  - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
-  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
-  - **Command Brief:** Track the Wild-class target — Gardevoir (wild signal).
-  - **Type Intel:** Unknown
-
-  <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 60% odds</summary>
-
-    - **If it lands:** Coordinated assaults land clean, dropping Gardevoir's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Gardevoir rallies.
-  </details>
-  <details>
-    <summary>🛰️ Call Orbital Survey Assist · 70% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 79% odds</summary>
 
     - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
     - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
@@ -333,24 +311,46 @@ Current Hunt: **25** Days Dry. Odds: **2.08**
 </details>
 
 <details>
-  <summary>🌌 Path 3 — Starfall Ridge</summary>
+  <summary>🌌 Path 2 — Starfall Ridge</summary>
 
   - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
   - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
-  - **Command Brief:** Track the Wild-class target — Gardevoir (wild signal).
+  - **Command Brief:** Track the Wild-class target — Magikarp (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 92% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 58% odds</summary>
+
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Magikarp slips free in a burst of light, boosting its Evasion and tempo.
+  </details>
+  <details>
+    <summary>🛡️ Raise Reflective Barriers · 80% odds</summary>
+
+    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
+    - **If it whiffs:** Barrier harmonics misalign, giving Magikarp a free setup turn to escalate pressure.
+  </details>
+</details>
+
+<details>
+  <summary>❄️ Path 3 — Aurora Chasm</summary>
+
+  - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
+  - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
+  - **Command Brief:** Track the Wild-class target — Magikarp (wild signal).
+  - **Type Intel:** Unknown
+
+  <details>
+    <summary>🛡️ Raise Reflective Barriers · 74% odds</summary>
+
+    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
+    - **If it whiffs:** Barrier harmonics misalign, giving Magikarp a free setup turn to escalate pressure.
+  </details>
+  <details>
+    <summary>🛰️ Call Orbital Survey Assist · 66% odds</summary>
 
     - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
     - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
-  </details>
-  <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 84% odds</summary>
-
-    - **If it lands:** Coordinated assaults land clean, dropping Gardevoir's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Gardevoir rallies.
   </details>
 </details>
 
@@ -370,4 +370,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-09-30 03:18 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-10-01 03:25 UTC. Next rotation triggers at midnight UTC.</sub>
