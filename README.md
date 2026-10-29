@@ -6,24 +6,24 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-10-28 03:22 UTC |
-| Schedule Index | 739917 |
-| Archetype | Emerald Forest Warden |
-| Lead Operative | Decidueye · Balanced Command Core |
+| Generated | 2026-10-29 03:45 UTC |
+| Schedule Index | 739918 |
+| Archetype | Ultrasonic Night Raider |
+| Lead Operative | Noivern · Balanced Command Core |
 | Power Core | 3600 ([█████████████████████████░░░░░]  83.3% capacity) |
-| Active Roster | Decidueye, Rayquaza, Noivern, Metagross, Gengar, Zeraora |
+| Active Roster | Noivern, Rayquaza, Zeraora, Gengar, Metagross, Decidueye |
 | Unique Typings | 1 |
 | Average Speed | 100.0 |
 
 ---
 
-## ⚡ WEATHER REPORT: ☀️ Clear Skies
-> **Field Condition:** Standard battle conditions.
+## ⚡ WEATHER REPORT: 🌧️ Rain
+> **Field Condition:** Water moves boosted 50%, Fire moves weakened 50%.
 
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Refactor legacy code to clear Gengar's Cursed Body status.
+### **Quest:** Review a PR to teach Alakazam 'Future Sight'.
 
 ---
 
@@ -31,8 +31,8 @@
 
 ### 🧭 Rotation Hologram
 
-> **Rotation Profile:** Emerald Forest Warden
-> **Command Lead:** Decidueye
+> **Rotation Profile:** Ultrasonic Night Raider
+> **Command Lead:** Noivern
 
 ### Lead Strategy Module
 
@@ -59,18 +59,18 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Standard OU Offense** (Threat: **Landorus-Therian**). Your **Decidueye** outspeeds Landorus-Therian (Base 91). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Stall** (Threat: **Alomomola**). Your **Noivern** outspeeds Alomomola (Base 65). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -102,29 +102,11 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Noivern</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_noivern.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Hp (100)
-- **Ability:** Unknown
-- **Nature:** Serious
-- **Held Item:** Leftovers
-- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
-- **Signature Moves:**
-  - (pending scouting)
-</details>
-
-<details open>
-<summary>⚔️ <strong>Metagross</strong> · ⚪NORMAL</summary>
-
-<div align="center">
-???
-<br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -156,11 +138,29 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 </details>
 
 <details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚪NORMAL</summary>
+<summary>⚔️ <strong>Metagross</strong> · ⚪NORMAL</summary>
 
 <div align="center">
 ???
-<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
+<br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Hp (100)
+- **Ability:** Unknown
+- **Nature:** Serious
+- **Held Item:** Leftovers
+- **EV Spread:** 0 / 0 / 0 / 0 / 0 / 0
+- **Signature Moves:**
+  - (pending scouting)
+</details>
+
+<details open>
+<summary>⚔️ <strong>Decidueye</strong> · ⚪NORMAL</summary>
+
+<div align="center">
+???
+<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
 - **Base Stat Total:** 600
@@ -210,19 +210,19 @@ SPEED:  [███████░░░░░░░░░░░░░] 100
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Emerald Forest Warden vs Rival Blue!
-🔹 **Turn 1:** Decidueye Mega Evolves and uses **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Ultrasonic Night Raider vs Rival Blue!
+🔹 **Turn 1:** Noivern Mega Evolves and uses **Dragon Ascent**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Decidueye uses **Extreme Speed** for the KO!
+🔹 **Turn 2:** Noivern uses **Extreme Speed** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Decidueye switches to Landorus-T to Intimidate!
-🏆 **Result:** Rival forfeits! **Emerald Forest Warden Wins!**
+🔹 **Turn 3:** Noivern switches to Landorus-T to Intimidate!
+🏆 **Result:** Rival forfeits! **Ultrasonic Night Raider Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Decidueye @ Leftovers
+Noivern @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -232,12 +232,7 @@ Ability: Unknown
 EVs: 
 Serious Nature
 
-Noivern @ Leftovers
-Ability: Unknown
-EVs: 
-Serious Nature
-
-Metagross @ Leftovers
+Zeraora @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -247,7 +242,12 @@ Ability: Unknown
 EVs: 
 Serious Nature
 
-Zeraora @ Leftovers
+Metagross @ Leftovers
+Ability: Unknown
+EVs: 
+Serious Nature
+
+Decidueye @ Leftovers
 Ability: Unknown
 EVs: 
 Serious Nature
@@ -260,15 +260,15 @@ Serious Nature
 | Mechanic | Loadout |
 | --- | --- |
 | Mega Evolution | — |
-| Z-Move | ▲ Sinister Arrow Raid ⚡ |
-| Terastallization | ◇ Grass ✨ |
+| Z-Move | ▲ Supersonic Skystrike ⚡ |
+| Terastallization | ◇ Flying ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Gyarados</summary>
+  <summary>🎲 Encounter: Scizor</summary>
 
   <div align="center">
   ???
@@ -284,73 +284,73 @@ Serious Nature
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **26** Days Dry. Odds: **2.08**
+Current Hunt: **27** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
 <details>
-  <summary>❄️ Path 1 — Aurora Chasm</summary>
+  <summary>🌊 Path 1 — Tidal Resonance</summary>
 
-  - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
-  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
-  - **Command Brief:** Track the Wild-class target — Gyarados (wild signal).
-  - **Type Intel:** Unknown
-
-  <details>
-    <summary>🛡️ Raise Reflective Barriers · 69% odds</summary>
-
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Gyarados a free setup turn to escalate pressure.
-  </details>
-  <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 80% odds</summary>
-
-    - **If it lands:** Coordinated assaults land clean, dropping Gyarados's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Gyarados rallies.
-  </details>
-</details>
-
-<details>
-  <summary>🌋 Path 2 — Magma Corridor</summary>
-
-  - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
+  - **Battlefield State:** Moonlit surf crashes against crystalline caverns.
   - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
-  - **Command Brief:** Track the Wild-class target — Gyarados (wild signal).
+  - **Command Brief:** Track the Wild-class target — Scizor (wild signal).
   - **Type Intel:** Unknown
 
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 67% odds</summary>
-
-    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Gyarados slips free in a burst of light, boosting its Evasion and tempo.
-  </details>
-  <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 55% odds</summary>
-
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Gyarados's innate typing instead.
-  </details>
-</details>
-
-<details>
-  <summary>⚙️ Path 3 — Celadon Manufactory</summary>
-
-  - **Battlefield State:** Servo arms reset the battlefield between each exchange.
-  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
-  - **Command Brief:** Track the Wild-class target — Gyarados (wild signal).
-  - **Type Intel:** Unknown
-
-  <details>
-    <summary>🛰️ Call Orbital Survey Assist · 86% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 85% odds</summary>
 
     - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
     - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
   </details>
   <details>
-    <summary>🎯 Deploy Quick Ball Salvo · 55% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 77% odds</summary>
+
+    - **If it lands:** Coordinated assaults land clean, dropping Scizor's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Scizor rallies.
+  </details>
+</details>
+
+<details>
+  <summary>❄️ Path 2 — Aurora Chasm</summary>
+
+  - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
+  - **Encounter Twist:** Command authorises prototype gear if you can stall three turns.
+  - **Command Brief:** Track the Wild-class target — Scizor (wild signal).
+  - **Type Intel:** Unknown
+
+  <details>
+    <summary>🛰️ Call Orbital Survey Assist · 74% odds</summary>
+
+    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
+    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
+  </details>
+  <details>
+    <summary>🎯 Deploy Quick Ball Salvo · 80% odds</summary>
 
     - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
-    - **If it whiffs:** Gyarados slips free in a burst of light, boosting its Evasion and tempo.
+    - **If it whiffs:** Scizor slips free in a burst of light, boosting its Evasion and tempo.
+  </details>
+</details>
+
+<details>
+  <summary>🌋 Path 3 — Magma Corridor</summary>
+
+  - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
+  - **Encounter Twist:** An allied scout flags a terrain hazard rewriting initiative order.
+  - **Command Brief:** Track the Wild-class target — Scizor (wild signal).
+  - **Type Intel:** Unknown
+
+  <details>
+    <summary>⚡ Trigger Overclocked Strike Team · 79% odds</summary>
+
+    - **If it lands:** Coordinated assaults land clean, dropping Scizor's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Scizor rallies.
+  </details>
+  <details>
+    <summary>🪬 Invoke Terrain Sync Protocol · 79% odds</summary>
+
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Scizor's innate typing instead.
   </details>
 </details>
 
@@ -370,4 +370,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-10-28 03:22 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-10-29 03:45 UTC. Next rotation triggers at midnight UTC.</sub>
