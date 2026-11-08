@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PokéLab, a deterministic Pokémon battle benchmark</title>
+<meta name="description" content="A deterministic, dependency-free Pokémon battle benchmark with side-swapped matches, bootstrap intervals, held-out species, and reproducible results.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to results</a>
+<header class="masthead">
+  <div class="shell masthead-row">
+    <a class="wordmark" href="#top">PokéLab</a>
+    <nav aria-label="Sections">
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="#pareto">Compute</a>
+      <a href="#learning">Learning</a>
+      <a href="#generalization">Generalization</a>
+      <a href="#reproducibility">Reproduce</a>
+      <a href="https://github.com/Arudchayan/Arudchayan/blob/main/paper/main.md">Paper</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="hero shell" aria-labelledby="title">
+    <h1 id="title">A deterministic Pokémon battle benchmark.</h1>
+    <p class="lede">A 24-species, 3v3 singles engine with fixed seeds, side-swapped matches, bootstrap intervals, held-out species, and a failure log. Zero runtime dependencies.</p>
+    <div class="hero-links">
+      <a class="button" href="https://github.com/Arudchayan/Arudchayan">View the source</a>
+      <a href="results/REPORT.md">Read the report</a>
+      <a href="https://github.com/Arudchayan/Arudchayan/blob/main/FAILURES.md">Failure log</a>
+    </div>
+    <dl class="metrics">
+      <div><dt>Best agent</dt><dd>Search-1<span>1153 Elo</span></dd></div>
+      <div><dt>Search-1 vs heuristic</dt><dd>69.5%<span>497 decisions/s</span></dd></div>
+      <div><dt>Search-2 oracle</dt><dd>90.0%<span>31 decisions/s</span></dd></div>
+      <div><dt>Engine throughput</dt><dd>7302<span>decisions/s, fastest match</span></dd></div>
+    </dl>
+  </section>
+
+  <section class="shell section" id="leaderboard" aria-labelledby="leaderboard-title">
+    <h2 id="leaderboard-title">Leaderboard</h2>
+    <p class="section-lede">Bradley-Terry strength from side-swapped round-robin play. Intervals are 95% percentile bootstrap intervals over decisive games; draws are reported but excluded from the denominator.</p>
+    <div class="table-wrap"><table><thead><tr><th scope="col">Agent</th><th scope="col">Elo</th><th scope="col">W-L-D</th><th scope="col">Win rate</th><th scope="col">95% CI</th><th scope="col">Decisions/s</th></tr></thead><tbody><tr><td><strong>Search-1</strong></td><td class="num">1153</td><td class="num">429-158-13</td><td class="num">73.1%</td><td class="num">[69.3, 76.7]</td><td class="num">445</td></tr><tr><td><strong>Heuristic</strong></td><td class="num">1104</td><td class="num">392-204-4</td><td class="num">65.8%</td><td class="num">[61.9, 69.6]</td><td class="num">3827</td></tr><tr><td><strong>Greedy</strong></td><td class="num">1073</td><td class="num">363-230-7</td><td class="num">61.2%</td><td class="num">[57.3, 65.1]</td><td class="num">4078</td></tr><tr><td><strong>MLP BC</strong></td><td class="num">943</td><td class="num">242-348-10</td><td class="num">41.0%</td><td class="num">[37.1, 44.9]</td><td class="num">2519</td></tr><tr><td><strong>MLP+DAgger</strong></td><td class="num">913</td><td class="num">214-375-11</td><td class="num">36.3%</td><td class="num">[32.6, 40.2]</td><td class="num">2585</td></tr><tr><td><strong>Random</strong></td><td class="num">813</td><td class="num">134-459-7</td><td class="num">22.6%</td><td class="num">[19.4, 26.1]</td><td class="num">4171</td></tr></tbody></table></div>
+    <p class="note">The six-agent round robin uses 120 games per pair and one shared team schedule. Search-2 is a separate 100-game oracle match.</p>
+  </section>
+
+  <section class="shell section" id="compute" aria-labelledby="compute-title">
+    <span id="pareto"></span>
+    <h2 id="compute-title">Strength and compute</h2>
+    <p class="section-lede">A point on the right is cheaper. Search depth is the strongest lever; distillation buys throughput at a measurable strength cost.</p>
+    <figure><img src="assets/pareto.svg" alt="Elo rating against decisions per second for six agents."><figcaption>Elo-like rating against measured decisions per second. Log scale on throughput.</figcaption></figure>
+  </section>
+
+  <section class="shell section" id="learning" aria-labelledby="learning-title">
+    <h2 id="learning-title">Learning</h2>
+    <p class="section-lede">The linear behaviour clone is a negative control. The non-linear MLP reaches 41.0% overall in the round robin; the linear model does not learn a useful ranking.</p>
+    <div class="table-wrap"><table><thead><tr><th scope="col">Stage</th><th scope="col">Budget</th><th scope="col">Win rate</th></tr></thead><tbody><tr><td>BC, linear control</td><td class="num">500</td><td class="num">3.8%</td></tr><tr><td>BC, linear control</td><td class="num">1000</td><td class="num">6.2%</td></tr><tr><td>BC, linear control</td><td class="num">2000</td><td class="num">3.8%</td></tr><tr><td>BC, linear control</td><td class="num">3006</td><td class="num">0.0%</td></tr></tbody></table></div>
+    <figure><img src="assets/learning_curve.svg" alt="Win rate against training budget for the linear control and REINFORCE."><figcaption>Win rate against the heuristic reference. The linear curve is a negative result, not a missing run.</figcaption></figure>
+  </section>
+
+  <section class="shell section" id="generalization" aria-labelledby="generalization-title">
+    <h2 id="generalization-title">Generalization</h2>
+    <p class="section-lede">Policies train on 18 species and are tested on six they never see. Search transfers; the small MLP does not.</p>
+    <div class="table-wrap"><table><thead><tr><th scope="col">Agent</th><th scope="col">Train species</th><th scope="col">Held-out species</th><th scope="col">Delta</th></tr></thead><tbody><tr><td><strong>Heuristic</strong></td><td class="num">54.1%</td><td class="num">63.6%</td><td class="num">+9.6 pp</td></tr><tr><td><strong>Search-1</strong></td><td class="num">64.6%</td><td class="num">78.0%</td><td class="num">+13.4 pp</td></tr><tr><td><strong>MLP BC</strong></td><td class="num">37.4%</td><td class="num">14.3%</td><td class="num">-23.1 pp</td></tr><tr><td><strong>Hybrid-1</strong></td><td class="num">66.0%</td><td class="num">66.0%</td><td class="num">-0.0 pp</td></tr><tr><td><strong>MLP+DAgger</strong></td><td class="num">30.2%</td><td class="num">17.0%</td><td class="num">-13.2 pp</td></tr></tbody></table></div>
+    <figure><img src="assets/generalization.svg" alt="Train and held-out species win rates by agent."><figcaption>Same policy, unseen species. The MLP loses 23.1 points on the held-out split.</figcaption></figure>
+  </section>
+
+  <section class="shell section" id="reproduce" aria-labelledby="reproduce-title">
+    <span id="reproducibility"></span>
+    <h2 id="reproduce-title">Reproduce</h2>
+    <p class="section-lede">The engine, agents, report, and charts use the Python standard library. PyTorch is optional and used only to train the MLP; inference is exported to JSON.</p>
+    <pre><code>python -m pokerl verify
+python -m pytest
+python -m pokerl bench --games 120 --seed 2025
+python -m pokerl generalize --games 100 --seed 2025
+python -m pokerl report</code></pre>
+    <p class="note">Every result file records the git SHA, Python version, platform, seed, and a config hash.</p>
+  </section>
+</main>
+<footer class="shell footer">
+  <p>PokéLab is a non-commercial fan research project. Pokémon is a trademark of Nintendo, Creatures, and GAME FREAK. Not affiliated with or endorsed by them.</p>
+  <p class="footer-links"><a href="https://github.com/Arudchayan/Arudchayan">GitHub</a><a href="https://github.com/Arudchayan/Arudchayan/issues">Issues</a><a href="results/REPORT.md">Report</a><a href="https://github.com/Arudchayan/Arudchayan/blob/main/paper/main.md">Paper</a><a href="https://github.com/Arudchayan/Arudchayan/blob/main/FAILURES.md">Failure log</a></p>
+</footer>
+</body>
+</html>

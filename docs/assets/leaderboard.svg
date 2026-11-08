@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420" role="img">
+<title>Bradley-Terry leaderboard</title>
+<rect width="820" height="420" fill="#f7f4ed"/>
+<rect x="12" y="12" width="796" height="396" rx="16" fill="#f1ece1" stroke="#d8d0c1"/>
+<text x="32" y="48" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700">Bradley-Terry leaderboard</text>
+<text x="32" y="72" fill="#746e63" font-family="ui-monospace,monospace" font-size="12">Side-swapped matches, 95% bootstrap intervals</text>
+<line x1="190.0" y1="110" x2="190.0" y2="350" stroke="#d8d0c1" stroke-width="1"/>
+<text x="190.0" y="372" text-anchor="middle" fill="#746e63" font-family="ui-monospace,monospace" font-size="11">0.0</text>
+<line x1="332.5" y1="110" x2="332.5" y2="350" stroke="#d8d0c1" stroke-width="1"/>
+<text x="332.5" y="372" text-anchor="middle" fill="#746e63" font-family="ui-monospace,monospace" font-size="11">311.4</text>
+<line x1="475.0" y1="110" x2="475.0" y2="350" stroke="#d8d0c1" stroke-width="1"/>
+<text x="475.0" y="372" text-anchor="middle" fill="#746e63" font-family="ui-monospace,monospace" font-size="11">622.7</text>
+<line x1="617.5" y1="110" x2="617.5" y2="350" stroke="#d8d0c1" stroke-width="1"/>
+<text x="617.5" y="372" text-anchor="middle" fill="#746e63" font-family="ui-monospace,monospace" font-size="11">934.1</text>
+<line x1="760.0" y1="110" x2="760.0" y2="350" stroke="#d8d0c1" stroke-width="1"/>
+<text x="760.0" y="372" text-anchor="middle" fill="#746e63" font-family="ui-monospace,monospace" font-size="11">1245.5</text>
+<text x="178" y="132.2" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">Search-1</text>
+<rect x="190.0" y="110.0" width="527.8" height="31.7" rx="4" fill="#8a5a2b" opacity="0.9"/>
+<text x="727.8" y="132.2" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">1153.2</text>
+<text x="178" y="173.8" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">Heuristic</text>
+<rect x="190.0" y="151.7" width="505.4" height="31.7" rx="4" fill="#5b6b8c" opacity="0.9"/>
+<text x="705.4" y="173.8" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">1104.2</text>
+<text x="178" y="215.5" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">Greedy</text>
+<rect x="190.0" y="193.3" width="491.2" height="31.7" rx="4" fill="#3f6b4f" opacity="0.9"/>
+<text x="691.2" y="215.5" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">1073.3</text>
+<text x="178" y="257.2" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">MLP BC</text>
+<rect x="190.0" y="235.0" width="431.8" height="31.7" rx="4" fill="#a67c2e" opacity="0.9"/>
+<text x="631.8" y="257.2" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">943.4</text>
+<text x="178" y="298.8" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">MLP+DAgger</text>
+<rect x="190.0" y="276.7" width="417.7" height="31.7" rx="4" fill="#8a3f32" opacity="0.9"/>
+<text x="617.7" y="298.8" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">912.7</text>
+<text x="178" y="340.5" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">Random</text>
+<rect x="190.0" y="318.3" width="372.2" height="31.7" rx="4" fill="#7d5a62" opacity="0.9"/>
+<text x="572.2" y="340.5" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">813.2</text>
+<text x="475.0" y="398" text-anchor="middle" fill="#746e63" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12">Elo-like rating</text>
+</svg>

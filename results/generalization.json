@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "config_hash": "09141fb22b2310e1",
+    "generated_at": "2026-11-08 15:27 UTC",
+    "git_sha": "0b7e141c0e0edd74ddd7173bf522adea6a54ce6e",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "python": "3.12.10",
+    "seed": 2025
+  },
+  "results": [
+    {
+      "agent": "Heuristic",
+      "heldout_games": 100,
+      "heldout_win_rate": 0.6363636363636364,
+      "train_games": 100,
+      "train_win_rate": 0.5408163265306123
+    },
+    {
+      "agent": "Search-1",
+      "heldout_games": 100,
+      "heldout_win_rate": 0.78,
+      "train_games": 100,
+      "train_win_rate": 0.6464646464646465
+    },
+    {
+      "agent": "MLP BC",
+      "heldout_games": 100,
+      "heldout_win_rate": 0.14285714285714285,
+      "train_games": 100,
+      "train_win_rate": 0.37373737373737376
+    },
+    {
+      "agent": "Hybrid-1",
+      "heldout_games": 100,
+      "heldout_win_rate": 0.6597938144329897,
+      "train_games": 100,
+      "train_win_rate": 0.66
+    },
+    {
+      "agent": "MLP+DAgger",
+      "heldout_games": 100,
+      "heldout_win_rate": 0.17,
+      "train_games": 100,
+      "train_win_rate": 0.3020833333333333
+    }
+  ]
+}

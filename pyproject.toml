@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pokerl"
+version = "1.0.0"
+description = "A reproducible, dependency-free Pokémon battle benchmark and policy lab"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Arudchayan" }]
+keywords = ["pokemon", "benchmark", "reinforcement-learning", "simulation", "research"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-cov>=5",
+    "ruff>=0.6",
+    "mypy>=1.10",
+    "build>=1.2",
+    "numpy>=1.26",
+]
+nn = [
+    "torch>=2.2",
+    "numpy>=1.26",
+]
+docs = []
+
+[project.scripts]
+pokerl = "pokerl.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Arudchayan/Arudchayan"
+Repository = "https://github.com/Arudchayan/Arudchayan"
+Issues = "https://github.com/Arudchayan/Arudchayan/issues"
+Changelog = "https://github.com/Arudchayan/Arudchayan/blob/main/CHANGELOG.md"
+Documentation = "https://arudchayan.github.io/Arudchayan/"
+
+[tool.setuptools]
+packages = ["pokerl"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["legacy", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501", "B905"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+warn_unused_ignores = false

@@ -1,0 +1,85 @@
+name: Research proposal
+description: Propose a falsifiable experiment for the PokéLab benchmark.
+title: "[Research]: "
+labels: ["research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Research proposals should be reproducible and falsifiable before they are run. State the hypothesis, the metric that will decide it, the seed protocol, the expected compute, and the result that would prove the hypothesis wrong.
+
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+      description: A precise, testable claim. Avoid vague goals.
+      placeholder: A search agent at depth 1 achieves a higher side-swapped win rate than the heuristic agent against the fixed benchmark pool.
+    validations:
+      required: true
+
+  - type: textarea
+    id: metric
+    attributes:
+      label: Primary metric and decision rule
+      description: Define the metric, comparison baseline, confidence interval or effect size, and the threshold for success.
+      placeholder: Win rate over side-swapped matches with 95% bootstrap CI; success if the lower bound exceeds 0.5 against the baseline.
+    validations:
+      required: true
+
+  - type: input
+    id: seed
+    attributes:
+      label: Seed or seed protocol
+      description: The seed, seed range, and number of repetitions used for the experiment.
+      placeholder: "seed=1; 20 seeds (1-20); 1,000 matches per seed"
+    validations:
+      required: true
+
+  - type: input
+    id: compute
+    attributes:
+      label: Expected compute
+      description: Estimate wall-clock time, CPU-hours, memory, and any hardware requirements.
+      placeholder: "~2 CPU-hours on a 4-core laptop; no GPU"
+    validations:
+      required: true
+
+  - type: textarea
+    id: falsification
+    attributes:
+      label: Falsification criterion
+      description: What observed result would refute the hypothesis? Be explicit about the threshold.
+      placeholder: The hypothesis is rejected if the 95% CI for the win-rate difference includes zero or favors the baseline.
+    validations:
+      required: true
+
+  - type: textarea
+    id: design
+    attributes:
+      label: Experimental design
+      description: Describe the agents, teams, held-out split, controls, and evaluation commands.
+      placeholder: |
+        python -m pokerl bench
+        python -m pokerl demo --seed 1
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and limitations
+      description: Known confounders, failure modes, or reasons the result may not generalize.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: The proposal uses fixed seeds and a deterministic evaluation protocol.
+          required: true
+        - label: Results will be saved under `results/` with the command and configuration used.
+          required: true
+        - label: The experiment adds no runtime dependencies to the default install.
+          required: true

@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-08",
+  "day_number": 739928,
+  "species": "breloom",
+  "species_name": "Breloom",
+  "types": [
+    "grass",
+    "fighting"
+  ],
+  "bst": 460,
+  "opponent": "scizor",
+  "opponent_name": "Scizor",
+  "quest": "Read the held-out split before touching the train set.",
+  "seed": 6972566247772334273,
+  "moves": [
+    "mach-punch",
+    "seed-bomb",
+    "spore",
+    "swords-dance"
+  ]
+}

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img">
+<title>Generalisation to held-out species</title>
+<rect width="900" height="500" fill="#f7f4ed"/>
+<rect x="12" y="12" width="876" height="476" rx="16" fill="#f1ece1" stroke="#d8d0c1"/>
+<text x="32" y="48" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700">Generalisation to held-out species</text>
+<text x="32" y="72" fill="#746e63" font-family="ui-monospace,monospace" font-size="12">Same policy, unseen species</text>
+<line x1="190.0" y1="110" x2="190.0" y2="430" stroke="#d8d0c1" stroke-width="1"/>
+<text x="190.0" y="452" text-anchor="middle" fill="#746e63" font-family="ui-monospace,monospace" font-size="11">0.0</text>
+<line x1="352.5" y1="110" x2="352.5" y2="430" stroke="#d8d0c1" stroke-width="1"/>
+<text x="352.5" y="452" text-anchor="middle" fill="#746e63" font-family="ui-monospace,monospace" font-size="11">0.2</text>
+<line x1="515.0" y1="110" x2="515.0" y2="430" stroke="#d8d0c1" stroke-width="1"/>
+<text x="515.0" y="452" text-anchor="middle" fill="#746e63" font-family="ui-monospace,monospace" font-size="11">0.4</text>
+<line x1="677.5" y1="110" x2="677.5" y2="430" stroke="#d8d0c1" stroke-width="1"/>
+<text x="677.5" y="452" text-anchor="middle" fill="#746e63" font-family="ui-monospace,monospace" font-size="11">0.6</text>
+<line x1="840.0" y1="110" x2="840.0" y2="430" stroke="#d8d0c1" stroke-width="1"/>
+<text x="840.0" y="452" text-anchor="middle" fill="#746e63" font-family="ui-monospace,monospace" font-size="11">0.8</text>
+<text x="178" y="126.1" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">Heuristic, train</text>
+<rect x="190.0" y="110.0" width="417.3" height="23.0" rx="4" fill="#8a5a2b" opacity="0.9"/>
+<text x="617.3" y="126.1" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">0.5</text>
+<text x="178" y="159.1" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">Search-1, train</text>
+<rect x="190.0" y="143.0" width="498.8" height="23.0" rx="4" fill="#5b6b8c" opacity="0.9"/>
+<text x="698.8" y="159.1" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">0.6</text>
+<text x="178" y="192.1" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">MLP BC, train</text>
+<rect x="190.0" y="176.0" width="288.4" height="23.0" rx="4" fill="#3f6b4f" opacity="0.9"/>
+<text x="488.4" y="192.1" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">0.4</text>
+<text x="178" y="225.1" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">Hybrid-1, train</text>
+<rect x="190.0" y="209.0" width="509.3" height="23.0" rx="4" fill="#a67c2e" opacity="0.9"/>
+<text x="709.3" y="225.1" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">0.7</text>
+<text x="178" y="258.1" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">MLP+DAgger, train</text>
+<rect x="190.0" y="242.0" width="233.1" height="23.0" rx="4" fill="#8a3f32" opacity="0.9"/>
+<text x="433.1" y="258.1" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">0.3</text>
+<text x="178" y="291.1" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">Heuristic, held-out</text>
+<rect x="190.0" y="275.0" width="491.0" height="23.0" rx="4" fill="#7d5a62" opacity="0.9"/>
+<text x="691.0" y="291.1" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">0.6</text>
+<text x="178" y="324.1" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">Search-1, held-out</text>
+<rect x="190.0" y="308.0" width="601.9" height="23.0" rx="4" fill="#4f6b72" opacity="0.9"/>
+<text x="801.9" y="324.1" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">0.8</text>
+<text x="178" y="357.1" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">MLP BC, held-out</text>
+<rect x="190.0" y="341.0" width="110.2" height="23.0" rx="4" fill="#8a7a55" opacity="0.9"/>
+<text x="310.2" y="357.1" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">0.1</text>
+<text x="178" y="390.1" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">Hybrid-1, held-out</text>
+<rect x="190.0" y="374.0" width="509.1" height="23.0" rx="4" fill="#8a5a2b" opacity="0.9"/>
+<text x="709.1" y="390.1" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">0.7</text>
+<text x="178" y="423.1" text-anchor="end" fill="#201d18" font-family="ui-sans-serif,system-ui,sans-serif" font-size="13">MLP+DAgger, held-out</text>
+<rect x="190.0" y="407.0" width="131.2" height="23.0" rx="4" fill="#5b6b8c" opacity="0.9"/>
+<text x="331.2" y="423.1" fill="#201d18" font-family="ui-monospace,monospace" font-size="12">0.2</text>
+<text x="515.0" y="478" text-anchor="middle" fill="#746e63" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12">Win rate vs Heuristic</text>
+</svg>

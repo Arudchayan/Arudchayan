@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use PokéLab in research, please cite this repository."
+type: software
+title: "PokéLab"
+abstract: >-
+  PokéLab is a zero-runtime-dependency Python framework for reproducible Pokémon
+  battle simulation, agent benchmarking, and policy research. It provides a
+  deterministic singles engine, a zoo of baseline agents, seeded evaluation with
+  confidence intervals and Bradley-Terry ratings, training utilities, and
+  experiment tooling.
+authors:
+  - name: "Arudchayan"
+    website: "https://github.com/Arudchayan"
+version: "1.0.0"
+date-released: "2026-11-08"
+license: MIT
+repository-code: "https://github.com/Arudchayan/Arudchayan"
+url: "https://arudchayan.github.io/Arudchayan/"
+keywords:
+  - pokemon
+  - benchmark
+  - reinforcement-learning
+  - simulation
+  - reproducible-research

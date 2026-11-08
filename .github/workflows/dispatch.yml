@@ -1,0 +1,32 @@
+name: Daily dispatch
+
+on:
+  schedule:
+    - cron: "15 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Generate deterministic dispatch
+        run: |
+          python -m pokerl dispatch
+          python -m pokerl report
+      - name: Commit if changed
+        run: |
+          git config user.name "PokéLab Bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet README.md docs/ results/; then
+            git add README.md docs/ results/
+            git commit -m "chore: daily lab dispatch [skip ci]"
+            git push
+          fi
