@@ -217,14 +217,15 @@ from pokerl.agents import HeuristicAgent, RandomAgent
 from pokerl.engine import Battle
 from pokerl.rng import RNG
 
+
 def replay(seed: int):
-    b = Battle(["garchomp", "dragonite", "metagross"],
-               ["blissey", "skarmory", "gliscor"], seed=seed)
+    b = Battle(["garchomp", "dragonite", "metagross"], ["blissey", "skarmory", "gliscor"], seed=seed)
     a0, a1 = HeuristicAgent(), RandomAgent()
     r0, r1 = RNG(seed ^ 0xAA55), RNG(seed ^ 0x55AA)
     while not b.done:
         b.step(a0.act(b, 0, r0), a1.act(b, 1, r1))
     return b.winner, b.turn, tuple(b.log)
+
 
 assert replay(11) == replay(11)
 ```
