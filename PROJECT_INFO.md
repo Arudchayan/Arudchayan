@@ -16,12 +16,7 @@
 ├── 📂 .github/
 │   ├── 📂 workflows/              # GitHub Actions automation
 │   │   ├── update-readme.yml     # ⚡ Main daily update
-│   │   ├── manual-update.yml     # 🎯 Manual trigger
 │   │   ├── test-build.yml        # 🧪 PR testing
-│   │   ├── blog.yml              # 📝 Optional: Blog feed
-│   │   ├── snake.yml             # 🐍 Optional: Contribution snake
-│   │   ├── metrics.yml           # 📊 Optional: GitHub metrics
-│   │   └── wakatime.yml          # ⏱️ Optional: WakaTime stats
 │   └── WORKFLOWS.md              # Workflow documentation
 │
 ├── 📂 scripts/

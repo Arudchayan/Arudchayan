@@ -48,15 +48,14 @@ def generate_radar_chart(stats: dict, clean_name: str, types: list[str] | None =
         axes.append(f'<line x1="{center}" y1="{center}" x2="{x:.2f}" y2="{y:.2f}" stroke="#4C3A6B" stroke-width="1"/>')
 
     text = []
-    for i, (label, value) in enumerate(zip(labels, values)):
+    for i, label in enumerate(labels):
         angle = i * angle_step - math.pi / 2
-        x = center + (radius + 20) * math.cos(angle)
-        y = center + (radius + 20) * math.sin(angle)
-        anchor = "middle" if abs(math.cos(angle)) < 0.3 else ("start" if math.cos(angle) > 0 else "end")
+        x = center + (radius + 22) * math.cos(angle)
+        y = center + (radius + 22) * math.sin(angle)
         text.append(
-            f'<text x="{x:.2f}" y="{y + 3:.2f}" text-anchor="{anchor}" '
+            f'<text x="{x:.2f}" y="{y + 3:.2f}" text-anchor="middle" '
             f'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" '
-            f'font-size="9" fill="#C4B5FD">{label} {value}</text>'
+            f'font-size="9" fill="#C4B5FD">{label}</text>'
         )
 
     svg = f"""<svg width="{size}" height="{size}" viewBox="0 0 {size} {size}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Base stat radar for {clean_name}">

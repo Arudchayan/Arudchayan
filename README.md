@@ -8,7 +8,7 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-11-08 16:08 UTC |
+| Generated | 2026-11-08 16:09 UTC |
 | Schedule Index | 739928 |
 | Archetype | Sky Tyrant Ascendant |
 | Lead Operative | Mega Rayquaza · Balanced Command Core |
@@ -457,4 +457,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-11-08 16:08 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-11-08 16:09 UTC. Next rotation triggers at midnight UTC.</sub>
