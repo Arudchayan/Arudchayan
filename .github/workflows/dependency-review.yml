@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   dependency-review:
+    if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

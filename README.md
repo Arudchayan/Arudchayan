@@ -243,6 +243,9 @@ flowchart LR
 - **Optional neural training.** `torch` is a `[nn]` extra. The exported MLP is
   plain nested lists and runs in the standard library; NumPy, when installed, is
   an optional inference accelerator.
+- **Static, linted dashboard.** The Pages report is generated HTML from the
+  committed JSON, with no client-side JavaScript or CDN. Hallmark `sloplint`
+  reports **0 FAIL, 0 REFLEX, 0 WARN** on the dashboard.
 
 ## What I would do next
 
