@@ -1,83 +1,73 @@
-# Contributing to PokéLab
+# Contributing
 
-PokéLab is a research benchmark, so contributions are judged on **reproducibility
-and evidence**, not only on features. A change that makes the engine more fun
-but untestable is a hard sell.
+Issues and PRs are welcome! Theme is **Royal Purple**—keep assets and badges aligned to hex `#6A0DAD`.
 
-## Good first contributions
+## 🎮 How to Contribute
 
-- Add a test that pins a mechanic you rely on.
-- Improve the failure log with a reproducible bug and seed.
-- Add a held-out species experiment or a new baseline agent.
-- Improve the dashboard, report, or documentation without adding runtime
-  dependencies.
-- Profile the engine and propose a measured optimization.
+### Reporting Issues
+- 🐛 Found a bug? Open an issue!
+- 💡 Have an idea? Share it!
+- ❓ Need help? Ask away!
 
-## Development setup
+### Contributing Code
 
-```bash
-git clone https://github.com/Arudchayan/Arudchayan.git
-cd Arudchayan
-python -m pip install -e ".[dev]"
-python -m pytest
-python -m pokerl verify
+1. **Fork the repository**
+2. **Create a feature branch:** `git checkout -b feature/amazing-feature`
+3. **Make your changes**
+4. **Test locally:** `python3 scripts/build_readme.py`
+5. **Commit with emoji:** `git commit -m "✨ Add amazing feature"`
+6. **Push to branch:** `git push origin feature/amazing-feature`
+7. **Open a Pull Request**
+
+### Adding New Archetypes
+
+Edit `data/archetypes.json`:
+
+```json
+{
+  "id": "unique-id",
+  "title": "Your Awesome Title",
+  "lead": "YourPokemon",
+  "team": ["Pokemon1", "Pokemon2", "Pokemon3", "Pokemon4", "Pokemon5", "Pokemon6"],
+  "tera_type": "Fire",
+  "z_move": "Optional Z-Move Name",
+  "mega": "Optional Mega Stone"
+}
 ```
 
-Optional neural work:
+### Modifying the Template
 
-```bash
-python -m pip install -e ".[nn]"
-```
+Edit `README.template.md` and use these placeholders:
+- `{LEAD_POKEMON}` - Lead Pokémon name
+- `{TEAM_LIST}` - Comma-separated team
+- See `scripts/build_readme.py` for full list
 
-## Pull request checklist
+### Testing Workflows
 
-- [ ] Tests pass: `python -m pytest`
-- [ ] Determinism holds: `python -m pokerl verify`
-- [ ] Lint passes: `python -m ruff check .` and `python -m ruff format --check .`
-- [ ] No runtime dependency added to `[project].dependencies`
-- [ ] New mechanics are documented in `paper/main.md` and `FAILURES.md`
-- [ ] Results, seeds, and sample sizes are reported if claims change
-- [ ] Generated figures/README blocks were produced by `python -m pokerl report`
+The `test-build.yml` workflow runs automatically on PRs to validate changes.
 
-## Adding a species
+## 🎨 Style Guidelines
 
-1. Add a `Species` entry in `pokerl/dex.py` with accurate base stats and typing.
-2. Add a fixed `PokemonSet` with a legal ability, item, nature, EVs, and four
-   moves. `SETS` validates itself at import time.
-3. If the species is part of the held-out split, keep it out of
-   `TRAIN_SPECIES`; otherwise add it there.
-4. Add a test if the species exercises a new mechanic.
-5. Re-run the benchmark. Do not compare new ratings to old ones without noting
-   the roster change.
+- 💜 Use Royal Purple (#6A0DAD) for branding
+- 🎯 Keep the Pokémon theme consistent
+- ✨ Add ASCII art and emojis liberally
+- 🎮 Make it BONKERS and FUN!
 
-## Adding a move or ability
+## 📝 Commit Message Format
 
-- Implement the effect in `pokerl/engine.py`, not in an agent.
-- Add a deterministic unit test with a fixed seed.
-- Add the move to at least one set if it should appear in the benchmark.
-- Document any approximation in `FAILURES.md`.
+Use emoji prefixes:
+- ✨ New feature
+- 🐛 Bug fix
+- 📝 Documentation
+- 🎨 Style/formatting
+- ⚡ Performance
+- 🔧 Configuration
+- 🎮 Pokémon-related changes
 
-## Research claims
+## 🤝 Code of Conduct
 
-If you change a result, include:
+Be excellent to each other! 🎉
 
-- the exact command;
-- the seed;
-- the number of games;
-- the confidence interval;
-- the git SHA / config hash from the result metadata.
+## 💜 Thank You!
 
-A claim without a rerunnable command is not a result.
-
-## Style
-
-- Python 3.11+, type hints on public functions.
-- 120-column lines, Ruff formatting.
-- Prefer standard library. Optional heavy dependencies belong behind extras.
-- Keep engine mechanics deterministic; never use `random` for battle state.
-- Keep the tone precise. Hype is not a substitute for evidence.
-
-## Code of conduct
-
-Be excellent to each other. Harassment, discrimination, and bad-faith review are
-not welcome. See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Your contributions make this project more awesome! 🚀

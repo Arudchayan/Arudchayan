@@ -25,8 +25,9 @@ TYPE_CHART = {
 META_LEADS = [
     ("Standard OU Offense", "Landorus-Therian", 91, ["ground", "flying"]),
     ("Sun Offense", "Torkoal", 20, ["fire"]),
-    ("Stall", "Alomomola", 65, ["normal"]),
-    ("Hyper Offense", "Ribombee", 124, ["normal"]),
+    ("Stall", "Alomomola", 65, ["water"]),
+    ("Hyper Offense", "Ribombee", 124, ["bug", "fairy"]),
+    ("Balance", "Heatran", 77, ["fire", "steel"]),
 ]
 
 

@@ -3,9 +3,13 @@ import json
 import os
 import datetime
 import random
+import sys
 import urllib.request
 import time
 from collections import Counter
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 import svg_generator
 import coach
@@ -69,7 +73,7 @@ MOVE_CACHE_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data
 
 def load_move_cache():
     try:
-        with open(MOVE_CACHE_FILE, 'r') as f:
+        with open(MOVE_CACHE_FILE, 'r', encoding='utf-8') as f:
             return json.load(f)
     except (OSError, json.JSONDecodeError):
         return {}
@@ -189,7 +193,7 @@ def load_trainer_history():
     default = {"shiny_hunt": {"encounters_since_last": 0, "last_found": None}}
     history_path = os.path.join(root, "data", "trainer_history.json")
     if os.path.exists(history_path):
-        with open(history_path) as f:
+        with open(history_path, encoding='utf-8') as f:
             loaded = json.load(f)
         loaded.setdefault("shiny_hunt", default["shiny_hunt"])
         return loaded
@@ -322,16 +326,30 @@ def calculate_evs(stats: dict) -> dict:
         'SpA': 0 if is_physical else 252, 'SpD': 0 if is_physical else 4, 'Spe': 252 if is_fast else 0,
     }
 
+def _fetch_json(url: str, headers: dict) -> dict:
+    last_error = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=20) as response:
+                return json.loads(response.read().decode())
+        except Exception as error:
+            last_error = error
+            time.sleep(1 + attempt)
+    raise last_error  # type: ignore[misc]
+
+
 def fetch_pokemon_data(pokemon_name: str):
     try:
         identifier = normalize_pokemon_identifier(pokemon_name)
+        headers = {
+            "User-Agent": "Arudchayan-Trainer-Profile/1.0 (+https://github.com/Arudchayan)",
+            "Accept": "application/json",
+        }
         url = f"https://pokeapi.co/api/v2/pokemon/{identifier}"
-        with urllib.request.urlopen(url, timeout=5) as response:
-            data = json.loads(response.read().decode())
+        data = _fetch_json(url, headers)
 
         species_url = data['species']['url']
-        with urllib.request.urlopen(species_url, timeout=5) as response:
-            species_data = json.loads(response.read().decode())
+        species_data = _fetch_json(species_url, headers)
             
         time.sleep(0.5)
         sprites = data['sprites']
@@ -353,7 +371,7 @@ def fetch_pokemon_data(pokemon_name: str):
         ev_spread = calculate_evs(stats)
 
         # Generate SVG
-        svg_generator.generate_radar_chart(stats, normalize_pokemon_identifier(pokemon_name))
+        svg_generator.generate_radar_chart(stats, normalize_pokemon_identifier(pokemon_name), pokemon_types)
 
         return {
             'name': pokemon_name.title(),
@@ -461,7 +479,7 @@ def generate_branching_paths(species: str, pokemon_info: dict, is_shiny: bool, l
 # ==========================================
 
 # Load archetypes
-with open(os.path.join(root, "data", "archetypes.json")) as f:
+with open(os.path.join(root, "data", "archetypes.json"), encoding="utf-8") as f:
     arc = json.load(f)
 
 now_utc = datetime.datetime.now(datetime.UTC)
@@ -500,13 +518,19 @@ for pokemon_name in chosen['team']:
 # Advanced Features Generation
 team_list_data = list(pokemon_data.values())
 pokepaste_link = generate_paste(team_list_data)
+lead_data = pokemon_data.get(chosen['lead'], {})
+lead_moves = lead_data.get('signature_moves', [])
+damaging_moves = [m for m in lead_moves if m.get('damage_class') != 'status']
+move_one = damaging_moves[0]['name'] if damaging_moves else (lead_moves[0]['name'] if lead_moves else 'its signature move')
+move_two = damaging_moves[1]['name'] if len(damaging_moves) > 1 else 'a coverage move'
+pivot = chosen['team'][1] if len(chosen['team']) > 1 else chosen['lead']
 battle_log = (
     f"⚔️ **Battle Start!** Trainer {chosen['title']} vs Rival Blue!\n"
-    f"🔹 **Turn 1:** {chosen['lead']} Mega Evolves and uses **Dragon Ascent**!\n"
+    f"🔹 **Turn 1:** {chosen['lead']} opens with **{move_one}**!\n"
     "🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!\n"
-    f"🔹 **Turn 2:** {chosen['lead']} uses **Extreme Speed** for the KO!\n"
+    f"🔹 **Turn 2:** {chosen['lead']} answers with **{move_two}** for the KO!\n"
     "🔸 Rival sends out Tapu Koko. Electric Terrain activates!\n"
-    f"🔹 **Turn 3:** {chosen['lead']} switches to Landorus-T to Intimidate!\n"
+    f"🔹 **Turn 3:** {chosen['lead']} pivots to {pivot} to reset the tempo!\n"
     f"🏆 **Result:** Rival forfeits! **{chosen['title']} Wins!**"
 )
 
@@ -517,14 +541,17 @@ shiny_hunt = trainer_history["shiny_hunt"]
 random_choice, encounter_rarity, encounter_callout, encounter_is_shiny = roll_random_encounter()
 
 # Update History
-if encounter_is_shiny:
-    shiny_hunt["encounters_since_last"] = 0
-    shiny_hunt["last_found"] = now_utc.strftime("%Y-%m-%d")
-    print("✨ SHINY FOUND! Resetting counter.")
-else:
-    shiny_hunt["encounters_since_last"] += 1
+today = now_utc.strftime("%Y-%m-%d")
+if shiny_hunt.get("last_updated") != today:
+    if encounter_is_shiny:
+        shiny_hunt["encounters_since_last"] = 0
+        shiny_hunt["last_found"] = today
+        print("✨ SHINY FOUND! Resetting counter.")
+    else:
+        shiny_hunt["encounters_since_last"] += 1
+    shiny_hunt["last_updated"] = today
 
-with open(os.path.join(root, "data", "trainer_history.json"), "w") as f:
+with open(os.path.join(root, "data", "trainer_history.json"), "w", encoding="utf-8") as f:
     json.dump(trainer_history, f, indent=2)
 
 print(f"\n✨ Random encounter: {random_choice.title()} [{encounter_rarity}]")
@@ -537,7 +564,7 @@ branching_paths_block = generate_branching_paths(
 challenger_text = "No recent challengers recorded."
 challenger_path = os.path.join(root, "data", "challengers.json")
 if os.path.exists(challenger_path):
-    with open(challenger_path) as f:
+    with open(challenger_path, encoding="utf-8") as f:
         challengers = json.load(f)
         if challengers:
             rows = ["| Date | Challenger | Team | Result |", "| --- | --- | --- | --- |"]
@@ -546,13 +573,17 @@ if os.path.exists(challenger_path):
             challenger_text = "\n".join(rows)
 
 # Load template
-with open(os.path.join(root, "README.template.md")) as f:
+with open(os.path.join(root, "README.template.md"), encoding="utf-8") as f:
     template = f.read()
 
 # Build Team Data
 lead_name = chosen['lead']
 lead_data = pokemon_data.get(lead_name, {})
 lead_stats = lead_data.get('stats', {})
+team_sprites = " ".join(
+    get_pokemon_sprite_html(pokemon_data.get(name, {}).get('sprite'), name, 72)
+    for name in chosen['team']
+)
 
 team_type_counts = {}
 team_types_by_pokemon = {}
@@ -616,6 +647,8 @@ replacements = {
     '{DAY_NUMBER}': str(day_number),
     '{ARCHETYPE_TITLE}': chosen['title'],
     '{LEAD_POKEMON}': lead_name,
+    '{LEAD_ASCII}': get_pokemon_sprite_html(lead_data.get('sprite'), lead_name, 150),
+    '{TEAM_SPRITES}': team_sprites,
     '{LEAD_TYPES}': ' '.join([get_type_emoji(t) + t.upper() for t in lead_data.get('types', ['normal'])]),
     '{LEAD_ABILITY}': lead_data.get('best_ability', 'Unknown'),
     '{LEAD_NATURE}': lead_data.get('nature', 'Serious'),
@@ -708,7 +741,7 @@ output = template
 for key, value in replacements.items():
     output = output.replace(key, str(value))
 
-with open(os.path.join(root, "README.md"), "w") as f:
+with open(os.path.join(root, "README.md"), "w", encoding="utf-8") as f:
     f.write(output)
 
 print("\n✅ README built successfully!")
