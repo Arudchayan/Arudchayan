@@ -8,26 +8,26 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-11-14 05:59 UTC |
-| Schedule Index | 739934 |
-| Archetype | Sky Tyrant Ascendant |
-| Lead Operative | Mega Rayquaza · Balanced Command Core |
-| Power Core | 3545 ([████████████████████████░░░░░░]  82.1% capacity) |
-| Active Roster | Mega Rayquaza, Noivern, Zeraora, Metagross, Gengar, Decidueye |
+| Generated | 2026-11-15 06:03 UTC |
+| Schedule Index | 739935 |
+| Archetype | Emerald Forest Warden |
+| Lead Operative | Decidueye · Balanced Command Core |
+| Power Core | 3445 ([███████████████████████░░░░░░░]  79.7% capacity) |
+| Active Roster | Decidueye, Rayquaza, Noivern, Metagross, Gengar, Zeraora |
 | Unique Typings | 8 |
-| Average Speed | 105.2 |
+| Average Speed | 101.8 |
 
-<p align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10079.gif" alt="Mega Rayquaza" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/715.gif" alt="Noivern" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/376.gif" alt="Metagross" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="72" height="72"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/384.gif" alt="Rayquaza" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/715.gif" alt="Noivern" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/376.gif" alt="Metagross" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="72" height="72"/></p>
 
 ---
 
-## ⚡ WEATHER REPORT: 🌧️ Rain
-> **Field Condition:** Water moves boosted 50%, Fire moves weakened 50%.
+## ⚡ WEATHER REPORT: 🔥 Harsh Sunlight
+> **Field Condition:** Fire moves boosted 50%, Water moves weakened 50%.
 
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Add unit tests to strengthen the team's Synergy Mesh.
+### **Quest:** Optimize 3 functions to increase Metagross's calculation speed.
 
 ---
 
@@ -35,64 +35,85 @@
 
 ### 🧭 Rotation Hologram
 
-> **Rotation Profile:** Sky Tyrant Ascendant
-> **Command Lead:** Mega Rayquaza
+> **Rotation Profile:** Emerald Forest Warden
+> **Command Lead:** Decidueye
 
 ### Lead Strategy Module
 
-<div align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10079.gif" alt="Mega Rayquaza" width="150" height="150"/></div>
+<div align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="150" height="150"/></div>
 
-**Primary Types:** 🐉DRAGON 🕊️FLYING
-**Ability:** Delta Stream
-**Nature:** Hasty
-**Held Item:** Heavy-Duty Boots
-**EV Spread:** 252 SpA / 4 SpD / 252 Spe
-**Physical Specs:** 10.8m · 392.0kg
+**Primary Types:** 🌿GRASS 👻GHOST
+**Ability:** Overgrow
+**Nature:** Adamant
+**Held Item:** Leftovers
+**EV Spread:** 252 HP / 252 Atk / 4 Def
+**Physical Specs:** 1.6m · 36.6kg
 
 #### Stat Telemetry
 ```
-HP:     [████████░░░░░░░░░░░░]  105
-ATK:    [██████████████░░░░░░] 180
-DEF:    [███████░░░░░░░░░░░░░] 100
-SP.ATK: [██████████████░░░░░░] 180
+HP:     [██████░░░░░░░░░░░░░░]  78
+ATK:    [████████░░░░░░░░░░░░] 107
+DEF:    [█████░░░░░░░░░░░░░░░] 75
+SP.ATK: [███████░░░░░░░░░░░░░] 100
 SP.DEF: [███████░░░░░░░░░░░░░] 100
-SPEED:  [█████████░░░░░░░░░░░] 115
+SPEED:  [█████░░░░░░░░░░░░░░░] 70
 ```
 
 #### Signature Arsenal
-- **🕊️ Dragon Ascent · Physical · 120 BP**
-- **🐉 Dragon Dance · Status · Utility**
-- **🕊️ Defog · Status · Utility**
-- **🐉 Dragon Pulse · Special · 85 BP**
+- **🌿 Synthesis · Status · Utility**
+- **👻 Shadow Sneak · Physical · 40 BP**
+- **🌙 Nasty Plot · Status · Utility**
+- **🥊 Bulk Up · Status · Utility**
 
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Sun Offense** (Threat: **Torkoal**). Your **Mega Rayquaza** outspeeds Torkoal (Base 20). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Sun Offense** (Threat: **Torkoal**). Your **Decidueye** outspeeds Torkoal (Base 20). Strike first! Warning: Torkoal has STAB **FIRE** moves that hit you for super-effective damage!
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Mega Rayquaza</strong> · 🐉DRAGON / 🕊️FLYING</summary>
+<summary>⚔️ <strong>Decidueye</strong> · 🌿GRASS / 👻GHOST</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10079.gif" alt="Mega Rayquaza" width="160" height="160"/>
-<br/><img src="assets/stats_rayquaza-mega.svg" width="200" height="200" alt="Stats Radar"/>
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="160" height="160"/>
+<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 780
-- **Top Stat:** Attack (180)
-- **Ability:** Delta Stream
-- **Nature:** Hasty
+- **Base Stat Total:** 530
+- **Top Stat:** Attack (107)
+- **Ability:** Overgrow
+- **Nature:** Adamant
+- **Held Item:** Leftovers
+- **EV Spread:** 252 HP / 252 Atk / 4 Def
+- **Signature Moves:**
+  - 🌿 Synthesis · Status · Utility
+  - 👻 Shadow Sneak · Physical · 40 BP
+  - 🌙 Nasty Plot · Status · Utility
+  - 🥊 Bulk Up · Status · Utility
+</details>
+
+<details open>
+<summary>⚔️ <strong>Rayquaza</strong> · 🐉DRAGON / 🕊️FLYING</summary>
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/384.gif" alt="Rayquaza" width="160" height="160"/>
+<br/><img src="assets/stats_rayquaza.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 680
+- **Top Stat:** Attack (150)
+- **Ability:** Air Lock
+- **Nature:** Mild
 - **Held Item:** Heavy-Duty Boots
-- **EV Spread:** 252 SpA / 4 SpD / 252 Spe
+- **EV Spread:** 252 HP / 252 SpA / 4 SpD
 - **Signature Moves:**
   - 🕊️ Dragon Ascent · Physical · 120 BP
   - 🐉 Dragon Dance · Status · Utility
   - 🕊️ Defog · Status · Utility
-  - 🐉 Dragon Pulse · Special · 85 BP
+  - 🕊️ Hurricane · Special · 110 BP
 </details>
 
 <details open>
@@ -114,27 +135,6 @@ SPEED:  [█████████░░░░░░░░░░░] 115
   - 🕊️ Defog · Status · Utility
   - 🐉 Dragon Dance · Status · Utility
   - 🕊️ Hurricane · Special · 110 BP
-</details>
-
-<details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚡ELECTRIC</summary>
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="160" height="160"/>
-<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Speed (143)
-- **Ability:** Volt Absorb
-- **Nature:** Jolly
-- **Held Item:** Life Orb
-- **EV Spread:** 252 Atk / 4 Def / 252 Spe
-- **Signature Moves:**
-  - ⚡ Thunder Wave · Status · Utility
-  - 🥊 Bulk Up · Status · Utility
-  - 🔮 Calm Mind · Status · Utility
-  - ⚪ Protect · Status · Utility
 </details>
 
 <details open>
@@ -170,7 +170,7 @@ SPEED:  [█████████░░░░░░░░░░░] 115
 - **Top Stat:** Special-Attack (130)
 - **Ability:** Cursed Body
 - **Nature:** Timid
-- **Held Item:** Choice Specs
+- **Held Item:** Life Orb
 - **EV Spread:** 252 SpA / 4 SpD / 252 Spe
 - **Signature Moves:**
   - ☠️ Toxic · Status · Utility
@@ -180,38 +180,38 @@ SPEED:  [█████████░░░░░░░░░░░] 115
 </details>
 
 <details open>
-<summary>⚔️ <strong>Decidueye</strong> · 🌿GRASS / 👻GHOST</summary>
+<summary>⚔️ <strong>Zeraora</strong> · ⚡ELECTRIC</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="160" height="160"/>
-<br/><img src="assets/stats_decidueye.svg" width="200" height="200" alt="Stats Radar"/>
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="160" height="160"/>
+<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 530
-- **Top Stat:** Attack (107)
-- **Ability:** Overgrow
-- **Nature:** Adamant
-- **Held Item:** Leftovers
-- **EV Spread:** 252 HP / 252 Atk / 4 Def
+- **Base Stat Total:** 600
+- **Top Stat:** Speed (143)
+- **Ability:** Volt Absorb
+- **Nature:** Jolly
+- **Held Item:** Life Orb
+- **EV Spread:** 252 Atk / 4 Def / 252 Spe
 - **Signature Moves:**
-  - 🌿 Synthesis · Status · Utility
-  - 👻 Shadow Sneak · Physical · 40 BP
-  - 🌙 Nasty Plot · Status · Utility
+  - ⚡ Thunder Wave · Status · Utility
   - 🥊 Bulk Up · Status · Utility
+  - 🔮 Calm Mind · Status · Utility
+  - ⚪ Protect · Status · Utility
 </details>
 
 ---
 
 ## 🧪 Type Coverage Broadcast
 
+- 👻 **GHOST** ×2
 - 🐉 **DRAGON** ×2
 - 🕊️ **FLYING** ×2
-- 👻 **GHOST** ×2
-- ⚡ **ELECTRIC** ×1
+- 🌿 **GRASS** ×1
 - ⚙️ **STEEL** ×1
 - 🔮 **PSYCHIC** ×1
 - ☠️ **POISON** ×1
-- 🌿 **GRASS** ×1
+- ⚡ **ELECTRIC** ×1
 
 ---
 
@@ -219,17 +219,17 @@ SPEED:  [█████████░░░░░░░░░░░] 115
 
 ### ⚠️ Critical Weaknesses (3+ Pokemon)
 - 🧊 **ICE** threatens 5 team members
-- 🌍 **GROUND** threatens 3 team members
 - 👻 **GHOST** threatens 3 team members
 - 🌙 **DARK** threatens 3 team members
+- 🌍 **GROUND** threatens 3 team members
 
 ### ⚡ Moderate Weaknesses (2 Pokemon)
+- 🔥 **FIRE** hits 2 team members
+- 🐛 **BUG** hits 2 team members
 - 🐉 **DRAGON** hits 2 team members
 - ✨ **FAIRY** hits 2 team members
 - ⚡ **ELECTRIC** hits 2 team members
 - 🪨 **ROCK** hits 2 team members
-- 🔥 **FIRE** hits 2 team members
-- 🐛 **BUG** hits 2 team members
 
 ---
 
@@ -238,8 +238,8 @@ SPEED:  [█████████░░░░░░░░░░░] 115
 | Flux Channel | Status |
 | --- | --- |
 | Synergy Mesh | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]  100% · Ω-OVERDRIVE |
-| Speed Pulse | [▓▓▓▓▓▓▓▓▓▓░░░░░░░░]   58% · CRUISE |
-| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]  100% · Ω-OVERDRIVE |
+| Speed Pulse | [▓▓▓▓▓▓▓▓▓▓░░░░░░░░]   57% · CRUISE |
+| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░]   94% · Ω-OVERDRIVE |
 
 > Adaptive cadence engaged.
 
@@ -255,26 +255,35 @@ SPEED:  [█████████░░░░░░░░░░░] 115
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Sky Tyrant Ascendant vs Rival Blue!
-🔹 **Turn 1:** Mega Rayquaza opens with **Dragon Ascent**!
+⚔️ **Battle Start!** Trainer Emerald Forest Warden vs Rival Blue!
+🔹 **Turn 1:** Decidueye opens with **Shadow Sneak**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Mega Rayquaza answers with **Dragon Pulse** for the KO!
+🔹 **Turn 2:** Decidueye answers with **a coverage move** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Mega Rayquaza pivots to Noivern to reset the tempo!
-🏆 **Result:** Rival forfeits! **Sky Tyrant Ascendant Wins!**
+🔹 **Turn 3:** Decidueye pivots to Rayquaza to reset the tempo!
+🏆 **Result:** Rival forfeits! **Emerald Forest Warden Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Mega Rayquaza @ Heavy-Duty Boots
-Ability: Delta Stream
-EVs: 252 SpA / 4 SpD / 252 Spe
-Hasty Nature
+Decidueye @ Leftovers
+Ability: Overgrow
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
+- Synthesis
+- Shadow Sneak
+- Nasty Plot
+- Bulk Up
+
+Rayquaza @ Heavy-Duty Boots
+Ability: Air Lock
+EVs: 252 HP / 252 SpA / 4 SpD
+Mild Nature
 - Dragon Ascent
 - Dragon Dance
 - Defog
-- Dragon Pulse
+- Hurricane
 
 Noivern @ Heavy-Duty Boots
 Ability: Frisk
@@ -285,15 +294,6 @@ Timid Nature
 - Dragon Dance
 - Hurricane
 
-Zeraora @ Life Orb
-Ability: Volt Absorb
-EVs: 252 Atk / 4 Def / 252 Spe
-Jolly Nature
-- Thunder Wave
-- Bulk Up
-- Calm Mind
-- Protect
-
 Metagross @ Leftovers
 Ability: Clear Body
 EVs: 252 HP / 252 Atk / 4 Def
@@ -303,7 +303,7 @@ Adamant Nature
 - Stealth Rock
 - Substitute
 
-Gengar @ Choice Specs
+Gengar @ Life Orb
 Ability: Cursed Body
 EVs: 252 SpA / 4 SpD / 252 Spe
 Timid Nature
@@ -312,14 +312,14 @@ Timid Nature
 - Shadow Ball
 - Sludge Wave
 
-Decidueye @ Leftovers
-Ability: Overgrow
-EVs: 252 HP / 252 Atk / 4 Def
-Adamant Nature
-- Synthesis
-- Shadow Sneak
-- Nasty Plot
+Zeraora @ Life Orb
+Ability: Volt Absorb
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Thunder Wave
 - Bulk Up
+- Calm Mind
+- Protect
 ```
 
 ---
@@ -328,98 +328,98 @@ Adamant Nature
 
 | Mechanic | Loadout |
 | --- | --- |
-| Mega Evolution | ◆ Dragon Ascent (Primal Instinct) 💎 |
-| Z-Move | — |
-| Terastallization | ◇ Dragon ✨ |
+| Mega Evolution | — |
+| Z-Move | ▲ Sinister Arrow Raid ⚡ |
+| Terastallization | ◇ Grass ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Mienshao</summary>
+  <summary>🎲 Encounter: Rotom</summary>
 
   <div align="center">
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/620.gif" alt="Mienshao" width="150" height="150"/>
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/479.gif" alt="Rotom" width="150" height="150"/>
   </div>
 
   - **Rarity Signal:** Wild Encounter
-  - **Type Signal:** 🥊FIGHTING
-  - **Height / Weight:** 1.4m · 35.5kg
-  - **Abilities:** Inner Focus, Regenerator, Reckless
-  - **Pokédex Insight:** It wields the fur on its arms like a whip. Its arm attacks come with such rapidity that they cannot even be seen.
+  - **Type Signal:** ⚡ELECTRIC 👻GHOST
+  - **Height / Weight:** 0.3m · 0.3kg
+  - **Abilities:** Levitate
+  - **Pokédex Insight:** Its body is composed of plasma. It is known to infiltrate electronic devices and wreak havoc.
   - **Encounter Telemetry:** Routine scouting ping—deploy capture drones at your discretion.
 
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **48** Days Dry. Odds: **2.08**
+Current Hunt: **49** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
 <details>
-  <summary>⚙️ Path 1 — Celadon Manufactory</summary>
+  <summary>🌋 Path 1 — Magma Corridor</summary>
 
-  - **Battlefield State:** Servo arms reset the battlefield between each exchange.
-  - **Encounter Twist:** Command authorises prototype gear if you can stall three turns.
-  - **Command Brief:** Track the Wild-class target — Mienshao (wild signal).
-  - **Type Intel:** Fighting
+  - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
+  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
+  - **Command Brief:** Track the Wild-class target — Rotom (wild signal).
+  - **Type Intel:** Electric / Ghost
 
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 92% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 92% odds</summary>
 
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Mienshao a free setup turn to escalate pressure.
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Rotom slips free in a burst of light, boosting its Evasion and tempo.
   </details>
   <details>
-    <summary>🛰️ Call Orbital Survey Assist · 61% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 77% odds</summary>
 
-    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
-    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
-  </details>
-</details>
-
-<details>
-  <summary>🌌 Path 2 — Starfall Ridge</summary>
-
-  - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
-  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
-  - **Command Brief:** Track the Wild-class target — Mienshao (wild signal).
-  - **Type Intel:** Fighting
-
-  <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 79% odds</summary>
-
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Mienshao's innate typing instead.
-  </details>
-  <details>
-    <summary>🛡️ Raise Reflective Barriers · 72% odds</summary>
-
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Mienshao a free setup turn to escalate pressure.
+    - **If it lands:** Coordinated assaults land clean, dropping Rotom's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Rotom rallies.
   </details>
 </details>
 
 <details>
-  <summary>❄️ Path 3 — Aurora Chasm</summary>
+  <summary>❄️ Path 2 — Aurora Chasm</summary>
 
   - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
   - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
-  - **Command Brief:** Track the Wild-class target — Mienshao (wild signal).
-  - **Type Intel:** Fighting
+  - **Command Brief:** Track the Wild-class target — Rotom (wild signal).
+  - **Type Intel:** Electric / Ghost
 
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 60% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 67% odds</summary>
 
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Mienshao's innate typing instead.
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Rotom slips free in a burst of light, boosting its Evasion and tempo.
   </details>
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 75% odds</summary>
+    <summary>🪬 Invoke Terrain Sync Protocol · 78% odds</summary>
 
-    - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Mienshao a free setup turn to escalate pressure.
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Rotom's innate typing instead.
+  </details>
+</details>
+
+<details>
+  <summary>⚙️ Path 3 — Celadon Manufactory</summary>
+
+  - **Battlefield State:** Servo arms reset the battlefield between each exchange.
+  - **Encounter Twist:** Wild support units stir in the periphery, ready to tip the balance.
+  - **Command Brief:** Track the Wild-class target — Rotom (wild signal).
+  - **Type Intel:** Electric / Ghost
+
+  <details>
+    <summary>🪬 Invoke Terrain Sync Protocol · 69% odds</summary>
+
+    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
+    - **If it whiffs:** The sync desyncs, amplifying Rotom's innate typing instead.
+  </details>
+  <details>
+    <summary>🎯 Deploy Quick Ball Salvo · 78% odds</summary>
+
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Rotom slips free in a burst of light, boosting its Evasion and tempo.
   </details>
 </details>
 
@@ -457,4 +457,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-11-14 05:59 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-11-15 06:03 UTC. Next rotation triggers at midnight UTC.</sub>
