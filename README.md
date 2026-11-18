@@ -8,26 +8,26 @@
 
 | Signal | Readout |
 | --- | --- |
-| Generated | 2026-11-17 07:39 UTC |
-| Schedule Index | 739937 |
-| Archetype | Thunderborn Storm Raider |
-| Lead Operative | Zeraora · Balanced Command Core |
-| Power Core | 3445 ([███████████████████████░░░░░░░]  79.7% capacity) |
-| Active Roster | Zeraora, Rayquaza, Noivern, Metagross, Gengar, Decidueye |
+| Generated | 2026-11-18 07:02 UTC |
+| Schedule Index | 739938 |
+| Archetype | Quantum Steel Prophet |
+| Lead Operative | Mega Metagross · Balanced Command Core |
+| Power Core | 3545 ([████████████████████████░░░░░░]  82.1% capacity) |
+| Active Roster | Mega Metagross, Rayquaza, Gengar, Zeraora, Noivern, Decidueye |
 | Unique Typings | 8 |
-| Average Speed | 101.8 |
+| Average Speed | 108.5 |
 
-<p align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/384.gif" alt="Rayquaza" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/715.gif" alt="Noivern" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/376.gif" alt="Metagross" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="72" height="72"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10076.gif" alt="Mega Metagross" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/384.gif" alt="Rayquaza" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/715.gif" alt="Noivern" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="72" height="72"/></p>
 
 ---
 
-## ⚡ WEATHER REPORT: 🌧️ Rain
-> **Field Condition:** Water moves boosted 50%, Fire moves weakened 50%.
+## ⚡ WEATHER REPORT: ☀️ Clear Skies
+> **Field Condition:** Standard battle conditions.
 
 ---
 
 ## 📜 DAILY MISSION LOG
-### **Quest:** Refactor legacy code to clear Gengar's Cursed Body status.
+### **Quest:** Push a commit before noon to outspeed Rival Weavile.
 
 ---
 
@@ -35,64 +35,64 @@
 
 ### 🧭 Rotation Hologram
 
-> **Rotation Profile:** Thunderborn Storm Raider
-> **Command Lead:** Zeraora
+> **Rotation Profile:** Quantum Steel Prophet
+> **Command Lead:** Mega Metagross
 
 ### Lead Strategy Module
 
-<div align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="150" height="150"/></div>
+<div align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10076.gif" alt="Mega Metagross" width="150" height="150"/></div>
 
-**Primary Types:** ⚡ELECTRIC
-**Ability:** Volt Absorb
+**Primary Types:** ⚙️STEEL 🔮PSYCHIC
+**Ability:** Tough Claws
 **Nature:** Jolly
-**Held Item:** Choice Scarf
+**Held Item:** Life Orb
 **EV Spread:** 252 Atk / 4 Def / 252 Spe
-**Physical Specs:** 1.5m · 44.5kg
+**Physical Specs:** 2.5m · 942.9kg
 
 #### Stat Telemetry
 ```
-HP:     [██████░░░░░░░░░░░░░░]  88
-ATK:    [████████░░░░░░░░░░░░] 112
-DEF:    [█████░░░░░░░░░░░░░░░] 75
-SP.ATK: [████████░░░░░░░░░░░░] 102
-SP.DEF: [██████░░░░░░░░░░░░░░] 80
-SPEED:  [███████████░░░░░░░░░] 143
+HP:     [██████░░░░░░░░░░░░░░]  80
+ATK:    [███████████░░░░░░░░░] 145
+DEF:    [███████████░░░░░░░░░] 150
+SP.ATK: [████████░░░░░░░░░░░░] 105
+SP.DEF: [████████░░░░░░░░░░░░] 110
+SPEED:  [████████░░░░░░░░░░░░] 110
 ```
 
 #### Signature Arsenal
-- **⚡ Thunder Wave · Status · Utility**
-- **🥊 Bulk Up · Status · Utility**
-- **🔮 Calm Mind · Status · Utility**
+- **⚙️ Bullet Punch · Physical · 40 BP**
+- **🪨 Stealth Rock · Status · Utility**
 - **⚪ Protect · Status · Utility**
+- **⚪ Substitute · Status · Utility**
 
 ---
 
 ## 🧠 Coach's Corner
-> **Coach's Analysis:** Simulating matchup vs **Sun Offense** (Threat: **Torkoal**). Your **Zeraora** outspeeds Torkoal (Base 20). Strike first! Type matchup looks neutral or favorable. Press the advantage.
+> **Coach's Analysis:** Simulating matchup vs **Stall** (Threat: **Alomomola**). Your **Mega Metagross** outspeeds Alomomola (Base 65). Strike first! Type matchup looks neutral or favorable. Press the advantage.
 
 ---
 
 ## 🗂️ Squad Dossiers
 
 <details open>
-<summary>⚔️ <strong>Zeraora</strong> · ⚡ELECTRIC</summary>
+<summary>⚔️ <strong>Mega Metagross</strong> · ⚙️STEEL / 🔮PSYCHIC</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="160" height="160"/>
-<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10076.gif" alt="Mega Metagross" width="160" height="160"/>
+<br/><img src="assets/stats_metagross-mega.svg" width="200" height="200" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 600
-- **Top Stat:** Speed (143)
-- **Ability:** Volt Absorb
+- **Base Stat Total:** 700
+- **Top Stat:** Defense (150)
+- **Ability:** Tough Claws
 - **Nature:** Jolly
-- **Held Item:** Choice Scarf
+- **Held Item:** Life Orb
 - **EV Spread:** 252 Atk / 4 Def / 252 Spe
 - **Signature Moves:**
-  - ⚡ Thunder Wave · Status · Utility
-  - 🥊 Bulk Up · Status · Utility
-  - 🔮 Calm Mind · Status · Utility
+  - ⚙️ Bullet Punch · Physical · 40 BP
+  - 🪨 Stealth Rock · Status · Utility
   - ⚪ Protect · Status · Utility
+  - ⚪ Substitute · Status · Utility
 </details>
 
 <details open>
@@ -117,6 +117,48 @@ SPEED:  [███████████░░░░░░░░░] 143
 </details>
 
 <details open>
+<summary>⚔️ <strong>Gengar</strong> · 👻GHOST / ☠️POISON</summary>
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="160" height="160"/>
+<br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 500
+- **Top Stat:** Special-Attack (130)
+- **Ability:** Cursed Body
+- **Nature:** Timid
+- **Held Item:** Life Orb
+- **EV Spread:** 252 SpA / 4 SpD / 252 Spe
+- **Signature Moves:**
+  - ☠️ Toxic · Status · Utility
+  - ☠️ Toxic Spikes · Status · Utility
+  - 👻 Shadow Ball · Special · 80 BP
+  - ☠️ Sludge Wave · Special · 95 BP
+</details>
+
+<details open>
+<summary>⚔️ <strong>Zeraora</strong> · ⚡ELECTRIC</summary>
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="160" height="160"/>
+<br/><img src="assets/stats_zeraora.svg" width="200" height="200" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Speed (143)
+- **Ability:** Volt Absorb
+- **Nature:** Jolly
+- **Held Item:** Choice Scarf
+- **EV Spread:** 252 Atk / 4 Def / 252 Spe
+- **Signature Moves:**
+  - ⚡ Thunder Wave · Status · Utility
+  - 🥊 Bulk Up · Status · Utility
+  - 🔮 Calm Mind · Status · Utility
+  - ⚪ Protect · Status · Utility
+</details>
+
+<details open>
 <summary>⚔️ <strong>Noivern</strong> · 🕊️FLYING / 🐉DRAGON</summary>
 
 <div align="center">
@@ -138,48 +180,6 @@ SPEED:  [███████████░░░░░░░░░] 143
 </details>
 
 <details open>
-<summary>⚔️ <strong>Metagross</strong> · ⚙️STEEL / 🔮PSYCHIC</summary>
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/376.gif" alt="Metagross" width="160" height="160"/>
-<br/><img src="assets/stats_metagross.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Attack (135)
-- **Ability:** Clear Body
-- **Nature:** Adamant
-- **Held Item:** Leftovers
-- **EV Spread:** 252 HP / 252 Atk / 4 Def
-- **Signature Moves:**
-  - ⚙️ Bullet Punch · Physical · 40 BP
-  - ⚪ Protect · Status · Utility
-  - 🪨 Stealth Rock · Status · Utility
-  - ⚪ Substitute · Status · Utility
-</details>
-
-<details open>
-<summary>⚔️ <strong>Gengar</strong> · 👻GHOST / ☠️POISON</summary>
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="160" height="160"/>
-<br/><img src="assets/stats_gengar.svg" width="200" height="200" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 500
-- **Top Stat:** Special-Attack (130)
-- **Ability:** Cursed Body
-- **Nature:** Timid
-- **Held Item:** Choice Specs
-- **EV Spread:** 252 SpA / 4 SpD / 252 Spe
-- **Signature Moves:**
-  - ☠️ Toxic · Status · Utility
-  - ☠️ Toxic Spikes · Status · Utility
-  - 👻 Shadow Ball · Special · 80 BP
-  - ☠️ Sludge Wave · Special · 95 BP
-</details>
-
-<details open>
 <summary>⚔️ <strong>Decidueye</strong> · 🌿GRASS / 👻GHOST</summary>
 
 <div align="center">
@@ -197,7 +197,7 @@ SPEED:  [███████████░░░░░░░░░] 143
   - 🌿 Synthesis · Status · Utility
   - 👻 Shadow Sneak · Physical · 40 BP
   - 🌙 Nasty Plot · Status · Utility
-  - 🥊 Bulk Up · Status · Utility
+  - 🕊️ Defog · Status · Utility
 </details>
 
 ---
@@ -207,10 +207,10 @@ SPEED:  [███████████░░░░░░░░░] 143
 - 🐉 **DRAGON** ×2
 - 🕊️ **FLYING** ×2
 - 👻 **GHOST** ×2
-- ⚡ **ELECTRIC** ×1
 - ⚙️ **STEEL** ×1
 - 🔮 **PSYCHIC** ×1
 - ☠️ **POISON** ×1
+- ⚡ **ELECTRIC** ×1
 - 🌿 **GRASS** ×1
 
 ---
@@ -224,12 +224,12 @@ SPEED:  [███████████░░░░░░░░░] 143
 - 🌙 **DARK** threatens 3 team members
 
 ### ⚡ Moderate Weaknesses (2 Pokemon)
+- 🔥 **FIRE** hits 2 team members
+- 🐛 **BUG** hits 2 team members
 - 🐉 **DRAGON** hits 2 team members
 - ✨ **FAIRY** hits 2 team members
 - ⚡ **ELECTRIC** hits 2 team members
 - 🪨 **ROCK** hits 2 team members
-- 🔥 **FIRE** hits 2 team members
-- 🐛 **BUG** hits 2 team members
 
 ---
 
@@ -238,8 +238,8 @@ SPEED:  [███████████░░░░░░░░░] 143
 | Flux Channel | Status |
 | --- | --- |
 | Synergy Mesh | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓]  100% · Ω-OVERDRIVE |
-| Speed Pulse | [▓▓▓▓▓▓▓▓▓▓░░░░░░░░]   57% · CRUISE |
-| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░]   94% · Ω-OVERDRIVE |
+| Speed Pulse | [▓▓▓▓▓▓▓▓▓▓░░░░░░░░]   60% · CRUISE |
+| Apex Pressure | [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░]   97% · Ω-OVERDRIVE |
 
 > Adaptive cadence engaged.
 
@@ -255,26 +255,26 @@ SPEED:  [███████████░░░░░░░░░] 143
 
 ## 📋 BATTLE SIMULATION LOG (Daily Drill)
 ```
-⚔️ **Battle Start!** Trainer Thunderborn Storm Raider vs Rival Blue!
-🔹 **Turn 1:** Zeraora opens with **Thunder Wave**!
+⚔️ **Battle Start!** Trainer Quantum Steel Prophet vs Rival Blue!
+🔹 **Turn 1:** Mega Metagross opens with **Bullet Punch**!
 🔸 Rival's Garchomp survives on Focus Sash and uses **Swords Dance**!
-🔹 **Turn 2:** Zeraora answers with **a coverage move** for the KO!
+🔹 **Turn 2:** Mega Metagross answers with **a coverage move** for the KO!
 🔸 Rival sends out Tapu Koko. Electric Terrain activates!
-🔹 **Turn 3:** Zeraora pivots to Rayquaza to reset the tempo!
-🏆 **Result:** Rival forfeits! **Thunderborn Storm Raider Wins!**
+🔹 **Turn 3:** Mega Metagross pivots to Rayquaza to reset the tempo!
+🏆 **Result:** Rival forfeits! **Quantum Steel Prophet Wins!**
 ```
 
 ## 📥 POKÉPASTE EXPORT
 Copy this to import your team into Pokémon Showdown:
 ```
-Zeraora @ Choice Scarf
-Ability: Volt Absorb
+Mega Metagross @ Life Orb
+Ability: Tough Claws
 EVs: 252 Atk / 4 Def / 252 Spe
 Jolly Nature
-- Thunder Wave
-- Bulk Up
-- Calm Mind
+- Bullet Punch
+- Stealth Rock
 - Protect
+- Substitute
 
 Rayquaza @ Heavy-Duty Boots
 Ability: Air Lock
@@ -285,6 +285,24 @@ Mild Nature
 - Defog
 - Hurricane
 
+Gengar @ Life Orb
+Ability: Cursed Body
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Toxic
+- Toxic Spikes
+- Shadow Ball
+- Sludge Wave
+
+Zeraora @ Choice Scarf
+Ability: Volt Absorb
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Thunder Wave
+- Bulk Up
+- Calm Mind
+- Protect
+
 Noivern @ Heavy-Duty Boots
 Ability: Frisk
 EVs: 252 SpA / 4 SpD / 252 Spe
@@ -294,24 +312,6 @@ Timid Nature
 - Dragon Dance
 - Hurricane
 
-Metagross @ Leftovers
-Ability: Clear Body
-EVs: 252 HP / 252 Atk / 4 Def
-Adamant Nature
-- Bullet Punch
-- Protect
-- Stealth Rock
-- Substitute
-
-Gengar @ Choice Specs
-Ability: Cursed Body
-EVs: 252 SpA / 4 SpD / 252 Spe
-Timid Nature
-- Toxic
-- Toxic Spikes
-- Shadow Ball
-- Sludge Wave
-
 Decidueye @ Leftovers
 Ability: Overgrow
 EVs: 252 HP / 252 Atk / 4 Def
@@ -319,7 +319,7 @@ Adamant Nature
 - Synthesis
 - Shadow Sneak
 - Nasty Plot
-- Bulk Up
+- Defog
 ```
 
 ---
@@ -328,32 +328,32 @@ Adamant Nature
 
 | Mechanic | Loadout |
 | --- | --- |
-| Mega Evolution | — |
-| Z-Move | ▲ Gigavolt Havoc ⚡ |
-| Terastallization | ◇ Electric ✨ |
+| Mega Evolution | ◆ Metagrossite 💎 |
+| Z-Move | — |
+| Terastallization | ◇ Steel ✨ |
 
 ---
 
 ## 🎲 Encounter Terminal
 
 <details open>
-  <summary>🎲 Encounter: Eevee</summary>
+  <summary>🎲 Encounter: Mienshao</summary>
 
   <div align="center">
-  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/133.gif" alt="Eevee" width="150" height="150"/>
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/620.gif" alt="Mienshao" width="150" height="150"/>
   </div>
 
   - **Rarity Signal:** Wild Encounter
-  - **Type Signal:** ⚪NORMAL
-  - **Height / Weight:** 0.3m · 6.5kg
-  - **Abilities:** Run Away, Adaptability, Anticipation
-  - **Pokédex Insight:** Its genetic code is irregular. It may mutate if it is exposed to radiation from element STONEs.
+  - **Type Signal:** 🥊FIGHTING
+  - **Height / Weight:** 1.4m · 35.5kg
+  - **Abilities:** Inner Focus, Regenerator, Reckless
+  - **Pokédex Insight:** It wields the fur on its arms like a whip. Its arm attacks come with such rapidity that they cannot even be seen.
   - **Encounter Telemetry:** Routine scouting ping—deploy capture drones at your discretion.
 
 </details>
 
 ### ✨ Shiny Hunt Status
-Current Hunt: **51** Days Dry. Odds: **2.08**
+Current Hunt: **52** Days Dry. Odds: **2.08**
 
 ### 🔀 Click-to-Choose Battle Routes
 
@@ -361,65 +361,65 @@ Current Hunt: **51** Days Dry. Odds: **2.08**
   <summary>❄️ Path 1 — Aurora Chasm</summary>
 
   - **Battlefield State:** Iridescent ice mirrors every motion in prismatic streaks.
-  - **Encounter Twist:** A timed supply drop hums overhead, promising backup if you hold out.
-  - **Command Brief:** Track the Wild-class target — Eevee (wild signal).
-  - **Type Intel:** Normal
+  - **Encounter Twist:** Command authorises prototype gear if you can stall three turns.
+  - **Command Brief:** Track the Wild-class target — Mienshao (wild signal).
+  - **Type Intel:** Fighting
 
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 90% odds</summary>
-
-    - **If it lands:** Coordinated assaults land clean, dropping Eevee's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Eevee rallies.
-  </details>
-  <details>
-    <summary>🛰️ Call Orbital Survey Assist · 77% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 68% odds</summary>
 
     - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
     - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
   </details>
-</details>
-
-<details>
-  <summary>⚙️ Path 2 — Celadon Manufactory</summary>
-
-  - **Battlefield State:** Servo arms reset the battlefield between each exchange.
-  - **Encounter Twist:** Command authorises prototype gear if you can stall three turns.
-  - **Command Brief:** Track the Wild-class target — Eevee (wild signal).
-  - **Type Intel:** Normal
-
   <details>
-    <summary>⚡ Trigger Overclocked Strike Team · 61% odds</summary>
+    <summary>⚡ Trigger Overclocked Strike Team · 78% odds</summary>
 
-    - **If it lands:** Coordinated assaults land clean, dropping Eevee's stamina into the red immediately.
-    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Eevee rallies.
-  </details>
-  <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 67% odds</summary>
-
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Eevee's innate typing instead.
+    - **If it lands:** Coordinated assaults land clean, dropping Mienshao's stamina into the red immediately.
+    - **If it whiffs:** Overclock feedback rattles your squad, forcing a swap while Mienshao rallies.
   </details>
 </details>
 
 <details>
-  <summary>🌋 Path 3 — Magma Corridor</summary>
+  <summary>🌲 Path 2 — Verdant Overwatch</summary>
 
-  - **Battlefield State:** Vents pulse underfoot with primal, red-hot rhythm.
+  - **Battlefield State:** Bioluminescent spores swirl between ancient trunks.
   - **Encounter Twist:** Telemetry pings a sudden weather flux altering move potency.
-  - **Command Brief:** Track the Wild-class target — Eevee (wild signal).
-  - **Type Intel:** Normal
+  - **Command Brief:** Track the Wild-class target — Mienshao (wild signal).
+  - **Type Intel:** Fighting
 
   <details>
-    <summary>🛡️ Raise Reflective Barriers · 70% odds</summary>
+    <summary>🛰️ Call Orbital Survey Assist · 71% odds</summary>
+
+    - **If it lands:** Satellite intel locks patterns, letting you predict every counter-move perfectly.
+    - **If it whiffs:** A solar flare knocks the feed offline, leaving you momentarily exposed.
+  </details>
+  <details>
+    <summary>🎯 Deploy Quick Ball Salvo · 80% odds</summary>
+
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Mienshao slips free in a burst of light, boosting its Evasion and tempo.
+  </details>
+</details>
+
+<details>
+  <summary>🌌 Path 3 — Starfall Ridge</summary>
+
+  - **Battlefield State:** Meteor dust drifts across a gravity-light plateau.
+  - **Encounter Twist:** A rival operative shadows the encounter, eager to intercept your claim.
+  - **Command Brief:** Track the Wild-class target — Mienshao (wild signal).
+  - **Type Intel:** Fighting
+
+  <details>
+    <summary>🛡️ Raise Reflective Barriers · 92% odds</summary>
 
     - **If it lands:** Screens crystallise, letting you pace the fight and open a safe capture window.
-    - **If it whiffs:** Barrier harmonics misalign, giving Eevee a free setup turn to escalate pressure.
+    - **If it whiffs:** Barrier harmonics misalign, giving Mienshao a free setup turn to escalate pressure.
   </details>
   <details>
-    <summary>🪬 Invoke Terrain Sync Protocol · 58% odds</summary>
+    <summary>🎯 Deploy Quick Ball Salvo · 88% odds</summary>
 
-    - **If it lands:** Terrain energy bends toward you, amplifying status plays that pacify the target.
-    - **If it whiffs:** The sync desyncs, amplifying Eevee's innate typing instead.
+    - **If it lands:** The wild signal is secured in a double-shake snap while cheers erupt across comms.
+    - **If it whiffs:** Mienshao slips free in a burst of light, boosting its Evasion and tempo.
   </details>
 </details>
 
@@ -457,4 +457,4 @@ The README is rebuilt daily by [`scripts/build_readme.py`](scripts/build_readme.
 
 ---
 
-<sub>README last rebuilt on 2026-11-17 07:39 UTC. Next rotation triggers at midnight UTC.</sub>
+<sub>README last rebuilt on 2026-11-18 07:02 UTC. Next rotation triggers at midnight UTC.</sub>
