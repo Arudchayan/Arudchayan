@@ -198,6 +198,14 @@ def load_trainer_history():
         loaded.setdefault("shiny_hunt", default["shiny_hunt"])
         return loaded
     return default
+
+
+def load_proof_metrics() -> list[dict]:
+    proof_path = os.path.join(root, "data", "proof_metrics.json")
+    if not os.path.exists(proof_path):
+        return []
+    with open(proof_path, encoding="utf-8") as f:
+        return json.load(f)
 def normalize_pokemon_identifier(pokemon_name: str) -> str:
     lower_name = pokemon_name.lower().strip()
     if lower_name.startswith("mega "):
@@ -253,7 +261,18 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
             ),
         })
 
-    final_moves = sorted(candidates, key=lambda m: m.pop("key"))[:4]
+    ranked = sorted(candidates, key=lambda move: move["key"])
+    for move in ranked:
+        move.pop("key", None)
+
+    # Keep at least two damaging moves so every set can actually attack.
+    final_moves = [move for move in ranked if move["damage_class"] != "status"][:2]
+    for move in ranked:
+        if len(final_moves) >= 4:
+            break
+        if move not in final_moves:
+            final_moves.append(move)
+    final_moves = [move for move in ranked if move in final_moves][:4]
     if 'rayquaza' in pokemon_name.lower():
         final_moves = [m for m in final_moves if m["raw_name"] != 'dragon-ascent'][:3]
         final_moves.insert(0, {
@@ -276,12 +295,11 @@ def select_competitive_ability(pokemon_name: str, abilities: list[str]) -> str:
     if not abilities: return 'Unknown'
     normalized_name = pokemon_name.lower().replace(' ', '-')
     base_name = normalized_name.replace('mega-', '').replace('-mega', '')
-    if base_name in COMPETITIVE_ABILITIES:
-        preferred = COMPETITIVE_ABILITIES[base_name]
-        for ability in abilities:
-            normalized_ability = ability.lower().replace(' ', '-')
-            if normalized_ability in preferred:
-                return ability
+    preferred = COMPETITIVE_ABILITIES.get(base_name, [])
+    by_slug = {ability.lower().replace(' ', '-'): ability for ability in abilities}
+    for wanted in preferred:
+        if wanted in by_slug:
+            return by_slug[wanted]
     return abilities[0]
 
 def select_competitive_item(stats: dict, types: list[str]) -> str:
@@ -303,12 +321,10 @@ def select_competitive_item(stats: dict, types: list[str]) -> str:
         return 'Leftovers'
 
 def analyze_team_weaknesses(team_types: dict) -> dict:
-    weakness_count = Counter(
-        w
-        for pokemon_types in team_types.values()
-        for ptype in pokemon_types
-        for w in coach.TYPE_CHART.get(ptype, [])
-    )
+    weakness_count = Counter()
+    for pokemon_types in team_types.values():
+        weaknesses = {w for ptype in pokemon_types for w in coach.TYPE_CHART.get(ptype, [])}
+        weakness_count.update(weaknesses)
     return {
         'critical': {t: count for t, count in weakness_count.items() if count >= 3},
         'moderate': {t: count for t, count in weakness_count.items() if count == 2},
@@ -338,7 +354,7 @@ def _fetch_json(url: str, headers: dict) -> dict:
     raise last_error  # type: ignore[misc]
 
 
-def fetch_pokemon_data(pokemon_name: str):
+def fetch_pokemon_data(pokemon_name: str, generate_assets: bool = True):
     try:
         identifier = normalize_pokemon_identifier(pokemon_name)
         headers = {
@@ -370,8 +386,9 @@ def fetch_pokemon_data(pokemon_name: str):
         competitive_item = select_competitive_item(stats, pokemon_types)
         ev_spread = calculate_evs(stats)
 
-        # Generate SVG
-        svg_generator.generate_radar_chart(stats, normalize_pokemon_identifier(pokemon_name), pokemon_types)
+        # Generate SVG only for team members; random encounters are not rendered as radars.
+        if generate_assets:
+            svg_generator.generate_radar_chart(stats, normalize_pokemon_identifier(pokemon_name), pokemon_types)
 
         return {
             'name': pokemon_name.title(),
@@ -386,7 +403,8 @@ def fetch_pokemon_data(pokemon_name: str):
             'evs': ev_spread,
             'signature_moves': signature_moves,
             'flavor_text': get_english_flavor_text(species_data),
-            'sprite': sprite_url
+            'sprite': sprite_url,
+            'static_sprite': sprites.get('front_default') or sprite_url,
         }
     except Exception as e:
         print(f"Warning: Could not fetch data for {pokemon_name}: {e}")
@@ -406,6 +424,12 @@ def format_move(move: dict) -> str:
 def bar(value, max_value, length=20, filled_char='█', suffix=""):
     filled = int(min(max(value, 0) / max_value, 1) * length) if max_value > 0 else 0
     return '[' + filled_char * filled + '░' * (length - filled) + ']' + suffix
+
+
+def md_cell(value, limit=80):
+    """Escape untrusted text before it lands in a Markdown table cell."""
+    text = str(value).replace("|", "\\|").replace("<", "&lt;").replace(">", "&gt;").strip()
+    return text[:limit]
 
 def flux_suffix(pct: float) -> str:
     mode = ("Ω-OVERDRIVE" if pct >= 0.9 else "VORTEX" if pct >= 0.7
@@ -522,7 +546,7 @@ lead_data = pokemon_data.get(chosen['lead'], {})
 lead_moves = lead_data.get('signature_moves', [])
 damaging_moves = [m for m in lead_moves if m.get('damage_class') != 'status']
 move_one = damaging_moves[0]['name'] if damaging_moves else (lead_moves[0]['name'] if lead_moves else 'its signature move')
-move_two = damaging_moves[1]['name'] if len(damaging_moves) > 1 else 'a coverage move'
+move_two = damaging_moves[1]['name'] if len(damaging_moves) > 1 else move_one
 pivot = chosen['team'][1] if len(chosen['team']) > 1 else chosen['lead']
 battle_log = (
     f"⚔️ **Battle Start!** Trainer {chosen['title']} vs Rival Blue!\n"
@@ -555,21 +579,25 @@ with open(os.path.join(root, "data", "trainer_history.json"), "w", encoding="utf
     json.dump(trainer_history, f, indent=2)
 
 print(f"\n✨ Random encounter: {random_choice.title()} [{encounter_rarity}]")
-random_pokemon_data = fetch_pokemon_data(random_choice)
+random_pokemon_data = fetch_pokemon_data(random_choice, generate_assets=False)
 branching_paths_block = generate_branching_paths(
     random_choice, random_pokemon_data, encounter_is_shiny, encounter_rarity == "Legendary Sighting"
 )
 
 # === 6. GYM LEADER CHALLENGERS ===
-challenger_text = "No recent challengers recorded."
+challenger_text = "No challengers recorded yet. Open an issue titled `Challenge @...` to simulate a gym battle."
 challenger_path = os.path.join(root, "data", "challengers.json")
 if os.path.exists(challenger_path):
     with open(challenger_path, encoding="utf-8") as f:
-        challengers = json.load(f)
+        challengers = [c for c in json.load(f) if "test" not in c.get("challenger", "").lower()]
         if challengers:
             rows = ["| Date | Challenger | Team | Result |", "| --- | --- | --- | --- |"]
             for c in challengers[:5]: # Top 5
-                rows.append(f"| {c['date']} | {c['challenger']} | {', '.join(c['team'])} | {c['result']} ({c['winner']}) |")
+                rows.append(
+                    f"| {md_cell(c.get('date', ''))} | {md_cell(c.get('challenger', ''))} | "
+                    f"{md_cell(', '.join(c.get('team', [])))} | {md_cell(c.get('result', ''))} "
+                    f"({md_cell(c.get('winner', ''))}) |"
+                )
             challenger_text = "\n".join(rows)
 
 # Load template
@@ -617,12 +645,12 @@ for pokemon_name in chosen['team']:
     stat_radar = f"assets/stats_{normalize_pokemon_identifier(pokemon_name)}.svg"
 
     dossier = (
-        f"<details open>\n"
+        f"<details>\n"
         f"<summary>⚔️ <strong>{pokemon_name}</strong> · "
         + " / ".join([get_type_emoji(t) + t.upper() for t in types])
         + "</summary>\n\n"
         f"<div align=\"center\">\n{get_pokemon_sprite_html(pdata.get('sprite'), pokemon_name, 160)}\n"
-        f"<br/><img src=\"{stat_radar}\" width=\"200\" height=\"200\" alt=\"Stats Radar\"/>\n</div>\n\n"
+        f"<br/><img src=\"{stat_radar}?v=2\" width=\"240\" height=\"264\" alt=\"Stats Radar\"/>\n</div>\n\n"
         f"- **Base Stat Total:** {bst}\n"
         f"- **Top Stat:** {top_stat_key.title()} ({top_stat_val})\n"
         f"- **Ability:** {pdata.get('best_ability', 'Unknown')}\n"
@@ -641,8 +669,38 @@ coach_tips = coach.get_coach_advice(
     lead_stats.get('speed', 90)
 )
 
+# === 9. HERO BANNER ===
+proof_metrics = load_proof_metrics()
+hero_banner = svg_generator.generate_field_guide_hero(
+    team=chosen['team'],
+    day_number=day_number,
+    weather=weather['name'],
+    power_pct=min(team_bst_total / (max(1, len(chosen['team'])) * 720), 1),
+    date_label=now_utc.strftime("%Y-%m-%d"),
+    sprites=[pokemon_data.get(name, {}).get('static_sprite') for name in chosen['team']],
+    types=[pokemon_data.get(name, {}).get('types', []) for name in chosen['team']],
+    archetype=chosen['title'],
+    lead=lead_name,
+    proofs=proof_metrics,
+)
+
+proofs_by_key = {proof["key"]: proof for proof in proof_metrics}
+proof_row = '<p align="center"><sub>' + ' · '.join(
+    f'<strong>{proof["value"]}</strong> {proof["label"].lower()}'
+    for proof in proof_metrics[:3]
+) + '</sub></p>'
+hero_alt = "Arudchayan — ML research engineer. " + "; ".join(
+    f'{proof["value"]} {proof["label"].lower()}' for proof in proof_metrics[:3]
+) + ". Open to research engineering roles."
+
 # Replacements Dictionary
 replacements = {
+    '{HERO_BANNER}': f'<p align="center"><img src="{hero_banner}?v={day_number}" width="880" alt="{hero_alt}"/></p>',
+    '{PROOF_ROW}': proof_row,
+    '{PROOF_TURNWAVE}': proofs_by_key.get('turnwave', {}).get('value', ''),
+    '{PROOF_TRACESCOPE}': proofs_by_key.get('tracescope', {}).get('value', ''),
+    '{PROOF_AGENTGATE}': proofs_by_key.get('agentgate', {}).get('value', ''),
+    '{PROOF_WARNINGTIME}': proofs_by_key.get('warningtime', {}).get('value', ''),
     '{CURRENT_DATE}': now_utc.strftime("%Y-%m-%d %H:%M UTC"),
     '{DAY_NUMBER}': str(day_number),
     '{ARCHETYPE_TITLE}': chosen['title'],

@@ -1,0 +1,38 @@
+[
+  {
+    "key": "turnwave",
+    "value": "2,003/2,003",
+    "label": "SPEECH PLAYBACK",
+    "source": "TURNWAVE",
+    "status": "public",
+    "note": "was 0/2,003",
+    "url": "https://github.com/Arudchayan/Turnwave"
+  },
+  {
+    "key": "tracescope",
+    "value": "0.60 \u2192 0.00",
+    "label": "BLINDED DETECTION",
+    "source": "TRACESCOPE",
+    "status": "private R&D",
+    "note": "every monitor family blinded",
+    "url": ""
+  },
+  {
+    "key": "agentgate",
+    "value": "16/16",
+    "label": "AGENT BOUNDARY",
+    "source": "AGENTGATE",
+    "status": "private R&D",
+    "note": "2/2 exfil + 14/14 boundary",
+    "url": ""
+  },
+  {
+    "key": "warningtime",
+    "value": "3/47",
+    "label": "FALSE ALARMS",
+    "source": "WARNINGTIME",
+    "status": "private R&D",
+    "note": "lenient monitors: 3 steps late",
+    "url": ""
+  }
+]
