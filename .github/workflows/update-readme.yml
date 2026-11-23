@@ -23,6 +23,10 @@ jobs:
   update-readme:
     name: 🔄 Generate Bonkers Pokémon README
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: profile-readme-write
+      cancel-in-progress: false
     
     permissions:
       contents: write
@@ -42,8 +46,8 @@ jobs:
           git config user.name "Pokémon Trainer Bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if ! git diff --quiet README.md assets/ data/; then
-            git add README.md assets/ data/
+          git add README.md assets/ data/
+          if ! git diff --cached --quiet; then
             git commit -m "🎮 Daily Pokémon Profile Update [skip ci]"
             git push
           fi

@@ -253,7 +253,18 @@ def select_signature_moves(api_moves: list, pokemon_types: list[str], pokemon_st
             ),
         })
 
-    final_moves = sorted(candidates, key=lambda m: m.pop("key"))[:4]
+    ranked = sorted(candidates, key=lambda move: move["key"])
+    for move in ranked:
+        move.pop("key", None)
+
+    # Keep at least two damaging moves so every set can actually attack.
+    final_moves = [move for move in ranked if move["damage_class"] != "status"][:2]
+    for move in ranked:
+        if len(final_moves) >= 4:
+            break
+        if move not in final_moves:
+            final_moves.append(move)
+    final_moves = [move for move in ranked if move in final_moves][:4]
     if 'rayquaza' in pokemon_name.lower():
         final_moves = [m for m in final_moves if m["raw_name"] != 'dragon-ascent'][:3]
         final_moves.insert(0, {
@@ -276,12 +287,11 @@ def select_competitive_ability(pokemon_name: str, abilities: list[str]) -> str:
     if not abilities: return 'Unknown'
     normalized_name = pokemon_name.lower().replace(' ', '-')
     base_name = normalized_name.replace('mega-', '').replace('-mega', '')
-    if base_name in COMPETITIVE_ABILITIES:
-        preferred = COMPETITIVE_ABILITIES[base_name]
-        for ability in abilities:
-            normalized_ability = ability.lower().replace(' ', '-')
-            if normalized_ability in preferred:
-                return ability
+    preferred = COMPETITIVE_ABILITIES.get(base_name, [])
+    by_slug = {ability.lower().replace(' ', '-'): ability for ability in abilities}
+    for wanted in preferred:
+        if wanted in by_slug:
+            return by_slug[wanted]
     return abilities[0]
 
 def select_competitive_item(stats: dict, types: list[str]) -> str:
@@ -303,12 +313,10 @@ def select_competitive_item(stats: dict, types: list[str]) -> str:
         return 'Leftovers'
 
 def analyze_team_weaknesses(team_types: dict) -> dict:
-    weakness_count = Counter(
-        w
-        for pokemon_types in team_types.values()
-        for ptype in pokemon_types
-        for w in coach.TYPE_CHART.get(ptype, [])
-    )
+    weakness_count = Counter()
+    for pokemon_types in team_types.values():
+        weaknesses = {w for ptype in pokemon_types for w in coach.TYPE_CHART.get(ptype, [])}
+        weakness_count.update(weaknesses)
     return {
         'critical': {t: count for t, count in weakness_count.items() if count >= 3},
         'moderate': {t: count for t, count in weakness_count.items() if count == 2},
@@ -338,7 +346,7 @@ def _fetch_json(url: str, headers: dict) -> dict:
     raise last_error  # type: ignore[misc]
 
 
-def fetch_pokemon_data(pokemon_name: str):
+def fetch_pokemon_data(pokemon_name: str, generate_assets: bool = True):
     try:
         identifier = normalize_pokemon_identifier(pokemon_name)
         headers = {
@@ -370,8 +378,9 @@ def fetch_pokemon_data(pokemon_name: str):
         competitive_item = select_competitive_item(stats, pokemon_types)
         ev_spread = calculate_evs(stats)
 
-        # Generate SVG
-        svg_generator.generate_radar_chart(stats, normalize_pokemon_identifier(pokemon_name), pokemon_types)
+        # Generate SVG only for team members; random encounters are not rendered as radars.
+        if generate_assets:
+            svg_generator.generate_radar_chart(stats, normalize_pokemon_identifier(pokemon_name), pokemon_types)
 
         return {
             'name': pokemon_name.title(),
@@ -406,6 +415,12 @@ def format_move(move: dict) -> str:
 def bar(value, max_value, length=20, filled_char='█', suffix=""):
     filled = int(min(max(value, 0) / max_value, 1) * length) if max_value > 0 else 0
     return '[' + filled_char * filled + '░' * (length - filled) + ']' + suffix
+
+
+def md_cell(value, limit=80):
+    """Escape untrusted text before it lands in a Markdown table cell."""
+    text = str(value).replace("|", "\\|").replace("<", "&lt;").replace(">", "&gt;").strip()
+    return text[:limit]
 
 def flux_suffix(pct: float) -> str:
     mode = ("Ω-OVERDRIVE" if pct >= 0.9 else "VORTEX" if pct >= 0.7
@@ -555,7 +570,7 @@ with open(os.path.join(root, "data", "trainer_history.json"), "w", encoding="utf
     json.dump(trainer_history, f, indent=2)
 
 print(f"\n✨ Random encounter: {random_choice.title()} [{encounter_rarity}]")
-random_pokemon_data = fetch_pokemon_data(random_choice)
+random_pokemon_data = fetch_pokemon_data(random_choice, generate_assets=False)
 branching_paths_block = generate_branching_paths(
     random_choice, random_pokemon_data, encounter_is_shiny, encounter_rarity == "Legendary Sighting"
 )
@@ -569,7 +584,11 @@ if os.path.exists(challenger_path):
         if challengers:
             rows = ["| Date | Challenger | Team | Result |", "| --- | --- | --- | --- |"]
             for c in challengers[:5]: # Top 5
-                rows.append(f"| {c['date']} | {c['challenger']} | {', '.join(c['team'])} | {c['result']} ({c['winner']}) |")
+                rows.append(
+                    f"| {md_cell(c.get('date', ''))} | {md_cell(c.get('challenger', ''))} | "
+                    f"{md_cell(', '.join(c.get('team', [])))} | {md_cell(c.get('result', ''))} "
+                    f"({md_cell(c.get('winner', ''))}) |"
+                )
             challenger_text = "\n".join(rows)
 
 # Load template

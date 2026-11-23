@@ -48,7 +48,12 @@ def _type_chips(types: list[str] | None, right: float, y: float) -> tuple[str, f
 def generate_radar_chart(stats: dict, clean_name: str, types: list[str] | None = None) -> str:
     """Generate a theme-safe stat card: dark HUD panel with a six-stat radar."""
     values = [min(stats.get(k, 0), RADAR_SCALE) for k in STAT_KEYS]
-    display_name = clean_name.replace("-", " ").upper()
+    display_name = (
+        clean_name.replace("-mega", " · MEGA")
+        .replace("mega-", "MEGA · ")
+        .replace("-", " ")
+        .upper()
+    )
     primary, secondary = _type_colors(types)
 
     width, height = 300, 330
