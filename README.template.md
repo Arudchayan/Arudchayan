@@ -94,8 +94,9 @@ The README rebuilds itself daily in GitHub Actions: `scripts/build_readme.py` pi
 ## 🤝 Contact
 
 - **GitHub:** [@Arudchayan](https://github.com/Arudchayan)
+- **LinkedIn:** [in/arudchayan](https://www.linkedin.com/in/arudchayan/)
 - **Open to:** research engineering, ML systems, evaluation, and reinforcement learning roles.
-- **Best way to reach me:** open an issue or start a discussion on any repo.
+- **Best way to reach me:** a LinkedIn message or an issue/discussion on any repo.
 
 ---
 

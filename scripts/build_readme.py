@@ -395,7 +395,8 @@ def fetch_pokemon_data(pokemon_name: str, generate_assets: bool = True):
             'evs': ev_spread,
             'signature_moves': signature_moves,
             'flavor_text': get_english_flavor_text(species_data),
-            'sprite': sprite_url
+            'sprite': sprite_url,
+            'static_sprite': sprites.get('front_default') or sprite_url,
         }
     except Exception as e:
         print(f"Warning: Could not fetch data for {pokemon_name}: {e}")
@@ -667,6 +668,10 @@ hero_banner = svg_generator.generate_hero_banner(
     weather=weather['name'],
     power_pct=min(team_bst_total / (max(1, len(chosen['team'])) * 720), 1),
     date_label=now_utc.strftime("%Y-%m-%d"),
+    sprites=[pokemon_data.get(name, {}).get('static_sprite') for name in chosen['team']],
+    types=[pokemon_data.get(name, {}).get('types', []) for name in chosen['team']],
+    archetype=chosen['title'],
+    lead=lead_name,
 )
 
 # Replacements Dictionary

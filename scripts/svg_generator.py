@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import base64
 import html
 import math
 import os
+import urllib.request
+from collections import defaultdict
 
 
 TYPE_COLORS = {
@@ -141,73 +144,277 @@ def generate_radar_chart(stats: dict, clean_name: str, types: list[str] | None =
     return f"assets/stats_{clean_name}.svg"
 
 
+PIXEL_FONT = {
+    "A": ("01110", "10001", "10001", "11111", "10001", "10001", "10001"),
+    "B": ("11110", "10001", "10001", "11110", "10001", "10001", "11110"),
+    "C": ("01110", "10001", "10000", "10000", "10000", "10001", "01110"),
+    "D": ("11110", "10001", "10001", "10001", "10001", "10001", "11110"),
+    "E": ("11111", "10000", "10000", "11110", "10000", "10000", "11111"),
+    "F": ("11111", "10000", "10000", "11110", "10000", "10000", "10000"),
+    "G": ("01110", "10001", "10000", "10111", "10001", "10001", "01110"),
+    "H": ("10001", "10001", "10001", "11111", "10001", "10001", "10001"),
+    "I": ("01110", "00100", "00100", "00100", "00100", "00100", "01110"),
+    "J": ("00111", "00010", "00010", "00010", "00010", "10010", "01100"),
+    "K": ("10001", "10010", "10100", "11000", "10100", "10010", "10001"),
+    "L": ("10000", "10000", "10000", "10000", "10000", "10000", "11111"),
+    "M": ("10001", "11011", "10101", "10101", "10001", "10001", "10001"),
+    "N": ("10001", "11001", "10101", "10011", "10001", "10001", "10001"),
+    "O": ("01110", "10001", "10001", "10001", "10001", "10001", "01110"),
+    "P": ("11110", "10001", "10001", "11110", "10000", "10000", "10000"),
+    "Q": ("01110", "10001", "10001", "10001", "10101", "10010", "01101"),
+    "R": ("11110", "10001", "10001", "11110", "10100", "10010", "10001"),
+    "S": ("01111", "10000", "10000", "01110", "00001", "00001", "11110"),
+    "T": ("11111", "00100", "00100", "00100", "00100", "00100", "00100"),
+    "U": ("10001", "10001", "10001", "10001", "10001", "10001", "01110"),
+    "V": ("10001", "10001", "10001", "10001", "10001", "01010", "00100"),
+    "W": ("10001", "10001", "10001", "10101", "10101", "10101", "01010"),
+    "X": ("10001", "01010", "00100", "00100", "00100", "01010", "10001"),
+    "Y": ("10001", "01010", "00100", "00100", "00100", "00100", "00100"),
+    "Z": ("11111", "00001", "00010", "00100", "01000", "10000", "11111"),
+    "0": ("01110", "10001", "10011", "10101", "11001", "10001", "01110"),
+    "1": ("00100", "01100", "00100", "00100", "00100", "00100", "01110"),
+    "2": ("01110", "10001", "00001", "00010", "00100", "01000", "11111"),
+    "3": ("11110", "00001", "00001", "01110", "00001", "00001", "11110"),
+    "4": ("00010", "00110", "01010", "10010", "11111", "00010", "00010"),
+    "5": ("11111", "10000", "11110", "00001", "00001", "10001", "01110"),
+    "6": ("00110", "01000", "10000", "11110", "10001", "10001", "01110"),
+    "7": ("11111", "00001", "00010", "00100", "01000", "01000", "01000"),
+    "8": ("01110", "10001", "10001", "01110", "10001", "10001", "01110"),
+    "9": ("01110", "10001", "10001", "01111", "00001", "00010", "01100"),
+    ".": ("00000", "00000", "00000", "00000", "00000", "00110", "00110"),
+    "%": ("11001", "11010", "00100", "00100", "01000", "01011", "10011"),
+}
+
+POKEBALL_PATTERN = (
+    "..RRRRRR..",
+    ".RRRRRRRR.",
+    "RRRRRRRRRR",
+    "RRRRRRRRRR",
+    "RRRRRRRRRR",
+    "BBBBBBBBBB",
+    "...WWWW...",
+    "..WWWWWW..",
+    ".WWWWWWWW.",
+    "WWWWWWWWWW",
+)
+
+WEATHER_PATTERNS = {
+    "sun": (
+        ("....Y.....", "....Y.....", "..YYYYY...", ".YYYYYYY..", "YYYYYYYYYY",
+         ".YYYYYYY..", "..YYYYY...", "....Y.....", "....Y.....", ".........."),
+        {"Y": "#F8D030"},
+    ),
+    "rain": (
+        ("...CCC....", "..CCCCC...", ".CCCCCCC..", "CCCCCCCCC.", "..........",
+         "..D...D...", ".D...D....", "..D...D...", ".D...D....", ".........."),
+        {"C": "#A79FC4", "D": "#22D3EE"},
+    ),
+    "snow": (
+        ("....S.....", ".S..S..S..", "..S.S.S...", "...SSS....", "SSSSSSSSS.",
+         "...SSS....", "..S.S.S...", ".S..S..S..", "....S.....", ".........."),
+        {"S": "#98D8D8"},
+    ),
+    "sand": (
+        ("..........", "..TTTT....", ".TTTTTT...", "TT..TTTTT.", "...TTTT...",
+         "..TTTTTT..", ".TTTT..TT.", "..TTTT....", "..........", ".........."),
+        {"T": "#E0C068"},
+    ),
+}
+
+
+def _pixel_text(text: str, x: float, y: float, scale: int, color: str) -> str:
+    parts = []
+    cursor = x
+    for char in text.upper():
+        if char == " ":
+            cursor += 4 * scale
+            continue
+        glyph = PIXEL_FONT.get(char)
+        if not glyph:
+            cursor += 6 * scale
+            continue
+        for row, bits in enumerate(glyph):
+            for col, bit in enumerate(bits):
+                if bit == "1":
+                    parts.append(
+                        f"M{cursor + col * scale} {y + row * scale}h{scale}v{scale}h-{scale}z"
+                    )
+        cursor += 6 * scale
+    return f'<path d="{"".join(parts)}" fill="{color}"/>' if parts else ""
+
+
+def _pixel_width(text: str, scale: int) -> float:
+    return sum((4 if char == " " else 6) * scale for char in text.upper()) - scale
+
+
+def _pixel_icon(pattern: tuple[str, ...], x: float, y: float, scale: int, palette: dict[str, str]) -> str:
+    by_color: dict[str, list[str]] = defaultdict(list)
+    for row, line in enumerate(pattern):
+        for col, char in enumerate(line):
+            color = palette.get(char)
+            if color:
+                by_color[color].append(
+                    f"M{x + col * scale} {y + row * scale}h{scale}v{scale}h-{scale}z"
+                )
+    return "".join(
+        f'<path d="{"".join(rects)}" fill="{color}"/>' for color, rects in by_color.items()
+    )
+
+
+_SPRITE_CACHE: dict[str, str | None] = {}
+
+
+def _embed_sprite(url: str | None) -> str | None:
+    if not url:
+        return None
+    if url in _SPRITE_CACHE:
+        return _SPRITE_CACHE[url]
+    try:
+        request = urllib.request.Request(
+            url,
+            headers={"User-Agent": "Arudchayan-Trainer-Profile/1.0", "Accept": "image/*"},
+        )
+        with urllib.request.urlopen(request, timeout=15) as response:
+            data = response.read()
+        if not data or len(data) > 250_000:
+            data_uri = None
+        elif data.startswith(b"\x89PNG"):
+            data_uri = "data:image/png;base64," + base64.b64encode(data).decode("ascii")
+        elif data.startswith(b"GIF8"):
+            data_uri = "data:image/gif;base64," + base64.b64encode(data).decode("ascii")
+        else:
+            data_uri = None
+    except Exception:
+        data_uri = None
+    _SPRITE_CACHE[url] = data_uri
+    return data_uri
+
+
 def generate_hero_banner(
     team: list[str],
     day_number: int,
     weather: str,
     power_pct: float,
     date_label: str,
+    sprites: list[str | None] | None = None,
+    types: list[list[str]] | None = None,
+    archetype: str = "",
+    lead: str = "",
     handle: str = "github.com/Arudchayan",
     role_line: str = "ML research engineering · evals · reinforcement learning · reproducible systems",
 ) -> str:
-    """Generate the profile hero banner. Dark panel, so it reads on light and dark themes."""
-    width, height = 880, 230
-    roster = " · ".join(name.upper() for name in team)
+    """Generate the pixel-art trainer-card banner, with embedded team sprites."""
+    width, height = 880, 320
     pct = max(0.0, min(power_pct, 1.0))
+    team = team[:6]
+    sprites = sprites or []
+    types = types or []
 
-    cx, cy, radius = 790, 112, 52
-    circumference = 2 * math.pi * radius
+    ink = "#0D1220"
+    cream = "#F6F1E3"
+    gold = "#F8D030"
+    cyan = "#22D3EE"
+    red = "#E3350D"
+    muted = "#6F7A99"
+    line = "#26314D"
+    lavender = "#A79FC4"
 
-    svg = f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arudchayan BattleOps Command Center banner">
-  <title>Arudchayan · BattleOps Command Center</title>
+    weather_key = weather.lower()
+    if "rain" in weather_key:
+        icon_key = "rain"
+    elif "snow" in weather_key:
+        icon_key = "snow"
+    elif "sand" in weather_key:
+        icon_key = "sand"
+    else:
+        icon_key = "sun"
+    weather_pattern, weather_palette = WEATHER_PATTERNS[icon_key]
+
+    # Team slots: six party frames across the right side of the card.
+    slot_x, slot_y, slot_size, slot_gap = 300, 54, 82, 8
+    slots = []
+    for index, name in enumerate(team):
+        x = slot_x + index * (slot_size + slot_gap)
+        is_lead = index == 0
+        border = gold if is_lead else line
+        slots.append(
+            f'<rect x="{x}" y="{slot_y}" width="{slot_size}" height="{slot_size}" '
+            f'fill="#0A0F1C" stroke="{border}" stroke-width="2"/>'
+        )
+        data_uri = _embed_sprite(sprites[index] if index < len(sprites) else None)
+        if data_uri:
+            slots.append(
+                f'<image x="{x + 9}" y="{slot_y + 5}" width="64" height="64" '
+                f'href="{data_uri}" xlink:href="{data_uri}" image-rendering="pixelated"/>'
+            )
+        else:
+            slots.append(_pixel_icon(POKEBALL_PATTERN, x + 31, slot_y + 26, 2, {"R": red, "B": "#111827", "W": cream}))
+
+        slot_types = types[index] if index < len(types) else []
+        strip_y = slot_y + slot_size - 6
+        if slot_types:
+            primary = TYPE_COLORS.get(slot_types[0], "#8B5CF6")
+            if len(slot_types) > 1:
+                secondary = TYPE_COLORS.get(slot_types[1], primary)
+                half = slot_size / 2
+                slots.append(f'<rect x="{x + 2}" y="{strip_y}" width="{half - 2}" height="4" fill="{primary}"/>')
+                slots.append(f'<rect x="{x + half}" y="{strip_y}" width="{half - 2}" height="4" fill="{secondary}"/>')
+            else:
+                slots.append(f'<rect x="{x + 2}" y="{strip_y}" width="{slot_size - 4}" height="4" fill="{primary}"/>')
+        slots.append(_pixel_text(f"{index + 1:02d}", x + 5, slot_y + slot_size - 16, 1, gold if is_lead else muted))
+
+    power_segments = 10
+    filled_segments = round(pct * power_segments)
+    bar_x, bar_y, seg_w, seg_h, seg_gap = 600, 194, 20, 14, 3
+    power_bar = []
+    for segment in range(power_segments):
+        x = bar_x + segment * (seg_w + seg_gap)
+        fill = "#4ADE80" if segment < filled_segments else "#1B2438"
+        power_bar.append(
+            f'<rect x="{x}" y="{bar_y}" width="{seg_w}" height="{seg_h}" fill="{fill}" stroke="#070A12" stroke-width="2"/>'
+        )
+
+    id_label = f"ID No. {day_number}"
+    svg = f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Arudchayan pixel trainer card">
+  <title>Arudchayan · BattleOps trainer card</title>
   <defs>
-    <linearGradient id="hero-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0B0817"/>
-      <stop offset="0.55" stop-color="#120D26"/>
-      <stop offset="1" stop-color="#0A1224"/>
-    </linearGradient>
-    <radialGradient id="hero-glow" cx="0.82" cy="0.15" r="0.7">
-      <stop offset="0" stop-color="#7C3AED" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="hero-teal" cx="0.1" cy="1" r="0.8">
-      <stop offset="0" stop-color="#06B6D4" stop-opacity="0.18"/>
-      <stop offset="1" stop-color="#06B6D4" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="hero-accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#8B5CF6"/>
-      <stop offset="0.5" stop-color="#22D3EE"/>
-      <stop offset="1" stop-color="#F472B6"/>
-    </linearGradient>
-    <pattern id="hero-grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M32 0H0V32" fill="none" stroke="#FFFFFF" stroke-opacity="0.035"/>
+    <pattern id="px-grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#FFFFFF" fill-opacity="0.022"/>
+      <rect x="8" y="8" width="8" height="8" fill="#FFFFFF" fill-opacity="0.022"/>
     </pattern>
   </defs>
-  <rect width="{width}" height="{height}" rx="20" fill="url(#hero-bg)"/>
-  <rect width="{width}" height="{height}" rx="20" fill="url(#hero-grid)"/>
-  <rect width="{width}" height="{height}" rx="20" fill="url(#hero-glow)"/>
-  <rect width="{width}" height="{height}" rx="20" fill="url(#hero-teal)"/>
-  <rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="20" fill="none" stroke="#FFFFFF" stroke-opacity="0.10"/>
-  <rect x="24" y="26" width="4" height="178" rx="2" fill="url(#hero-accent)"/>
 
-  <text x="46" y="48" font-family="{MONO}" font-size="10" letter-spacing="3.4" fill="#8B5CF6">BATTLEOPS // COMMAND CENTER</text>
-  <text x="44" y="106" font-family="{MONO}" font-size="46" font-weight="800" letter-spacing="-1" fill="#F8F7FF">ARUDCHAYAN</text>
-  <text x="46" y="138" font-family="{MONO}" font-size="12.5" letter-spacing="0.4" fill="#C9C4E0">{html.escape(role_line)}</text>
-  <text x="46" y="166" font-family="{MONO}" font-size="9.5" letter-spacing="1.6" fill="#6F6A88">ACTIVE ROSTER</text>
-  <text x="46" y="188" font-family="{MONO}" font-size="10.5" letter-spacing="1" fill="#A79FC4">{html.escape(roster)}</text>
+  <rect width="{width}" height="{height}" fill="{cream}"/>
+  <rect x="4" y="4" width="{width - 8}" height="{height - 8}" fill="{ink}"/>
+  <rect x="4" y="4" width="{width - 8}" height="{height - 8}" fill="url(#px-grid)"/>
+  <rect x="4" y="4" width="{width - 8}" height="10" fill="{red}"/>
+  <rect x="4" y="14" width="{width - 8}" height="2" fill="#8E1F0A"/>
 
-  <g transform="translate({cx},{cy})">
-    <circle r="{radius}" fill="#0A0817" fill-opacity="0.6" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="7"/>
-    <circle r="{radius}" fill="none" stroke="url(#hero-accent)" stroke-width="7" stroke-linecap="round"
-            stroke-dasharray="{circumference * pct:.1f} {circumference:.1f}" transform="rotate(-90)"/>
-    <text y="-2" text-anchor="middle" font-family="{MONO}" font-size="7.5" letter-spacing="1.4" fill="#6F6A88">POWER</text>
-    <text y="19" text-anchor="middle" font-family="{MONO}" font-size="21" font-weight="800" fill="#F8F7FF">{pct * 100:.1f}<tspan font-size="9" fill="#8B87A8">%</tspan></text>
-  </g>
+  {_pixel_icon(POKEBALL_PATTERN, 26, 28, 2, {"R": red, "B": "#111827", "W": cream})}
+  {_pixel_text("TRAINER CARD", 54, 32, 2, cream)}
+  {_pixel_text(id_label, width - 26 - _pixel_width(id_label, 2), 32, 2, muted)}
 
-  <g transform="translate(46,208)">
-    <circle cx="4" cy="-3" r="3" fill="#22D3EE"/>
-    <text x="14" y="0" font-family="{MONO}" font-size="8.5" letter-spacing="1.2" fill="#6F6A88">DAY {day_number} · {html.escape(weather.upper())} · {html.escape(date_label)} · {html.escape(handle.upper())}</text>
-  </g>
+  {_pixel_text("ARUDCHAYAN", 26, 66, 4, cream)}
+  {_pixel_text("ML RESEARCH ENGINEER", 28, 106, 2, gold)}
+  <text x="28" y="126" font-family="{MONO}" font-size="9.5" letter-spacing="0.6" fill="{lavender}">EVALS · RL · REPRODUCIBLE SYSTEMS</text>
+  {_pixel_text(f"LEAD // {lead.upper()}", 28, 142, 1, cyan)}
+
+  {''.join(slots)}
+
+  <rect x="26" y="154" width="{width - 52}" height="2" fill="{line}"/>
+  <rect x="26" y="154" width="34" height="2" fill="{red}"/>
+
+  {_pixel_text(archetype.upper(), 26, 172, 2, cream)}
+  {_pixel_icon(weather_pattern, 26, 198, 2, weather_palette)}
+  {_pixel_text(weather.upper(), 52, 202, 2, gold)}
+  <text x="26" y="246" font-family="{MONO}" font-size="9" letter-spacing="0.8" fill="{muted}">{html.escape(date_label)} · {html.escape(handle.upper())}</text>
+
+  {_pixel_text("POWER", 600, 172, 2, cream)}
+  {''.join(power_bar)}
+  {_pixel_text(f"{pct * 100:.1f}%", 600, 220, 2, cream)}
+  <rect x="708" y="226" width="6" height="6" fill="#4ADE80"/>
+  {_pixel_text("ONLINE", 720, 225, 1, "#4ADE80")}
+  <text x="600" y="252" font-family="{MONO}" font-size="8.5" letter-spacing="0.8" fill="{muted}">EVERY 24H · GITHUB ACTIONS</text>
 </svg>"""
 
     os.makedirs("assets", exist_ok=True)
