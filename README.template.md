@@ -1,59 +1,71 @@
 {HERO_BANNER}
 
-<p align="center"><sub>Pokémon trainer by night · research engineer by day · open to ML research engineering roles where rigorous evaluation matters</sub></p>
+{PROOF_ROW}
 
-<p align="center"><sub><strong>Now:</strong> evaluation harnesses for small LMs · monitorability &amp; agent safety · local-first AI tooling</sub></p>
+<p align="center"><sub>Evaluation harnesses for small models · monitorability &amp; agent safety · open to research engineering roles</sub></p>
 
-## 🧠 AI Research & Evaluation
+## 01 · Selected research
 
-I build systems that check whether the check works: monitorability evals, agent safety gates, and reproducible evaluation harnesses.
+### [Turnwave](https://github.com/Arudchayan/Turnwave)
+<sub><code>Python</code> · <code>evals</code> · public</sub>
 
-| Project | AI work |
-| --- | --- |
-| **[Turnwave](https://github.com/Arudchayan/Turnwave)**<br/><sub><code>Python</code> · <code>evals</code> · public</sub> | Local speech-to-speech research on LFM2.5-Audio-1.5B: streaming audio, interruption handling, Silero VAD, and a replayable eval harness.<br/><br/>Final-block playback race: **0/2,003 → 2,003/2,003** samples played, regression-tested. |
-| **TraceScope**<br/><sub><code>Python</code> · <code>evals</code> · private R&amp;D</sub> | Small-LM safety-monitor evals: judge seed variance, prompt brittleness, and embedding-monitor transfer limits.<br/><br/>Reassuring summaries blind every monitor tested: detection **0.60 → 0.00** across keyword, embedding, and 0.5B-judge monitors. |
-| **AgentGate**<br/><sub><code>Python</code> · <code>agent security</code> · private R&amp;D</sub> | Enforcement gate for agent file/email actions: allowlists, sensitive-pattern confirms, and measured block/legit rates.<br/><br/>**2/2** exfiltration tasks blocked and **14/14** boundary cases, with every bypass logged beside its fix. |
-| **WarningTime**<br/><sub><code>Python</code> · <code>evals</code> · private R&amp;D</sub> | Trajectory-monitor metrics that separate detection from prevention.<br/><br/>Strict monitors false-alarm on **3/47** benign trajectories; lenient ones arrive up to **3 steps** late. |
+Local speech-to-speech research on LFM2.5-Audio-1.5B: streaming audio, interruption handling, Silero VAD, and a replayable eval harness.
 
-<sub>Private R&amp;D write-ups are available on request — happy to walk through the harnesses and failure cases.</sub>
+> **Finding:** final-block playback race **0/2,003 → {PROOF_TURNWAVE}** samples played, regression-tested.
 
-## 🛠️ Agent & Research Tooling
+### TraceScope
+<sub><code>Python</code> · <code>evals</code> · private R&amp;D · write-up on request</sub>
 
-| Project | Tooling |
-| --- | --- |
-| **[adam-mcp](https://github.com/Arudchayan/adam-mcp)**<br/><sub><code>TypeScript</code> · <code>MCP</code> · <a href="https://www.npmjs.com/package/adam-mcp">npm</a></sub> | Local-first, read-only MCP server for University of Basel ADAM. SWITCH edu-ID stays in the browser.<br/><br/>**npm 0.5.0** · 71 commits and 71 PRs in the last 30 days. |
-| **[ResearchQuest](https://github.com/Arudchayan/ResearchQuest)**<br/><sub><code>React 19</code> · <code>Supabase</code> · <a href="https://rq.arudchayan.com">live demo</a></sub> | Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DOI/Crossref import.<br/><br/>**Live demo** · realtime Supabase workspace. |
+Small-LM safety-monitor evals: judge seed variance, prompt brittleness, and embedding-monitor transfer limits.
 
-## 📦 Also Shipped
+> **Finding:** reassuring summaries blind every monitor tested — detection **{PROOF_TRACESCOPE}** across keyword, embedding, and 0.5B-judge monitors.
 
-- **[overstay](https://github.com/Arudchayan/overstay)** `v0.2.1` — local-only time tracker and website limiter for Chrome, Edge, Brave, and Firefox.
-- **[BASELCAL](https://baselcal.vercel.app)** — Uni Basel MSc Data Science planner with ECTS rules and ICS export.
-- **[ResumeBuilder](https://github.com/Arudchayan/ResumeBuilder)** — one layout IR to vector PDF + DOCX, local-first.
+### AgentGate
+<sub><code>Python</code> · <code>agent security</code> · private R&amp;D · write-up on request</sub>
 
----
+Enforcement gate for agent file/email actions: allowlists, sensitive-pattern confirms, and measured block/legit rates.
 
-## 🎮 Today's Trainer Card
+> **Finding:** 2/2 exfiltration tasks blocked + 14/14 boundary cases = **{PROOF_AGENTGATE}**; every bypass logged beside its fix.
+
+### WarningTime
+<sub><code>Python</code> · <code>evals</code> · private R&amp;D · write-up on request</sub>
+
+Trajectory-monitor metrics that separate detection from prevention.
+
+> **Finding:** strict monitors raised false alarms on **3 of 47** benign trajectories; lenient monitors arrive up to **3 steps** late.
+
+## 02 · Apparatus & tooling
+
+**[adam-mcp](https://github.com/Arudchayan/adam-mcp)** · <sub><code>TypeScript</code> · <code>MCP</code> · <a href="https://www.npmjs.com/package/adam-mcp">npm</a></sub>
+Local-first, read-only MCP server for University of Basel ADAM. SWITCH edu-ID stays in the browser. **npm 0.5.0** · 71 commits and 71 PRs in the last 30 days.
+
+**[ResearchQuest](https://github.com/Arudchayan/ResearchQuest)** · <sub><code>React 19</code> · <code>Supabase</code> · <a href="https://rq.arudchayan.com">live demo</a></sub>
+Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DOI/Crossref import. **Live demo** · realtime Supabase workspace.
+
+<sub>**Also shipped:** <a href="https://github.com/Arudchayan/overstay">overstay</a> v0.2.1 · <a href="https://baselcal.vercel.app">BASELCAL</a> · <a href="https://github.com/Arudchayan/ResumeBuilder">ResumeBuilder</a></sub>
+
+## 03 · Field notes
 
 <p align="center">{TEAM_SPRITES}</p>
 
-**Day {DAY_NUMBER}** · {ARCHETYPE_TITLE} · **{LEAD_POKEMON}** lead · {WEATHER_EMOJI} {WEATHER_NAME}
+**Seed {DAY_NUMBER}** · {ARCHETYPE_TITLE} · **{LEAD_POKEMON}** lead · {WEATHER_EMOJI} {WEATHER_NAME}
 **Roster:** {TEAM_LIST}
 **Quest:** {QUEST_TEXT}
 
 <details>
-<summary>⚔️ Open the full trainer card — squad dossiers, type intel, gym log</summary>
+<summary>Open the full trainer card — squad dossiers, type intel, gym log</summary>
 
-### Squad Dossiers
+### Squad dossiers
 
 {TEAM_DETAIL_BLOCK}
 
-### Type Coverage & Defensive Analysis
+### Type coverage &amp; defensive analysis
 
 {TYPE_COVERAGE_BLOCK}
 
 {WEAKNESS_ANALYSIS}
 
-### Encounter of the Day
+### Encounter of the day
 
 <details>
 <summary>{ENCOUNTER_SUMMARY}</summary>
@@ -71,11 +83,11 @@ I build systems that check whether the check works: monitorability evals, agent 
 
 </details>
 
-### Gym Log
+### Gym log
 
 {CHALLENGER_LIST}
 
-### Poképaste Export
+### Poképaste export
 
 Copy this to import the current team into Pokémon Showdown:
 
@@ -83,15 +95,11 @@ Copy this to import the current team into Pokémon Showdown:
 
 </details>
 
----
+## 04 · Colophon
 
-## 🗺️ How This Page Is Built
+The README rebuilds itself daily in GitHub Actions: [`scripts/build_readme.py`](scripts/build_readme.py) picks a team from [`data/archetypes.json`](data/archetypes.json), fetches live stats from PokéAPI, renders the field-guide plate and radar cards through [`scripts/svg_generator.py`](scripts/svg_generator.py), and commits the result via [`.github/workflows/update-readme.yml`](.github/workflows/update-readme.yml). Issues titled `Challenge @...` trigger the gym-battle workflow. It is seeded from the date, re-runnable, and fully automated — the page is itself part of the portfolio.
 
-The README rebuilds itself daily in GitHub Actions: `scripts/build_readme.py` picks a team from [`data/archetypes.json`](data/archetypes.json), fetches live stats from PokéAPI, renders the battle card and radar charts through [`scripts/svg_generator.py`](scripts/svg_generator.py), and commits the result via [`.github/workflows/update-readme.yml`](.github/workflows/update-readme.yml). Issues titled `Challenge @...` trigger the gym-battle workflow. It is seeded from the date, re-runnable, and fully automated — the page is itself part of the portfolio.
-
----
-
-## 🤝 Contact
+## Contact
 
 - **GitHub:** [@Arudchayan](https://github.com/Arudchayan)
 - **LinkedIn:** [in/arudchayan](https://www.linkedin.com/in/arudchayan/)

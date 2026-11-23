@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import base64
+import datetime
 import html
 import math
 import os
@@ -416,6 +417,237 @@ def generate_hero_banner(
   {_pixel_text("ONLINE", 720, 225, 1, "#4ADE80")}
   <text x="600" y="252" font-family="{MONO}" font-size="8.5" letter-spacing="0.8" fill="{muted}">EVERY 24H · GITHUB ACTIONS</text>
 </svg>"""
+
+    os.makedirs("assets", exist_ok=True)
+    with open("assets/hero.svg", "w", encoding="utf-8") as f:
+        f.write(svg)
+    return "assets/hero.svg"
+
+
+# ---------------------------------------------------------------------------
+# Editorial field-guide hero (final direction)
+# ---------------------------------------------------------------------------
+
+PAPER = "#F2EBD9"
+PAPER_LIGHT = "#FAF5E6"
+INK = "#26221B"
+SOFT_INK = "#463E32"
+SAGE = "#7C8C6D"
+SAGE_DARK = "#58684E"
+FIELD_RED = "#B23A2B"
+FIELD_RED_DARK = "#7C2418"
+FIELD_RULE = "#D5C8B0"
+SERIF = "Georgia,'Iowan Old Style','Palatino Linotype','Times New Roman',serif"
+FIELD_MONO = "'Courier New',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
+
+
+def _field_text(x, y, value, *, size=9, fill=INK, family=FIELD_MONO, weight="normal",
+                style="normal", anchor="start", tracking=0, opacity=1.0):
+    return (
+        f'<text x="{x}" y="{y}" font-family="{family}" font-size="{size}" '
+        f'font-weight="{weight}" font-style="{style}" text-anchor="{anchor}" '
+        f'letter-spacing="{tracking}" fill="{fill}" opacity="{opacity}">'
+        f'{html.escape(str(value))}</text>'
+    )
+
+
+def _field_rule(x1, y1, x2, y2, color=FIELD_RULE, width=1.0, opacity=1.0):
+    return (
+        f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{color}" '
+        f'stroke-width="{width}" opacity="{opacity}"/>'
+    )
+
+
+def _corner_mounts(x, y, w, h, size=17, color=SAGE):
+    return "".join([
+        f'<path d="M{x} {y}h{size}l-{size} {size}z" fill="{color}" opacity="0.9"/>',
+        f'<path d="M{x + w} {y}h-{size}l{size} {size}z" fill="{color}" opacity="0.9"/>',
+        f'<path d="M{x} {y + h}h{size}l-{size} -{size}z" fill="{color}" opacity="0.9"/>',
+        f'<path d="M{x + w} {y + h}h-{size}l{size} -{size}z" fill="{color}" opacity="0.9"/>',
+    ])
+
+
+def _dex_from_sprite(url: str | None) -> str:
+    if not url:
+        return "???"
+    tail = url.rsplit("/", 1)[-1]
+    number = tail.split(".")[0]
+    return number.zfill(3) if number.isdigit() else "???"
+
+
+def _split_arrow_value(x, y, value, size=20):
+    """Draw a value containing an arrow without relying on font glyph coverage."""
+    if "\u2192" not in value:
+        return _field_text(x, y, value, size=size, family=SERIF, fill=INK)
+    left, right = [part.strip() for part in value.split("\u2192", 1)]
+    left_width = max(30, len(left) * size * 0.52)
+    parts = [_field_text(x, y, left, size=size, family=SERIF, fill=INK)]
+    arrow_x = x + left_width + 5
+    parts.append(
+        f'<path d="M{arrow_x:.1f} {y - 4:.1f}h13m-4 -4l4 4-4 4" fill="none" '
+        f'stroke="{FIELD_RED}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>'
+    )
+    parts.append(_field_text(arrow_x + 23, y, right, size=size, family=SERIF, fill=INK))
+    return "".join(parts)
+
+
+def _format_field_date(date_label: str) -> str:
+    try:
+        parsed = datetime.datetime.strptime(date_label, "%Y-%m-%d")
+        return parsed.strftime("%d %b %Y").upper()
+    except ValueError:
+        return date_label
+
+
+def generate_field_guide_hero(
+    team: list[str],
+    day_number: int,
+    weather: str,
+    power_pct: float,
+    date_label: str,
+    sprites: list[str | None] | None = None,
+    types: list[list[str]] | None = None,
+    archetype: str = "",
+    lead: str = "",
+    proofs: list[dict] | None = None,
+    handle: str = "github.com/Arudchayan",
+) -> str:
+    """Render the profile hero as a pinned field-guide plate.
+
+    Real text for everything load-bearing, embedded sprites, no theme queries.
+    """
+    width, height = 880, 320
+    team = team[:6]
+    sprites = sprites or []
+    types = types or []
+    proofs = (proofs or [])[:3]
+    pct = max(0.0, min(power_pct, 1.0))
+    date_text = _format_field_date(date_label)
+    lead = lead or (team[0] if team else "Arudchayan")
+    lead_types = types[0] if types else []
+    lead_type_text = " / ".join(t.upper() for t in lead_types) or "UNKNOWN"
+
+    lead_sprite = sprites[0] if sprites else None
+    lead_uri = _embed_sprite(lead_sprite)
+    if lead_uri:
+        lead_image = (
+            f'<image x="650" y="90" width="96" height="96" href="{lead_uri}" '
+            f'xlink:href="{lead_uri}" image-rendering="pixelated"/>'
+        )
+    else:
+        lead_image = _pixel_icon(POKEBALL_PATTERN, 674, 114, 2, {"R": FIELD_RED, "B": INK, "W": PAPER_LIGHT})
+
+    # Evidence ledger: value, method label, project + status.
+    evidence = []
+    column_x = [30, 190, 350]
+    for index, proof in enumerate(proofs[:3]):
+        x = column_x[index]
+        label = f"{proof.get('source', '')} · {proof.get('label', '')}".strip(" ·")
+        evidence.append(_field_text(x, 232, label, size=7.0, tracking=0.3, fill=SAGE_DARK))
+        evidence.append(_split_arrow_value(x, 250, str(proof.get("value", "")), size=20))
+        status = str(proof.get("status", "")).upper()
+        status_color = SAGE_DARK if status == "PUBLIC" else FIELD_RED
+        evidence.append(_field_text(x, 260, status, size=6.0, tracking=1.0, fill=status_color))
+    if not evidence:
+        evidence.append(_field_text(30, 240, "Evidence ledger pending.", size=11, family=SERIF, fill=SOFT_INK))
+
+    # Paratype plate: up to five reserve specimens, centred if fewer.
+    paratypes = []
+    reserve = list(zip(team[1:6], sprites[1:6], types[1:6]))
+    if reserve:
+        spacing = 50
+        total = spacing * (len(reserve) - 1)
+        start = 698 - total / 2
+        for index, (name, sprite, _) in enumerate(reserve):
+            center = start + index * spacing
+            uri = _embed_sprite(sprite)
+            if uri:
+                paratypes.append(
+                    f'<image x="{center - 15:.1f}" y="250" width="30" height="30" '
+                    f'href="{uri}" xlink:href="{uri}" image-rendering="pixelated"/>'
+                )
+            else:
+                paratypes.append(
+                    _pixel_icon(POKEBALL_PATTERN, center - 9, 256, 1, {"R": FIELD_RED, "B": INK, "W": PAPER_LIGHT})
+                )
+            paratypes.append(
+                _field_text(center, 291, f"No. {_dex_from_sprite(sprite)}", size=6.2,
+                            tracking=0.4, fill=SOFT_INK, anchor="middle", opacity=0.82)
+            )
+
+    svg = f'''<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Arudchayan, ML research engineer. Evaluation evidence and a pinned {html.escape(lead)} specimen.">
+  <title>Arudchayan · ML research engineer — evaluation is field work</title>
+  <desc>Evaluation evidence: {html.escape("; ".join(str(p.get("value", "")) + " " + str(p.get("label", "")) for p in proofs))}. Open to research engineering roles.</desc>
+  <defs>
+    <pattern id="field-dotgrid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="0.55" fill="{INK}" opacity="0.055"/>
+    </pattern>
+    <filter id="field-card-shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#4A3A24" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="{width}" height="{height}" fill="{PAPER}"/>
+  <rect width="{width}" height="{height}" fill="url(#field-dotgrid)"/>
+
+  <g filter="url(#field-card-shadow)">
+    <rect x="548" y="42" width="300" height="250" fill="{PAPER_LIGHT}" stroke="#CBBDA3" stroke-width="1"/>
+  </g>
+  <rect x="549" y="43" width="298" height="248" fill="none" stroke="{PAPER}" stroke-width="1"/>
+
+  <rect x="30" y="50" width="21" height="2.6" fill="{FIELD_RED}"/>
+  {_field_text(58, 57.5, "ARUDCHAYAN", size=10, weight="bold", tracking=2.0, fill=INK)}
+  {_field_text(178, 57.5, "· ML RESEARCH ENGINEER", size=10, tracking=1.8, fill=SAGE_DARK)}
+
+  <text x="30" y="103" font-family="{SERIF}" font-size="37" fill="{INK}" letter-spacing="-0.7">Evals that check</text>
+  <text x="30" y="141" font-family="{SERIF}" font-size="37" fill="{INK}" letter-spacing="-0.7">whether the check works.</text>
+
+  {_field_text(30, 166, "ABSTRACT", size=6.8, tracking=2.4, fill=FIELD_RED)}
+  <text x="30" y="183" font-family="{SERIF}" font-size="11.4" fill="{SOFT_INK}">Evaluation harnesses for small models: monitorability, agent-safety gates,</text>
+  <text x="30" y="198" font-family="{SERIF}" font-size="11.4" fill="{SOFT_INK}">and reproducible systems.</text>
+
+  {_field_rule(30, 208, 520, 208, FIELD_RULE, 0.9)}
+  {_field_rule(30, 208, 46, 208, FIELD_RED, 1.6)}
+  {_field_text(30, 221, "EVIDENCE", size=6.8, tracking=1.6, fill=FIELD_RED)}
+  {''.join(evidence)}
+
+  {_field_rule(30, 266, 520, 266, FIELD_RULE, 0.9)}
+  {_field_text(30, 282, f"SEED {day_number} · {weather.upper()} · {pct * 100:.1f}% POWER", size=8.2, tracking=1.1, fill=SAGE_DARK)}
+
+  {_field_text(562, 60, "SPECIMEN PLATE", size=6.8, tracking=2.2, fill=SAGE_DARK)}
+  {_field_text(834, 60, f"No. {_dex_from_sprite(lead_sprite)}", size=6.8, tracking=1.4, fill=INK, anchor="end")}
+  {_field_rule(562, 66, 834, 66, FIELD_RULE, 0.8)}
+
+  <circle cx="698" cy="138" r="54" fill="{SAGE}" opacity="0.10"/>
+  {_corner_mounts(634, 74, 128, 128, 17)}
+  {lead_image}
+  <g transform="rotate(-10 763 93)">
+    <ellipse cx="763" cy="93" rx="23" ry="10" fill="none" stroke="{FIELD_RED}" stroke-width="1.4" opacity="0.9"/>
+    <ellipse cx="763" cy="93" rx="19.5" ry="7.2" fill="none" stroke="{FIELD_RED}" stroke-width="0.5" opacity="0.55"/>
+    <text x="763" y="95.6" text-anchor="middle" font-family="{FIELD_MONO}" font-size="7.2" font-weight="bold" letter-spacing="1.2" fill="{FIELD_RED}">LEAD</text>
+  </g>
+  {_field_text(698, 222, lead.upper(), size=15, family=SERIF, tracking=3.2, fill=INK, anchor="middle")}
+  {_field_text(698, 234, f"{lead_type_text} · LEAD SPECIMEN", size=6.4, tracking=1.5, fill=SAGE_DARK, anchor="middle")}
+  {_field_rule(562, 242, 834, 242, FIELD_RULE, 0.8)}
+  {''.join(paratypes)}
+
+  <rect x="0" y="0" width="{width}" height="30" fill="{FIELD_RED}"/>
+  <rect x="0" y="29" width="{width}" height="1" fill="{FIELD_RED_DARK}"/>
+  <circle cx="27" cy="15" r="5.6" fill="none" stroke="{PAPER_LIGHT}" stroke-width="1.1"/>
+  <path d="M21.4 15h11.2" stroke="{PAPER_LIGHT}" stroke-width="1.1"/>
+  <circle cx="27" cy="15" r="1.9" fill="{PAPER_LIGHT}"/>
+  {_field_text(42, 18.3, "POKÉDEX FIELD GUIDE", size=8.6, tracking=2.7, fill=PAPER_LIGHT)}
+  <rect x="345" y="7" width="190" height="16" fill="none" stroke="{PAPER_LIGHT}" stroke-width="0.8" opacity="0.65"/>
+  {_field_text(440, 18.2, "OPEN TO RESEARCH ROLES", size=7.2, tracking=1.7, fill=PAPER_LIGHT, anchor="middle")}
+  {_field_text(848, 18, date_text, size=7.5, tracking=1.6, fill=PAPER_LIGHT, anchor="end", opacity="0.92")}
+
+  {_field_rule(30, 302, 848, 302, FIELD_RULE, 0.9)}
+  {_field_text(30, 315, handle, size=7.4, tracking=1.0, fill=INK, opacity=0.85)}
+  {_field_text(440, 315, "EVALS · AGENT SAFETY · REPRODUCIBLE SYSTEMS", size=7.6, tracking=1.3, fill=SAGE_DARK, anchor="middle")}
+  {_field_text(848, 315, "p. 01", size=7.4, tracking=1.0, fill=SAGE_DARK, anchor="end")}
+
+  <rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" fill="none" stroke="{INK}" stroke-width="1" opacity="0.85"/>
+</svg>'''
 
     os.makedirs("assets", exist_ok=True)
     with open("assets/hero.svg", "w", encoding="utf-8") as f:

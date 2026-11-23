@@ -198,6 +198,14 @@ def load_trainer_history():
         loaded.setdefault("shiny_hunt", default["shiny_hunt"])
         return loaded
     return default
+
+
+def load_proof_metrics() -> list[dict]:
+    proof_path = os.path.join(root, "data", "proof_metrics.json")
+    if not os.path.exists(proof_path):
+        return []
+    with open(proof_path, encoding="utf-8") as f:
+        return json.load(f)
 def normalize_pokemon_identifier(pokemon_name: str) -> str:
     lower_name = pokemon_name.lower().strip()
     if lower_name.startswith("mega "):
@@ -662,7 +670,8 @@ coach_tips = coach.get_coach_advice(
 )
 
 # === 9. HERO BANNER ===
-hero_banner = svg_generator.generate_hero_banner(
+proof_metrics = load_proof_metrics()
+hero_banner = svg_generator.generate_field_guide_hero(
     team=chosen['team'],
     day_number=day_number,
     weather=weather['name'],
@@ -672,11 +681,26 @@ hero_banner = svg_generator.generate_hero_banner(
     types=[pokemon_data.get(name, {}).get('types', []) for name in chosen['team']],
     archetype=chosen['title'],
     lead=lead_name,
+    proofs=proof_metrics,
 )
+
+proofs_by_key = {proof["key"]: proof for proof in proof_metrics}
+proof_row = '<p align="center"><sub>' + ' · '.join(
+    f'<strong>{proof["value"]}</strong> {proof["label"].lower()}'
+    for proof in proof_metrics[:3]
+) + '</sub></p>'
+hero_alt = "Arudchayan — ML research engineer. " + "; ".join(
+    f'{proof["value"]} {proof["label"].lower()}' for proof in proof_metrics[:3]
+) + ". Open to research engineering roles."
 
 # Replacements Dictionary
 replacements = {
-    '{HERO_BANNER}': f'<p align="center"><img src="{hero_banner}?v={day_number}" width="880" alt="Arudchayan · BattleOps Command Center"/></p>',
+    '{HERO_BANNER}': f'<p align="center"><img src="{hero_banner}?v={day_number}" width="880" alt="{hero_alt}"/></p>',
+    '{PROOF_ROW}': proof_row,
+    '{PROOF_TURNWAVE}': proofs_by_key.get('turnwave', {}).get('value', ''),
+    '{PROOF_TRACESCOPE}': proofs_by_key.get('tracescope', {}).get('value', ''),
+    '{PROOF_AGENTGATE}': proofs_by_key.get('agentgate', {}).get('value', ''),
+    '{PROOF_WARNINGTIME}': proofs_by_key.get('warningtime', {}).get('value', ''),
     '{CURRENT_DATE}': now_utc.strftime("%Y-%m-%d %H:%M UTC"),
     '{DAY_NUMBER}': str(day_number),
     '{ARCHETYPE_TITLE}': chosen['title'],

@@ -34,8 +34,8 @@ jobs:
           # A missing file also fails -s, so one check covers both
           [ -s README.md ] || { echo "❌ ERROR: README.md missing or empty!"; exit 1; }
           
-          grep -q "AI Research" README.md || { echo "❌ ERROR: README.md missing AI Research section!"; exit 1; }
-          grep -q "Trainer Card" README.md || { echo "❌ ERROR: README.md missing Trainer Card section!"; exit 1; }
+          grep -q "Selected research" README.md || { echo "❌ ERROR: README.md missing Selected research section!"; exit 1; }
+          grep -q "Field notes" README.md || { echo "❌ ERROR: README.md missing Field notes section!"; exit 1; }
           ! grep -qE '\{[A-Z_]+\}' README.md || { echo "❌ ERROR: README.md has unresolved placeholders!"; exit 1; }
           
           for asset in $(grep -oE 'assets/[A-Za-z0-9_./-]+\.svg' README.md | sort -u); do
