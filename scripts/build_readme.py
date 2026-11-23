@@ -522,7 +522,7 @@ lead_data = pokemon_data.get(chosen['lead'], {})
 lead_moves = lead_data.get('signature_moves', [])
 damaging_moves = [m for m in lead_moves if m.get('damage_class') != 'status']
 move_one = damaging_moves[0]['name'] if damaging_moves else (lead_moves[0]['name'] if lead_moves else 'its signature move')
-move_two = damaging_moves[1]['name'] if len(damaging_moves) > 1 else 'a coverage move'
+move_two = damaging_moves[1]['name'] if len(damaging_moves) > 1 else move_one
 pivot = chosen['team'][1] if len(chosen['team']) > 1 else chosen['lead']
 battle_log = (
     f"⚔️ **Battle Start!** Trainer {chosen['title']} vs Rival Blue!\n"
@@ -561,11 +561,11 @@ branching_paths_block = generate_branching_paths(
 )
 
 # === 6. GYM LEADER CHALLENGERS ===
-challenger_text = "No recent challengers recorded."
+challenger_text = "No challengers recorded yet. Open an issue titled `Challenge @...` to simulate a gym battle."
 challenger_path = os.path.join(root, "data", "challengers.json")
 if os.path.exists(challenger_path):
     with open(challenger_path, encoding="utf-8") as f:
-        challengers = json.load(f)
+        challengers = [c for c in json.load(f) if "test" not in c.get("challenger", "").lower()]
         if challengers:
             rows = ["| Date | Challenger | Team | Result |", "| --- | --- | --- | --- |"]
             for c in challengers[:5]: # Top 5
@@ -617,12 +617,12 @@ for pokemon_name in chosen['team']:
     stat_radar = f"assets/stats_{normalize_pokemon_identifier(pokemon_name)}.svg"
 
     dossier = (
-        f"<details open>\n"
+        f"<details>\n"
         f"<summary>⚔️ <strong>{pokemon_name}</strong> · "
         + " / ".join([get_type_emoji(t) + t.upper() for t in types])
         + "</summary>\n\n"
         f"<div align=\"center\">\n{get_pokemon_sprite_html(pdata.get('sprite'), pokemon_name, 160)}\n"
-        f"<br/><img src=\"{stat_radar}\" width=\"200\" height=\"200\" alt=\"Stats Radar\"/>\n</div>\n\n"
+        f"<br/><img src=\"{stat_radar}?v=2\" width=\"240\" height=\"264\" alt=\"Stats Radar\"/>\n</div>\n\n"
         f"- **Base Stat Total:** {bst}\n"
         f"- **Top Stat:** {top_stat_key.title()} ({top_stat_val})\n"
         f"- **Ability:** {pdata.get('best_ability', 'Unknown')}\n"
@@ -641,8 +641,18 @@ coach_tips = coach.get_coach_advice(
     lead_stats.get('speed', 90)
 )
 
+# === 9. HERO BANNER ===
+hero_banner = svg_generator.generate_hero_banner(
+    team=chosen['team'],
+    day_number=day_number,
+    weather=weather['name'],
+    power_pct=min(team_bst_total / (max(1, len(chosen['team'])) * 720), 1),
+    date_label=now_utc.strftime("%Y-%m-%d"),
+)
+
 # Replacements Dictionary
 replacements = {
+    '{HERO_BANNER}': f'<p align="center"><img src="{hero_banner}?v={day_number}" width="880" alt="Arudchayan · BattleOps Command Center"/></p>',
     '{CURRENT_DATE}': now_utc.strftime("%Y-%m-%d %H:%M UTC"),
     '{DAY_NUMBER}': str(day_number),
     '{ARCHETYPE_TITLE}': chosen['title'],
