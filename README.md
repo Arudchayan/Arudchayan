@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/hero.svg?v=739943" width="880" alt="Arudchayan — ML research engineer. 2,003/2,003 speech playback; 0.60 → 0.00 blinded detection; 16/16 agent boundary. Open to research engineering roles."/></p>
+<p align="center"><img src="assets/hero.svg?v=739944" width="880" alt="Arudchayan — ML research engineer. 2,003/2,003 speech playback; 0.60 → 0.00 blinded detection; 16/16 agent boundary. Open to research engineering roles."/></p>
 
 <p align="center"><sub><strong>2,003/2,003</strong> speech playback · <strong>0.60 → 0.00</strong> blinded detection · <strong>16/16</strong> agent boundary</sub></p>
 
@@ -46,11 +46,11 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
 
 ## 03 · Field notes
 
-<p align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/384.gif" alt="Rayquaza" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/715.gif" alt="Noivern" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/376.gif" alt="Metagross" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="72" height="72"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10076.gif" alt="Mega Metagross" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/384.gif" alt="Rayquaza" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/715.gif" alt="Noivern" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="72" height="72"/></p>
 
-**Seed 739943** · Thunderborn Storm Raider · **Zeraora** lead · 🔥 Harsh Sunlight
-**Roster:** Zeraora, Rayquaza, Noivern, Metagross, Gengar, Decidueye
-**Quest:** Push a commit before noon to outspeed Rival Weavile.
+**Seed 739944** · Quantum Steel Prophet · **Mega Metagross** lead · ❄️ Snow
+**Roster:** Mega Metagross, Rayquaza, Gengar, Zeraora, Noivern, Decidueye
+**Quest:** Optimize 3 functions to increase Metagross's calculation speed.
 
 <details>
 <summary>Open the full trainer card — squad dossiers, type intel, gym log</summary>
@@ -58,24 +58,24 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
 ### Squad dossiers
 
 <details>
-<summary>⚔️ <strong>Zeraora</strong> · ⚡ELECTRIC</summary>
+<summary>⚔️ <strong>Mega Metagross</strong> · ⚙️STEEL / 🔮PSYCHIC</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="160" height="160"/>
-<br/><img src="assets/stats_zeraora.svg?v=2" width="240" height="264" alt="Stats Radar"/>
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10076.gif" alt="Mega Metagross" width="160" height="160"/>
+<br/><img src="assets/stats_metagross-mega.svg?v=2" width="240" height="264" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 600
-- **Top Stat:** Speed (143)
-- **Ability:** Volt Absorb
+- **Base Stat Total:** 700
+- **Top Stat:** Defense (150)
+- **Ability:** Tough Claws
 - **Nature:** Jolly
-- **Held Item:** Expert Belt
+- **Held Item:** Choice Band
 - **EV Spread:** 252 Atk / 4 Def / 252 Spe
 - **Signature Moves:**
-  - ⚡ Thunder Wave · Status · Utility
-  - 🥊 Bulk Up · Status · Utility
-  - 🥊 Close Combat · Physical · 120 BP
-  - 🌙 Knock Off · Physical · 65 BP
+  - ⚙️ Bullet Punch · Physical · 40 BP
+  - 🪨 Stealth Rock · Status · Utility
+  - ⚪ Protect · Status · Utility
+  - 🌍 Earthquake · Physical · 100 BP
 </details>
 
 <details>
@@ -100,48 +100,6 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
 </details>
 
 <details>
-<summary>⚔️ <strong>Noivern</strong> · 🕊️FLYING / 🐉DRAGON</summary>
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/715.gif" alt="Noivern" width="160" height="160"/>
-<br/><img src="assets/stats_noivern.svg?v=2" width="240" height="264" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 535
-- **Top Stat:** Speed (123)
-- **Ability:** Infiltrator
-- **Nature:** Timid
-- **Held Item:** Heavy-Duty Boots
-- **EV Spread:** 252 SpA / 4 SpD / 252 Spe
-- **Signature Moves:**
-  - 🕊️ Roost · Status · Utility
-  - 🕊️ Defog · Status · Utility
-  - 🕊️ Hurricane · Special · 110 BP
-  - 🐉 Dragon Pulse · Special · 85 BP
-</details>
-
-<details>
-<summary>⚔️ <strong>Metagross</strong> · ⚙️STEEL / 🔮PSYCHIC</summary>
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/376.gif" alt="Metagross" width="160" height="160"/>
-<br/><img src="assets/stats_metagross.svg?v=2" width="240" height="264" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 600
-- **Top Stat:** Attack (135)
-- **Ability:** Clear Body
-- **Nature:** Adamant
-- **Held Item:** Leftovers
-- **EV Spread:** 252 HP / 252 Atk / 4 Def
-- **Signature Moves:**
-  - ⚙️ Bullet Punch · Physical · 40 BP
-  - ⚪ Protect · Status · Utility
-  - 🪨 Stealth Rock · Status · Utility
-  - 🌍 Earthquake · Physical · 100 BP
-</details>
-
-<details>
 <summary>⚔️ <strong>Gengar</strong> · 👻GHOST / ☠️POISON</summary>
 
 <div align="center">
@@ -160,6 +118,48 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
   - ☠️ Toxic Spikes · Status · Utility
   - 👻 Shadow Ball · Special · 80 BP
   - ☠️ Sludge Wave · Special · 95 BP
+</details>
+
+<details>
+<summary>⚔️ <strong>Zeraora</strong> · ⚡ELECTRIC</summary>
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="160" height="160"/>
+<br/><img src="assets/stats_zeraora.svg?v=2" width="240" height="264" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 600
+- **Top Stat:** Speed (143)
+- **Ability:** Volt Absorb
+- **Nature:** Jolly
+- **Held Item:** Choice Scarf
+- **EV Spread:** 252 Atk / 4 Def / 252 Spe
+- **Signature Moves:**
+  - ⚡ Thunder Wave · Status · Utility
+  - 🥊 Bulk Up · Status · Utility
+  - 🥊 Close Combat · Physical · 120 BP
+  - 🌙 Knock Off · Physical · 65 BP
+</details>
+
+<details>
+<summary>⚔️ <strong>Noivern</strong> · 🕊️FLYING / 🐉DRAGON</summary>
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/715.gif" alt="Noivern" width="160" height="160"/>
+<br/><img src="assets/stats_noivern.svg?v=2" width="240" height="264" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 535
+- **Top Stat:** Speed (123)
+- **Ability:** Infiltrator
+- **Nature:** Timid
+- **Held Item:** Heavy-Duty Boots
+- **EV Spread:** 252 SpA / 4 SpD / 252 Spe
+- **Signature Moves:**
+  - 🕊️ Roost · Status · Utility
+  - 🕊️ Defog · Status · Utility
+  - 🕊️ Hurricane · Special · 110 BP
+  - 🐉 Dragon Pulse · Special · 85 BP
 </details>
 
 <details>
@@ -188,41 +188,41 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
 - 🐉 **DRAGON** ×2
 - 🕊️ **FLYING** ×2
 - 👻 **GHOST** ×2
-- ⚡ **ELECTRIC** ×1
 - ⚙️ **STEEL** ×1
 - 🔮 **PSYCHIC** ×1
 - ☠️ **POISON** ×1
+- ⚡ **ELECTRIC** ×1
 - 🌿 **GRASS** ×1
 
 ### ⚠️ Critical Weaknesses (3+ Pokemon)
 - 🌍 **GROUND** threatens 3 team members
-- 🧊 **ICE** threatens 3 team members
-- 🌙 **DARK** threatens 3 team members
 - 👻 **GHOST** threatens 3 team members
+- 🌙 **DARK** threatens 3 team members
+- 🧊 **ICE** threatens 3 team members
 
 ### ⚡ Moderate Weaknesses (2 Pokemon)
-- 🐉 **DRAGON** hits 2 team members
-- 🪨 **ROCK** hits 2 team members
-- ⚡ **ELECTRIC** hits 2 team members
-- ✨ **FAIRY** hits 2 team members
 - 🐛 **BUG** hits 2 team members
 - 🔥 **FIRE** hits 2 team members
+- ⚡ **ELECTRIC** hits 2 team members
+- 🐉 **DRAGON** hits 2 team members
+- 🪨 **ROCK** hits 2 team members
+- ✨ **FAIRY** hits 2 team members
 
 ### Encounter of the day
 
 <details>
-<summary>🎲 Encounter: Snorlax</summary>
+<summary>🎲 Encounter: Zekrom</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/143.gif" alt="Snorlax" width="150" height="150"/>
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/644.gif" alt="Zekrom" width="150" height="150"/>
 </div>
 
-- **Rarity Signal:** Wild Encounter
-- **Type Signal:** ⚪NORMAL
-- **Height / Weight:** 2.1m · 460.0kg
-- **Abilities:** Immunity, Thick Fat, Gluttony
-- **Pokédex Insight:** Very lazy. Just eats and sleeps. As its rotund bulk builds, it becomes steadily more slothful.
-- **Encounter Telemetry:** Routine scouting ping—deploy capture drones at your discretion.
+- **Rarity Signal:** Legendary Sighting
+- **Type Signal:** 🐉DRAGON ⚡ELECTRIC
+- **Height / Weight:** 2.9m · 345.0kg
+- **Abilities:** Teravolt
+- **Pokédex Insight:** Concealing itself in lightning clouds, it flies throughout the Unova region. It creates electricity in its tail.
+- **Encounter Telemetry:** Ultra-rare beacon detected—Command approves immediate containment.
 
 </details>
 
@@ -237,14 +237,14 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
 Copy this to import the current team into Pokémon Showdown:
 
 ```
-Zeraora @ Expert Belt
-Ability: Volt Absorb
+Mega Metagross @ Choice Band
+Ability: Tough Claws
 EVs: 252 Atk / 4 Def / 252 Spe
 Jolly Nature
-- Thunder Wave
-- Bulk Up
-- Close Combat
-- Knock Off
+- Bullet Punch
+- Stealth Rock
+- Protect
+- Earthquake
 
 Rayquaza @ Heavy-Duty Boots
 Ability: Air Lock
@@ -255,24 +255,6 @@ Mild Nature
 - Defog
 - Hurricane
 
-Noivern @ Heavy-Duty Boots
-Ability: Infiltrator
-EVs: 252 SpA / 4 SpD / 252 Spe
-Timid Nature
-- Roost
-- Defog
-- Hurricane
-- Dragon Pulse
-
-Metagross @ Leftovers
-Ability: Clear Body
-EVs: 252 HP / 252 Atk / 4 Def
-Adamant Nature
-- Bullet Punch
-- Protect
-- Stealth Rock
-- Earthquake
-
 Gengar @ Life Orb
 Ability: Cursed Body
 EVs: 252 SpA / 4 SpD / 252 Spe
@@ -281,6 +263,24 @@ Timid Nature
 - Toxic Spikes
 - Shadow Ball
 - Sludge Wave
+
+Zeraora @ Choice Scarf
+Ability: Volt Absorb
+EVs: 252 Atk / 4 Def / 252 Spe
+Jolly Nature
+- Thunder Wave
+- Bulk Up
+- Close Combat
+- Knock Off
+
+Noivern @ Heavy-Duty Boots
+Ability: Infiltrator
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Roost
+- Defog
+- Hurricane
+- Dragon Pulse
 
 Decidueye @ Leftovers
 Ability: Long Reach
@@ -307,4 +307,4 @@ The README rebuilds itself daily in GitHub Actions: [`scripts/build_readme.py`](
 
 ---
 
-<sub>README last rebuilt on 2026-11-23 07:14 UTC. The next daily rotation is generated by GitHub Actions.</sub>
+<sub>README last rebuilt on 2026-11-24 09:37 UTC. The next daily rotation is generated by GitHub Actions.</sub>
