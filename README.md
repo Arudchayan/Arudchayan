@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/hero.svg?v=739945" width="880" alt="Arudchayan — ML research engineer. 2,003/2,003 speech playback; 0.60 → 0.00 blinded detection; 16/16 agent boundary. Open to research engineering roles."/></p>
+<p align="center"><img src="assets/hero.svg?v=739946" width="880" alt="Arudchayan — ML research engineer. 2,003/2,003 speech playback; 0.60 → 0.00 blinded detection; 16/16 agent boundary. Open to research engineering roles."/></p>
 
 <p align="center"><sub><strong>2,003/2,003</strong> speech playback · <strong>0.60 → 0.00</strong> blinded detection · <strong>16/16</strong> agent boundary</sub></p>
 
@@ -46,11 +46,11 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
 
 ## 03 · Field notes
 
-<p align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10038.gif" alt="Mega Gengar" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/715.gif" alt="Noivern" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/384.gif" alt="Rayquaza" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/376.gif" alt="Metagross" width="72" height="72"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10079.gif" alt="Mega Rayquaza" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/715.gif" alt="Noivern" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif" alt="Zeraora" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/376.gif" alt="Metagross" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="72" height="72"/> <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="72" height="72"/></p>
 
-**Seed 739945** · Nightfall Rift Summoner · **Mega Gengar** lead · 🔥 Harsh Sunlight
-**Roster:** Mega Gengar, Decidueye, Noivern, Rayquaza, Zeraora, Metagross
-**Quest:** Review a PR to teach Alakazam 'Future Sight'.
+**Seed 739946** · Sky Tyrant Ascendant · **Mega Rayquaza** lead · 🔥 Harsh Sunlight
+**Roster:** Mega Rayquaza, Noivern, Zeraora, Metagross, Gengar, Decidueye
+**Quest:** Push a commit before noon to outspeed Rival Weavile.
 
 <details>
 <summary>Open the full trainer card — squad dossiers, type intel, gym log</summary>
@@ -58,45 +58,24 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
 ### Squad dossiers
 
 <details>
-<summary>⚔️ <strong>Mega Gengar</strong> · 👻GHOST / ☠️POISON</summary>
+<summary>⚔️ <strong>Mega Rayquaza</strong> · 🐉DRAGON / 🕊️FLYING</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/10038.gif" alt="Mega Gengar" width="160" height="160"/>
-<br/><img src="assets/stats_gengar-mega.svg?v=2" width="240" height="264" alt="Stats Radar"/>
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10079.gif" alt="Mega Rayquaza" width="160" height="160"/>
+<br/><img src="assets/stats_rayquaza-mega.svg?v=2" width="240" height="264" alt="Stats Radar"/>
 </div>
 
-- **Base Stat Total:** 600
-- **Top Stat:** Special-Attack (170)
-- **Ability:** Shadow Tag
-- **Nature:** Timid
-- **Held Item:** Life Orb
+- **Base Stat Total:** 780
+- **Top Stat:** Attack (180)
+- **Ability:** Delta Stream
+- **Nature:** Hasty
+- **Held Item:** Heavy-Duty Boots
 - **EV Spread:** 252 SpA / 4 SpD / 252 Spe
 - **Signature Moves:**
-  - ☠️ Toxic · Status · Utility
-  - ☠️ Toxic Spikes · Status · Utility
-  - ☠️ Sludge Wave · Special · 95 BP
-  - 👻 Shadow Ball · Special · 80 BP
-</details>
-
-<details>
-<summary>⚔️ <strong>Decidueye</strong> · 🌿GRASS / 👻GHOST</summary>
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="160" height="160"/>
-<br/><img src="assets/stats_decidueye.svg?v=2" width="240" height="264" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 530
-- **Top Stat:** Attack (107)
-- **Ability:** Long Reach
-- **Nature:** Adamant
-- **Held Item:** Leftovers
-- **EV Spread:** 252 HP / 252 Atk / 4 Def
-- **Signature Moves:**
-  - 🌿 Synthesis · Status · Utility
-  - 👻 Shadow Sneak · Physical · 40 BP
-  - 🌙 Nasty Plot · Status · Utility
-  - 🕊️ Brave Bird · Physical · 120 BP
+  - 🕊️ Dragon Ascent · Physical · 120 BP
+  - 🐉 Dragon Dance · Status · Utility
+  - 🕊️ Defog · Status · Utility
+  - 🕊️ Hurricane · Special · 110 BP
 </details>
 
 <details>
@@ -121,27 +100,6 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
 </details>
 
 <details>
-<summary>⚔️ <strong>Rayquaza</strong> · 🐉DRAGON / 🕊️FLYING</summary>
-
-<div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/384.gif" alt="Rayquaza" width="160" height="160"/>
-<br/><img src="assets/stats_rayquaza.svg?v=2" width="240" height="264" alt="Stats Radar"/>
-</div>
-
-- **Base Stat Total:** 680
-- **Top Stat:** Attack (150)
-- **Ability:** Air Lock
-- **Nature:** Mild
-- **Held Item:** Heavy-Duty Boots
-- **EV Spread:** 252 HP / 252 SpA / 4 SpD
-- **Signature Moves:**
-  - 🕊️ Dragon Ascent · Physical · 120 BP
-  - 🐉 Dragon Dance · Status · Utility
-  - 🕊️ Defog · Status · Utility
-  - 🕊️ Hurricane · Special · 110 BP
-</details>
-
-<details>
 <summary>⚔️ <strong>Zeraora</strong> · ⚡ELECTRIC</summary>
 
 <div align="center">
@@ -153,7 +111,7 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
 - **Top Stat:** Speed (143)
 - **Ability:** Volt Absorb
 - **Nature:** Jolly
-- **Held Item:** Life Orb
+- **Held Item:** Choice Scarf
 - **EV Spread:** 252 Atk / 4 Def / 252 Spe
 - **Signature Moves:**
   - ⚡ Thunder Wave · Status · Utility
@@ -183,46 +141,88 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
   - 🌍 Earthquake · Physical · 100 BP
 </details>
 
+<details>
+<summary>⚔️ <strong>Gengar</strong> · 👻GHOST / ☠️POISON</summary>
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif" alt="Gengar" width="160" height="160"/>
+<br/><img src="assets/stats_gengar.svg?v=2" width="240" height="264" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 500
+- **Top Stat:** Special-Attack (130)
+- **Ability:** Cursed Body
+- **Nature:** Timid
+- **Held Item:** Choice Specs
+- **EV Spread:** 252 SpA / 4 SpD / 252 Spe
+- **Signature Moves:**
+  - ☠️ Toxic · Status · Utility
+  - ☠️ Toxic Spikes · Status · Utility
+  - 👻 Shadow Ball · Special · 80 BP
+  - ☠️ Sludge Wave · Special · 95 BP
+</details>
+
+<details>
+<summary>⚔️ <strong>Decidueye</strong> · 🌿GRASS / 👻GHOST</summary>
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/724.gif" alt="Decidueye" width="160" height="160"/>
+<br/><img src="assets/stats_decidueye.svg?v=2" width="240" height="264" alt="Stats Radar"/>
+</div>
+
+- **Base Stat Total:** 530
+- **Top Stat:** Attack (107)
+- **Ability:** Long Reach
+- **Nature:** Adamant
+- **Held Item:** Leftovers
+- **EV Spread:** 252 HP / 252 Atk / 4 Def
+- **Signature Moves:**
+  - 🌿 Synthesis · Status · Utility
+  - 👻 Shadow Sneak · Physical · 40 BP
+  - 🌙 Nasty Plot · Status · Utility
+  - 🕊️ Brave Bird · Physical · 120 BP
+</details>
+
 ### Type coverage &amp; defensive analysis
 
-- 👻 **GHOST** ×2
-- 🕊️ **FLYING** ×2
 - 🐉 **DRAGON** ×2
-- ☠️ **POISON** ×1
-- 🌿 **GRASS** ×1
+- 🕊️ **FLYING** ×2
+- 👻 **GHOST** ×2
 - ⚡ **ELECTRIC** ×1
 - ⚙️ **STEEL** ×1
 - 🔮 **PSYCHIC** ×1
+- ☠️ **POISON** ×1
+- 🌿 **GRASS** ×1
 
 ### ⚠️ Critical Weaknesses (3+ Pokemon)
-- 🌍 **GROUND** threatens 3 team members
-- 👻 **GHOST** threatens 3 team members
-- 🌙 **DARK** threatens 3 team members
 - 🧊 **ICE** threatens 3 team members
+- 🌍 **GROUND** threatens 3 team members
+- 🌙 **DARK** threatens 3 team members
+- 👻 **GHOST** threatens 3 team members
 
 ### ⚡ Moderate Weaknesses (2 Pokemon)
-- 🔥 **FIRE** hits 2 team members
-- 🐛 **BUG** hits 2 team members
-- 🐉 **DRAGON** hits 2 team members
-- ⚡ **ELECTRIC** hits 2 team members
-- 🪨 **ROCK** hits 2 team members
 - ✨ **FAIRY** hits 2 team members
+- 🪨 **ROCK** hits 2 team members
+- ⚡ **ELECTRIC** hits 2 team members
+- 🐉 **DRAGON** hits 2 team members
+- 🐛 **BUG** hits 2 team members
+- 🔥 **FIRE** hits 2 team members
 
 ### Encounter of the day
 
 <details>
-<summary>🎲 Encounter: Scizor</summary>
+<summary>🎲 Encounter: Eternatus</summary>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/212.gif" alt="Scizor" width="150" height="150"/>
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/890.gif" alt="Eternatus" width="150" height="150"/>
 </div>
 
-- **Rarity Signal:** Wild Encounter
-- **Type Signal:** 🐛BUG ⚙️STEEL
-- **Height / Weight:** 1.8m · 118.0kg
-- **Abilities:** Swarm, Technician, Light Metal
-- **Pokédex Insight:** It swings its eye- patterned pincers up to scare its foes. This makes it look like it has three heads.
-- **Encounter Telemetry:** Routine scouting ping—deploy capture drones at your discretion.
+- **Rarity Signal:** Legendary Sighting
+- **Type Signal:** ☠️POISON 🐉DRAGON
+- **Height / Weight:** 20.0m · 950.0kg
+- **Abilities:** Pressure
+- **Pokédex Insight:** The core on its chest absorbs energy emanating from the lands of the Galar region. This energy is what allows Eternatus to stay active.
+- **Encounter Telemetry:** Ultra-rare beacon detected—Command approves immediate containment.
 
 </details>
 
@@ -237,23 +237,14 @@ Scholarly workspace for papers, notes, ideas, a Today plan, Focus Studio, and DO
 Copy this to import the current team into Pokémon Showdown:
 
 ```
-Mega Gengar @ Life Orb
-Ability: Shadow Tag
+Mega Rayquaza @ Heavy-Duty Boots
+Ability: Delta Stream
 EVs: 252 SpA / 4 SpD / 252 Spe
-Timid Nature
-- Toxic
-- Toxic Spikes
-- Sludge Wave
-- Shadow Ball
-
-Decidueye @ Leftovers
-Ability: Long Reach
-EVs: 252 HP / 252 Atk / 4 Def
-Adamant Nature
-- Synthesis
-- Shadow Sneak
-- Nasty Plot
-- Brave Bird
+Hasty Nature
+- Dragon Ascent
+- Dragon Dance
+- Defog
+- Hurricane
 
 Noivern @ Heavy-Duty Boots
 Ability: Infiltrator
@@ -264,16 +255,7 @@ Timid Nature
 - Hurricane
 - Dragon Pulse
 
-Rayquaza @ Heavy-Duty Boots
-Ability: Air Lock
-EVs: 252 HP / 252 SpA / 4 SpD
-Mild Nature
-- Dragon Ascent
-- Dragon Dance
-- Defog
-- Hurricane
-
-Zeraora @ Life Orb
+Zeraora @ Choice Scarf
 Ability: Volt Absorb
 EVs: 252 Atk / 4 Def / 252 Spe
 Jolly Nature
@@ -290,6 +272,24 @@ Adamant Nature
 - Protect
 - Stealth Rock
 - Earthquake
+
+Gengar @ Choice Specs
+Ability: Cursed Body
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Toxic
+- Toxic Spikes
+- Shadow Ball
+- Sludge Wave
+
+Decidueye @ Leftovers
+Ability: Long Reach
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
+- Synthesis
+- Shadow Sneak
+- Nasty Plot
+- Brave Bird
 ```
 
 </details>
@@ -307,4 +307,4 @@ The README rebuilds itself daily in GitHub Actions: [`scripts/build_readme.py`](
 
 ---
 
-<sub>README last rebuilt on 2026-11-25 08:08 UTC. The next daily rotation is generated by GitHub Actions.</sub>
+<sub>README last rebuilt on 2026-11-26 07:57 UTC. The next daily rotation is generated by GitHub Actions.</sub>
